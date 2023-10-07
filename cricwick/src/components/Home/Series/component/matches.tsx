@@ -16,7 +16,7 @@ const overMatchCont = (item: any) => {
                     color: 'gray',
                     fontWeight: '400',
                 }}>{
-                    'RESULT  ' + `${item.card_title}, `
+                    'RESULT  ' + `${item.card_title}`
                 }</Text>
                 <View style={{
                     flexDirection: 'row',
@@ -62,7 +62,7 @@ const overMatchCont = (item: any) => {
 
                             }}>
                                 (
-                                {item.innings[0].overs > 0 ? item.innings[0].overs : 0}
+                                {item.innings[0].overs > 0 ? Number(item.innings[0].overs).toFixed(1) : 0}
                                 {` ov)`}
                             </Text>
                         </View>
@@ -112,7 +112,7 @@ const overMatchCont = (item: any) => {
 
                             }}>
                                 (
-                                {item.innings[1].overs > 0 ? item.innings[1].overs : 0}
+                                {item.innings[1].overs > 0 ? (item.innings[1].overs).toFixed(1) : 0}
                                 {` ov)`}
                             </Text>
                         </View>

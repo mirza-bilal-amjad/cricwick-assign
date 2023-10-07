@@ -12,7 +12,10 @@ const Article = ({item}: any) => {
         }}>
             <View style={{}}>
                 <Image source={{uri: item.image}}
-                       style={{width: 140, height: 80, aspectRatio: 16 / 9, borderRadius: 10}}/>
+                       style={{
+                           width: 140, height: 80, aspectRatio: 16 / 9,
+                           // borderRadius: 10
+                       }}/>
             </View>
             <View style={{
                 width: '60%',

@@ -1,0 +1,463 @@
+[
+  {
+    "l_i_10252": [
+      "null"
+    ],
+    "l_i_10253": [
+      "null"
+    ],
+    "l_i_10254": [
+      "null"
+    ],
+    "l_i_10255": [
+      "null"
+    ],
+    "l_i_10256": [
+      "null"
+    ],
+    "l_i_10468": [
+      {
+        "batting_team_id": 5025,
+        "fielding_team_id": 5029,
+        "id": 19864,
+        "overs": 161.2,
+        "run_rate": "3.0",
+        "runs": 568,
+        "wickets": 10
+      },
+      {
+        "batting_team_id": 5029,
+        "fielding_team_id": 5025,
+        "id": 19872,
+        "overs": 16,
+        "run_rate": "4.0",
+        "runs": 76,
+        "total_overs": 90,
+        "wickets": 1
+      }
+    ],
+    "l_i_10469": [
+      {
+        "batting_team_id": 5031,
+        "fielding_team_id": 5027,
+        "id": 19866,
+        "overs": 79.5,
+        "run_rate": "3.0",
+        "runs": 215,
+        "total_overs": 79.5,
+        "wickets": 10
+      },
+      {
+        "batting_team_id": 5027,
+        "fielding_team_id": 5031,
+        "id": 19868,
+        "overs": 43.4,
+        "run_rate": "3.0",
+        "runs": 128,
+        "total_overs": 43.4,
+        "wickets": 10
+      },
+      {
+        "batting_team_id": 5031,
+        "fielding_team_id": 5027,
+        "id": 19873,
+        "overs": 38.3,
+        "run_rate": "3.0",
+        "runs": 128,
+        "wickets": 5
+      }
+    ],
+    "l_i_10470": [
+      {
+        "batting_team_id": 5026,
+        "fielding_team_id": 5028,
+        "id": 19865,
+        "overs": 99.3,
+        "run_rate": "4.0",
+        "runs": 396,
+        "wickets": 10
+      },
+      {
+        "batting_team_id": 5028,
+        "fielding_team_id": 5026,
+        "id": 19874,
+        "overs": 50.2,
+        "run_rate": "3.0",
+        "runs": 176,
+        "wickets": 10
+      },
+      {
+        "batting_team_id": 5028,
+        "fielding_team_id": 5026,
+        "id": 19875,
+        "overs": 14,
+        "run_rate": "3.0",
+        "runs": 40,
+        "wickets": 0
+      }
+    ],
+    "l_i_10471": [
+      {
+        "batting_team_id": 5032,
+        "fielding_team_id": 5030,
+        "id": 19867,
+        "overs": 50.2,
+        "run_rate": "4.0",
+        "runs": 220,
+        "wickets": 10
+      },
+      {
+        "batting_team_id": 5030,
+        "fielding_team_id": 5032,
+        "id": 19869,
+        "overs": 64.2,
+        "run_rate": "3.0",
+        "runs": 194,
+        "wickets": 10
+      },
+      {
+        "batting_team_id": 5032,
+        "fielding_team_id": 5030,
+        "id": 19876,
+        "overs": 59.1,
+        "runs": 169,
+        "wickets": 3
+      }
+    ],
+    "l_m_10252": {
+      "format": "ODI",
+      "id": 10252,
+      "match_result": "",
+      "match_start": "2023/10/06 08:30:00 +0000",
+      "match_state": "Scheduled",
+      "series": {
+        "id": 1522,
+        "title": "Cricket World Cup 2023"
+      },
+      "teamA": {
+        "color_hex": "#a38056",
+        "flag_url": "https://asset.cricvids.co/teams/flags/000/000/001/original/Pakistan.webp?1660664108",
+        "id": 1,
+        "name": "Pakistan",
+        "short_name": "PAK"
+      },
+      "teamB": {
+        "color_hex": "#cacfd2",
+        "flag_url": "https://asset.cricvids.co/teams/flags/000/000/207/original/Netherlands.webp?1660663318",
+        "id": 207,
+        "name": "Netherlands",
+        "short_name": "NED"
+      },
+      "team_1_id": 4971,
+      "team_2_id": 4980,
+      "title": "Match 2",
+      "venue": {
+        "id": 291,
+        "stadium_name": "Rajiv Gandhi International Stadium",
+        "title": "Hyderabad"
+      }
+    },
+    "l_m_10253": {
+      "format": "ODI",
+      "id": 10253,
+      "match_result": "",
+      "match_start": "2023/10/07 05:00:00 +0000",
+      "match_state": "Scheduled",
+      "series": {
+        "id": 1522,
+        "title": "Cricket World Cup 2023"
+      },
+      "teamA": {
+        "color_hex": "#18481f",
+        "flag_url": "https://asset.cricvids.co/teams/flags/000/000/004/original/Bangladesh.webp?1660655213",
+        "id": 4,
+        "name": "Bangladesh",
+        "short_name": "BAN"
+      },
+      "teamB": {
+        "color_hex": "#1c50d7",
+        "flag_url": "https://asset.cricvids.co/teams/flags/000/000/019/original/Afghanistan.webp?1660654814",
+        "id": 19,
+        "name": "Afghanistan",
+        "short_name": "AFG"
+      },
+      "team_1_id": 4974,
+      "team_2_id": 4979,
+      "title": "Match 3",
+      "venue": {
+        "id": 3,
+        "stadium_name": "Himachal Pradesh Cricket Association Stadium",
+        "title": "Dharamshala"
+      }
+    },
+    "l_m_10254": {
+      "format": "ODI",
+      "id": 10254,
+      "match_result": "",
+      "match_start": "2023/10/07 08:30:00 +0000",
+      "match_state": "Scheduled",
+      "series": {
+        "id": 1522,
+        "title": "Cricket World Cup 2023"
+      },
+      "teamA": {
+        "color_hex": "#0a6b36",
+        "flag_url": "https://asset.cricvids.co/teams/flags/000/000/008/original/South-Africa.webp?1660665420",
+        "id": 8,
+        "name": "South Africa",
+        "short_name": "SA"
+      },
+      "teamB": {
+        "color_hex": "#1f3d87",
+        "flag_url": "https://asset.cricvids.co/teams/flags/000/000/003/original/Sri-Lanka.webp?1660665512",
+        "id": 3,
+        "name": "Sri Lanka",
+        "short_name": "SL"
+      },
+      "team_1_id": 4977,
+      "team_2_id": 4973,
+      "title": "Match 4",
+      "venue": {
+        "id": 12,
+        "stadium_name": "Feroz Shah Kotla",
+        "title": "Delhi"
+      }
+    },
+    "l_m_10255": {
+      "format": "ODI",
+      "id": 10255,
+      "match_result": "",
+      "match_start": "2023/10/08 08:30:00 +0000",
+      "match_state": "Scheduled",
+      "series": {
+        "id": 1522,
+        "title": "Cricket World Cup 2023"
+      },
+      "teamA": {
+        "color_hex": "#2255a4",
+        "flag_url": "https://asset.cricvids.co/teams/flags/000/000/006/original/India.webp?1660656334",
+        "id": 6,
+        "name": "India",
+        "short_name": "IND"
+      },
+      "teamB": {
+        "color_hex": "#286c17",
+        "flag_url": "https://asset.cricvids.co/teams/flags/000/000/005/original/Australia.webp?1660666273",
+        "id": 5,
+        "name": "Australia",
+        "short_name": "AUS"
+      },
+      "team_1_id": 4976,
+      "team_2_id": 4975,
+      "title": "Match 5",
+      "venue": {
+        "id": 292,
+        "stadium_name": "M.A. Chidambaram Stadium",
+        "title": "Chennai"
+      }
+    },
+    "l_m_10256": {
+      "format": "ODI",
+      "id": 10256,
+      "match_result": "",
+      "match_start": "2023/10/09 08:30:00 +0000",
+      "match_state": "Scheduled",
+      "series": {
+        "id": 1522,
+        "title": "Cricket World Cup 2023"
+      },
+      "teamA": {
+        "color_hex": "#231f20",
+        "flag_url": "https://asset.cricvids.co/teams/flags/000/000/002/original/New-Zealand.webp?1660663354",
+        "id": 2,
+        "name": "New Zealand",
+        "short_name": "NZ"
+      },
+      "teamB": {
+        "color_hex": "#cacfd2",
+        "flag_url": "https://asset.cricvids.co/teams/flags/000/000/207/original/Netherlands.webp?1660663318",
+        "id": 207,
+        "name": "Netherlands",
+        "short_name": "NED"
+      },
+      "team_1_id": 4972,
+      "team_2_id": 4980,
+      "title": "Match 6",
+      "venue": {
+        "id": 18,
+        "stadium_name": "Rajiv Gandhi International Stadium",
+        "title": "Hyderabad, Deccan"
+      }
+    },
+    "l_m_10468": {
+      "break_type": "Stumps",
+      "chose_to": "Bat",
+      "day": 2,
+      "format": "Test",
+      "id": 10468,
+      "is_alternate_stream_url": false,
+      "live_match_state": "Playing",
+      "match_result": "",
+      "match_start": "2023/10/04 05:00:00 +0000",
+      "match_state": "Live",
+      "series": {
+        "id": 1533,
+        "title": "Quaid-e-Azam Trophy 2023"
+      },
+      "teamA": {
+        "color_hex": "",
+        "flag_url": "https://asset.cricvids.co/teams/flags/000/000/590/original/LRW.png?1694407697",
+        "id": 590,
+        "name": "Lahore Region Whites",
+        "short_name": "LRW"
+      },
+      "teamB": {
+        "color_hex": "",
+        "flag_url": "https://asset.cricvids.co/teams/flags/000/000/594/original/PR.png?1694407605",
+        "id": 594,
+        "name": "Peshawar Region",
+        "short_name": "PR"
+      },
+      "team_1_id": 5025,
+      "team_2_id": 5029,
+      "title": "Match 17",
+      "toss_won_by_id": 5025,
+      "venue": {
+        "id": 46,
+        "stadium_name": "Gaddafi Stadium, Lahore",
+        "title": "Lahore"
+      }
+    },
+    "l_m_10469": {
+      "break_type": "Stumps",
+      "chose_to": "Bowl",
+      "day": 2,
+      "format": "Test",
+      "id": 10469,
+      "is_alternate_stream_url": false,
+      "live_match_state": "Playing",
+      "live_stream_url": "",
+      "match_result": "",
+      "match_start": "2023/10/04 05:00:00 +0000",
+      "match_state": "Live",
+      "series": {
+        "id": 1533,
+        "title": "Quaid-e-Azam Trophy 2023"
+      },
+      "teamA": {
+        "color_hex": "",
+        "flag_url": "https://asset.cricvids.co/teams/flags/000/000/592/original/FR.png?1694407657",
+        "id": 592,
+        "name": "FATA Region",
+        "short_name": "FR"
+      },
+      "teamB": {
+        "color_hex": "",
+        "flag_url": "https://asset.cricvids.co/teams/flags/000/000/596/original/FASR.png?1694407581",
+        "id": 596,
+        "name": "Faisalabad Region",
+        "short_name": "FR"
+      },
+      "team_1_id": 5027,
+      "team_2_id": 5031,
+      "title": "Match 18",
+      "toss_won_by_id": 5027,
+      "venue": {
+        "id": 432,
+        "stadium_name": "Abbottabad Cricket Stadium",
+        "title": "Abbottabad"
+      }
+    },
+    "l_m_10470": {
+      "break_type": "Stumps",
+      "chose_to": "Bowl",
+      "day": 2,
+      "format": "Test",
+      "id": 10470,
+      "is_alternate_stream_url": false,
+      "live_match_state": "Playing",
+      "live_stream_url": "",
+      "match_result": "",
+      "match_start": "2023/10/04 05:00:00 +0000",
+      "match_state": "Live",
+      "series": {
+        "id": 1533,
+        "title": "Quaid-e-Azam Trophy 2023"
+      },
+      "teamA": {
+        "color_hex": "",
+        "flag_url": "https://asset.cricvids.co/teams/flags/000/000/593/original/RR.png?1694407627",
+        "id": 593,
+        "name": "Rawalpindi Region",
+        "short_name": "RR"
+      },
+      "teamB": {
+        "color_hex": "",
+        "flag_url": "https://asset.cricvids.co/teams/flags/000/000/591/original/LRB.png?1694407677",
+        "id": 591,
+        "name": "Lahore Region Blues",
+        "short_name": "LRB"
+      },
+      "team_1_id": 5028,
+      "team_2_id": 5026,
+      "title": "Match 19",
+      "toss_won_by_id": 5028,
+      "venue": {
+        "id": 71,
+        "stadium_name": "Rawalpindi Cricket Stadium",
+        "title": "Rawalpindi"
+      }
+    },
+    "l_m_10471": {
+      "break_type": "Stumps",
+      "chose_to": "Bat",
+      "day": 2,
+      "format": "Test",
+      "id": 10471,
+      "is_alternate_stream_url": false,
+      "live_match_state": "Playing",
+      "live_stream_url": "",
+      "match_result": "",
+      "match_start": "2023/10/04 05:00:00 +0000",
+      "match_state": "Live",
+      "series": {
+        "id": 1533,
+        "title": "Quaid-e-Azam Trophy 2023"
+      },
+      "teamA": {
+        "color_hex": "",
+        "flag_url": "https://asset.cricvids.co/teams/flags/000/000/595/original/KRW.png?1694407596",
+        "id": 595,
+        "name": "Karachi Region Whites",
+        "short_name": "KRW"
+      },
+      "teamB": {
+        "color_hex": "",
+        "flag_url": "https://asset.cricvids.co/teams/flags/000/000/597/original/MR.png?1694407570",
+        "id": 597,
+        "name": "Multan Region",
+        "short_name": "MR"
+      },
+      "team_1_id": 5030,
+      "team_2_id": 5032,
+      "title": "Match 20",
+      "toss_won_by_id": 5032,
+      "venue": {
+        "id": 71,
+        "stadium_name": "Rawalpindi Cricket Stadium",
+        "title": "Rawalpindi"
+      }
+    },
+    "l_m_ids": [
+      10468,
+      10469,
+      10470,
+      10471,
+      10252,
+      10253,
+      10254,
+      10255,
+      10256
+    ]
+  }
+]

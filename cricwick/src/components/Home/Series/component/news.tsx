@@ -18,7 +18,10 @@ const News = ({index, item, dataLength}: { index: number, item: any, dataLength:
                     height: 30,
                     justifyContent: 'center'
                 }}><View
-                    style={{backgroundColor: 'black', width: 10, height: 10, borderRadius: 20}}></View>
+                    style={{
+                        backgroundColor: 'black', width: 10, height: 10,
+                        borderRadius: 20
+                    }}></View>
                 </View>
                 <View style={{
                     width: '90%'

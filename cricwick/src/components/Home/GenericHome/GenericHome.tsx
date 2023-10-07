@@ -1,13 +1,30 @@
-import {Image, StyleSheet, Text, View} from 'react-native'
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React from 'react'
+import IonIcon from "react-native-vector-icons/Ionicons";
 
 const GenericHome = ({item}: { item: any; }) => {
     return (
         <View style={[styles.itemContainer, {
-            borderRadius: 15,
+            // borderRadius: 15,
         }]}>
             <View style={[styles.thumbnailView]}>
                 <Image style={[styles.thumbnail, {height: 220}]} source={{uri: item.data[0].med_image}}/>
+                <TouchableOpacity
+                    style={{
+                        position: 'absolute',
+                        width: '100%',
+                        zIndex: 10,
+                        height: '100%',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}
+                    activeOpacity={.7}
+                >
+                    <IonIcon name={'play-circle-outline'} size={40} color={'white'} style={{
+                        backgroundColor: 'rgba(127,127,127,.5)',
+                        borderRadius: 50,
+                    }}/>
+                </TouchableOpacity>
             </View>
             <View style={{
                 width: '100%'
@@ -46,7 +63,7 @@ const styles = StyleSheet.create({
     },
     thumbnail: {
         width: '100%',
-        borderRadius: 14
+        // borderRadius: 14
     },
     title: {
         fontSize: 12.5,

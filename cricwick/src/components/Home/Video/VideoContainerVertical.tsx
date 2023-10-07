@@ -1,11 +1,11 @@
-import {Dimensions, FlatList, Image, StyleSheet, Text, View} from 'react-native'
+import {Dimensions, FlatList, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React, {memo, useMemo} from 'react'
+import IonIcon from "react-native-vector-icons/Ionicons";
 
-const VideoContainer = ({item}: any) => {
-
-    console.log(item);
+const VideoContainerVertical = ({item}: any) => {
     const renderItem = useMemo(() => {
         return (({item}: any) => {
+                item = item[0];
                 return (
                     <View style={styles.imageContainer}>
                         <View style={styles.imageWrapper}>
@@ -13,9 +13,25 @@ const VideoContainer = ({item}: any) => {
                                 source={{uri: item.thumb}}
                                 style={styles.image}
                             />
+                            <TouchableOpacity
+                                style={{
+                                    position: 'absolute',
+                                    width: '100%',
+                                    height: '100%',
+                                    zIndex: 10,
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                }}
+                                activeOpacity={.7}
+                            >
+                                <IonIcon name={'play-circle-outline'} size={40} color={'white'} style={{
+                                    backgroundColor: 'rgba(127,127,127,.5)',
+                                    borderRadius: 50,
+                                }}/>
+                            </TouchableOpacity>
                         </View>
                         <View style={{
-                            width: 255,
+                            // width: 255,
                             padding: 5
                         }}>
                             <Text style={{
@@ -41,36 +57,25 @@ const VideoContainer = ({item}: any) => {
         );
     }, [])
 
-    return (
-        <View style={{
-            marginHorizontal: 10,
-        }}>
-            <FlatList data={item} renderItem={renderItem}
-                      ItemSeparatorComponent={() => <View style={{width: 10}}/>}
-                      horizontal={true}
-                      contentContainerStyle={styles.flatListContent}/>
-        </View>
-    );
+    return renderItem({item});
 };
 
-export default VideoContainer
+export default VideoContainerVertical
 
 const styles = StyleSheet.create({
     imageContainer: {
-        marginHorizontal: 0,
-
+        marginHorizontal: 10,
         flexDirection: 'column',
 
     },
     imageWrapper: {},
     image: {
-        width: 255,
 
-        borderRadius: 15,
-        height: 140,
+        // borderRadius: 15,
         aspectRatio: 16 / 9,
     },
     flatListContent: {
         flexDirection: 'row',
+
     },
 });

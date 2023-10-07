@@ -1,12 +1,12 @@
 import {FlatList, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
-import React from 'react'
+import React, {useMemo} from 'react'
 import {ArticleComponent, MatchesComponent, NewsComponent} from "../../index";
 
 const Series = ({item}: any) => {
     return (
         <View style={
             [styles.itemContainer, {
-                borderRadius: 15,
+                // borderRadius: 15,
             }]
         }>
             <View>
@@ -37,10 +37,11 @@ const Series = ({item}: any) => {
                                                     borderTopWidth: .2,
                                                     borderColor: '#d0d0d0',
                                                 }}
-                                                renderItem={({item, index}: any) => (
-                                                    <NewsComponent index={index} item={item} dataLength={lent}/>
-                                                )
-                                                }/>
+                                                renderItem={useMemo(() => {
+                                                    return ({item, index}: any) => (
+                                                        <NewsComponent index={index} item={item} dataLength={lent}/>
+                                                    )
+                                                }, [])}/>
                                         )
                                     case 'matches':
                                         return (
@@ -60,9 +61,11 @@ const Series = ({item}: any) => {
                                                         height: 0
                                                     }}></View>
                                                 )}
-                                                renderItem={({item}: any) => (
-                                                    <MatchesComponent item={item}/>
-                                                )}/>
+                                                renderItem={useMemo(() => {
+                                                    return ({item}: any) => (
+                                                        <MatchesComponent item={item}/>
+                                                    )
+                                                }, [])}/>
                                         );
                                     case 'article':
                                         return (
@@ -76,9 +79,11 @@ const Series = ({item}: any) => {
                                                 contentContainerStyle={{
                                                     flexDirection: 'column',
                                                 }}
-                                                renderItem={({item}: any) => (
-                                                    <ArticleComponent item={item}/>
-                                                )}/>
+                                                renderItem={useMemo(() => {
+                                                    return ({item}: any) => (
+                                                        <ArticleComponent item={item}/>
+                                                    )
+                                                }, [])}/>
                                         )
 
                                     default:
@@ -95,7 +100,6 @@ const Series = ({item}: any) => {
                 item.series_obj &&
                 <View style={{
                     flexDirection: 'row',
-                    paddingHorizontal: 15,
                     paddingVertical: 15,
                     borderTopWidth: 0.2,
                     borderColor: '#d0d0d0',
@@ -135,7 +139,7 @@ const Series = ({item}: any) => {
                             flexDirection: 'row',
                         }}
                     >
-                     {/*   <Image source={item['series_obj'].mini_logo_url}
+                        {/*   <Image source={item['series_obj'].mini_logo_url}
                                style={{
                                    width: 20,
                                    height: 20,
@@ -166,7 +170,7 @@ const styles = StyleSheet.create({
     },
     thumbnail: {
         width: '100%',
-        borderRadius: 14
+        // borderRadius: 14
     },
     title: {
         fontSize: 12.5,
