@@ -159,6 +159,7 @@ const Home = () => {
                                 width: Dimensions.get('screen').width,
                                 paddingBottom: 10
                             }}
+
                             ItemSeparatorComponent={() => (
                                 <View style={{height: 10}}></View>
                             )}
