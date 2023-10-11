@@ -1,8 +1,16 @@
 import {FlatList, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React, {useMemo} from 'react'
-import {ArticleComponent, MatchesComponent, NewsComponent} from "../../index";
+import {ArticleComponent, MatchesComponent, NewsComponent, VideoComponent} from "../../index";
+import IonIcon from "react-native-vector-icons/Ionicons";
+import GoogleIcon from "react-native-vector-icons/MaterialIcons";
+import {getNumOfCharacters} from "../../../utils/method";
 
 const Series = ({item}: any) => {
+    const [componentWidth, setComponentWidth] = React.useState(0);
+    const onLayout = (event: any) => {
+        const {width} = event.nativeEvent.layout;
+        setComponentWidth(width);
+    };
     return (
         <View style={
             [styles.itemContainer, {
@@ -11,7 +19,15 @@ const Series = ({item}: any) => {
         }>
             <View>
                 <TouchableOpacity
-                    activeOpacity={0.5}
+                    activeOpacity={0.6}
+                    style={{
+                        borderBottomWidth: .2,
+                        borderColor: '#d0d0d0',
+                        justifyContent: 'space-between',
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        paddingRight: 10,
+                    }}
                 >
                     <Text style={[{
                         fontSize: 18,
@@ -22,6 +38,7 @@ const Series = ({item}: any) => {
                     }]}>
                         {item.title}
                     </Text>
+                    <GoogleIcon name={'arrow-forward-ios'} size={20} color={'black'}/>
                 </TouchableOpacity>
                 <View>
                     {
@@ -31,7 +48,7 @@ const Series = ({item}: any) => {
                                 switch (item.type) {
                                     case 'news':
                                         return (
-                                            <FlatList
+                                            item.data && <FlatList
                                                 data={item.data} key={item.type} bounces
                                                 style={{
                                                     borderTopWidth: .2,
@@ -45,7 +62,7 @@ const Series = ({item}: any) => {
                                         )
                                     case 'matches':
                                         return (
-                                            <FlatList
+                                            item.data && <FlatList
                                                 data={item.data} key={item.type}
                                                 contentContainerStyle={{
                                                     flexDirection: 'column',
@@ -69,7 +86,7 @@ const Series = ({item}: any) => {
                                         );
                                     case 'article':
                                         return (
-                                            <FlatList
+                                            item.data && <FlatList
                                                 data={item.data} key={item.type}
                                                 style={{
                                                     // borderBottomWidth: .2,
@@ -85,6 +102,69 @@ const Series = ({item}: any) => {
                                                     )
                                                 }, [])}/>
                                         )
+                                    case 'videos':
+                                        return (
+                                            item.data && <View key={item.type}>
+                                                {item.data[0] && <View style={[styles.itemContainer, {
+                                                    // borderRadius: 15,
+                                                    marginVertical: 10,
+                                                }]}>
+                                                    <View style={[styles.thumbnailView]}>
+                                                        <Image style={[{
+                                                            width: '100%',
+                                                        }, {height: 220}]}
+                                                               source={{uri: item.data[0].thumb}}/>
+                                                        <TouchableOpacity
+                                                            style={{
+                                                                position: 'absolute',
+                                                                width: '100%',
+                                                                zIndex: 10,
+                                                                height: '100%',
+                                                                alignItems: 'center',
+                                                                justifyContent: 'center',
+                                                            }}
+                                                            activeOpacity={.7}
+                                                        >
+                                                            <IonIcon name={'play-circle-outline'} size={40}
+                                                                     color={'white'} style={{
+                                                                backgroundColor: 'rgba(127,127,127,.5)',
+                                                                borderRadius: 50,
+                                                            }}/>
+                                                        </TouchableOpacity>
+                                                    </View>
+                                                    <View style={{
+                                                        width: '100%'
+                                                    }}>
+                                                        <Text onLayout={onLayout} style={[styles.title, {
+                                                            paddingHorizontal: 10,
+                                                            fontWeight: '500'
+                                                        }]}>
+                                                            {item.data[0].title.slice(0, getNumOfCharacters(componentWidth)) + '...'}
+                                                        </Text>
+                                                        <Text style={[styles.title2, {
+                                                            paddingHorizontal: 10,
+                                                        }]}>
+                                                            {item.data[0].match_obj.title} - {item.data[0].match_obj.team_1} vs {item.data[0].match_obj.team_2}
+                                                        </Text>
+                                                    </View>
+                                                </View>}
+                                                <FlatList
+                                                    data={item.data}
+                                                    horizontal={true}
+                                                    style={{
+                                                        // borderBottomWidth: .2,
+                                                        flexDirection: 'row',
+
+                                                        borderTopWidth: .2,
+                                                        borderColor: '#d0d0d0',
+                                                    }}
+                                                    renderItem={useMemo(() => {
+                                                        return ({item, index}: any) => (
+                                                            item && index > 0 && <VideoComponent item={item}/>
+                                                        )
+                                                    }, [])}/>
+                                            </View>
+                                        );
 
                                     default:
                                         return null;
@@ -128,6 +208,10 @@ const Series = ({item}: any) => {
                                    resizeMode: 'contain',
                                    marginHorizontal: 5,
                                }}/>*/}
+                        <GoogleIcon name={'smart-display'} size={20} color={'gray'} style={{
+                            paddingHorizontal: 3
+                        }
+                        }/>
                         <Text style={{
                             fontSize: 13.5,
                             color: 'gray',
@@ -155,7 +239,7 @@ const Series = ({item}: any) => {
                     }
                 </View>}
         </View>
-    )
+    );
 }
 export default Series
 const styles = StyleSheet.create({
@@ -176,5 +260,10 @@ const styles = StyleSheet.create({
         fontSize: 12.5,
         color: 'black',
         marginTop: 10,
+    },
+    title2: {
+        fontSize: 12.5,
+        color: 'black',
+        marginTop: 2,
     },
 })

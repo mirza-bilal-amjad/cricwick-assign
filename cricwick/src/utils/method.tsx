@@ -1,6 +1,6 @@
 import moment from "moment";
 
-const getRawDate = (date) => {
+const getRawDate = (date: any) => {
     const parts = date.split(/[\s:\/]+/);
 
     const year = Number(parts[0]);
@@ -19,4 +19,20 @@ const convertTime = (time: any) => {
     const minutes = date.getMinutes();
     return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`
 }
-export {getRawDate, convertTime}
+
+const getNumOfCharacters = (componentWidth: number) => {
+    const avgCharWidth = 8;
+    return Math.floor(componentWidth / avgCharWidth);
+};
+const removeDuplicate = (array: any[]) => {
+    let dummy: any[] = []
+    array.forEach((c) => {
+        if (!dummy.includes(c)) {
+            dummy.push(c)
+        }
+    })
+    return dummy
+
+}
+
+export {getRawDate, convertTime, getNumOfCharacters,removeDuplicate}

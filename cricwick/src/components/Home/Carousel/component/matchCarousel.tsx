@@ -1,5 +1,5 @@
-import {Animated, Dimensions, FlatList, StyleSheet, Text, View} from 'react-native'
-import React, {useMemo, useRef} from 'react'
+import {Animated, Dimensions, Text, View} from 'react-native'
+import React, {PureComponent, useEffect, useMemo, useRef} from 'react'
 import {SwiperFlatList} from "react-native-swiper-flatlist";
 import LottieView from "lottie-react-native";
 import {LiveAnim} from "../../../../assets";
@@ -7,9 +7,10 @@ import {Live, Scheduled} from "../index";
 
 const MatchCarousel = ({data}: any) => {
     const renderItem = useMemo(() => {
+
         return ({item}: any) => {
             const match = data[`l_m_${item}`];
-            const inning = data[`l_i_${item}`];
+            let inning = data[`l_i_${item}`];
 
             return (
                 <View style={{
@@ -82,7 +83,10 @@ const MatchCarousel = ({data}: any) => {
                 snapToAlignment={'center'}
                 data={data['l_m_ids']} renderItem={renderItem}
                 paginationDefaultColor={'#ccc'}
-                paginationActiveColor={'#c50000'}
+                maxToRenderPerBatch={1}
+                initialNumToRender={1}
+
+                paginationActiveColor={'#c22026'}
                 decelerationRate={'fast'}
                 index={0}
                 paginationStyleItem={{

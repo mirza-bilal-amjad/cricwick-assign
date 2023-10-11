@@ -31,13 +31,17 @@ const Scheduled = ({match, inning}: any) => {
                     <View style={[styles.teamScoreInfo]}>
                     </View>
                 </View>
-            </View>
 
+            </View>
+            {match['series'] &&
+                <Text style={{color: 'black', fontSize: 12,}}>{match['series'].title}</Text>
+            }
             <View style={[styles.teamInfo_Button]}>
                 <View style={{
                     flexDirection: 'row',
                     // backgroundColor: 'violet',
                 }}>
+
                     <Text style={{color: 'black', fontSize: 11, fontWeight: 'bold'}}>{match.title}</Text>
                     <Text style={{color: 'black', fontSize: 11, fontWeight: 'bold'}}> - </Text>
                     <Text style={{
@@ -60,7 +64,7 @@ const styles = StyleSheet.create({
     teamABCont: {
         flex: 1,
         // maxWidth: '100%',
-        maxHeight: 100,
+        maxHeight: 110,
         marginHorizontal: 10,
         marginVertical: 10,
         flexDirection: 'row',
@@ -89,6 +93,7 @@ const styles = StyleSheet.create({
     },
     teamInfo_Button: {
         marginVertical: 5,
+        backgroundColor: 'white',
     },
     teamName_Flag: {
         width: '100%',

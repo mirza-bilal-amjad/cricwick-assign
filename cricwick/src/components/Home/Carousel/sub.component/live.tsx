@@ -2,6 +2,7 @@ import {FlatList, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-n
 import React, {useMemo} from 'react'
 import {DateComponent} from "../../../index";
 import GoogleIcon from "react-native-vector-icons/MaterialIcons";
+import firebase from "firebase/compat";
 
 const Live = ({match, inning}: any) => {
     const team1 = inning.filter((item: any) => item.batting_team_id === match[`team_${1}_id`]);
@@ -18,9 +19,44 @@ const Live = ({match, inning}: any) => {
             });
 
         }
+    } else if (team1.length < 1 && match.format === 'ODI') {
+        for (let i = 0; i < 1 - team1.length; i++) {
+            team1.push({
+                batting_team_id: match[`team_${1}_id`],
+                fielding_team_id: match[`team_${2}_id`],
+                id: null,
+                overs: null,
+                run_rate: null,
+                runs: null,
+                summary: {
+                    batsman_1: {
+                        balls_played: null,
+                        name: null,
+                        runs_scored: null,
+                        string_state: null
+                    },
+                    batsman_2: {
+                        balls_played: null,
+                        name: null,
+                        runs_scored: null,
+                        string_state: null
+                    },
+                    bowler: {
+                        name: null,
+                        overs_bowled: null,
+                        overs_maiden: null,
+                        runs_given: null,
+                        wickets_taken: null
+                    }
+                },
+                total_overs: null,
+                wickets: null
+            });
+
+        }
     }
     const team2 = inning.filter((item: any) => item.batting_team_id === match[`team_${2}_id`]);
-    if (team2.length < 2) {
+    if (team2.length < 2 && match.format === 'Test') {
         for (let i = 0; i < 3 - team2.length; i++) {
             team2.push({
                 batting_team_id: match[`team_${2}_id`],
@@ -32,8 +68,42 @@ const Live = ({match, inning}: any) => {
                 wickets: null,
             });
         }
-    }
+    } else if (team2.length < 1 && match.format === 'ODI') {
+        for (let i = 0; i < 1 - team2.length; i++) {
+            team2.push({
+                batting_team_id: match[`team_${2}_id`],
+                fielding_team_id: match[`team_${1}_id`],
+                id: null,
+                overs: null,
+                run_rate: null,
+                runs: null,
+                summary: {
+                    batsman_1: {
+                        balls_played: null,
+                        name: null,
+                        runs_scored: null,
+                        string_state: null
+                    },
+                    batsman_2: {
+                        balls_played: null,
+                        name: null,
+                        runs_scored: null,
+                        string_state: null
+                    },
+                    bowler: {
+                        name: null,
+                        overs_bowled: null,
+                        overs_maiden: null,
+                        runs_given: null,
+                        wickets_taken: null
+                    }
+                },
+                total_overs: null,
+                wickets: null
+            });
 
+        }
+    }
     const test_score_over = (item: any) => {
         return (
             <View style={{
@@ -44,23 +114,23 @@ const Live = ({match, inning}: any) => {
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                 }}>
-                    {item.wickets && item.runs ? <Text style={{
+                    {item.wickets !== null && item.runs !== null ? <Text style={{
                             color: 'black',
                             fontWeight: '500',
-                        }}>{item.runs}/{item.wickets}</Text> :
+                        }}>{item.runs > 0 ? item.runs : 0}/{item.wickets > 0 ? item.wickets : 0}</Text> :
                         <Text style={{
                             color: 'black',
                             textAlign: 'center',
                         }}>-</Text>
                     }
-                    {item.overs ? <View style={{
+                    {item.overs !== null ? <View style={{
                             flexDirection: 'row',
                             alignItems: 'flex-end',
                         }}>
                             <Text style={{
                                 color: 'black',
                                 fontSize: 11,
-                            }}>{item.overs}</Text>
+                            }}>{Number(item.overs > 0 ? item.overs : 0).toFixed(1)}</Text>
 
                             <Text style={{
                                 color: 'black',
@@ -89,14 +159,14 @@ const Live = ({match, inning}: any) => {
                     flexDirection: 'row-reverse',
                     justifyContent: 'space-between',
                 }}>
-                    {item.overs ? <View style={{
+                    {item.overs !== null ? <View style={{
                             flexDirection: 'row',
                             alignItems: 'flex-end',
                         }}>
                             <Text style={{
                                 color: 'black',
                                 fontSize: 11,
-                            }}>{item.overs}</Text>
+                            }}>{Number(item.overs > 0 ? item.overs : 0).toFixed(1)}</Text>
                             <Text style={{
                                 color: 'black',
                                 fontSize: 11,
@@ -115,6 +185,7 @@ const Live = ({match, inning}: any) => {
         );
     }
     const odi_score = (item: any) => {
+
         return (
             <View style={{
                 // backgroundColor: 'lightblue',
@@ -124,10 +195,10 @@ const Live = ({match, inning}: any) => {
                     flexDirection: 'row-reverse',
                     justifyContent: 'space-between',
                 }}>
-                    {item.wickets && item.runs ? <Text style={{
+                    {item.wickets !== null && item.runs !== null ? <Text style={{
                             color: 'black',
                             fontWeight: '500',
-                        }}>{item.runs}/{item.wickets}</Text> :
+                        }}>{item.runs > 0 ? item.runs : 0}/{item.wickets > 0 ? item.wickets : 0}</Text> :
                         <Text style={{
                             color: 'black',
                             fontWeight: '500',
@@ -156,9 +227,9 @@ const Live = ({match, inning}: any) => {
                     </View>
                     <View style={{borderWidth: .21, width: '100%', marginVertical: 3}}/>
                     <View style={[styles.teamScoreInfo, {}]}>
-                        {match.format === 'Test' ? test_score_over(team1[0]) : odi_overs(team1[0])}
+                        {match.format === 'Test' ? test_score_over(team1[0]) : match.format === 'ODI' || match.format === 'T20' ? odi_overs(team1[0]) : <></>}
                         {match.format === 'Test' && team1[0].runs && team1[1].runs ? <Text>&</Text> : <></>}
-                        {match.format === 'Test' ? test_score_over(team1[1]) : odi_score(team1[0])}
+                        {match.format === 'Test' ? test_score_over(team1[1]) : match.format === 'ODI' || match.format === 'T20' ? odi_score(team1[0]) : <></>}
                     </View>
                 </View>
                 <Text style={[styles.vs]}>vs</Text>
@@ -169,10 +240,10 @@ const Live = ({match, inning}: any) => {
                     </View>
                     <View style={{borderWidth: .21, width: '100%', marginVertical: 3}}/>
                     <View style={[styles.teamScoreInfo]}>
-                        {match.format === 'Test' ? test_score_over(team2[0]) : odi_overs(team2[0])}
+                        {match.format === 'Test' ? test_score_over(team2[0]) : match.format === 'ODI' || match.format === 'T20' ? odi_overs(team2[0]) : <></>}
                         {match.format === 'Test' && team2[0].runs && team2[1].runs ?
                             <Text>&</Text> : <></>}
-                        {match.format === 'Test' ? test_score_over(team2[1]) : odi_score(team2[0])}
+                        {match.format === 'Test' ? test_score_over(team2[1]) : match.format === 'ODI' || match.format === 'T20' ? odi_score(team2[0]) : <></>}
                     </View>
                 </View>
             </View>

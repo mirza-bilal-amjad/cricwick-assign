@@ -8,7 +8,7 @@ import changeNavigationBarColor from "react-native-navigation-bar-color";
 const RootStackTab = createNativeStackNavigator();
 const RootNavigator = () => {
     const changeNavColor = async () => {
-        await changeNavigationBarColor('#FFEAE7', true, true);
+        await changeNavigationBarColor('#f3f3f3', true, true);
     }
 
     useEffect(() => {
@@ -17,7 +17,7 @@ const RootNavigator = () => {
     }, [])
     return (
         <SafeAreaView style={{flex: 1}}>
-            <StatusBar animated barStyle={'dark-content'} backgroundColor={'#FFEAE7'}/>
+            <StatusBar animated barStyle={'dark-content'} backgroundColor={'#f3f3f3'}/>
             <NavigationContainer>
                 <RootStackTab.Navigator initialRouteName={'BottomTabNavigation'}>
                     <RootStackTab.Screen name={'BottomTabNavigation'} component={BottomTabNavigation} options={{
