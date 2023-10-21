@@ -1,11 +1,21 @@
 import {FlatList, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React, {useMemo} from 'react'
-import {ArticleComponent, MatchesComponent, NewsComponent, VideoComponent} from "../../index";
+import {HomeArticleComponent, MatchesComponent, HomeNewsComponent, VideoComponent} from "../../index";
 import IonIcon from "react-native-vector-icons/Ionicons";
 import GoogleIcon from "react-native-vector-icons/MaterialIcons";
 import {getNumOfCharacters} from "../../../utils/method";
+// @ts-ignore
+import CricWickFantasy from '../../../assets/Images/cwd.png'
+// @ts-ignore
+import HomeSeriesIcon from '../../../assets/Images/series_icon.png'
+// @ts-ignore
+import VideoIcon from '../../../assets/Images/video_icon.png'
+// @ts-ignore
+import PointTableIcon from '../../../assets/Images/point_table.png'
+import {useNavigation} from "@react-navigation/native";
 
 const Series = ({item}: any) => {
+    const navigation = useNavigation();
     const [componentWidth, setComponentWidth] = React.useState(0);
     const onLayout = (event: any) => {
         const {width} = event.nativeEvent.layout;
@@ -28,6 +38,15 @@ const Series = ({item}: any) => {
                         alignItems: 'center',
                         paddingRight: 10,
                     }}
+                    //@ts-ignore
+                    onPress={() => navigation.navigate('SeriesInfoBottomNavigation', {
+                        screen: 'Summary',
+                        title: item.series_obj.title,
+                        matchId: item.series_obj.id,
+                        is_videos_enabled: item.series_obj.is_videos_enabled,
+                        has_points_table: item.series_obj.has_points_table,
+
+                    })}
                 >
                     <Text style={[{
                         fontSize: 18,
@@ -56,7 +75,7 @@ const Series = ({item}: any) => {
                                                 }}
                                                 renderItem={useMemo(() => {
                                                     return ({item, index}: any) => (
-                                                        <NewsComponent index={index} item={item} dataLength={lent}/>
+                                                        <HomeNewsComponent index={index} item={item} dataLength={lent}/>
                                                     )
                                                 }, [])}/>
                                         )
@@ -80,7 +99,7 @@ const Series = ({item}: any) => {
                                                 )}
                                                 renderItem={useMemo(() => {
                                                     return ({item}: any) => (
-                                                        <MatchesComponent item={item}/>
+                                                        <MatchesComponent match={item}/>
                                                     )
                                                 }, [])}/>
                                         );
@@ -98,7 +117,7 @@ const Series = ({item}: any) => {
                                                 }}
                                                 renderItem={useMemo(() => {
                                                     return ({item}: any) => (
-                                                        <ArticleComponent item={item}/>
+                                                        <HomeArticleComponent item={item}/>
                                                     )
                                                 }, [])}/>
                                         )
@@ -183,59 +202,118 @@ const Series = ({item}: any) => {
                     paddingVertical: 15,
                     borderTopWidth: 0.2,
                     borderColor: '#d0d0d0',
-                    justifyContent: 'space-around'
+                    justifyContent: 'space-around',
+                    alignItems: 'center'
                 }}>
-                    <View
+                    {
+                        <TouchableOpacity onPress={() => navigation.navigate('SeriesInfoBottomNavigation', {
+                            screen: 'Summary',
+                            title: item.series_obj.title,
+                            matchId: item.series_obj.id,
+                            is_videos_enabled: item.series_obj.is_videos_enabled,
+                            has_points_table: item.series_obj.has_points_table
+                        })}
+                                          style={{
+                                              flexDirection: 'row',
+                                              alignItems: 'center'
+
+                                          }}
+                        >
+                            <Image source={HomeSeriesIcon}
+                                   style={{
+                                       width: 20,
+                                       height: 20,
+                                       resizeMode: 'contain',
+                                       tintColor: 'gray',
+                                       marginHorizontal: 5,
+                                   }}/>
+                            <Text style={{
+                                fontSize: 13.5,
+                                color: 'gray',
+                                fontWeight: '600'
+                            }}>Series Home</Text>
+                        </TouchableOpacity>
+                    }
+                    {item['series_obj'].has_points_table && item['series_obj'].is_videos_enabled && <TouchableOpacity
                         style={{
                             flexDirection: 'row',
+                            alignItems: 'center'
+
                         }}
+                        onPress={() => navigation.navigate('SeriesInfoBottomNavigation', {
+                            screen: 'Videos',
+                            title: item.series_obj.title,
+                            matchId: item.series_obj.id,
+                            is_videos_enabled: item.series_obj.is_videos_enabled,
+                            has_points_table: item.series_obj.has_points_table
+
+                        })}
                     >
+                        <Image source={VideoIcon}
+                               style={{
+                                   width: 20,
+                                   height: 15,
+                                   resizeMode: 'contain',
+                                   tintColor: 'gray',
+                                   marginHorizontal: 5,
+                               }}/>
                         <Text style={{
                             fontSize: 13.5,
                             color: 'gray',
                             fontWeight: '600'
-                        }}>Series Home</Text>
-                    </View>
-                    {item['series_obj'].has_points_table && <View
+                        }}>Videos</Text>
+                    </TouchableOpacity>
+                    }{item['series_obj'].has_points_table && !item['series_obj'].is_videos_enabled && <TouchableOpacity
+                    style={{
+                        flexDirection: 'row',
+                        alignItems: 'center'
+
+                    }}
+                    onPress={() => navigation.navigate('SeriesInfoBottomNavigation', {
+                        screen: 'PointTable',
+                        title: item.series_obj.title,
+                        matchId: item.series_obj.id,
+                        is_videos_enabled: item.series_obj.is_videos_enabled,
+                        has_points_table: item.series_obj.has_points_table
+
+                    })}
+                >
+                    <Image source={PointTableIcon}
+                           style={{
+                               width: 20,
+                               height: 15,
+                               resizeMode: 'contain',
+                               marginHorizontal: 3,
+                               tintColor: 'gray',
+                           }}
+                    />
+                    <Text style={{
+                        fontSize: 13.5,
+                        color: 'gray',
+                        fontWeight: '600'
+                    }}>Points Table</Text>
+                </TouchableOpacity>
+                }
+
+                    {item['series_obj'].fantasy_gm_allowed && <TouchableOpacity
                         style={{
                             flexDirection: 'row',
+                            alignItems: 'center'
                         }}
                     >
-                        {/*<Image source={item['series_obj'].mini_logo_url}
+                        <Image source={CricWickFantasy}
                                style={{
                                    width: 20,
                                    height: 20,
-                                   resizeMode: 'contain',
                                    marginHorizontal: 5,
-                               }}/>*/}
-                        <GoogleIcon name={'smart-display'} size={20} color={'gray'} style={{
-                            paddingHorizontal: 3
-                        }
-                        }/>
-                        <Text style={{
-                            fontSize: 13.5,
-                            color: 'gray',
-                            fontWeight: '600'
-                        }}>Points Table</Text>
-                    </View>}
-                    {item['series_obj'].fantasy_gm_allowed && <View
-                        style={{
-                            flexDirection: 'row',
-                        }}
-                    >
-                        {/*   <Image source={item['series_obj'].mini_logo_url}
-                               style={{
-                                   width: 20,
-                                   height: 20,
-                                   resizeMode: 'contain',
-                                   marginHorizontal: 5,
-                               }}/>*/}
+                                   tintColor: 'gray'
+                               }}/>
                         <Text style={{
                             fontSize: 13.5,
                             color: 'gray',
                             fontWeight: '600'
                         }}>Fantasy</Text>
-                    </View>
+                    </TouchableOpacity>
                     }
                 </View>}
         </View>

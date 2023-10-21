@@ -1,6 +1,6 @@
 import {Dimensions, FlatList, Image, StyleSheet, Text, View} from 'react-native'
 import React, {PureComponent, useMemo} from 'react'
-import {GenericHome, Rankings, Series, VideoContainerVertical} from "../index";
+import {GenericHome, Rankings, Series, SeriesComponent, VideoContainerVertical} from "../index";
 import {Callback} from "@react-native-async-storage/async-storage/lib/typescript/types";
 
 const HomeScreenComponent = ({data, fetchHome}: { data: any, fetchHome: Callback }) => {
@@ -24,21 +24,23 @@ const HomeScreenComponent = ({data, fetchHome}: { data: any, fetchHome: Callback
         }
     }, []);
 
+    // @ts-ignore
     return (
-        <FlatList data={data}
-                  contentContainerStyle={{
-                      width: Dimensions.get('screen').width,
-                      paddingBottom: 10
-                  }}
+        <FlatList
+            data={data}
+            contentContainerStyle={{
+                width: Dimensions.get('screen').width,
+                paddingBottom: 10
+            }}
 
-                  ItemSeparatorComponent={() => (
-                      <View style={{height: 10}}></View>
-                  )}
-
-                  onEndReached={fetchHome}
-                  onEndReachedThreshold={0.1}
-                  keyExtractor={(key, index) => key + index.toString()}
-                  renderItem={renderItem}
+            ItemSeparatorComponent={() => (
+                <View style={{height: 10}}></View>
+            )}
+            // @ts-ignore
+            onEndReached={fetchHome}
+            onEndReachedThreshold={0.1}
+            keyExtractor={(key, index) => key + index.toString()}
+            renderItem={renderItem}
         />
     )
 };

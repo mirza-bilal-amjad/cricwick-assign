@@ -2421,6 +2421,15 @@
   resolved "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.7.tgz"
   integrity sha512-FbtmBWCcSa2J4zL781Zf1p5YUBXQomPEcep9QZCfRfQgTxz3pJWiDFLebohZ9fFntX5ibzOkSsrJ0TEew8cAog==
 
+"@types/react-native-table-component@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.npmjs.org/@types/react-native-table-component/-/react-native-table-component-1.2.5.tgz"
+  integrity sha512-k/eEueXRCMF1C+NugH+IFEuQWdCa6y0tjmleG52ADWfhtvvAzWvDYVwAKkV8I6ODBFQ9F3CFZpl+sQFv+p+YxA==
+  dependencies:
+    "@types/react" "*"
+    "@types/react-native" "*"
+    csstype "^3.0.3"
+
 "@types/react-native-vector-icons@^6.4.15":
   version "6.4.15"
   resolved "https://registry.npmjs.org/@types/react-native-vector-icons/-/react-native-vector-icons-6.4.15.tgz"
@@ -2429,7 +2438,15 @@
     "@types/react" "*"
     "@types/react-native" "^0.70"
 
-"@types/react-native@^0.70":
+"@types/react-native-video@^5.0.16":
+  version "5.0.16"
+  resolved "https://registry.npmjs.org/@types/react-native-video/-/react-native-video-5.0.16.tgz"
+  integrity sha512-JglESKLRSprDywjiigf6HQjc0PC873OSz5elzlbZT3MDS1L8nWlSA2FTYH46i+zfQPGZgi2NNWpZroMIUqRxDg==
+  dependencies:
+    "@types/react" "*"
+    "@types/react-native" "*"
+
+"@types/react-native@*", "@types/react-native@^0.70":
   version "0.70.15"
   resolved "https://registry.npmjs.org/@types/react-native/-/react-native-0.70.15.tgz"
   integrity sha512-wHrMQd65odOFbejFSDF7riocwLGEjkoJCF3GhH2a1vKqWbCExH361AZa/1GMG8gijAP86hkjF9gHZFHepEXaZA==
@@ -3336,7 +3353,7 @@ cross-spawn@^7.0.2, cross-spawn@^7.0.3:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
-csstype@^3.0.2:
+csstype@^3.0.2, csstype@^3.0.3:
   version "3.1.2"
   resolved "https://registry.npmjs.org/csstype/-/csstype-3.1.2.tgz"
   integrity sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==
@@ -3671,6 +3688,11 @@ escape-string-regexp@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz"
   integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
+
+escape-string-regexp@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-2.0.0.tgz"
+  integrity sha512-UpzcLCXolUWcNu5HtVMHYdXJjArjsF9C0aNnquZYY4uW/Vu0miy5YoWvbV345HauVvcAUnpRuhMMcqTcGOY2+w==
 
 eslint-config-prettier@^8.5.0:
   version "8.10.0"
@@ -4448,7 +4470,7 @@ internal-slot@^1.0.5:
     has "^1.0.3"
     side-channel "^1.0.4"
 
-invariant@*, invariant@^2.2.4:
+invariant@*, invariant@^2.2.4, invariant@2.2.4:
   version "2.2.4"
   resolved "https://registry.npmjs.org/invariant/-/invariant-2.2.4.tgz"
   integrity sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==
@@ -6395,8 +6417,7 @@ react-native-screens@^3.25.0, "react-native-screens@>= 3.0.0":
 
 react-native-slider@^0.11.0:
   version "0.11.0"
-  resolved "https://registry.npmjs.org/react-native-slider/-/react-native-slider-0.11.0.tgz"
-  integrity sha512-jV9K87eu9uWr0uJIyrSpBLnCKvVlOySC2wynq9TFCdV9oGgjt7Niq8Q1A8R8v+5GHsuBw/s8vEj1AAkkUi+u+w==
+  resolved "git+ssh://git@github.com/abbasfreestyle/react-native-slider.git#c53b4965c5e4c3ec258479417898dece367e603e"
   dependencies:
     prop-types "^15.5.6"
 
@@ -6411,6 +6432,11 @@ react-native-tab-view@^3.5.2, "react-native-tab-view@>= 3.0.0":
   integrity sha512-nE5WqjbeEPsWQx4mtz81QGVvgHRhujTNIIZiMCx3Bj6CBFDafbk7XZp9ocmtzXUQaZ4bhtVS43R4FIiR4LboJw==
   dependencies:
     use-latest-callback "^0.1.5"
+
+react-native-table-component@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.npmjs.org/react-native-table-component/-/react-native-table-component-1.2.2.tgz"
+  integrity sha512-7bbsi5431iWcjj3toASh8lFHGi6AG/+MTd4M7GuksXKxx/CFs/Qwv1Ys7D2wgyuYKe3hxWNfSVrteFj0tOYXYw==
 
 react-native-vector-icons@^10.0.0:
   version "10.0.0"
@@ -6429,6 +6455,14 @@ react-native-video@^5.2.1:
     keymirror "^0.1.1"
     prop-types "^15.7.2"
     shaka-player "^2.5.9"
+
+react-native-webview@^13.6.2:
+  version "13.6.2"
+  resolved "https://registry.npmjs.org/react-native-webview/-/react-native-webview-13.6.2.tgz"
+  integrity sha512-QzhQ5JCU+Nf2W285DtvCZOVQy/MkJXMwNDYPZvOWQbAOgxJMSSO+BtqXTMA1UPugDsko6PxJ0TxSlUwIwJijDg==
+  dependencies:
+    escape-string-regexp "2.0.0"
+    invariant "2.2.4"
 
 react-native@*, "react-native@^0.0.0-0 || 0.60 - 0.72 || 1000.0.0", react-native@>=0.46, react-native@>=0.59, react-native@>=0.59.0, react-native@>=0.60, react-native@0.72.5:
   version "0.72.5"

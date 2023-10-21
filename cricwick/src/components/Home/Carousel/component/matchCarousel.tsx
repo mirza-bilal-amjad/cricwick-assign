@@ -1,11 +1,12 @@
-import {Animated, Dimensions, Text, View} from 'react-native'
+import {Animated, Dimensions, Text, TouchableOpacity, View} from 'react-native'
 import React, {PureComponent, useEffect, useMemo, useRef} from 'react'
 import {SwiperFlatList} from "react-native-swiper-flatlist";
 import LottieView from "lottie-react-native";
 import {LiveAnim} from "../../../../assets";
 import {Live, Scheduled} from "../index";
 
-const MatchCarousel = ({data}: any) => {
+const MatchCarousel = ({data, navigation}: any) => {
+
     const renderItem = useMemo(() => {
 
         return ({item}: any) => {
@@ -13,13 +14,23 @@ const MatchCarousel = ({data}: any) => {
             let inning = data[`l_i_${item}`];
 
             return (
-                <View style={{
-                    height: 230,
-                    width: Dimensions.get('window').width - 20,
-                    marginBottom: 10,
-                    backgroundColor: 'white',
-                    marginHorizontal: 10,
-                }}>
+                <TouchableOpacity
+                    style={{
+                        height: 230,
+                        width: Dimensions.get('window').width - 20,
+                        marginBottom: 10,
+                        backgroundColor: 'white',
+                        marginHorizontal: 10,
+                    }}
+                    activeOpacity={.8}
+                    onPress={() => navigation.navigate('MatchResultBottomNavigation', {
+                        screen: match.match_state === 'Over' ? 'Report' : 'MRSummary',
+                        matchId: match.id,
+                        matchTitle: `${match.teamA.short_name} vs ${match.teamB.short_name}`,
+                        matchNumber: match.title,
+                        matchState: match.match_state
+                    })}
+                >
                     <View style={{
                         height: 215,
                         width: '100%',
@@ -28,8 +39,8 @@ const MatchCarousel = ({data}: any) => {
                         <View style={{
                             position: 'absolute',
                             top: 10,
-                            paddingVertical: 5,
-                            paddingHorizontal: 10,
+                            paddingVertical: 3,
+                            paddingHorizontal: 8,
                             zIndex: 10,
                             flexDirection: 'row',
                             alignItems: 'center',
@@ -67,7 +78,7 @@ const MatchCarousel = ({data}: any) => {
                             <Scheduled match={match} inning={inning}/>
                         }
                     </View>
-                </View>
+                </TouchableOpacity>
             );
         }
     }, [data]);

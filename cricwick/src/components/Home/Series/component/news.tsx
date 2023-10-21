@@ -1,10 +1,14 @@
-import {StyleSheet, Text, View} from 'react-native'
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React from 'react'
+import {useNavigation} from "@react-navigation/native";
 
 const News = ({index, item, dataLength}: { index: number, item: any, dataLength: number }) => {
-
+    const navigation = useNavigation();
     return (
-        <View style={{
+        // @ts-ignore
+        <TouchableOpacity onPress={()=> navigation.navigate('News',{
+            newsID: item.id
+        })} activeOpacity={.5} style={{
             padding: 10,
         }}>
             <View style={{
@@ -29,7 +33,7 @@ const News = ({index, item, dataLength}: { index: number, item: any, dataLength:
                     <Text style={{color: 'black', fontSize: 15}}>{item.title}</Text>
                 </View>
             </View>
-        </View>
+        </TouchableOpacity>
     )
 };
 export default News

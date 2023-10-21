@@ -14,16 +14,17 @@ import {
     MatchCarousel,
     GenericHome,
     Rankings,
-    Series,
-    VideoContainerVertical
+    SeriesComponent,
+    VideoContainerVertical, Series
 } from "../../components";
 import {FIREBASE_DATABASE_REF} from "../../config/firebase/firebase.config";
 import {onValue} from "firebase/database";
 import {useDispatch, useSelector} from "react-redux";
 import {addToCarousel} from "../../store/FBCarouselReducer";
 import {removeDuplicate} from "../../utils/method";
+import {toggleFlag} from "../../store/toggleReducer";
 
-const Home = () => {
+const Home = ({navigation}: any) => {
         const cData = removeDuplicate(useSelector((state: any) => state.carouselReducer));
         const [homeData, setHomeData] = useState([]);
         const [pageCounter, setPageCounter] = useState(1);
@@ -33,8 +34,7 @@ const Home = () => {
 
         const returnApi = (page: number) => {
             return `https://cwscoring.cricwick.net/api/v3/view_lists/get_by_name?view=home&web_user=1&page=${page}&telco=ufone&app_name=CricwickWeb`
-        }
-
+        };
         const fetchHome = async () => {
             setRefreshing(true);
             await fetchGenericHome(returnApi(pageCounter))
@@ -52,20 +52,17 @@ const Home = () => {
                             /*const withoutVideo = r.filter((item) => item.type !== 'video');
                             return [...prevState, ...withoutVideo];*/
                         });
-
-                        // console.log(JSON.stringify(data))
                     }
                 )
                 .catch(e => console.error('Error:', e));
-        }
-
+        };
         const firebaseCarousel = async () => {
             onValue(FIREBASE_DATABASE_REF, (snapshot) => {
                 const data = snapshot.val();
+                dispatch(toggleFlag())
                 dispatch(addToCarousel(data));
             })
         };
-
 
         useEffect(() => {
             fetchHome().catch((e) => console.error(e));
@@ -74,64 +71,63 @@ const Home = () => {
 
         const renderItem = useMemo(() => {
             return ({item}: any) => {
-                if (item.type === 'native_screen' && item.data) {// console.log('native-screen')
+                if (item.type === 'native_screen' && item.data) {
                     return <View style={[styles.itemContainer, {
                         // borderRadius: 15,
                     }]}>
                         <View style={[styles.thumbnailView,]}>
-                            <Image style={[styles.thumbnail, {height: 120}]} source={{uri: item.data.thumbnail}}/>
+                            <Image style={[styles.thumbnail,]} source={{uri: item.data.thumbnail}}/>
                         </View>
                     </View>;
                 } else if (item.type === 'generic-home') {
-                    // console.log('generic-home')
                     if (item.data !== null && item.data) {
-                        return <GenericHome item={item}/>;
+                        return <GenericHome item={item} route={navigation}/>;
                     }
                 } else if (item.type === 'series' && item.data) {
-                    // console.log('series')
                     return <Series item={item}/>;
                 } else if (item.type === 'video' && item.data) {
-                    // console.log('video')
-                    return <VideoContainerVertical item={item.data}/>;
+                    return <VideoContainerVertical item={item.data} route={navigation}/>;
                 } else if (item.type === 'ranking' && item) {
-                    // console.log('ranking')
                     return <Rankings item={item}/>;
                 } else return null;
             }
-        }, []);
+        }, [navigation]);
         const mainFlatListData = [
             {
                 id: 0,
                 type: 'carousel',
                 component: useMemo(() => {
-                    return cData[0] && <MatchCarousel data={cData[0]}/>
-                }, [cData]),
+                    return cData[0] && <MatchCarousel data={cData[0]} navigation={navigation}/>
+                }, [cData, navigation]),
             }, {
                 id: 2,
                 type: 'home',
                 component: useMemo(() => {
+                    // @ts-ignore
                     return (
-                        homeData && <FlatList data={homeData}
-                                              contentContainerStyle={{
-                                                  width: Dimensions.get('screen').width,
-                                                  paddingBottom: 10
-                                              }}
-                                              ItemSeparatorComponent={() => (
-                                                  <View style={{height: 10}}></View>
-                                              )}
-                                              removeClippedSubviews={true}
-                                              maxToRenderPerBatch={5}
-                                              windowSize={7}
-
-                                              onEndReached={fetchHome}
-                                              onEndReachedThreshold={0.1}
-                                              keyExtractor={(item, index) => index.toString()}
-                                              renderItem={renderItem}
+                        homeData
+                        &&
+                        <FlatList data={homeData}
+                                  contentContainerStyle={{
+                                      width: Dimensions.get('screen').width,
+                                      paddingBottom: 10
+                                  }}
+                                  ItemSeparatorComponent={() => (
+                                      <View style={{height: 10}}></View>
+                                  )}
+                                  removeClippedSubviews={true}
+                                  maxToRenderPerBatch={5}
+                                  windowSize={7}
+                                  showsHorizontalScrollIndicator={false}
+                                  onEndReached={fetchHome}
+                                  onEndReachedThreshold={0.1}
+                                  keyExtractor={(item, index) => index.toString()}
+                            // @ts-ignore
+                                  renderItem={renderItem}
                         />
                     )
-                }, [homeData]),
+                }, [homeData, renderItem]),
             }
-
         ]
 
         return (
@@ -144,15 +140,12 @@ const Home = () => {
                     height: 2
                 }}>
                     {homeData.length !== 0 && refreshing && <LottieView
-                        source={Loader}
-                        autoPlay
-                        loop
+                        source={Loader} autoPlay loop
                         style={{
                             position: 'relative',
                             height: 4,
                             top: -2,
                             zIndex: 10
-
                         }}
                         colorFilters={[
                             {
@@ -167,27 +160,22 @@ const Home = () => {
                         justifyContent: 'center',
                         alignItems: 'center',
                     }}>
-                        <LottieView
-                            source={ActivityLoader}
-                            autoPlay
-                            loop
-                            style={{
-                                width: 280, height: 280
-                            }}
-
-                            colorFilters={[
-                                {
-                                    keypath: "Shape Layer 2",
-                                    color: "#c22026"
-                                }]}
+                        <LottieView source={ActivityLoader} autoPlay loop
+                                    style={{
+                                        width: 280, height: 280
+                                    }}
+                                    colorFilters={[{
+                                        keypath: "Shape Layer 2",
+                                        color: "#c22026"
+                                    }]}
                         />
                     </View>
                     : <FlatList data={mainFlatListData}
-
                                 contentContainerStyle={{
-                                    width: Dimensions.get('screen').width,
                                     paddingBottom: 10
                                 }}
+                                showsVerticalScrollIndicator={false}
+                                windowSize={1}
                                 keyExtractor={(item, index) => index.toString()}
                                 renderItem={({item}) => item.component}
                     />}
@@ -204,12 +192,13 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         // elevation: 4,
     },
+
     thumbnailView: {
-        width: '100%',
         alignItems: 'center',
     },
     thumbnail: {
         width: '100%',
+        aspectRatio: 30 / 9
         // borderRadius: 14
     },
     title: {

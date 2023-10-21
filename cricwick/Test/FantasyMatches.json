@@ -1,0 +1,66 @@
+[
+  {
+    "inning": [
+      {
+        "batting_team_id": 4980,
+        "fielding_team_id": 4977,
+        "id": 19922,
+        "overs": 43,
+        "run_rate": "5.7",
+        "runs": 245,
+        "total_overs": 43,
+        "wickets": 8
+      },
+      {
+        "batting_team_id": 4977,
+        "fielding_team_id": 4980,
+        "id": 19923,
+        "overs": 42.5,
+        "required_rate": "234.0",
+        "run_rate": "4.83",
+        "runs": 207,
+        "summary": {},
+        "total_overs": 43,
+        "wickets": 10
+      }
+    ]
+  },
+  {
+    "break_type": "",
+    "chose_to": "Bowl",
+    "format": "ODI",
+    "id": 10265,
+    "is_alternate_stream_url": false,
+    "live_match_state": "Playing",
+    "match_result": "Netherlands has won by 38 runs.",
+    "match_start": "2023/10/17 08:30:00 +0000",
+    "match_state": "Live",
+    "series": {
+      "id": 1522,
+      "title": "Cricket World Cup 2023"
+    },
+    "teamA": {
+      "color_hex": "#0a6b36",
+      "flag_url": "https://asset.cricvids.co/teams/flags/000/000/008/original/South_Africa.webp?1696949488",
+      "id": 8,
+      "name": "South Africa",
+      "short_name": "SA"
+    },
+    "teamB": {
+      "color_hex": "#cacfd2",
+      "flag_url": "https://asset.cricvids.co/teams/flags/000/000/207/original/Netherlands.webp?1696949312",
+      "id": 207,
+      "name": "Netherlands",
+      "short_name": "NED"
+    },
+    "team_1_id": 4977,
+    "team_2_id": 4980,
+    "title": "Match 15",
+    "toss_won_by_id": 4977,
+    "venue": {
+      "id": 3,
+      "stadium_name": "Himachal Pradesh Cricket Association Stadium",
+      "title": "Dharamshala"
+    }
+  }
+]

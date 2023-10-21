@@ -1,10 +1,24 @@
-import {Image, StyleSheet, Text, View} from 'react-native'
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React from 'react'
 import {DateComponent} from "../../../index";
+import {
+    EventConsumer, EventMapCore,
+    NavigationAction,
+    NavigationHelpers, NavigationProp,
+    ParamListBase,
+    PartialState, PrivateValueStore,
+    useNavigation
+} from "@react-navigation/native";
 
-const overMatchCont = (item: any) => {
+const overMatchCont = (match: any, navigation: any) => {
     return (
-        <View style={{
+        <TouchableOpacity onPress={() => navigation.navigate('MatchResultBottomNavigation', {
+            screen: match.match_state === 'Over' ? 'Report' : 'MRSummary',
+            matchId: match.id,
+            matchTitle: `${match.teamA.short_name} vs ${match.teamB.short_name}`,
+            matchNumber: match.title,
+            matchState: match.match_state
+        })} activeOpacity={.7} style={{
             paddingVertical: 10,
             marginHorizontal: 10,
         }}>
@@ -16,8 +30,9 @@ const overMatchCont = (item: any) => {
                     color: 'gray',
                     fontWeight: '400',
                 }}>{
-                    'RESULT  ' + `${item.card_title}`
+                    'RESULT  ' + `${match.card_title}`
                 }</Text>
+                {/*----------------------------------------/*----------------------------------------/*----------------------------------------*/}
                 <View style={{
                     flexDirection: 'row',
                     alignItems: 'center',
@@ -29,7 +44,7 @@ const overMatchCont = (item: any) => {
                         marginVertical: 7,
 
                     }}>
-                        <Image source={{uri: item['teamA'].flag_url}}
+                        <Image source={{uri: match['teamA'].flag_url}}
                                style={{
                                    width: 30,
                                    height: 30,
@@ -38,36 +53,42 @@ const overMatchCont = (item: any) => {
                             marginLeft: 10,
                             color: 'black',
                             fontSize: 15
-                        }}>{item['teamA'].short_name}</Text>
+                        }}>{match['teamA'].short_name}</Text>
                     </View>
                     {
-                        item.innings && item.innings[0] &&
-                        <View style={{
-                            flexDirection: 'row',
-                            alignItems: 'flex-end',
-                        }}>< Text style={{
-                            color: 'black',
-                        }}>
-                            {
-                                item.innings[0].runs > 0 ? item.innings[0].runs : 0
-                            }
-                            /
-                            {
-                                item.innings[0].wickets > 0 ? item.innings[0].wickets : 0
-                            }{' '}
-                        </Text>
-                            <Text style={{
-                                color: 'gray',
-                                fontSize: 10,
+                        match.innings && match.innings.map(
+                            (inning: any, index: number) => {
+                                return (inning.batting_team_id === match.team_1_id &&
+                                    <View key={index} style={{
+                                        flexDirection: 'row',
+                                        alignItems: 'flex-end',
+                                    }}>< Text style={{
+                                        color: 'black',
+                                    }}>
+                                        {
+                                            inning.runs > 0 ? inning.runs : 0
+                                        }
+                                        /
+                                        {
+                                            inning.wickets > 0 ? inning.wickets : 0
+                                        }{' '}
+                                    </Text>
+                                        <Text style={{
+                                            color: 'gray',
+                                            fontSize: 10,
 
-                            }}>
-                                (
-                                {item.innings[0].overs > 0 ? Number(item.innings[0].overs).toFixed(1) : 0}
-                                {` ov)`}
-                            </Text>
-                        </View>
+                                        }}>
+                                            (
+                                            {inning.overs > 0 ? Number(inning.overs).toFixed(1) : 0}
+                                            {` ov)`}
+                                        </Text>
+                                    </View>
+                                )
+                            }
+                        )
                     }
                 </View>
+                {/*----------------------------------------/*----------------------------------------/*----------------------------------------*/}
                 <View style={{
                     flexDirection: 'row',
                     alignItems: 'center',
@@ -79,7 +100,7 @@ const overMatchCont = (item: any) => {
                         marginVertical: 7,
 
                     }}>
-                        <Image source={{uri: item['teamB'].flag_url}}
+                        <Image source={{uri: match['teamB'].flag_url}}
                                style={{
                                    width: 30,
                                    height: 30,
@@ -88,56 +109,83 @@ const overMatchCont = (item: any) => {
                             marginLeft: 10,
                             color: 'black',
                             fontSize: 15
-                        }}>{item['teamB'].short_name}</Text>
+                        }}>{match['teamB'].short_name}</Text>
                     </View>
-                    {
-                        item.innings && item.innings[1] &&
-                        <View style={{
-                            flexDirection: 'row',
-                            alignItems: 'flex-end',
-                        }}>< Text style={{
-                            color: 'black',
-                        }}>
-                            {
-                                item.innings[1].runs > 0 ? item.innings[1].runs : 0
-                            }
-                            /
-                            {
-                                item.innings[1].wickets > 0 ? item.innings[1].wickets : 0
-                            }{' '}
-                        </Text>
-                            <Text style={{
-                                color: 'gray',
-                                fontSize: 10,
+                    <View style={{
+                        flexDirection: 'row',
+                    }}>
+                        {
+                            match.innings && match.innings.map(
+                                (inning: any, index: number) => {
+                                    return (inning.batting_team_id === match.team_2_id &&
+                                        <View key={index} style={{
+                                            flexDirection: 'row',
+                                            alignItems: 'flex-end',
+                                        }}>< Text style={{
+                                            color: 'black',
+                                        }}>
+                                            {
+                                                inning.runs > 0 ? inning.runs : 0
+                                            }
+                                            /
+                                            {
+                                                inning.wickets > 0 ? inning.wickets : 0
+                                            }{' '}
+                                        </Text>
+                                            <Text style={{
+                                                color: 'gray',
+                                                fontSize: 10,
 
-                            }}>
-                                (
-                                {item.innings[1].overs > 0 ? (item.innings[1].overs).toFixed(1) : 0}
-                                {` ov)`}
-                            </Text>
-                        </View>
-                    }
+                                            }}>
+                                                (
+                                                {inning.overs > 0 ? Number(inning.overs).toFixed(1) : 0}
+                                                {` ov) `}
+                                            </Text>
+                                        </View>
+                                    )
+                                }
+                            )
+                        }
+                    </View>
                 </View>
             </View>
-            {item.detail && item.detail.length > 0 && <View style={{
+            {match.detail && match.detail.length > 0 && <View style={{
                 alignItems: 'center',
             }
             }>
                 <Text style={{
                     fontSize: 12,
-                    color: 'red',
+                    color: 'black',
+                    textAlign: 'center',
                     fontWeight: '500',
                 }}>
-                    {item.detail}
+                    {match.detail}
+                </Text>
+                <Text style={{
+                    fontSize: 12,
+                    color: 'red',
+                    textAlign: 'center',
+                    fontWeight: '500',
+                    marginVertical: 5,
+
+                }}>
+                    View Match Report
                 </Text>
             </View>}
-        </View>
+        </TouchableOpacity>
     )
         ;
-}
-const upcomingMatchCont = (item: any) => {
+};
+const upcomingMatchCont = (item: any, navigation: any) => {
+
     return (
-        <View style={{
+        <TouchableOpacity onPress={() => navigation.navigate('MatchResultBottomNavigation', {
+            matchId: item.id,
+            matchTitle: `${item.teamA.short_name} vs ${item.teamB.short_name}`,
+            matchNumber: item.title,
+            matchState: item.match_state,
+
+        })} activeOpacity={.7} style={{
             paddingVertical: 10,
             marginHorizontal: 10,
 
@@ -207,15 +255,15 @@ const upcomingMatchCont = (item: any) => {
                     }}>{item['teamB'].short_name}</Text>
                 </View>
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }
-
-const Matches = ({item}: any) => {
+const Matches = ({match}: any) => {
+    const navigation = useNavigation()
     return (
-        item.match_state === 'Scheduled' ?
-            upcomingMatchCont(item) :
-            overMatchCont(item)
+        match.match_state === 'Scheduled' ?
+            upcomingMatchCont(match, navigation) :
+            overMatchCont(match, navigation)
     )
 }
 export default Matches

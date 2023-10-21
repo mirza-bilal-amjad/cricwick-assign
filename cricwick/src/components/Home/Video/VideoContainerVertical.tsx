@@ -1,8 +1,9 @@
 import {Dimensions, FlatList, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React, {memo, useMemo} from 'react'
 import IonIcon from "react-native-vector-icons/Ionicons";
+import FeaturedContentGHome from "../../../screens/home/FeaturedContent/FeaturedContentGHome";
 
-const VideoContainerVertical = ({item}: any) => {
+const VideoContainerVertical = ({item, route}: any) => {
     const renderItem = useMemo(() => {
         return (({item}: any) => {
                 item = item[0];
@@ -23,6 +24,14 @@ const VideoContainerVertical = ({item}: any) => {
                                     justifyContent: 'center',
                                 }}
                                 activeOpacity={.7}
+                                onPress={() => route.navigate('FeaturedContentVideos', {
+                                    videoUri: item.qualities,
+                                    title: item.title,
+                                    poster: item.thumb,
+                                    views: item.views,
+                                    likes: item.likes,
+                                    homePageItemType: 'videos-home'
+                                })}
                             >
                                 <IonIcon name={'play-circle-outline'} size={40} color={'white'} style={{
                                     backgroundColor: 'rgba(127,127,127,.5)',

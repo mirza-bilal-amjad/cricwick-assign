@@ -1,12 +1,12 @@
 import {StyleSheet, Text, View} from 'react-native'
 import React from 'react'
 
-const Series = () => {
+const Videos = () => {
     return (
         <View>
-            <Text>Series</Text>
+            <Text>Videos</Text>
         </View>
     )
 }
-export default Series
+export default Videos
 const styles = StyleSheet.create({})

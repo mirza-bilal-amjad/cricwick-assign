@@ -1,4 +1,3 @@
-import moment from "moment";
 
 const getRawDate = (date: any) => {
     const parts = date.split(/[\s:\/]+/);
@@ -35,4 +34,9 @@ const removeDuplicate = (array: any[]) => {
 
 }
 
-export {getRawDate, convertTime, getNumOfCharacters,removeDuplicate}
+const convertSecondToMinutes = (seconds: number) => {
+    const minutes = Math.floor(seconds / (60));
+    const newSeconds = Number(((seconds % 60)).toFixed(0))
+    return `${minutes < 10 ? '0' : ''}${minutes}:${newSeconds < 10 ? '0' : ''}${newSeconds}`;
+}
+export {getRawDate, convertTime, getNumOfCharacters, removeDuplicate, convertSecondToMinutes}

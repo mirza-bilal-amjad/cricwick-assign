@@ -1,8 +1,10 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import {LogBox, StyleSheet, Text, View} from 'react-native';
+import React, {useEffect} from 'react';
 import {RootNavigator} from "./navigation";
-
 const App = () => {
+    useEffect(() => {
+        LogBox.ignoreLogs(['Invalid prop `textStyle` of type `array` supplied to `Cell`'])
+    }, []);
     return (
         <RootNavigator/>
     );
