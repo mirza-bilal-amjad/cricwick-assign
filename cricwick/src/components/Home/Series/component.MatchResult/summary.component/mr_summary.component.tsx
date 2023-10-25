@@ -1,16 +1,15 @@
-import {Dimensions, FlatList, Image, StyleSheet, Text, View} from 'react-native'
+import {Dimensions, FlatList, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React from 'react'
 import {ODITeamVsTeam, T20TeamVsTeam, TestTeamVsTeam} from "./team_vs_team.component";
 import {ODIManOfTheMatch, T20ManOfTheMatch} from "./man_of_the_match.component";
 import {ODIBowlers, T20Bowlers, TestBowlers} from "./bowlers.component";
 
-const MrSummaryComponent = ({item, index}: any) => {
+const MrSummaryComponent = ({item, index, navigation}: any) => {
     return (
         <View style={{
             // padding: 20,
             // marginHorizontal: 10
         }}>
-
             {/*Team Vs Team Component*/}
             {item &&
                 item['match'].format === 'ODI' &&
@@ -22,7 +21,7 @@ const MrSummaryComponent = ({item, index}: any) => {
                 <T20TeamVsTeam item={item['match']}/>}
             {item &&
                 item['match'].format === 'Test' &&
-                item['match'].match_state === 'Scheduled' &&
+                item['match'].match_state !== 'Scheduled' &&
                 <TestTeamVsTeam item={item['match']}/>}
             {/*Bowlers Component*/}
 
@@ -66,16 +65,20 @@ const MrSummaryComponent = ({item, index}: any) => {
                 {
                     item &&
                     item['articles'].map((inItem: any, index: number) =>
-                        (<View key={index}
-                               style={{
-                                   flexDirection: 'row',
-                                   justifyContent: 'space-between',
-                                   alignItems: 'center',
-                                   marginVertical: 2.5,
-                                   borderBottomWidth: index % 2 === 0 ? 0.2 : 0,
-                                   borderColor: 'gray'
+                        (<TouchableOpacity onPress={() => navigation.navigate('Articles', {
+                            articleId: inItem.id,
+                            matchId: item.match.id
+                        })}
+                                           activeOpacity={.7} key={index}
+                                           style={{
+                                               flexDirection: 'row',
+                                               justifyContent: 'space-between',
+                                               alignItems: 'center',
+                                               marginVertical: 2.5,
+                                               borderBottomWidth: index % 2 === 0 ? 0.2 : 0,
+                                               borderColor: 'gray'
 
-                               }}>
+                                           }}>
                             <View style={{
                                 width: 145
                             }}>
@@ -93,7 +96,7 @@ const MrSummaryComponent = ({item, index}: any) => {
                             </View>
 
 
-                        </View>)
+                        </TouchableOpacity>)
                     )
                 }
             </View>

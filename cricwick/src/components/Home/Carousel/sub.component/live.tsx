@@ -14,8 +14,11 @@ const Live = ({match, inning}: any) => {
                 id: null,
                 overs: null,
                 run_rate: null,
+                total_overs: 50,
                 runs: null,
                 wickets: null,
+                required_rate: null
+
             });
 
         }
@@ -117,10 +120,12 @@ const Live = ({match, inning}: any) => {
                     {item.wickets !== null && item.runs !== null ? <Text style={{
                             color: 'black',
                             fontWeight: '500',
+                            fontSize: 15
                         }}>{item.runs > 0 ? item.runs : 0}/{item.wickets > 0 ? item.wickets : 0}</Text> :
                         <Text style={{
                             color: 'black',
                             textAlign: 'center',
+                            fontSize: 15
                         }}>-</Text>
                     }
                     {item.overs !== null ? <View style={{
@@ -198,10 +203,13 @@ const Live = ({match, inning}: any) => {
                     {item.wickets !== null && item.runs !== null ? <Text style={{
                             color: 'black',
                             fontWeight: '500',
+                            fontSize: 15,
+
                         }}>{item.runs > 0 ? item.runs : 0}/{item.wickets > 0 ? item.wickets : 0}</Text> :
                         <Text style={{
                             color: 'black',
                             fontWeight: '500',
+                            fontSize: 15,
                             textAlign: 'center',
                         }}>-</Text>
                     }
@@ -339,8 +347,8 @@ const styles = StyleSheet.create({
         color: 'black',
     },
     teamFlag: {
-        width: 35,
-        height: 35,
+        width: 40,
+        height: 40,
     },
     teamScoreInfo: {
         width: '97%',

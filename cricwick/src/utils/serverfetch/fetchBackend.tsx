@@ -53,3 +53,14 @@ const fetchSchedule = async (api: string) => {
     }
 };
 export {fetchSchedule};
+
+const fetchBlogs = async (page: number) => {
+    try {
+        const response = await Axios.get(`https://cwscoring.cricwick.net/api/news?page=${page}&per_page=6&app_name=CricwickWeb`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching BLogs:', error);
+        throw error;
+    }
+};
+export {fetchBlogs};

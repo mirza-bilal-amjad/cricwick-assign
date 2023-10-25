@@ -13,6 +13,7 @@ const WebViewComp = ({item, height}: any) => {
                     font-size: 2.5rem;
                     color: #333;
                     scrollbar-width: none;
+                   
                 }
                     .highlighted {
                     background-color: yellow;
@@ -30,16 +31,16 @@ const WebViewComp = ({item, height}: any) => {
     }
     return (
         <View style={{
+            flex: 1,
             justifyContent: 'center',
             // width: Dimensions.get('window').width - 20,
             marginHorizontal: 10,
         }}>
             <WebView
                 style={{
-                    flex: 1,
+                    // flex: 1,
                     backgroundColor: '#f3f3f3',
-                    height: height,
-
+                    // height: 300,
                 }}
                 originWhitelist={['*']}
                 source={{html: htmlComp(item.body)}}/>

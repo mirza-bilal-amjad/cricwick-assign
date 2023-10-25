@@ -6,8 +6,10 @@ import {useDispatch, useSelector} from "react-redux";
 import {MatchResultSummaryComponent} from "../../../components/Home/Series/component.MatchResult";
 import LottieView from "lottie-react-native";
 import {ActivityLoader} from "../../../assets";
+import {useNavigation} from "@react-navigation/native";
 
 const MrSummary = ({route}: any) => {
+    const navigation = useNavigation()
     const flag = useSelector((state: any) => state.toggleReducer.flag);
     const [MRData, setMRData] = useState([]);
     const [pageCounter, setPageCounter] = useState(1);
@@ -34,7 +36,6 @@ const MrSummary = ({route}: any) => {
 
     useEffect(() => {
         fetchMR();
-
     }, [flag]);
     return (
         <SafeAreaView style={{
@@ -42,9 +43,9 @@ const MrSummary = ({route}: any) => {
         }}>
             {MRData.length > 0 ? <FlatList data={MRData} keyExtractor={
                     (item, index) => index.toString()
-                } renderItem={
-                    MatchResultSummaryComponent
-                }/> :
+                } renderItem={({item, index}) => <MatchResultSummaryComponent item={item} index={index}
+                                                                              navigation={navigation}/>}
+                /> :
                 <View style={{
                     flex: 1,
                     justifyContent: 'center',

@@ -10,28 +10,28 @@ import FeaturedContentCardVideo from "../../../components/Home/Video/FeaturedCon
 import {RootNavigator} from "../../../navigation";
 import {useNavigation} from "@react-navigation/native";
 
-const FeaturedContentGHome = ({route}: any) => {
+const FeaturedContentVideos = ({route}: any) => {
     const navigation = useNavigation();
-    const {videoUri, title, poster, views, likes, homePageItemType} = route.params;
-
+    const {listId, videoUri, title, poster, views, likes} = route.params;
 
     const [theVideoUri, setTheVideoUri] = useState(videoUri);
     const [theTitle, setTheTitle] = useState(title);
     const [thePoster, setThePoster] = useState(poster);
     const [theViews, setTheViews] = useState(views);
     const [theLikes, setTheLikes] = useState(likes)
+
     const videoPlayer = useRef().current;
     const [pageNumber, setPageNumber] = useState(1);
     const [featuredContentData, setFeaturedContentData] = useState([]);
     const [refreshing, setRefreshing] = useState(false);
 
 
-    const returnApiVideo = (pageNumber: number) => {
+    const returnApiVideo = (pageNumber: number, listId: number) => {
         return `https://cwscoring.cricwick.net/api/v4/video_lists/play_video_list?list_id=1&type=featured&page=${pageNumber}&msisdn=00000000000&app_name=CricwickWeb`;
     }
     const fetch = async () => {
         setRefreshing(true)
-        fetchGenericHome(returnApiVideo(pageNumber)).then(
+        fetchGenericHome(returnApiVideo(pageNumber, listId)).then(
             (r) => {
                 if (r) {
                     setFeaturedContentData(
@@ -66,7 +66,7 @@ const FeaturedContentGHome = ({route}: any) => {
     useEffect(() => {
         const handleBackPress = () => {
             //@ts-ignore
-            navigation.reset({
+            navigation.goBack({
                 index: 0,
                 // @ts-ignore
                 routes: [{name: 'BottomTabNavigation'}] // Replace with the name of the screen you want to navigate to
@@ -207,11 +207,14 @@ const FeaturedContentGHome = ({route}: any) => {
                                 setTheLikes={setTheLikes}
                             />
                         )}
+                        ListFooterComponent={
+                            () => <View style={{height: 10}}/>
+                        }
                         ItemSeparatorComponent={() => <View style={{height: 10}}/>}/>
                 }
             </View>
         </View>
     );
 }
-export default FeaturedContentGHome
+export default FeaturedContentVideos
 const styles = StyleSheet.create({})

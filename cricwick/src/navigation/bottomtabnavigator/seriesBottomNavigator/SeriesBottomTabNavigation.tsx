@@ -26,7 +26,9 @@ const BottomTabs = createBottomTabNavigator();
 
 const SeriesBottomTabNavigation = ({navigation}: any) => {
     return (
-        <BottomTabs.Navigator initialRouteName={'Ongoing'} screenOptions={{
+        <BottomTabs.Navigator detachInactiveScreens={
+            true
+        } initialRouteName={'Ongoing'} screenOptions={{
             tabBarStyle: {
                 backgroundColor: '#f3f3f3',
                 height: 60,

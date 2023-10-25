@@ -59,14 +59,13 @@ const FeaturedContentGHome = ({route}: any) => {
     };
     useEffect(() => {
     }, [theVideoUri, theLikes, thePoster, theViews, theTitle]);
-
     useEffect(() => {
         fetch();
     }, []);
     useEffect(() => {
         const handleBackPress = () => {
             //@ts-ignore
-            navigation.reset({
+            navigation.goBack({
                 index: 0,
                 // @ts-ignore
                 routes: [{name: 'BottomTabNavigation'}] // Replace with the name of the screen you want to navigate to
@@ -78,6 +77,7 @@ const FeaturedContentGHome = ({route}: any) => {
             backHandler.remove();
         };
     }, [route]);
+
     return (
         <View style={{
             flex: 1

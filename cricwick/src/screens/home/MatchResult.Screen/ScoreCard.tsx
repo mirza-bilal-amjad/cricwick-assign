@@ -1,6 +1,6 @@
 import {FlatList, SafeAreaView, StyleSheet, Text, View} from 'react-native'
 import React, {useEffect, useState} from 'react'
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {fetchSeries} from "../../../utils/serverfetch/fetchBackend";
 import {MatchResultSummaryComponent} from "../../../components/Home/Series/component.MatchResult";
 import LottieView from "lottie-react-native";
@@ -9,7 +9,8 @@ import MrScoreCardComponent
     from "../../../components/Home/Series/component.MatchResult/scorecard.component/mr_score_card.component";
 
 const ScoreCard = ({route}: any) => {
-    const [SCData, setSCData] = useState([]);
+    const flag = useSelector((state: any) => state.toggleReducer.flag);
+    const [SCData, setSCData] = useState<any>();
     const [pageCounter, setPageCounter] = useState(1);
     const [refreshing, setRefreshing] = useState(false);
     const dispatch = useDispatch();
@@ -24,9 +25,9 @@ const ScoreCard = ({route}: any) => {
         await fetchSeries(returnApi(route.params.matchId))
             .then((r: any) => {
                     setSCData((prevState: any[]): any => {
-                        const {match} = r
-                        if (match)
-                            return [match];
+
+                        if (r)
+                            return r;
                         else return prevState;
                     });
                 }
@@ -37,15 +38,14 @@ const ScoreCard = ({route}: any) => {
     useEffect(() => {
         fetchMR();
 
-    }, []);
+    }, [flag]);
 
     return (
         <SafeAreaView style={{
             flex: 1
         }}>
-            {SCData.length > 0 ? <FlatList data={SCData} renderItem={
-                    MrScoreCardComponent
-                }/> :
+            {SCData ?
+                <MrScoreCardComponent item={SCData}/> :
                 <View style={{
                     flex: 1,
                     justifyContent: 'center',

@@ -1,5 +1,5 @@
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
-import React from 'react'
+import React, {memo} from 'react'
 import GoogleIcon from "react-native-vector-icons/MaterialIcons";
 import moment from "moment";
 import {convertSecondToMinutes} from "../../../../utils/method";
@@ -106,5 +106,5 @@ const FeaturedContentCardVideo = ({item, setTheVideoUri, setTheTitle, setThePost
         </TouchableOpacity>
     );
 }
-export default FeaturedContentCardVideo
+export default memo(FeaturedContentCardVideo)
 const styles = StyleSheet.create({})

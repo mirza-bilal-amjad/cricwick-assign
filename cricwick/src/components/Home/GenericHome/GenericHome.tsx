@@ -7,6 +7,7 @@ import FeaturedContentGHome from "../../../screens/home/FeaturedContent/Featured
 const GenericHome = ({item, route}: any) => {
     return (
         item.data.map((inItem: any, index: number) => {
+
             return (
                 <View key={index} style={[styles.itemContainer, {
                     // borderRadius: 15,
@@ -24,6 +25,7 @@ const GenericHome = ({item, route}: any) => {
                             }}
                             activeOpacity={.7}
                             onPress={() => route.navigate('FeaturedContentGHome', {
+                                listId: 1,
                                 videoUri: inItem.qualities,
                                 title: inItem.title,
                                 poster: inItem.thumb,

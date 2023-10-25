@@ -3,7 +3,8 @@ import React, {useMemo} from 'react'
 import Card from "./component/card";
 import GoogleIcon from "react-native-vector-icons/MaterialIcons";
 
-const Series = ({data}: any) => {
+const Series = ({data, listID, seriesID, label, navigation}: any) => {
+
     return (
         <FlatList
             horizontal
@@ -23,38 +24,11 @@ const Series = ({data}: any) => {
             ItemSeparatorComponent={() => (
                 <View style={{width: 10}}/>
             )}
-            /*            ListFooterComponent={() => {
-                            return <View style={{
-                                width: 50,
-                                height: 220,
-                                elevation: 3,
-                                justifyContent: 'center',
-                                backgroundColor: 'white',
-                                marginLeft: 10,
-                                borderRadius: 15,
-                                marginRight: 20,
 
-                            }}>
-                                <TouchableOpacity activeOpacity={0.7} style={{
-                                    width: 50,
-                                    height: 50,
-                                    borderWidth: .3,
-                                    borderColor: '#00ff94',
-                                    left: 20,
-
-                                    borderRadius: 50,
-                                    backgroundColor: 'white',
-                                    elevation: 3,
-                                    justifyContent: 'center',
-                                    alignItems: 'center'
-                                }}>
-                                    <GoogleIcon name={'more-vert'} size={30} color={'gray'}/>
-                                </TouchableOpacity>
-                            </View>
-                        }}*/
             renderItem={useMemo(() => {
-                return Card;
-            }, [])}/>
+                return ({item}) => <Card item={item} listID={listID} seriesID={seriesID} label={label}
+                                         navigation={navigation}/>;
+            }, [seriesID, listID, label, navigation])}/>
     )
 }
 export default Series

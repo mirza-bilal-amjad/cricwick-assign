@@ -5,13 +5,14 @@ import WebViewComp from "./match_image_heading.component/WebViewComp";
 
 const MatchResultReportComponent = ({item}: any) => {
     return (
-        <View style={{
+        item.match_report && <View style={{
             flex: 1,
+            // backgroundColor: 'pink',
+
         }}>
             {item.match_report.large_image && item.match_report.title &&
                 <ImageHeading item={item.match_report}/>}
-            {item.match_report.body && <WebViewComp item={item.match_report} height={
-                Dimensions.get('screen').height - 465}/>}
+            {item.match_report.body && <WebViewComp item={item.match_report}/>}
         </View>
     );
 }

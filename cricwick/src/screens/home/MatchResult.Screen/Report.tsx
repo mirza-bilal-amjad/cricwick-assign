@@ -10,7 +10,7 @@ import {useDispatch} from "react-redux";
 import {fetchSeries} from "../../../utils/serverfetch/fetchBackend";
 
 const Report = ({route}: any) => {
-    const [reportData, setReportData] = useState([]);
+    const [reportData, setReportData] = useState<any>( );
     const [pageCounter, setPageCounter] = useState(1);
     const [refreshing, setRefreshing] = useState(false);
     const dispatch = useDispatch();
@@ -25,7 +25,7 @@ const Report = ({route}: any) => {
                     setReportData((prevState: any[]): any => {
                         const {match} = r;
                         if (match)
-                            return [match];
+                            return match;
                         else return prevState;
                     });
                 }
@@ -40,29 +40,25 @@ const Report = ({route}: any) => {
     return (
         <SafeAreaView style={{
             flex: 1,
+
         }}>
-            {reportData.length > 0 ? reportData[0].match_report !== null ? <FlatList data={reportData} style={{
-                    flex: 1,
-
-                }} keyExtractor={
-                    (item, index) => index.toString()
-                } renderItem={
-                    MatchResultReportComponent
-                }/> : <View style={{
-                    flex: 1,
-                    justifyContent: 'center',
-                    alignItems: 'center'
-                }}>
-                    <Text style={{
-                        color: 'black',
-                        textAlign: 'center',
-                        fontSize: 18,
-                        fontWeight: 'bold'
+            {reportData ? reportData.match_report !== null || reportData.match_report ?
+                    <MatchResultReportComponent item={reportData}/> :
+                    <View style={{
+                        flex: 1,
+                        justifyContent: 'center',
+                        alignItems: 'center'
                     }}>
-                        No Content Available
-                    </Text>
+                        <Text style={{
+                            color: 'black',
+                            textAlign: 'center',
+                            fontSize: 18,
+                            fontWeight: 'bold'
+                        }}>
+                            No Content Available
+                        </Text>
 
-                </View> :
+                    </View> :
                 <View style={{
                     flex: 1,
                     justifyContent: 'center',

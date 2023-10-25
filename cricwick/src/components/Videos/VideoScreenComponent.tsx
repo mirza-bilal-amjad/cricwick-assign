@@ -1,16 +1,19 @@
 import {Dimensions, FlatList, SafeAreaView, StyleSheet, Text, View} from 'react-native'
-import React, {useEffect, useMemo, useState} from 'react'
+import React, {memo, useEffect, useMemo, useState} from 'react'
 import {CarouselVideo, PlayListComponent, SeriesComponent, VideoComponent} from "../index";
 import {fetchVideos} from "../../utils/serverfetch/fetchBackend";
 import LottieView from "lottie-react-native";
 import {ActivityLoader, Loader} from "../../assets";
 
-const VideoScreenComponent = ({item, refresh, fetchCallBack}: any) => {
+const VideoScreenComponent = ({item, refresh, fetchCallBack, navigation}: any) => {
+    const RenderItem = useMemo(() => ({item, navigation}: any) => {
 
-    const renderItem = useMemo(() => ({item}: any) => {
         switch (item.type) {
             case 'featured':
-                return (<View><CarouselVideo data={item['data']}/>
+                return (<View>
+                    <CarouselVideo data={item['data']} listID={item.list_id ? item.list_id : null}
+                                   seriesID={item.series_id ? item.series_id : null} label={item.label}
+                                   navigation={navigation}/>
                 </View>)
             case 'play_list':
                 return (<View style={{
@@ -23,7 +26,9 @@ const VideoScreenComponent = ({item, refresh, fetchCallBack}: any) => {
                         marginBottom: 5,
                         fontWeight: '900'
                     }}>{item.label.slice(0, 46)}</Text>
-                    <PlayListComponent data={item['data']}/>
+                    <PlayListComponent data={item['data']} listID={item.list_id ? item.list_id : null}
+                                       seriesID={item.series_id ? item.series_id : null} label={item.label}
+                                       navigation={navigation}/>
                 </View>)
             case 'series':
                 return (<View style={{
@@ -36,7 +41,9 @@ const VideoScreenComponent = ({item, refresh, fetchCallBack}: any) => {
                         marginBottom: 5,
                         fontWeight: '900'
                     }}>{item.label.slice(0, 46)}</Text>
-                    <SeriesComponent data={item['data']}/>
+                    <SeriesComponent data={item['data']} listID={item.list_id ? item.list_id : null}
+                                     seriesID={item.series_id ? item.series_id : null} label={item.label}
+                                     navigation={navigation}/>
                 </View>)
             default:
                 return null
@@ -48,7 +55,7 @@ const VideoScreenComponent = ({item, refresh, fetchCallBack}: any) => {
         <SafeAreaView style={{
             backgroundColor: '#f3f3f3',
             flex: 1,
-            position: 'relative'
+            position: 'relative',
         }}>
             <View style={{
                 height: 2
@@ -86,9 +93,11 @@ const VideoScreenComponent = ({item, refresh, fetchCallBack}: any) => {
                 </View>
                 : <FlatList
                     data={item}
+                    initialNumToRender={10}
                     windowSize={10}
+                    maxToRenderPerBatch={10}
                     showsVerticalScrollIndicator={false}
-                    renderItem={renderItem}
+                    renderItem={({item}) => <RenderItem item={item} navigation={navigation}/>}
                     onEndReachedThreshold={1}
                     onEndReached={fetchCallBack}
                     contentContainerStyle={{
@@ -96,12 +105,12 @@ const VideoScreenComponent = ({item, refresh, fetchCallBack}: any) => {
                         paddingBottom: 10
                     }}
                     removeClippedSubviews={true}
-                    maxToRenderPerBatch={10}
+
                     showsHorizontalScrollIndicator={false}
                     keyExtractor={(item, index) => index.toString()}
                 />}
         </SafeAreaView>
     );
 }
-export default VideoScreenComponent
+export default memo(VideoScreenComponent)
 const styles = StyleSheet.create({})

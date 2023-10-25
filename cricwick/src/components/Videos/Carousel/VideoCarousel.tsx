@@ -3,7 +3,8 @@ import React, {useEffect, useMemo, useState} from 'react'
 import Card from "./component/card";
 import {SwiperFlatList} from "react-native-swiper-flatlist";
 
-const VideoCarousel = ({data}: any) => {
+const VideoCarousel = ({data, listID, seriesID, label,navigation}: any) => {
+
     return (
         <SwiperFlatList
             snapToAlignment={'center'}
@@ -29,8 +30,8 @@ const VideoCarousel = ({data}: any) => {
             }
             data={data}
             renderItem={useMemo(() => {
-                return Card
-            }, [])}
+                return ({item}: any) => <Card item={item} listID={listID} seriesID={seriesID} label={label} navigation={navigation}/>;
+            }, [listID, seriesID, label, navigation])}
         />
 
     );

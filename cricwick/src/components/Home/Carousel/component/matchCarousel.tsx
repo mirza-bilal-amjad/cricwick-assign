@@ -28,7 +28,14 @@ const MatchCarousel = ({data, navigation}: any) => {
                         matchId: match.id,
                         matchTitle: `${match.teamA.short_name} vs ${match.teamB.short_name}`,
                         matchNumber: match.title,
-                        matchState: match.match_state
+                        matchState: match.match_state,
+                        team_1_id: match.team_1_id,
+                        team_2_id: match.team_2_id,
+                        nameTeamA: match.teamA.name,
+                        nameTeamB: match.teamB.name,
+                        shortNameTeamA: match.teamA.short_name,
+                        shortNameTeamB: match.teamB.short_name,
+
                     })}
                 >
                     <View style={{

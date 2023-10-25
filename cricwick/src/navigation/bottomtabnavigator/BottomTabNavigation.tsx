@@ -17,26 +17,28 @@ const BottomTabs = createBottomTabNavigator();
 
 const BottomTabNavigation = ({navigation}: any) => {
     return (
-        <BottomTabs.Navigator initialRouteName={'Home'} screenOptions={{
-            tabBarStyle: {
-                backgroundColor: '#f3f3f3',
-                height: 60,
-                padding: 0,
-                justifyContent: 'center',
-            },
-            tabBarActiveTintColor: '#c22026',
-            tabBarLabelStyle: {
-                padding: 0,
-                top: -2,
-                fontSize: 12,
-                fontWeight: 'bold',
-            },
-            tabBarIconStyle: {
-                padding: 0,
-                top: 5
-            }
+        <BottomTabs.Navigator initialRouteName={'Home'}
+                              detachInactiveScreens={true}
+                              screenOptions={{
+                                  tabBarStyle: {
+                                      backgroundColor: '#f3f3f3',
+                                      height: 60,
+                                      padding: 0,
+                                      justifyContent: 'center',
+                                  },
+                                  tabBarActiveTintColor: '#c22026',
+                                  tabBarLabelStyle: {
+                                      padding: 0,
+                                      top: -2,
+                                      fontSize: 12,
+                                      fontWeight: 'bold',
+                                  },
+                                  tabBarIconStyle: {
+                                      padding: 0,
+                                      top: 5
+                                  }
 
-        }}>
+                              }}>
             <BottomTabs.Screen name="Home" component={HomeScreen} options={{
                 headerShown: true,
                 header: () => (
@@ -48,7 +50,9 @@ const BottomTabNavigation = ({navigation}: any) => {
                         alignItems: 'center',
                         justifyContent: 'space-between',
                     }}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={
+                            () => navigation.openDrawer()
+                        } >
                             <IonIcon name="menu" size={35} color={'black'}/>
                         </TouchableOpacity>
                         <View>

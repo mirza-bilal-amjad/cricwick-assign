@@ -17,6 +17,7 @@ const Articles = ({route}: any) => {
     const dispatch = useDispatch();
 
     const returnApi = (matchId: number) => {
+
         return `https://cwscoring.cricwick.net/api/articles/${articleId}`
     };
     const fetchRD = async () => {
@@ -24,7 +25,7 @@ const Articles = ({route}: any) => {
         await fetchSeries(returnApi(route.params.matchId))
             .then((r: any) => {
                     setReportData((prevState: any[]): any => {
-                        return r && [r]
+                        return r && r
                     });
                 }
             )
@@ -38,9 +39,7 @@ const Articles = ({route}: any) => {
         <SafeAreaView style={{
             flex: 1
         }}>
-            {reportData.length > 0 ? <FlatList data={reportData} renderItem={
-                    ArticleComponent
-                }/> :
+            {reportData ? <ArticleComponent item={reportData}/> :
                 <View style={{
                     flex: 1,
                     justifyContent: 'center',

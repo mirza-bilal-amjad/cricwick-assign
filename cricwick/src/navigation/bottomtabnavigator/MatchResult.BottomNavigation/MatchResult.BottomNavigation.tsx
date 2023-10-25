@@ -1,4 +1,4 @@
-import {BackHandler, Dimensions, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
+import {BackHandler, Dimensions, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React, {useEffect} from 'react'
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import BallByBall from "../../../screens/home/MatchResult.Screen/BallByBall";
@@ -9,11 +9,14 @@ import PlayingEleven from "../../../screens/home/MatchResult.Screen/PlayingEleve
 import Report from "../../../screens/home/MatchResult.Screen/Report";
 import GoogleIcon from "react-native-vector-icons/MaterialIcons";
 import {useNavigation} from "@react-navigation/native";
+//@ts-ignore
+import PlayingXIIcon from '../../../assets/Images/ico_player_on.png'
 
 const MatchResultBottomTabs = createBottomTabNavigator();
 
 
 const MatchResultBottomNavigation = ({route}: any) => {
+
     const navigation = useNavigation();
     const renderHeader = (title: string, matchNumber: string) => {
         return (
@@ -100,7 +103,10 @@ const MatchResultBottomNavigation = ({route}: any) => {
                 <MatchResultBottomTabs.Screen name={'BallByBall'} component={BallByBall} options={{
                     headerShown: true,
                     header: () => renderHeader(route.params.matchTitle, route.params.matchNumber),
-                    title: 'Ball by Ball'
+                    title: 'Ball by Ball',
+                    tabBarIcon: ({focused, color, size}) => (
+                        <GoogleIcon name={'sports-cricket'} size={size} color={color}/>
+                    ),
                 }} initialParams={{
                     matchId: route.params.matchId
                 }}/>}
@@ -109,6 +115,9 @@ const MatchResultBottomNavigation = ({route}: any) => {
                     headerShown: true,
                     header: () => renderHeader(route.params.matchTitle, route.params.matchNumber),
                     title: 'Scorecard',
+                    tabBarIcon: ({focused, color, size}) => (
+                        <GoogleIcon name={'scoreboard'} size={size} color={color}/>
+                    ),
 
                 }} initialParams={{
                     matchId: route.params.matchId
@@ -116,7 +125,10 @@ const MatchResultBottomNavigation = ({route}: any) => {
             <MatchResultBottomTabs.Screen name={'MRSummary'} component={MRSummary} options={{
                 headerShown: true,
                 header: () => renderHeader(route.params.matchTitle, route.params.matchNumber),
-                title: 'Summary'
+                title: 'Summary',
+                tabBarIcon: ({focused, color, size}) => (
+                    <GoogleIcon name={'view-stream'} size={size} color={color}/>
+                ),
             }} initialParams={{
                 matchId: route.params.matchId
             }}/>
@@ -125,6 +137,9 @@ const MatchResultBottomNavigation = ({route}: any) => {
                     headerShown: true,
                     header: () => renderHeader(route.params.matchTitle, route.params.matchNumber),
                     title: 'Videos',
+                    tabBarIcon: ({focused, color, size}) => (
+                        <GoogleIcon name={'ondemand-video'} size={size} color={color}/>
+                    ),
                 }} initialParams={{
                     matchId: route.params.matchId
                 }}/>}
@@ -133,14 +148,24 @@ const MatchResultBottomNavigation = ({route}: any) => {
                 <MatchResultBottomTabs.Screen name={'PlayingEleven'} component={PlayingEleven} options={{
                     headerShown: true,
                     header: () => renderHeader(route.params.matchTitle, route.params.matchNumber),
-                    title: 'Playing XI'
+                    title: 'Playing XI',
+                    tabBarIcon: ({focused, color, size}) => (
+                        <Image source={PlayingXIIcon} style={{width: size, height: size, tintColor: color}}/>
+                    ),
                 }} initialParams={{
-                    matchd: route.params.matchId
+                    matchId: route.params.matchId,
+                    team_1_id: route.params.team_1_id,
+                    team_2_id: route.params.team_2_id,
+                    nameTeamA: route.params.nameTeamA,
+                    nameTeamB: route.params.nameTeamB
                 }}/> : route.params.matchState !== 'Scheduled' &&
                 <MatchResultBottomTabs.Screen name={'Report'} component={Report} options={{
                     headerShown: true,
                     header: () => renderHeader(route.params.matchTitle, route.params.matchNumber),
-                    title: 'Report'
+                    title: 'Report',
+                    tabBarIcon: ({focused, color, size}) => (
+                        <GoogleIcon name={'description'} size={size} color={color}/>
+                    ),
                 }} initialParams={{
                     matchId: route.params.matchId
                 }}/>}

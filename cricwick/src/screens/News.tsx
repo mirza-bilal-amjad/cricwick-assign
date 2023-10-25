@@ -25,7 +25,7 @@ const News = ({route}: any) => {
         await fetchSeries(returnApi(route.params.matchId))
             .then((r: any) => {
                     setNewsData((prevState: any[]): any => {
-                        return r && [r]
+                        return r && r
                     });
                 }
             )
@@ -39,9 +39,7 @@ const News = ({route}: any) => {
         <SafeAreaView style={{
             flex: 1
         }}>
-            {newsData.length > 0 ? <FlatList data={newsData} renderItem={
-                    NewsComponent
-                }/> :
+            {newsData ? <NewsComponent item={newsData}/> :
                 <View style={{
                     flex: 1,
                     justifyContent: 'center',

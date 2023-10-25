@@ -9,13 +9,14 @@ import SeriesInfoBottomNavigation
     from "../bottomtabnavigator/seriesBottomNavigator/SeriesInfoBottomNavigatior/SeriesInfoBottomNavigation";
 import FeaturedContentGHome from "../../screens/home/FeaturedContent/FeaturedContentGHome";
 import FeaturedContentVideos from "../../screens/home/FeaturedContent/FeaturedContentVideos";
-import DynamicFeaturedContent from "../../screens/home/FeaturedContent/DynamicFeaturedContent";
 import MatchResultBottomNavigation
     from "../bottomtabnavigator/MatchResult.BottomNavigation/MatchResult.BottomNavigation";
 import Articles from "../../screens/Articles";
 import News from "../../screens/News";
 import SquadDetails
     from "../../screens/series/inside_ongoing_result_upcomming_bottom_tab_screen/SingleSquadDetails/SquadDetails";
+import SideNavigatorBar from "../side_bar_navigator/SideNavigatorBar";
+import Blogs from "../../screens/Blogs";
 
 const RootStackTab = createNativeStackNavigator();
 const RootNavigator = () => {
@@ -24,25 +25,35 @@ const RootNavigator = () => {
     }
 
     useEffect(() => {
-        changeNavColor().then(r => console.log('r', r)
-        ).catch(e => console.log('e', e))
+        changeNavColor().catch(e => console.log('e', e))
     }, [])
     return (
         <SafeAreaView style={{flex: 1}}>
             <StatusBar animated barStyle={'dark-content'} backgroundColor={'#f3f3f3'}/>
             <NavigationContainer>
-                <RootStackTab.Navigator initialRouteName={'BottomTabNavigation'}>
+                <RootStackTab.Navigator initialRouteName={'SideNavigatorBar'}>
                     <RootStackTab.Screen name={'BottomTabNavigation'} component={BottomTabNavigation} options={{
                         headerShown: false,
                     }}/>
                     <RootStackTab.Screen name={'SeriesBottomTabNavigation'} component={SeriesBottomTabNavigation}
-                                         options={{
-                                             headerShown: false
-                                         }}/>
+                                   options={{
+                                       headerShown: false
+                                   }}/>
                     <RootStackTab.Screen name={'SeriesInfoBottomNavigation'} component={SeriesInfoBottomNavigation}
+                                   options={{
+                                       headerShown: false
+                                   }}/>
+
+                    <RootStackTab.Screen name={'MatchResultBottomNavigation'} component={MatchResultBottomNavigation}
+                                   options={{
+                                       headerShown: false,
+                                   }}/>
+
+                    <RootStackTab.Screen name={'SideNavigatorBar'} component={SideNavigatorBar}
                                          options={{
                                              headerShown: false
                                          }}/>
+
 
                     <RootStackTab.Screen name={'FeaturedContentGHome'} component={FeaturedContentGHome} options={{
                         headerShown: true,
@@ -60,32 +71,26 @@ const RootNavigator = () => {
                         headerShadowVisible: false
 
                     }}/>
-                    {/*<RootStackTab.Screen name={'DynamicFeaturedContent'} component={DynamicFeaturedContent} options={{
-                        headerShown: true,
-                        headerTitle: 'Feature Content',
-                        headerTitleAlign: 'center',
-                        headerStyle: {backgroundColor: '#f3f3f3'},
-                        headerShadowVisible: false
-
-                    }}/>*/}
 
 
-                    <RootStackTab.Screen name={'MatchResultBottomNavigation'} component={MatchResultBottomNavigation}
-                                         options={{
-                                             headerShown: false,
-                                         }}/>
                     <RootStackTab.Screen name={'Articles'}
                                          component={Articles}
                                          options={{
                                              headerShown: true,
                                              headerTitleAlign: 'center',
-                                             headerShadowVisible: false
-
+                                             headerShadowVisible: false,
+                                             headerTitleStyle: {fontWeight: 'bold'},
+                                             headerStyle: {backgroundColor: '#f3f3f3'}
                                          }}/>
                     <RootStackTab.Screen name={'News'}
                                          component={News}
                                          options={{
                                              headerShown: false,
+                                         }}/>
+                    <RootStackTab.Screen name={'Blogs'}
+                                         component={Blogs}
+                                         options={{
+                                             headerShown: true,
                                          }}/>
                     <RootStackTab.Screen name={'SquadDetails'}
                                          component={SquadDetails}

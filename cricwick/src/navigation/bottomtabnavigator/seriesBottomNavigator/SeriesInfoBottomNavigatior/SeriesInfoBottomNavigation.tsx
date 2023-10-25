@@ -33,8 +33,8 @@ const BottomTabs = createBottomTabNavigator();
 
 const SeriesInfoBottomNavigation = ({navigation, route}: any) => {
     const {is_videos_enabled, has_points_table} = route.params;
-       return (
-        <BottomTabs.Navigator initialRouteName={'Summary'} screenOptions={{
+    return (
+        <BottomTabs.Navigator detachInactiveScreens={true} initialRouteName={'Summary'} screenOptions={{
             tabBarStyle: {
                 backgroundColor: '#f3f3f3',
                 height: 60,

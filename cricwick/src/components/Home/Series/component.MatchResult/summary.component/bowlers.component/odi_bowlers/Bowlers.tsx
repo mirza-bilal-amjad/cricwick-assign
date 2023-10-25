@@ -6,7 +6,8 @@ const Bowlers = ({item}: any) => {
         return (
             <View style={{
                 marginHorizontal: 5,
-                padding: 10,
+                paddingHorizontal: 10,
+                paddingVertical: 5,
                 flexDirection: 'row'
             }}>
                 <View style={{

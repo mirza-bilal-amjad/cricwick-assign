@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useState} from 'react'
+import React, {useCallback, useEffect, useMemo, useState} from 'react'
 import {
     Dimensions,
     FlatList,
@@ -35,7 +35,7 @@ const Home = ({navigation}: any) => {
         const returnApi = (page: number) => {
             return `https://cwscoring.cricwick.net/api/v3/view_lists/get_by_name?view=home&web_user=1&page=${page}&telco=ufone&app_name=CricwickWeb`
         };
-        const fetchHome = async () => {
+        const fetchHome = useCallback(async () => {
             setRefreshing(true);
             await fetchGenericHome(returnApi(pageCounter))
                 .then((r: any) => {
@@ -55,7 +55,7 @@ const Home = ({navigation}: any) => {
                     }
                 )
                 .catch(e => console.error('Error:', e));
-        };
+        }, [pageCounter]);
         const firebaseCarousel = async () => {
             onValue(FIREBASE_DATABASE_REF, (snapshot) => {
                 const data = snapshot.val();
@@ -67,6 +67,7 @@ const Home = ({navigation}: any) => {
         useEffect(() => {
             fetchHome().catch((e) => console.error(e));
             firebaseCarousel().catch((e) => console.error(e));
+
         }, []);
 
         const renderItem = useMemo(() => {
@@ -92,6 +93,7 @@ const Home = ({navigation}: any) => {
                 } else return null;
             }
         }, [navigation]);
+
         const mainFlatListData = [
             {
                 id: 0,
