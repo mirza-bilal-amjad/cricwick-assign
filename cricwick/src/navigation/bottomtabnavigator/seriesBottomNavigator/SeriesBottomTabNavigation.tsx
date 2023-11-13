@@ -1,4 +1,4 @@
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
+import {Easing, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React, {useEffect, useState} from 'react'
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import IonIcon from 'react-native-vector-icons/Ionicons'
@@ -26,9 +26,7 @@ const BottomTabs = createBottomTabNavigator();
 
 const SeriesBottomTabNavigation = ({navigation}: any) => {
     return (
-        <BottomTabs.Navigator detachInactiveScreens={
-            true
-        } initialRouteName={'Ongoing'} screenOptions={{
+        <BottomTabs.Navigator initialRouteName={'Ongoing'} screenOptions={{
             tabBarStyle: {
                 backgroundColor: '#f3f3f3',
                 height: 60,
@@ -59,11 +57,12 @@ const SeriesBottomTabNavigation = ({navigation}: any) => {
                     }}>
                         <TouchableOpacity
                             style={{
-                                alignItems: 'center'
+                                alignItems: 'center',
+                                marginLeft: 10
                             }} activeOpacity={0.8}
                             onPress={() => navigation.goBack()}
                         >
-                            <GoogleIcon name="arrow-back" size={30} color={'black'}/>
+                            <GoogleIcon name="arrow-back-ios" size={30} color={'black'}/>
                         </TouchableOpacity>
                         <View>
                             <Text style={{
@@ -96,9 +95,13 @@ const SeriesBottomTabNavigation = ({navigation}: any) => {
                         justifyContent: 'space-between',
                     }}>
                         <TouchableOpacity
+                            style={{
+                                alignItems: 'center',
+                                marginLeft: 10
+                            }}
                             onPress={() => navigation.goBack()}
                         >
-                            <GoogleIcon name="arrow-back" size={30} color={'black'}/>
+                            <GoogleIcon name="arrow-back-ios" size={30} color={'black'}/>
                         </TouchableOpacity>
                         <View>
                             <Text style={{
@@ -129,9 +132,13 @@ const SeriesBottomTabNavigation = ({navigation}: any) => {
                         justifyContent: 'space-between',
                     }}>
                         <TouchableOpacity
+                            style={{
+                                alignItems: 'center',
+                                marginLeft: 10
+                            }}
                             onPress={() => navigation.goBack()}
                         >
-                            <GoogleIcon name="arrow-back" size={30} color={'black'}/>
+                            <GoogleIcon name="arrow-back-ios" size={30} color={'black'}/>
                         </TouchableOpacity>
                         <View>
                             <Text style={{

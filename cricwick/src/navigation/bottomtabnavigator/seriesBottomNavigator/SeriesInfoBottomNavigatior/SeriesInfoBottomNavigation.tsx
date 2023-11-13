@@ -1,4 +1,4 @@
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
+import {Easing, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React, {useEffect, useState} from 'react'
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import IonIcon from 'react-native-vector-icons/Ionicons'
@@ -34,24 +34,26 @@ const BottomTabs = createBottomTabNavigator();
 const SeriesInfoBottomNavigation = ({navigation, route}: any) => {
     const {is_videos_enabled, has_points_table} = route.params;
     return (
-        <BottomTabs.Navigator detachInactiveScreens={true} initialRouteName={'Summary'} screenOptions={{
-            tabBarStyle: {
-                backgroundColor: '#f3f3f3',
-                height: 60,
-                padding: 0
-            },
-            tabBarActiveTintColor: '#c22026',
-            tabBarLabelStyle: {
-                padding: 0,
-                fontSize: 12,
-                fontWeight: 'bold',
-            },
-            tabBarIconStyle: {
-                padding: 0,
-                top: 5
-            }
+        <BottomTabs.Navigator
+            initialRouteName={'Summary'}
+            screenOptions={{
+                tabBarStyle: {
+                    backgroundColor: '#f3f3f3',
+                    height: 60,
+                    padding: 0
+                },
+                tabBarActiveTintColor: '#c22026',
+                tabBarLabelStyle: {
+                    padding: 0,
+                    fontSize: 12,
+                    fontWeight: 'bold',
+                },
+                tabBarIconStyle: {
+                    padding: 0,
+                    top: 5
+                }
 
-        }}>
+            }}>
             <BottomTabs.Screen name="Summary" component={Summary} options={{
                 headerShown: true,
                 header: () => (
@@ -104,6 +106,9 @@ const SeriesInfoBottomNavigation = ({navigation, route}: any) => {
                         justifyContent: 'space-between',
                     }}>
                         <TouchableOpacity
+                            style={{
+                                alignItems: 'center'
+                            }} activeOpacity={0.8}
                             onPress={() => navigation.goBack()}
                         >
                             <GoogleIcon name="arrow-back" size={30} color={'black'}/>
@@ -139,6 +144,9 @@ const SeriesInfoBottomNavigation = ({navigation, route}: any) => {
                         justifyContent: 'space-between',
                     }}>
                         <TouchableOpacity
+                            style={{
+                                alignItems: 'center'
+                            }} activeOpacity={0.8}
                             onPress={() => navigation.goBack()}
                         >
                             <GoogleIcon name="arrow-back" size={30} color={'black'}/>
@@ -174,6 +182,9 @@ const SeriesInfoBottomNavigation = ({navigation, route}: any) => {
                         justifyContent: 'space-between',
                     }}>
                         <TouchableOpacity
+                            style={{
+                                alignItems: 'center'
+                            }} activeOpacity={0.8}
                             onPress={() => navigation.goBack()}
                         >
                             <GoogleIcon name="arrow-back" size={30} color={'black'}/>
@@ -209,6 +220,9 @@ const SeriesInfoBottomNavigation = ({navigation, route}: any) => {
                         justifyContent: 'space-between',
                     }}>
                         <TouchableOpacity
+                            style={{
+                                alignItems: 'center'
+                            }} activeOpacity={0.8}
                             onPress={() => navigation.goBack()}
                         >
                             <GoogleIcon name="arrow-back" size={30} color={'black'}/>

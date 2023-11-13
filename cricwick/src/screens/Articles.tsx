@@ -7,9 +7,11 @@ import {fetchSeries} from "../utils/serverfetch/fetchBackend";
 import {MatchResultReportComponent} from "../components/Home/Series/component.MatchResult";
 import LottieView from "lottie-react-native";
 import {ActivityLoader} from "../assets";
+import {useNavigation} from "@react-navigation/native";
+
 
 const Articles = ({route}: any) => {
-    //
+    const navigation = useNavigation();
     const {articleId} = route.params;
     const [reportData, setReportData] = useState([]);
     const [pageCounter, setPageCounter] = useState(1);
@@ -34,6 +36,7 @@ const Articles = ({route}: any) => {
 
     useEffect(() => {
         fetchRD();
+
     }, []);
     return (
         <SafeAreaView style={{

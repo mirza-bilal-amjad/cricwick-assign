@@ -16,27 +16,44 @@ const Bowlers = ({item}: any) => {
 
                 }}>
                     <Text style={{color: 'black'}}>{item.player.short_name}</Text>
-                    {showStar && <Text style={{color: 'red'}}> *</Text>}
+                    {item.bowler.string_state && item.bowler.string_state !== null && item.bowler.string_state === 'bowling' &&
+                        <Text style={{color: 'red'}}> *</Text>}
                 </View>
                 <View style={{
-                    width: '15%'
+                    width: '14%',
+                    flexDirection: 'row',
+                    justifyContent: 'flex-end',
+                    // backgroundColor:'red'
                 }}>
-                    <Text style={{color: 'black', fontSize: 12}}>{item.bowler.overs_bowled} Ovs</Text>
+                    <Text style={{color: 'black', fontSize: 12}}>{item.bowler.overs_bowled}</Text>
+                    <Text style={{color: 'black', fontSize: 12}}> Ovs</Text>
                 </View>
                 <View style={{
-                    width: '15%'
+                    width: '14%',
+                    flexDirection: 'row',
+                    justifyContent: 'flex-end',
+                    // backgroundColor:'red'
                 }}>
-                    <Text style={{color: 'black', fontSize: 12}}>{item.bowler.wickets_taken} Wkts</Text>
+                    <Text style={{color: 'black', fontSize: 12}}>{item.bowler.wickets_taken}</Text>
+                    <Text style={{color: 'black', fontSize: 12}}> Wkts</Text>
                 </View>
                 <View style={{
-                    width: '15%'
+                    width: '14%',
+                    flexDirection: 'row',
+                    justifyContent: 'flex-end',
+                    // backgroundColor:'red'
                 }}>
-                    <Text style={{color: 'black', fontSize: 12}}>{item.bowler.runs_given} Runs</Text>
+                    <Text style={{color: 'black', fontSize: 12}}>{item.bowler.runs_given}</Text>
+                    <Text style={{color: 'black', fontSize: 12}}> Runs</Text>
                 </View>
                 <View style={{
-                    width: '20%'
+                    width: '18%',
+                    flexDirection: 'row',
+                    justifyContent: 'flex-end',
+                    // backgroundColor:'red'
                 }}>
-                    <Text style={{color: 'black', fontSize: 12}}>{item.bowler.econ} Econ</Text>
+                    <Text style={{color: 'black', fontSize: 12}}>{item.bowler.econ}</Text>
+                    <Text style={{color: 'black', fontSize: 12}}> Econ</Text>
                 </View>
             </View>
         )

@@ -1,8 +1,8 @@
 import {View, Text, FlatList, Image} from 'react-native'
 import React, {useMemo} from 'react'
-import PlayerInfoCard from "../../../UnviversalComponent/PlayerInfoCard";
+import PlayerInfoCard from "../../../../UnviversalComponent/PlayerInfoCard";
 
-const TopBatsman = ({item}: any) => {
+const TopBowler = ({item}: any) => {
     return (
         <FlatList data={item} scrollEnabled={false} horizontal contentContainerStyle={{
             width: '100%',
@@ -18,4 +18,4 @@ const TopBatsman = ({item}: any) => {
         }, [])}/>
     )
 }
-export default TopBatsman
+export default TopBowler

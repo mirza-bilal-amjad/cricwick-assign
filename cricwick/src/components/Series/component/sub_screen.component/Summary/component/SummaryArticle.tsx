@@ -1,4 +1,4 @@
-import {Image, StyleSheet, Text, View} from 'react-native'
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React from 'react'
 
 const SummaryArticle = ({match, navigation}: any) => {
@@ -12,7 +12,9 @@ const SummaryArticle = ({match, navigation}: any) => {
                 match && match.map(
                     (item: any, index: number) => {
                         return (
-                            <View key={index} style={{
+                            <TouchableOpacity activeOpacity={.8} onPress={() => navigation.navigate('Articles', {
+                                articleId: item.id
+                            })} key={index} style={{
                                 flexDirection: 'row',
                                 borderTopColor: 'black',
                                 borderColor: 'grey',
@@ -33,7 +35,7 @@ const SummaryArticle = ({match, navigation}: any) => {
                                     <Text style={{color: 'black', fontSize: 13.5, fontWeight: '600'}}>{item.title}</Text>
                                     <Text style={{color: 'grey', fontSize: 12.5, fontWeight: '600'}}>{item.by}</Text>
                                 </View>
-                            </View>
+                            </TouchableOpacity>
                         )
                     }
                 )

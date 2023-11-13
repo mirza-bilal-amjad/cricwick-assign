@@ -1,6 +1,6 @@
 import {FlatList, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React, {useMemo} from 'react'
-import {DateComponent} from "../../../index";
+import {DateComponent} from "../../../../index";
 import GoogleIcon from "react-native-vector-icons/MaterialIcons";
 import firebase from "firebase/compat";
 
@@ -275,8 +275,10 @@ const Live = ({match, inning}: any) => {
                     justifyContent: 'center',
                     alignItems: 'center',
 
-                }}><TouchableOpacity style={{
-                    borderColor: '#ff5f5f',
+                }}><TouchableOpacity disabled={
+                    !match.is_alternate_stream_url
+                } style={{
+                    borderColor: match.is_alternate_stream_url ? '#ff5f5f' : '#878787',
                     marginVertical: 5,
                     borderRadius: 25,
                     borderWidth: 1, width: 100,
@@ -285,7 +287,7 @@ const Live = ({match, inning}: any) => {
                     justifyContent: 'center',
                 }}>
                     <Text style={{
-                        color: '#ff5f5f',
+                        color: match.is_alternate_stream_url ? '#ff5f5f' : '#878787',
                         fontSize: 13,
                         fontWeight: 'bold',
                         paddingVertical: 5,
@@ -293,7 +295,8 @@ const Live = ({match, inning}: any) => {
                         paddingHorizontal: 5,
 
                     }}>Watch Live</Text>
-                    <GoogleIcon name={'arrow-forward-ios'} size={13} color={'#ff5f5f'}/>
+                    <GoogleIcon name={'arrow-forward-ios'} size={13}
+                                color={match.is_alternate_stream_url ? '#ff5f5f' : '#878787'}/>
                 </TouchableOpacity></View>
             </View>
         </View>

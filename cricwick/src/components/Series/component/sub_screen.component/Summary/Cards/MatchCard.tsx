@@ -1,18 +1,18 @@
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React, {memo} from 'react'
-import SummaryMatches from "./component/SummaryMatches";
-import SummaryVideos from "./component/SummaryVideos";
-import SummaryNews from "./component/SummaryNews";
-import SummaryArticle from "./component/SummaryArticle";
+import SummaryMatches from "../component/SummaryMatches";
+import SummaryVideos from "../component/SummaryVideos";
+import SummaryNews from "../component/SummaryNews";
+import SummaryArticle from "../component/SummaryArticle";
 import GoogleIcon from "react-native-vector-icons/MaterialIcons";
 // @ts-ignore
-import MatchHomeIcon from '../../../../../assets/Images/match_home.png'
+import MatchHomeIcon from '../../../../../../assets/Images/match_home.png'
 // @ts-ignore
-import VideoIcon from '../../../../../assets/Images/video_icon.png'
+import VideoIcon from '../../../../../../assets/Images/video_icon.png'
 import {useNavigation} from "@react-navigation/native";
 
-const SummaryCard = ({match, navigation}: any) => {
-
+const MatchCard = ({match}: any) => {
+    const navigation = useNavigation();
     return (
         <View style={{
             marginHorizontal: 10,
@@ -61,14 +61,34 @@ const SummaryCard = ({match, navigation}: any) => {
                 justifyContent: 'space-evenly',
                 alignItems: 'center'
             }}>
-                <TouchableOpacity activeOpacity={.5} style={{
+                <TouchableOpacity
+                    activeOpacity={.5} style={{
                     borderColor: '#d7d7d7',
                     flexDirection: 'row',
                     alignItems: 'center',
                     width: '50%',
                     justifyContent: 'center'
 
-                }}>
+                }}
+                    /*onPress={
+                        () =>
+                            console.log(match.title)
+                    }*/
+                    //@ts-ignore
+                    onPress={() => navigation.navigate('MatchResultBottomNavigation', {
+                        screen: match.data[0].data.match_state === 'Over' ? 'Report' : 'MRSummary',
+                        matchId: match.data[0].data.id,
+                        matchTitle: `${match.data[0].data.teamA.short_name} vs ${match.data[0].data.teamB.short_name}`,
+                        matchNumber: match.data[0].data.title,
+                        matchState: match.data[0].data.match_state,
+                        team_1_id: match.data[0].data.team_1_id,
+                        team_2_id: match.data[0].data.team_2_id,
+                        nameTeamA: match.data[0].data.teamA.name,
+                        nameTeamB: match.data[0].data.teamB.name,
+                        shortNameTeamA: match.data[0].data.teamA.short_name,
+                        shortNameTeamB: match.data[0].data.teamB.short_name,
+                    })}
+                >
                     <Image source={MatchHomeIcon} style={{
                         width: 18, resizeMode: 'contain', tintColor: 'gray',
                         left: 10
@@ -94,5 +114,5 @@ const SummaryCard = ({match, navigation}: any) => {
         </View>
     );
 }
-export default memo(SummaryCard)
+export default memo(MatchCard)
 const styles = StyleSheet.create({})

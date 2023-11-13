@@ -3,7 +3,7 @@ import React, {PureComponent, useEffect, useMemo, useRef} from 'react'
 import {SwiperFlatList} from "react-native-swiper-flatlist";
 import LottieView from "lottie-react-native";
 import {LiveAnim} from "../../../../assets";
-import {Live, Scheduled} from "../index";
+import {Live, Scheduled} from "./sub.component";
 
 const MatchCarousel = ({data, navigation}: any) => {
 
@@ -12,7 +12,6 @@ const MatchCarousel = ({data, navigation}: any) => {
         return ({item}: any) => {
             const match = data[`l_m_${item}`];
             let inning = data[`l_i_${item}`];
-
             return (
                 <TouchableOpacity
                     style={{
@@ -88,7 +87,7 @@ const MatchCarousel = ({data, navigation}: any) => {
                 </TouchableOpacity>
             );
         }
-    }, [data]);
+    }, [data, navigation]);
 
     return (
         <View style={{
@@ -98,8 +97,8 @@ const MatchCarousel = ({data, navigation}: any) => {
             // backgroundColor: 'white'
         }}>
             <SwiperFlatList
-                snapToAlignment={'center'}
                 data={data['l_m_ids']} renderItem={renderItem}
+                snapToAlignment={'center'}
                 paginationDefaultColor={'#ccc'}
                 maxToRenderPerBatch={1}
                 initialNumToRender={1}

@@ -3,17 +3,25 @@ import React from 'react'
 import IonIcon from "react-native-vector-icons/Ionicons";
 import {useRoute} from "@react-navigation/native";
 import FeaturedContentGHome from "../../../screens/home/FeaturedContent/FeaturedContentGHome";
+import FastImage from "react-native-fast-image";
 
 const GenericHome = ({item, route}: any) => {
     return (
         item.data.map((inItem: any, index: number) => {
-
+            const videoUri = inItem?.qualities;
+            const image = inItem?.med_image;
+            const title = inItem?.title;
+            const poster = inItem?.thumb;
+            const views = inItem?.views;
+            const likes = inItem?.likes;
+            const videoDuration = inItem?.duration;
+            const videoDesc = inItem?.match_desc;
             return (
                 <View key={index} style={[styles.itemContainer, {
                     // borderRadius: 15,
                 }]}>
                     <View style={[styles.thumbnailView]}>
-                        <Image style={[styles.thumbnail]} source={{uri: inItem.med_image}}/>
+                        <FastImage style={[styles.thumbnail]} source={{uri: image}}/>
                         <TouchableOpacity
                             style={{
                                 position: 'absolute',
@@ -26,11 +34,11 @@ const GenericHome = ({item, route}: any) => {
                             activeOpacity={.7}
                             onPress={() => route.navigate('FeaturedContentGHome', {
                                 listId: 1,
-                                videoUri: inItem.qualities,
-                                title: inItem.title,
-                                poster: inItem.thumb,
-                                views: inItem.views,
-                                likes: inItem.likes,
+                                videoUri: videoUri,
+                                title: title,
+                                poster: poster,
+                                views: views,
+                                likes: likes,
                                 homePageItemType: 'generic-home'
                             })}
                         >
@@ -56,7 +64,7 @@ const GenericHome = ({item, route}: any) => {
                             // marginLeft: 7,
                             marginVertical: 5,
                         }}>
-                            {inItem.match_desc}
+                            {videoDesc}
                         </Text>
                     </View>
                 </View>

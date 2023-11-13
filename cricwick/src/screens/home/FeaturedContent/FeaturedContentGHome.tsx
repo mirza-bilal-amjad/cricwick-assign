@@ -42,14 +42,14 @@ const FeaturedContentGHome = ({route}: any) => {
                             setPageNumber(
                                 prevState1 => prevState1 + 1
                             )
-                            if (prevState.includes(...r.resp)) {
+                            if (prevState.includes(...r?.resp)) {
                                 return prevState;
                             } else {
                                 setRefreshing(false);
                                 setPageNumber(
                                     prevState1 => prevState1 + 1
                                 )
-                                return [...prevState, ...r.resp];
+                                return [...prevState, ...r?.resp];
                             }
                         }
                     )

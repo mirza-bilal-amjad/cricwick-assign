@@ -1,6 +1,6 @@
 import {FlatList, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React, {useMemo} from 'react'
-import {DateComponent} from "../../../index";
+import {DateComponent} from "../../../../index";
 import GoogleIcon from "react-native-vector-icons/MaterialIcons";
 
 const Scheduled = ({match, inning}: any) => {

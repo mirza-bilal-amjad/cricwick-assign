@@ -2,8 +2,10 @@ import {Dimensions, Image, StyleSheet, Text, TouchableOpacity, View} from 'react
 import React from 'react'
 import IonIcon from "react-native-vector-icons/Ionicons";
 import {getNumOfCharacters} from "../../../../utils/method";
+import {useNavigation} from "@react-navigation/native";
 
 const Videos = ({item, key}: any) => {
+    const navigation = useNavigation();
     const [componentWidth, setComponentWidth] = React.useState(0);
     const onLayout = (event: any) => {
         const {width} = event.nativeEvent.layout;
@@ -25,6 +27,14 @@ const Videos = ({item, key}: any) => {
                         justifyContent: 'center',
                     }}
                     activeOpacity={.7}
+                    onPress={() => navigation.navigate('FeaturedContentVideos', {
+                        videoUri: item.qualities,
+                        title: item.title,
+                        poster: item.thumb,
+                        views:item.views,
+                        likes: item.likes,
+                        homePageItemType: 'videos-home'
+                    })}
                 >
                     <IonIcon name={'play-circle-outline'} size={30} color={'white'} style={{
                         backgroundColor: 'rgba(127,127,127,.5)',

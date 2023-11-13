@@ -1,35 +1,47 @@
-import {Animated, Image, Text, TouchableOpacity, View} from "react-native";
-import React, {useEffect, useState} from "react";
+import {Easing, Image, Text, TouchableOpacity, View} from "react-native";
+import React, {useEffect, useRef, useState} from "react";
 import {DateComponent} from "../index";
 import FastImage from "react-native-fast-image";
+import Animated, {useAnimatedStyle, useSharedValue, withDelay, withTiming} from "react-native-reanimated";
+import {getTimeSpan} from "../../utils/method";
+import {useNavigation} from "@react-navigation/native";
+import {useDispatch} from "react-redux";
+import {setIndexNumber} from "../../store/toggleReducer";
 
-const FadeInView = ({item, index}: any) => {
-    const [animated] = useState(new Animated.Value(0));
+const FadeInView = ({item, index, routeData}: any) => {
+    const navigation = useNavigation();
+    const translateY = useSharedValue(300);
+    const opacity = useSharedValue(0);
+    const dispatch = useDispatch();
+    const animatedStyle = useAnimatedStyle(() => {
+        return {
+            transform: [{translateY: translateY.value}],
+            opacity: opacity.value
+        }
+    })
 
     useEffect(() => {
-        Animated.timing(animated, {
-            toValue: 1,
-            duration: 1000, // Animation duration in milliseconds
-            useNativeDriver: true,
-            delay: index < 10 ? index * 100 : 0, // Delay animation by index * 200ms
-        }).start();
+        translateY.value = withDelay(index < 10 ? index * 150 : 0, withTiming(1, {duration: 500}));
+        opacity.value = withDelay(index < 10 ? index * 150 : 0, withTiming(1, {duration: 1000}));
     }, []);
+
 
     return (
         <Animated.View
-            style={{
-                opacity: animated,
+            style={[animatedStyle, {
                 flex: 1,
                 margin: 2,
-                transform: [{
-                    translateY: animated.interpolate({
-                        inputRange: [0, 1],
-                        outputRange: [250, 0],
-                    })
-                }],
-            }}
+                backgroundColor: 'white',
+            }]}
+
         >
-            <TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => {
+                    dispatch(setIndexNumber(index))
+                    navigation.navigate('SideSwipeAbleArticles', {routeData: routeData, selectedIndex: index})
+                }}
+                activeOpacity={0.8}
+            >
                 <View style={{
                     width: '100%',
                 }}>
@@ -45,8 +57,8 @@ const FadeInView = ({item, index}: any) => {
                         fontSize: 13,
                         height: 60
                     }}>{item.title.length > 70 ? item.title.slice(0, 70) + '...' : item.title}</Text>
-                    <DateComponent style={{color: 'black', fontWeight: 'bold', fontSize: 8}}
-                                   date={item.created_at}/>
+                    <Text style={{color: 'gray', fontWeight: '400', fontSize: 10}}
+                    >{getTimeSpan(item?.created_at)}</Text>
                 </View>
             </TouchableOpacity>
         </Animated.View>

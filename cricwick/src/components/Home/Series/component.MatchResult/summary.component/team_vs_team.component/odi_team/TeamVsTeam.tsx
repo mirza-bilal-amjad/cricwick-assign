@@ -3,11 +3,9 @@ import React from 'react'
 import {DateComponent} from "../../../../../../index";
 import GoogleIcon from "react-native-vector-icons/MaterialIcons";
 
-const TeamVsTeam = ({item}: any) => {
-
+const TeamVsTeam = ({item, index}: any) => {
     const team1 = item['innings'].filter((inItem: any) => inItem.batting_team_id === item.team_1_id);
     const team2 = item['innings'].filter((inItem: any) => inItem.batting_team_id === item.team_2_id);
-
     if (team1.length < 2) {
         for (let i = 0; i < 1 - team1.length; i++) {
             team1.push({
@@ -25,7 +23,6 @@ const TeamVsTeam = ({item}: any) => {
         }
     }
     if (team2.length < 2) {
-        console.log('less than 2')
         for (let i = 0; i < 1 - team2.length; i++) {
             team2.push({
                 batting_team_id: item.team_2_id,
@@ -41,7 +38,6 @@ const TeamVsTeam = ({item}: any) => {
 
         }
     }
-
 
     const odi_overs = (item: any) => {
         return (
@@ -70,16 +66,14 @@ const TeamVsTeam = ({item}: any) => {
                         <Text style={{
                             color: 'black',
                             textAlign: 'center',
-                        }}>-/-</Text>
+                        }}>-</Text>
                     }
-
                 </View>
                 <View></View>
             </View>
         );
     }
     const odi_score = (item: any) => {
-        console.log(item.wickets !== null && item.runs !== null)
         return (
             <View style={{}}>
                 <View style={{
@@ -87,12 +81,12 @@ const TeamVsTeam = ({item}: any) => {
                     flexDirection: 'row-reverse',
                     justifyContent: 'space-between',
                 }}>
-                    {item.wickets !== null && item.runs !== null ? <Text style={{
+                    {item ? <Text style={{
                             color: 'black',
                             fontWeight: '500',
                             fontSize: 15,
 
-                        }}>{item.runs > 0 ? item.runs : 0}/{item.wickets > 0 ? item.wickets : 0}</Text> :
+                        }}>{item.runs !== null ? item.runs > 0 ? item.runs : 0 : '-'}/{item.wickets !== null ? item.wickets > 0 ? item.wickets : 0 : '-'}</Text> :
                         <Text style={{
                             color: 'black',
                             fontWeight: '500',
@@ -121,7 +115,9 @@ const TeamVsTeam = ({item}: any) => {
                         <Image source={{uri: item.teamA.flag_url}} style={[styles.teamFlag]}/>
                     </View>
                     <View style={{borderWidth: .21, width: '100%', marginVertical: 3}}/>
-                    <View style={[styles.teamScoreInfo]}>
+                    <View style={[styles.teamScoreInfo, {
+                        flexDirection: 'row'
+                    }]}>
                         {item.format === 'ODI' ? odi_overs(team1[0]) : <></>}
                         {item.format === 'ODI' ? odi_score(team1[0]) : <></>}
                     </View>
@@ -133,53 +129,54 @@ const TeamVsTeam = ({item}: any) => {
                         <Text style={[styles.teamName]}>{item.teamB.short_name}</Text>
                     </View>
                     <View style={{borderWidth: .21, width: '100%', marginVertical: 3}}/>
-                    <View style={[styles.teamScoreInfo]}>
+                    <View style={[styles.teamScoreInfo, {
+                        flexDirection: 'row-reverse'
+                    }]}>
                         {item.format === 'ODI' && odi_overs(team2[0])}
-                        {item.format === 'Test' && team2[0].runs && team2[1].runs ?
-                            <Text>&</Text> : <></>}
                         {item.format === 'ODI' && odi_score(team2[0])}
                     </View>
                 </View>
             </View>
             {
                 !item.match_result && item['innings'].map((inItem: any, index: number) => {
-                    console.log(inItem.batting_team_id, item.team_1_id, item.team_2_id)
-                    return (
-                        (index === item.innings.length - 1) &&
-                        <View key={index} style={{
-                            flex: 1,
-                            flexDirection: 'row',
-                            justifyContent: 'center',
-                            marginTop: 20,
-                        }}>
-                            {inItem.required_rate !== null && <View style={{
+                        return (
+                            (index === item.innings.length - 1) &&
+                            <View key={index} style={{
+                                flex: 1,
                                 flexDirection: 'row',
-                                justifyContent: 'space-between'
+                                justifyContent: 'center',
+                                marginTop: 20,
                             }}>
-                                <Text style={{
-                                    color: 'gray'
-                                }}>RRR: </Text>
-                                <Text style={{
-                                    color: 'black',
-                                }}>{inItem.required_rate}</Text>
-                                <View style={{width: 10}}/>
-                            </View>}
+                                {inItem?.required_rate && < View style={{
+                                    flexDirection: 'row',
+                                    justifyContent: 'space-between'
+                                }}>
+                                    <Text style={{
+                                        color: 'gray'
+                                    }}>RRR: </Text>
+                                    <Text style={{
+                                        color: 'black',
+                                    }}>{inItem.required_rate}</Text>
+                                    <View style={{width: 10}}/>
+                                </View>}
 
-                            <View style={{
-                                flexDirection: 'row'
-                            }}>
-                                <Text style={{
-                                    color: 'gray'
-                                }}>CRR: </Text>
-                                <Text style={{
-                                    color: 'black',
-                                }}>{inItem.run_rate}</Text>
-                            </View>
-                        </View>)
-                })
+                                {inItem?.run_rate && <View style={{
+                                    flexDirection: 'row'
+                                }}>
+                                    <Text style={{
+                                        color: 'gray'
+                                    }}>CRR: </Text>
+                                    <Text style={{
+                                        color: 'black',
+                                    }}>{inItem.run_rate}</Text>
+                                </View>
+                                }
+                            </View>)
+                    }
+                )
             }
             {
-                item.match_result ? <View style={{
+                item?.match_result ? <View style={{
                     flex: 1,
                     alignItems: 'center',
                     // backgroundColor: 'red',
@@ -189,11 +186,10 @@ const TeamVsTeam = ({item}: any) => {
                 </View> : <View style={{
                     flex: 1,
                     alignItems: 'center',
-                    // backgroundColor: 'red',
                     marginTop: 5,
                     marginBottom: 5
                 }}>
-                    {item.match_status === null ? <Text style={{
+                    {!item?.match_status ? <Text style={{
                         color: 'black',
                         fontWeight: '500'
                     }}>{item.toss_won_by_id === item.team_1_id ? item.teamA.short_name : item.teamB.short_name} opted
@@ -261,7 +257,6 @@ const styles = StyleSheet.create({
     },
     teamScoreInfo: {
         width: '97%',
-        flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         // backgroundColor: 'blue',

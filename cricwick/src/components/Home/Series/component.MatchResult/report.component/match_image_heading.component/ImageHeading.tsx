@@ -2,15 +2,34 @@ import {Dimensions, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View}
 import React from 'react'
 import GoogleIcon from "react-native-vector-icons/MaterialIcons";
 import {WebView} from 'react-native-webview';
+import {useNavigation} from "@react-navigation/native";
 
 const ImageHeading = ({item}: any) => {
+    const navigation = useNavigation();
 
     return (
         <View style={{}}>
-            <View>
+            <View style={{
+                position: 'relative',
+            }}>
+                <TouchableOpacity
+                    activeOpacity={.8} style={{
+                    position: 'absolute',
+                    zIndex: 20,
+                    top: 15,
+                    right: 15,
+
+                }}
+                    onPress={
+                        () => navigation.goBack()
+                    }
+                >
+                    <GoogleIcon name={'cancel'} size={25} color={'gray'}/>
+                </TouchableOpacity>
                 <Image source={{uri: item.full_image}} style={{
                     width: Dimensions.get('screen').width,
-                    aspectRatio: 16 / 9
+                    aspectRatio: 16 / 9,
+                    zIndex: -1000
                 }}/>
             </View>
             <View style={{

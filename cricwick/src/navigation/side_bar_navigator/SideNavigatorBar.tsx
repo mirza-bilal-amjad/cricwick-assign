@@ -20,6 +20,10 @@ import TeamSide from '../../assets/Images/team_side.png'
 // @ts-ignore
 import RankingSide from '../../assets/Images/ranking_side.png'
 import Blogs from "../../screens/Blogs";
+import ICCRankings from "../../screens/ICCRankings";
+import DrawerArticle from "../../screens/DrawerArticle";
+import PSL2023 from '../../screens/PSL2023';
+import {BlogsScreen, DrawerArticleScreen, ICCRankingsScreen, PSLScreen} from "../../screens";
 
 const Drawer = createDrawerNavigator();
 const SideDrawerContent = ({navigation}: any) => {
@@ -181,15 +185,18 @@ const SideDrawerContent = ({navigation}: any) => {
                         }]}>Blogs</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.iconAndName} activeOpacity={0.7}>
+                    <TouchableOpacity style={styles.iconAndName} activeOpacity={0.7}
+                                      onPress={() => navigation.navigate("DrawerArticle")}
+                    >
                         <GoogleIcon name={"edit-document"} size={22} color={'gray'}/>
                         <Text style={[styles.drawerItem, {
                             color: 'darkgray'
                         }]}>Articles</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.iconAndName} activeOpacity={0.7}>
-
+                    <TouchableOpacity style={styles.iconAndName} activeOpacity={0.7} onPress={
+                        () => navigation.navigate("PSL2023")
+                    }>
                         <Image source={PSL} style={{width: 25, height: 25, tintColor: 'gray'}}/>
                         <Text style={[styles.drawerItem, {
                             color: 'darkgray'
@@ -219,7 +226,7 @@ const SideDrawerContent = ({navigation}: any) => {
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.iconAndName} activeOpacity={0.7}
-                                      onPress={() => navigation.navigate("SeriesBottomTabNavigation")}
+                                      onPress={() => navigation.navigate("Rankings")}
                     >
                         <Image source={RankingSide} style={{
                             width: 25,
@@ -230,7 +237,7 @@ const SideDrawerContent = ({navigation}: any) => {
                         }}/>
                         <Text style={[styles.drawerItem, {
                             color: 'darkgray'
-                        }]}>ICC Rankings</Text>
+                        }]}>Rankings</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.iconAndName} activeOpacity={0.7}
                                       onPress={() => navigation.navigate("SeriesBottomTabNavigation")}
@@ -287,23 +294,24 @@ const SideDrawerContent = ({navigation}: any) => {
 const SideNavigatorBar = ({navigation}: any) => {
 
     return (
-        <Drawer.Navigator drawerContent={(props) => <SideDrawerContent {...props} />}
-                          initialRouteName={'BottomTabNavigation'}
-                          screenOptions={{
-                              drawerStyle: {
-                                  backgroundColor: 'white',
-                                  padding: 0,
-                                  width: 280
-                              }, drawerItemStyle: {
-                                  backgroundColor: "pink",
-                                  margin: 0, padding: 0
+        <Drawer.Navigator
+            drawerContent={(props) => <SideDrawerContent {...props} />}
+            initialRouteName={'BottomTabNavigation'}
+            screenOptions={{
+                drawerStyle: {
+                    backgroundColor: 'white',
+                    padding: 0,
+                    width: 280
+                }, drawerItemStyle: {
+                    backgroundColor: "pink",
+                    margin: 0, padding: 0
 
-                              }
-                              , drawerLabelStyle: {
-                                  color: "red"
+                }
+                , drawerLabelStyle: {
+                    color: "red"
 
-                              }
-                          }}>
+                }
+            }}>
             <Drawer.Screen name={'BottomTabNavigation'} component={BottomTabNavigation} options={{
                 headerShown: false,
             }}/>
@@ -317,7 +325,7 @@ const SideNavigatorBar = ({navigation}: any) => {
                                headerShown: false,
                            }}/>
             <Drawer.Screen name={'Blogs'}
-                           component={Blogs}
+                           component={BlogsScreen}
                            options={{
                                headerShown: true,
                                headerTitleAlign: 'center',
@@ -329,14 +337,72 @@ const SideNavigatorBar = ({navigation}: any) => {
                                    <TouchableOpacity
                                        style={{marginLeft: 10}}
                                        onPress={() => navigation.reset({
-                                             index: 0,
-                                                routes: [{name: 'SideNavigatorBar'}],
+                                           index: 0,
+                                           routes: [{name: 'SideNavigatorBar'}],
                                        })}>
                                        <IonIcon name="chevron-back-outline" size={40} color="black"/>
                                    </TouchableOpacity>
                                ),
 
 
+                           }}/>
+
+            <Drawer.Screen name={'Rankings'}
+                           component={ICCRankingsScreen}
+                           options={{
+                               headerLeft: () => (
+                                   <TouchableOpacity
+                                       style={{marginLeft: 10}}
+                                       onPress={() => navigation.reset({
+                                           index: 0,
+                                           routes: [{name: 'SideNavigatorBar'}],
+                                       })}>
+                                       <IonIcon name="chevron-back-outline" size={40} color="black"/>
+                                   </TouchableOpacity>
+                               ),
+                               headerShown: true,
+                               headerTitleAlign: 'center',
+                               headerShadowVisible: false,
+                               headerTitleStyle: {fontWeight: 'bold'},
+                               headerStyle: {backgroundColor: '#f3f3f3'},
+                           }}/>
+            <Drawer.Screen name={'DrawerArticle'}
+                           component={DrawerArticleScreen}
+                           options={{
+                               headerLeft: () => (
+                                   <TouchableOpacity
+                                       style={{marginLeft: 10}}
+                                       onPress={() => navigation.reset({
+                                           index: 0,
+                                           routes: [{name: 'SideNavigatorBar'}],
+                                       })}>
+                                       <IonIcon name="chevron-back-outline" size={40} color="black"/>
+                                   </TouchableOpacity>
+                               ),
+                               headerShown: true,
+                               headerTitleAlign: 'center',
+                               headerShadowVisible: false,
+                               headerTitleStyle: {fontWeight: 'bold'},
+                               headerStyle: {backgroundColor: '#f3f3f3'},
+                           }}/>
+            <Drawer.Screen name={'PSL2023'}
+                           component={PSLScreen}
+                           options={{
+                               headerLeft: () => (
+                                   <TouchableOpacity
+                                       style={{marginLeft: 10}}
+                                       onPress={() => navigation.reset({
+                                           index: 0,
+                                           routes: [{name: 'SideNavigatorBar'}],
+                                       })}>
+                                       <IonIcon name="chevron-back-outline" size={40} color="black"/>
+                                   </TouchableOpacity>
+                               ),
+                               headerShown: true,
+                               headerTitleAlign: 'center',
+                               headerShadowVisible: false,
+                               headerTitleStyle: {fontWeight: 'bold'},
+                               headerStyle: {backgroundColor: '#f3f3f3'},
                            }}/>
         </Drawer.Navigator>
     );
@@ -367,7 +433,8 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "flex-start",
-        maxHeight: 50
+        maxHeight: 50,
+        minHeight: 50
 
 
     }, iconAndName2: {

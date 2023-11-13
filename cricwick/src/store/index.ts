@@ -10,18 +10,18 @@ import theme from './theme';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {carouselReducer} from "./FBCarouselReducer";
 import {toggleReducer} from "./toggleReducer";
-
+import {cricwickHomePageReducer} from "./crickwickHome";
 const reducers = combineReducers({
     theme,
     carouselReducer,
-    toggleReducer
-
+    toggleReducer,
+    cricwickReducer: cricwickHomePageReducer,
 });
 
 const persistConfig = {
     key: 'root',
     storage: AsyncStorage,
-    blacklist: ['carouselReducer', 'toggleReducer'],
+    blacklist: ['carouselReducer', 'toggleReducer', 'cricwickReducer'],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);

@@ -1,8 +1,8 @@
 import {View, Text, FlatList, SectionList} from 'react-native'
 import React, {useCallback, useMemo} from 'react'
-import TopBatsman from "../sub.component/topBatsman";
-import AllRounder from "../sub.component/allRounder";
-import TopBowler from "../sub.component/topbowler";
+import TopBatsman from "./sub.component/topBatsman";
+import AllRounder from "./sub.component/allRounder";
+import TopBowler from "./sub.component/topbowler";
 
 const T20 = ({route}: any) => {
     const {data} = route.params;

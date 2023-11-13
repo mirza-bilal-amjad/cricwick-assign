@@ -1,5 +1,5 @@
 import {FlatList, ScrollView, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
-import React from 'react'
+import React, {useState} from 'react'
 import {ODITeamVsTeam, T20TeamVsTeam, TestTeamVsTeam} from "./team_vs_team.component";
 import {ODIDecisionComp, T20DecisionComp, TestDecisionComp} from "./match_stats.component";
 import {Animated} from 'react-native';
@@ -17,11 +17,11 @@ const MrScoreCardComponent = ({item}: any) => {
 
             {/*Team Vs Team Component*/}
             {item && item.format === 'ODI' && <ODITeamVsTeam item={item}/>}
-            {item && item.format === 'T20i' && <T20TeamVsTeam item={item}/>}
+            {item && (item.format === 'T20i' || item.format === 'T20') && <T20TeamVsTeam item={item}/>}
             {item && item.format === 'Test' && <TestTeamVsTeam item={item}/>}
             {/*CricketName and Decisions Component*/}
             {item && item.format === 'ODI' && <ODIDecisionComp item={item}/>}
-            {item && item.format === 'T20i' && <T20DecisionComp item={item}/>}
+            {item && (item.format === 'T20i' || item.format === 'T20') && <T20DecisionComp item={item}/>}
             {item && item.format === 'Test' && <TestDecisionComp item={item}/>}
             {/*    Team ScoreBoard     */}
             <ScrollView style={{
@@ -30,7 +30,7 @@ const MrScoreCardComponent = ({item}: any) => {
                 item && item.innings &&
                 item.innings.map(
                     (inItem: any, index: number) => {
-                        const [isOpen, setIsOpen] = React.useState((index !== item.innings.length - 1));
+                        const [isOpen, setIsOpen] = useState((index !== item.innings.length - 1));
                         console.log(isOpen, item.innings.length, index)
 
                         return (

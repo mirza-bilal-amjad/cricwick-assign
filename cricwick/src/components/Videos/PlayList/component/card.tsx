@@ -2,6 +2,7 @@ import {Image, StyleSheet, Text, Touchable, TouchableOpacity, View} from 'react-
 import React, {useState} from 'react'
 import GoogleIcon from "react-native-vector-icons/MaterialIcons";
 import {fetchGenericHome} from "../../../../utils/serverfetch/fetchBackend";
+import FastImage from "react-native-fast-image";
 
 const Card = ({item, listID, seriesID, label, navigation}: any) => {
     const returnApiGHome = (pageNumber: number, listID: string | number, playListID: string | number) => {
@@ -88,7 +89,7 @@ const Card = ({item, listID, seriesID, label, navigation}: any) => {
 
                                 }}>Videos</Text>
                             </View>
-                            <Image source={{uri: inItem.thumb}} style={{
+                            <FastImage source={{uri: inItem.thumb}} style={{
                                 width: '100%',
                                 aspectRatio: 16 / 9,
 

@@ -30,14 +30,14 @@ const ScheduleMatch = ({item}: any) => {
                     flexDirection: 'row',
                     alignItems: 'center'
                 }}>
-                    <Image source={{uri: item.teamA.flag_url}} style={{width: 35, aspectRatio: 16 / 9}}/>
+                    <Image source={{uri: item.teamA.flag_url}} style={{width: 30, aspectRatio: 9 / 9}}/>
                     <Text style={{color: 'black', fontSize: 16, marginLeft: 5}}>{item.teamA.short_name}</Text>
                 </View>
                 <View><Text style={{color: 'gray'}}> vs </Text></View>
                 <View style={{
                     flexDirection: 'row'
                 }}>
-                    <Image source={{uri: item.teamB.flag_url}} style={{width: 35, aspectRatio: 16 / 9}}/>
+                    <Image source={{uri: item.teamB.flag_url}} style={{width: 30, aspectRatio: 9 / 9}}/>
                     <Text style={{color: 'black', fontSize: 16, marginLeft: 5}}>{item.teamB.short_name}</Text>
                 </View>
             </View>

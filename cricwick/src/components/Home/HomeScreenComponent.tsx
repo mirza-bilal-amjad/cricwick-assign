@@ -1,11 +1,12 @@
 import {Dimensions, FlatList, Image, StyleSheet, Text, View} from 'react-native'
-import React, {PureComponent, useMemo} from 'react'
-import {GenericHome, Rankings, Series, SeriesComponent, VideoContainerVertical} from "../index";
+import React, {useMemo} from 'react'
+import {GenericHome, Rankings, Series, VideoContainerVertical} from "../index";
 import {Callback} from "@react-native-async-storage/async-storage/lib/typescript/types";
 
 const HomeScreenComponent = ({data, fetchHome}: { data: any, fetchHome: Callback }) => {
     const renderItem = useMemo(() => {
         return ({item}: any) => {
+
             if (item.type === 'native_screen' && item.data) {// console.log('native-screen')
                 return <View style={[styles.itemContainer, {}]}>
                     <View style={[styles.thumbnailView,]}>

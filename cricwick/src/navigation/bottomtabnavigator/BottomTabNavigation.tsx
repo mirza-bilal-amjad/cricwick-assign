@@ -18,18 +18,18 @@ const BottomTabs = createBottomTabNavigator();
 const BottomTabNavigation = ({navigation}: any) => {
     return (
         <BottomTabs.Navigator initialRouteName={'Home'}
-                              detachInactiveScreens={true}
                               screenOptions={{
                                   tabBarStyle: {
                                       backgroundColor: '#f3f3f3',
-                                      height: 60,
+                                      height: 70,
                                       padding: 0,
                                       justifyContent: 'center',
+                                      alignItems: 'center',
                                   },
                                   tabBarActiveTintColor: '#c22026',
                                   tabBarLabelStyle: {
                                       padding: 0,
-                                      top: -2,
+                                      top: -8,
                                       fontSize: 12,
                                       fontWeight: 'bold',
                                   },
@@ -52,7 +52,7 @@ const BottomTabNavigation = ({navigation}: any) => {
                     }}>
                         <TouchableOpacity onPress={
                             () => navigation.openDrawer()
-                        } >
+                        }>
                             <IonIcon name="menu" size={35} color={'black'}/>
                         </TouchableOpacity>
                         <View>
@@ -82,8 +82,10 @@ const BottomTabNavigation = ({navigation}: any) => {
                         alignItems: 'center',
                         justifyContent: 'space-between',
                     }}>
-                        <TouchableOpacity>
-                            <GoogleIcon name="menu" size={35} color={'black'}/>
+                        <TouchableOpacity onPress={
+                            () => navigation.openDrawer()
+                        }>
+                            <IonIcon name="menu" size={35} color={'black'}/>
                         </TouchableOpacity>
                         <View>
                             <Text style={{
@@ -120,7 +122,7 @@ const BottomTabNavigation = ({navigation}: any) => {
                         <Text style={{
                             color: 'white',
                             marginTop: 4,
-                            top: -2,
+                            top: -3.5,
 
                             fontSize: 12,
                             fontWeight: '600',
@@ -148,7 +150,7 @@ const BottomTabNavigation = ({navigation}: any) => {
                         <Text style={{
                             color: 'gray',
                             marginTop: 5,
-                            top: -2,
+                            top: -3.5,
 
                             fontSize: 12,
                             fontWeight: '600',

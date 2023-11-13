@@ -1,8 +1,10 @@
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React from 'react'
 import {DateComponent} from "../../../../index";
+import {useNavigation} from "@react-navigation/native";
 
 const ScheduleCard = ({match}: any) => {
+    const navigation = useNavigation()
     return (
         <TouchableOpacity
             style={{
@@ -10,6 +12,19 @@ const ScheduleCard = ({match}: any) => {
                 backgroundColor: 'white'
             }}
             activeOpacity={0.8}
+            onPress={() => navigation.navigate('MatchResultBottomNavigation', {
+                screen: match?.match_state === 'Over' ? 'Report' : 'MRSummary',
+                matchId: match?.id,
+                matchTitle: `${match?.teamA.short_name} vs ${match?.teamB.short_name}`,
+                matchNumber: match?.title,
+                matchState: match?.match_state,
+                team_1_id: match?.team_1_id,
+                team_2_id: match?.team_2_id,
+                nameTeamA: match?.teamA.name,
+                nameTeamB: match?.teamB.name,
+                shortNameTeamA: match?.teamA.short_name,
+                shortNameTeamB: match?.teamB.short_name,
+            })}
         >
             <View>
                 <View style={{
@@ -18,11 +33,11 @@ const ScheduleCard = ({match}: any) => {
                     justifyContent: 'space-between'
                 }}>
                     <Text style={{
-                        color: match.live_match_state === null || match.live_match_state === "Post Match" ? 'black' : 'red',
-                        fontSize: match.live_match_state === null || match.live_match_state === "Post Match" ? 14 : 16,
+                        color: (match?.live_match_state === null || match.live_match_state === "Post Match") ? 'black' : 'red',
+                        fontSize: (match?.live_match_state === null || match.live_match_state === "Post Match") ? 14 : 16,
                         marginVertical: 1,
                         fontWeight: 'bold'
-                    }}>{match.live_match_state === null || match.live_match_state === "Post Match" ? 'RESULT' : 'Live Now'}</Text>
+                    }}>{(match.live_match_state === null || match.live_match_state === "Post Match") ? 'RESULT' : 'Live Now'}</Text>
                     <DateComponent date={match.match_start} style={{color: 'black', marginVertical: 1}}
                                    includeYear={true}/>
                 </View>
@@ -48,7 +63,7 @@ const ScheduleCard = ({match}: any) => {
                             }}/>
                         <Text style={{color: 'black', marginVertical: 1}}>{match.teamA.short_name}</Text>
                     </View>
-                    <Text style={{color: 'gray', marginVertical: 1}}>  vs  </Text>
+                    <Text style={{color: 'gray', marginVertical: 1}}> vs </Text>
                     <View style={{
                         flexDirection: 'row',
                         alignItems: 'center'

@@ -55,38 +55,42 @@ const overMatchCont = (match: any, navigation: any) => {
                             fontSize: 15
                         }}>{match['teamA'].short_name}</Text>
                     </View>
-                    {
-                        match.innings && match.innings.map(
-                            (inning: any, index: number) => {
-                                return (inning.batting_team_id === match.team_1_id &&
-                                    <View key={index} style={{
-                                        flexDirection: 'row',
-                                        alignItems: 'flex-end',
-                                    }}>< Text style={{
-                                        color: 'black',
-                                    }}>
-                                        {
-                                            inning.runs > 0 ? inning.runs : 0
-                                        }
-                                        /
-                                        {
-                                            inning.wickets > 0 ? inning.wickets : 0
-                                        }{' '}
-                                    </Text>
-                                        <Text style={{
-                                            color: 'gray',
-                                            fontSize: 10,
-
+                    <View style={{
+                        flexDirection: 'row',
+                    }}>
+                        {
+                            match.innings && match.innings.map(
+                                (inning: any, index: number) => {
+                                    return (inning.batting_team_id === match.team_1_id &&
+                                        <View key={index} style={{
+                                            flexDirection: 'row',
+                                            alignItems: 'flex-end',
+                                        }}><Text style={{
+                                            color: 'black',
                                         }}>
-                                            (
-                                            {inning.overs > 0 ? Number(inning.overs).toFixed(1) : 0}
-                                            {` ov)`}
+                                            {
+                                                inning.runs > 0 ? inning.runs : 0
+                                            }
+                                            /
+                                            {
+                                                inning.wickets > 0 ? inning.wickets : 0
+                                            }{' '}
                                         </Text>
-                                    </View>
-                                )
-                            }
-                        )
-                    }
+                                            <Text style={{
+                                                color: 'gray',
+                                                fontSize: 10,
+
+                                            }}>
+                                                (
+                                                {inning.overs > 0 ? Number(inning.overs).toFixed(1) : 0}
+                                                {` ov) `}
+                                            </Text>
+                                        </View>
+                                    )
+                                }
+                            )
+                        }
+                    </View>
                 </View>
                 {/*----------------------------------------/*----------------------------------------/*----------------------------------------*/}
                 <View style={{

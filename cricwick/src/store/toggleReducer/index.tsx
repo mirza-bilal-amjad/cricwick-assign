@@ -2,7 +2,9 @@ import {createSlice, Draft, PayloadAction} from '@reduxjs/toolkit';
 import {removeDuplicate} from "../../utils/method";
 
 const initialState = {
-    flag: false
+    flag: false,
+    index: 0,
+
 }
 
 
@@ -13,10 +15,15 @@ const toggleSlice = createSlice({
         toggleFlag: (state) => {
             state.flag = !state.flag
         },
-
+        setIndexNumber: (state, action) => {
+            console.log('index', action.payload)
+            return {
+                ...state, index: action.payload
+            }
+        }
     },
 });
 
-export const {toggleFlag} = toggleSlice.actions;
+export const {toggleFlag, setIndexNumber} = toggleSlice.actions;
 
 export const toggleReducer = toggleSlice.reducer;

@@ -1,4 +1,4 @@
-import {Animated, FlatList, Image, StyleSheet, Text, View} from 'react-native'
+import {FlatList, Image, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import React, {useCallback, useEffect, useState} from 'react'
 import * as Animatable from "react-native-animatable";
 import {fetchBlogs} from "../utils/serverfetch/fetchBackend";
@@ -6,7 +6,7 @@ import LottieView from "lottie-react-native";
 import {ActivityLoader, Loader} from "../assets";
 import {DateComponent} from "../components";
 import FadeInView from "../components/SideBar.Component/FadeInView";
-
+import Animated from "react-native-reanimated";
 
 const Blogs = () => {
     const [blogsData, setBlogsData] = useState([])
@@ -17,7 +17,11 @@ const Blogs = () => {
         setRefreshing(true)
         fetchBlogs(pageCounter).then((r: any) => {
             return setBlogsData((prevState: any[]): any => {
+                const check = prevState.findIndex((item) => item.id === r.data[0].id);
+                console.log(check)
                 if (r.length !== 0) {
+                    //check if previous data already exists
+
                     setPageCounter(preValue => preValue + 1);
                     setRefreshing(false);
                     return [...prevState, ...r.data];
@@ -33,7 +37,7 @@ const Blogs = () => {
     }, []);
 
     return (
-        <View style={{
+        <SafeAreaView style={{
             flex: 1,
         }}>
             <View style={{
@@ -71,11 +75,12 @@ const Blogs = () => {
                     />
                 </View> :
                 <Animated.FlatList
-                    // removeClippedSubviews={true}
+                    removeClippedSubviews={true}
                     initialNumToRender={10}
-                    windowSize={10}
+
+                    windowSize={100}
                     onEndReachedThreshold={0.5}
-                    onEndReached={fetchit}
+                    onEndReached={!refreshing ? fetchit : () => console.log('no fetch done')}
                     keyExtractor={(item, index) => index.toString()}
                     style={{
                         flex: 1,
@@ -84,11 +89,11 @@ const Blogs = () => {
                 }} renderItem={
 
                     ({item, index}: any) => (
-                        <FadeInView item={item} index={index}/>
+                        <FadeInView item={item} index={index} routeData={blogsData}/>
                     )
 
                 }/>}
-        </View>
+        </SafeAreaView>
     );
 }
 export default Blogs

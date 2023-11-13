@@ -23,168 +23,171 @@ import {useDispatch, useSelector} from "react-redux";
 import {addToCarousel} from "../../store/FBCarouselReducer";
 import {removeDuplicate} from "../../utils/method";
 import {toggleFlag} from "../../store/toggleReducer";
+import FastImage from "react-native-fast-image";
+import {setDataIncCricwick, setPageNumber} from "../../store/crickwickHome";
+import {useRoute} from "@react-navigation/native";
+import NativeScreen from "../../components/Home/NativeScreen/NativeScreen";
 
 const Home = ({navigation}: any) => {
-        const cData = removeDuplicate(useSelector((state: any) => state.carouselReducer));
-        const [homeData, setHomeData] = useState([]);
-        const [pageCounter, setPageCounter] = useState(1);
-        const [refreshing, setRefreshing] = useState(false);
-        const dispatch = useDispatch();
+
+    const cData = removeDuplicate(useSelector((state: any) => state.carouselReducer));
+    const homePageRedData = useSelector((state: any) => state.cricwickReducer.data);
+    const pageNUmber = useSelector((state: any) => state.cricwickReducer.pageNUmber);
+
+    const [homeData, setHomeData] = useState([]);
+    const [pageCounter, setPageCounter] = useState(1);
+    const [refreshing, setRefreshing] = useState(false);
+    const dispatch = useDispatch();
 
 
-        const returnApi = (page: number) => {
-            return `https://cwscoring.cricwick.net/api/v3/view_lists/get_by_name?view=home&web_user=1&page=${page}&telco=ufone&app_name=CricwickWeb`
-        };
-        const fetchHome = useCallback(async () => {
-            setRefreshing(true);
-            await fetchGenericHome(returnApi(pageCounter))
-                .then((r: any) => {
-                        setHomeData((prevState: any[]): any => {
+    const returnApi = (page: number) => {
+        return `https://cwscoring.cricwick.net/api/v3/view_lists/get_by_name?view=home&web_user=1&page=${page}&telco=ufone&app_name=CricwickWeb`
+    };
 
-                            if (r.length !== 0) {
-                                setPageCounter(preValue => preValue + 1);
-                                setRefreshing(false);
-                                return [...prevState, ...r];
-                            } else {
-                                setRefreshing(false);
-                                return prevState;
-                            }
-                            /*const withoutVideo = r.filter((item) => item.type !== 'video');
-                            return [...prevState, ...withoutVideo];*/
-                        });
-                    }
+    const fetchHome = useCallback(async () => {
+        setRefreshing(true);
+        try {
+            const r = await fetchGenericHome(returnApi(pageNUmber));
+            if (r.length !== 0) {
+                console.log('dispatch')
+                dispatch(setDataIncCricwick(r));
+                dispatch(setPageNumber())
+                setPageCounter(preValue => preValue + 1);
+                setHomeData((prevState: any): any => [...prevState, ...r]);
+            }
+            setRefreshing(false);
+        } catch (e) {
+            console.error('Error:', e);
+        }
+    }, [pageNUmber, dispatch]);
+    const firebaseCarousel = async () => {
+        onValue(FIREBASE_DATABASE_REF, (snapshot) => {
+            const data = snapshot.val();
+            dispatch(toggleFlag())
+            dispatch(addToCarousel(data));
+        })
+    };
+
+    useEffect(() => {
+        fetchHome().catch((e) => console.error(e));
+        firebaseCarousel().catch((e) => console.error(e));
+
+    }, []);
+
+    const renderItem = useMemo(() => {
+        return ({item}: any) => {
+            const screenType = item?.type;
+            const thumbnail = item?.data?.thumbnail;
+
+            if (screenType === 'native_screen' && item?.data) {// console.log('native-screen')
+                return <View style={[styles.itemContainer, {}]}>
+                    <NativeScreen uri={thumbnail}/>
+                </View>;
+            } else if (screenType === 'generic-home') {
+                return item?.data !== null && item?.data && <GenericHome item={item}/>;
+            } else if (screenType === 'series' && item?.data) {
+                return <Series item={item}/>;
+            } else if (screenType === 'video' && item?.data) {
+                return <VideoContainerVertical item={item?.data}/>;
+            } else if (screenType === 'ranking' && item) {
+                return <Rankings item={item}/>;
+            } else return null;
+        }
+    }, [navigation]);
+
+    const mainFlatListData = [
+        {
+            id: 0,
+            type: 'carousel',
+            component: useMemo(() => {
+                return cData[0] && <MatchCarousel data={cData[0]} navigation={navigation}/>
+            }, [cData, navigation]),
+        }, {
+            id: 2,
+            type: 'home',
+            component: useMemo(() => {
+                // @ts-ignore
+                return (
+                    homePageRedData
+                    &&
+                    <FlatList data={homePageRedData}
+                              contentContainerStyle={{
+                                  width: Dimensions.get('screen').width,
+                                  paddingBottom: 10
+                              }}
+                              ItemSeparatorComponent={() => (
+                                  <View style={{height: 10}}></View>
+                              )}
+                              removeClippedSubviews={true}
+                              maxToRenderPerBatch={5}
+                              windowSize={5}
+                              showsHorizontalScrollIndicator={false}
+                              onEndReached={() => {
+                                  fetchHome();
+                              }}
+                              onEndReachedThreshold={0.5}
+                              keyExtractor={(item, index) => index.toString()}
+                        // @ts-ignore
+                              renderItem={renderItem}
+                    />
                 )
-                .catch(e => console.error('Error:', e));
-        }, [pageCounter]);
-        const firebaseCarousel = async () => {
-            onValue(FIREBASE_DATABASE_REF, (snapshot) => {
-                const data = snapshot.val();
-                dispatch(toggleFlag())
-                dispatch(addToCarousel(data));
-            })
-        };
+            }, [renderItem, fetchHome, homePageRedData]),
+        }
+    ]
 
-        useEffect(() => {
-            fetchHome().catch((e) => console.error(e));
-            firebaseCarousel().catch((e) => console.error(e));
-
-        }, []);
-
-        const renderItem = useMemo(() => {
-            return ({item}: any) => {
-                if (item.type === 'native_screen' && item.data) {
-                    return <View style={[styles.itemContainer, {
-                        // borderRadius: 15,
-                    }]}>
-                        <View style={[styles.thumbnailView,]}>
-                            <Image style={[styles.thumbnail,]} source={{uri: item.data.thumbnail}}/>
-                        </View>
-                    </View>;
-                } else if (item.type === 'generic-home') {
-                    if (item.data !== null && item.data) {
-                        return <GenericHome item={item} route={navigation}/>;
-                    }
-                } else if (item.type === 'series' && item.data) {
-                    return <Series item={item}/>;
-                } else if (item.type === 'video' && item.data) {
-                    return <VideoContainerVertical item={item.data} route={navigation}/>;
-                } else if (item.type === 'ranking' && item) {
-                    return <Rankings item={item}/>;
-                } else return null;
-            }
-        }, [navigation]);
-
-        const mainFlatListData = [
-            {
-                id: 0,
-                type: 'carousel',
-                component: useMemo(() => {
-                    return cData[0] && <MatchCarousel data={cData[0]} navigation={navigation}/>
-                }, [cData, navigation]),
-            }, {
-                id: 2,
-                type: 'home',
-                component: useMemo(() => {
-                    // @ts-ignore
-                    return (
-                        homeData
-                        &&
-                        <FlatList data={homeData}
-                                  contentContainerStyle={{
-                                      width: Dimensions.get('screen').width,
-                                      paddingBottom: 10
-                                  }}
-                                  ItemSeparatorComponent={() => (
-                                      <View style={{height: 10}}></View>
-                                  )}
-                                  removeClippedSubviews={true}
-                                  maxToRenderPerBatch={5}
-                                  windowSize={7}
-                                  showsHorizontalScrollIndicator={false}
-                                  onEndReached={fetchHome}
-                                  onEndReachedThreshold={0.1}
-                                  keyExtractor={(item, index) => index.toString()}
-                            // @ts-ignore
-                                  renderItem={renderItem}
-                        />
-                    )
-                }, [homeData, renderItem]),
-            }
-        ]
-
-        return (
-            <SafeAreaView style={{
-                backgroundColor: '#f3f3f3', overflow: 'scroll',
-                flex: 1,
-                position: 'relative'
+    return (
+        <SafeAreaView style={{
+            backgroundColor: '#f3f3f3', overflow: 'scroll',
+            flex: 1,
+            position: 'relative'
+        }}>
+            <View style={{
+                height: 2
             }}>
-                <View style={{
-                    height: 2
-                }}>
-                    {homeData.length !== 0 && refreshing && <LottieView
-                        source={Loader} autoPlay loop
-                        style={{
-                            position: 'relative',
-                            height: 4,
-                            top: -2,
-                            zIndex: 10
-                        }}
-                        colorFilters={[
-                            {
-                                keypath: "Shape Layer 2",
-                                color: "#c22026"
-                            }]}
-                    />}
-                </View>
+                {homePageRedData.length !== 0 && refreshing && <LottieView
+                    source={Loader} autoPlay loop
+                    style={{
+                        position: 'relative',
+                        height: 4,
+                        top: -2,
+                        zIndex: 10
+                    }}
+                    colorFilters={[
+                        {
+                            keypath: "Shape Layer 2",
+                            color: "#c22026"
+                        }]}
+                />}
+            </View>
 
-                {homeData.length === 0 && cData.length === 0 ? <View style={{
-                        flex: 1,
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                    }}>
-                        <LottieView source={ActivityLoader} autoPlay loop
-                                    style={{
-                                        width: 280, height: 280
-                                    }}
-                                    colorFilters={[{
-                                        keypath: "Shape Layer 2",
-                                        color: "#c22026"
-                                    }]}
-                        />
-                    </View>
-                    : <FlatList data={mainFlatListData}
-                                contentContainerStyle={{
-                                    paddingBottom: 10
+            {homePageRedData.length === 0 && cData.length === 0 ? <View style={{
+                    flex: 1,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}>
+                    <LottieView source={ActivityLoader} autoPlay loop
+                                style={{
+                                    width: 280, height: 280
                                 }}
-                                showsVerticalScrollIndicator={false}
-                                windowSize={1}
-                                keyExtractor={(item, index) => index.toString()}
-                                renderItem={({item}) => item.component}
-                    />}
-            </SafeAreaView>
-        );
-    }
-;
+                                colorFilters={[{
+                                    keypath: "Shape Layer 2",
+                                    color: "#c22026"
+                                }]}
+                    />
+                </View>
+                : <FlatList data={mainFlatListData}
+                            contentContainerStyle={{
+                                paddingBottom: 10
+                            }}
+                            showsVerticalScrollIndicator={false}
+                            windowSize={20}
+                            maxToRenderPerBatch={100}
+                            keyExtractor={(item, index) => index.toString()}
+                            renderItem={({item}) => item.component}
+                />}
+        </SafeAreaView>
+    );
+};
 export default Home
 const styles = StyleSheet.create({
     itemContainer: {

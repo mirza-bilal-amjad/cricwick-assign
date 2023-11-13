@@ -1,15 +1,20 @@
 import {Dimensions, FlatList, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React, {memo, useMemo} from 'react'
 import IonIcon from "react-native-vector-icons/Ionicons";
+import * as util from "util";
 
 const VideoContainerHorizontal = ({item}: any) => {
     const renderItem = useMemo(() => {
         return (({item}: any) => {
+                const image = item?.thumb;
+                const title = item?.title;
+                const videoDesc = item?.match_desc?.length > 65 ? item?.match_desc.substring(0, 65) + '...' : item?.match_desc;
+
                 return (
                     <View style={styles.imageContainer}>
                         <View style={styles.imageWrapper}>
                             <Image
-                                source={{uri: item.thumb}}
+                                source={{uri: image}}
                                 style={styles.image}
                             />
                             <TouchableOpacity
@@ -37,7 +42,7 @@ const VideoContainerHorizontal = ({item}: any) => {
                                 fontSize: 12.5,
                                 fontWeight: '500'
                             }}>
-                                {item.title}
+                                {title}
                             </Text>
                             <Text style={{
                                 color: 'black',
@@ -45,7 +50,7 @@ const VideoContainerHorizontal = ({item}: any) => {
                                 paddingVertical: 2,
 
                             }}>
-                                {item.match_desc && item.match_desc.substring(0, 70) + '...'}
+                                {videoDesc}
                             </Text>
                         </View>
                     </View>

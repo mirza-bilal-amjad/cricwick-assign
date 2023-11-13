@@ -1,6 +1,6 @@
 import {View, Text, FlatList, Image} from 'react-native'
 import React, {useMemo} from 'react'
-import PlayerInfoCard from "../../../UnviversalComponent/PlayerInfoCard";
+import PlayerInfoCard from "../../../../UnviversalComponent/PlayerInfoCard";
 
 const AllRounder = ({item}: any) => {
 

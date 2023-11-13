@@ -2,16 +2,26 @@ import {Dimensions, FlatList, Image, StyleSheet, Text, TouchableOpacity, View} f
 import React, {memo, useMemo} from 'react'
 import IonIcon from "react-native-vector-icons/Ionicons";
 import FeaturedContentGHome from "../../../screens/home/FeaturedContent/FeaturedContentGHome";
+import LinearGradient from "react-native-linear-gradient";
 
 const VideoContainerVertical = ({item, route}: any) => {
     const renderItem = useMemo(() => {
         return (({item}: any) => {
                 item = item[0];
+                const videoUri = item?.qualities;
+                const image = item?.thumb;
+                const title = item?.title;
+                const poster = item?.thumb;
+                const views = item?.views;
+                const likes = item?.likes;
+                const videoDuration = item?.duration;
+                const videoDesc = item?.match_desc?.length > 65 ? item?.match_desc.substring(0, 65) + '...' : item?.match_desc;
+
                 return (
                     <View style={styles.imageContainer}>
                         <View style={styles.imageWrapper}>
                             <Image
-                                source={{uri: item.thumb}}
+                                source={{uri: image}}
                                 style={styles.image}
                             />
                             <TouchableOpacity
@@ -25,11 +35,11 @@ const VideoContainerVertical = ({item, route}: any) => {
                                 }}
                                 activeOpacity={.7}
                                 onPress={() => route.navigate('FeaturedContentVideos', {
-                                    videoUri: item.qualities,
-                                    title: item.title,
-                                    poster: item.thumb,
-                                    views: item.views,
-                                    likes: item.likes,
+                                    videoUri: videoUri,
+                                    title: title,
+                                    poster: poster,
+                                    views: views,
+                                    likes: likes,
                                     homePageItemType: 'videos-home'
                                 })}
                             >
@@ -39,27 +49,37 @@ const VideoContainerVertical = ({item, route}: any) => {
                                 }}/>
                             </TouchableOpacity>
                         </View>
-                        <View style={{
-                            // width: 255,
-                            padding: 5
+                        <LinearGradient colors={[
+                            'transparent',
+                            'rgba(0,0,0,0.1)',
+                            'rgba(0,0,0,0.3)',
+                            'rgba(0,0,0,0.9)',
+                        ]} style={{
+                            width: '100%',
+                            aspectRatio: 16 / 9,
+                            paddingHorizontal: 10,
+                            paddingVertical: 7,
+                            position: 'absolute',
+                            flexDirection: 'column',
+                            justifyContent: 'flex-end',
                         }}>
                             <Text style={{
-                                color: 'black',
+                                color: 'white',
                                 paddingVertical: 1,
                                 fontSize: 12.5,
                                 fontWeight: '500'
                             }}>
-                                {item.title}
+                                {title}
                             </Text>
                             <Text style={{
-                                color: 'black',
+                                color: 'white',
                                 fontSize: 11.4,
                                 paddingVertical: 2,
 
                             }}>
-                                {item.match_desc && item.match_desc.substring(0, 70) + '...'}
+                                {videoDesc}
                             </Text>
-                        </View>
+                        </LinearGradient>
                     </View>
                 );
             }

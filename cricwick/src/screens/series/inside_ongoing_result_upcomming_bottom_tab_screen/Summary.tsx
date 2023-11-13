@@ -1,13 +1,11 @@
 import {FlatList, SafeAreaView, StyleSheet, Text, View} from 'react-native'
-import React, {useEffect, useMemo, useState} from 'react'
+import React, {useCallback, useEffect, useMemo, useState} from 'react'
 import LottieView from "lottie-react-native";
 import {ActivityLoader, Loader, BallLoaderAnimation} from "../../../assets";
-import SeriesScreenComponent from "../../../components/Series/SeriesScreenComponent";
 import {fetchSeries, fetchSummary} from "../../../utils/serverfetch/fetchBackend";
-import {OnGoingCard, ResultCard, UpcomingCard} from "../../../components/Series/component";
-import SummaryCard from "../../../components/Series/component/sub_screen.component/Summary/SummaryCard";
-import summaryCard from "../../../components/Series/component/sub_screen.component/Summary/SummaryCard";
 import {useNavigation} from "@react-navigation/native";
+import MatchCard from "../../../components/Series/component/sub_screen.component/Summary/Cards/MatchCard";
+import GenericHomeCard from "../../../components/Series/component/sub_screen.component/Summary/Cards/GenericHomeCard";
 
 const Summary = ({route}: any) => {
     const navigation = useNavigation()
@@ -39,6 +37,17 @@ const Summary = ({route}: any) => {
             }
         });
     };
+
+    const RenderItem = useCallback(({item, navigation}: any) => {
+        switch (item.type) {
+            case 'match':
+                return <MatchCard match={item} navigation={navigation}/>;
+            case 'generic-home':
+                return <GenericHomeCard item={item} navigation={navigation}/>;
+            default:
+                return null;
+        }
+    }, [])
 
     useEffect(() => {
         fetchSum();
@@ -93,7 +102,7 @@ const Summary = ({route}: any) => {
                     removeClippedSubviews={true}
                     onEndReachedThreshold={.5}
                     onEndReached={fetchSum}
-                    renderItem={({item}: any) => <SummaryCard match={item} navigation={navigation}/>}
+                    renderItem={({item}: any) => <RenderItem item={item} navigation={navigation}/>}
                     ItemSeparatorComponent={() => <View style={{height: 5}}/>}/>
             }
         </SafeAreaView>

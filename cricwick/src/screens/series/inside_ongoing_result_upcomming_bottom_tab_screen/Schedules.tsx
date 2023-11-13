@@ -2,7 +2,7 @@ import {FlatList, SafeAreaView, StyleSheet, Text, View} from 'react-native'
 import React, {useEffect, useState} from 'react'
 import LottieView from "lottie-react-native";
 import {BallLoaderAnimation, Loader} from "../../../assets";
-import SummaryCard from "../../../components/Series/component/sub_screen.component/Summary/SummaryCard";
+import SummaryCard from "../../../components/Series/component/sub_screen.component/Summary/Cards/MatchCard";
 import {fetchSchedule, fetchSummary} from "../../../utils/serverfetch/fetchBackend";
 import ScheduleCard from "../../../components/Series/component/sub_screen.component/Schedule/ScheduleCard";
 

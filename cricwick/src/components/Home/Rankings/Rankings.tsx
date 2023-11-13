@@ -1,10 +1,9 @@
-import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React from 'react'
-import {SwiperFlatList} from 'react-native-swiper-flatlist';
 import {createMaterialTopTabNavigator} from "@react-navigation/material-top-tabs";
-import Test from './component/TEST';
 import ODI from "./component/ODI";
 import T20 from "./component/T20";
+import Test from "./component/TEST";
 
 const TopTabs = createMaterialTopTabNavigator();
 const Rankings = ({item}: any) => {

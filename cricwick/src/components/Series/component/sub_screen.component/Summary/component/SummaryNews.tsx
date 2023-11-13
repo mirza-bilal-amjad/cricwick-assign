@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native'
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React from 'react'
 import matches from "../../../../../Home/Series/component/matches";
 
@@ -12,7 +12,9 @@ const SummaryNews = ({match, navigation}: any) => {
         }}>{
             match && match.map((inMatch: any, index: number) => {
                 return (
-                    <View key={index} style={{
+                    <TouchableOpacity activeOpacity={.8} onPress={() => navigation.navigate('News', {
+                        newsID: inMatch.id
+                    })} key={index} style={{
                         marginHorizontal: 20,
                         marginVertical: 10,
                         flexDirection: 'row',
@@ -28,11 +30,11 @@ const SummaryNews = ({match, navigation}: any) => {
                         }}/>
                         <View style={{
                             marginHorizontal: 15,
-                            marginVertical:5
+                            marginVertical: 5
                         }}>
                             <Text style={{fontSize: 15, color: 'black'}}>{inMatch.title}</Text>
                         </View>
-                    </View>
+                    </TouchableOpacity>
                 )
             })
         }

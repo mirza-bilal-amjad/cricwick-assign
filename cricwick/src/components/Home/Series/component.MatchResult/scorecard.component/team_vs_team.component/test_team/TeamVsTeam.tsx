@@ -52,10 +52,10 @@ const TeamVsTeam = ({item}: any) => {
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                 }}>
-                    {item.wickets !== null && item.runs !== null ? <Text style={{
+                    {item ? <Text style={{
                             color: 'black',
                             fontWeight: '500',
-                        }}>{item.runs > 0 ? item.runs : 0}/{item.wickets > 0 ? item.wickets : 0}</Text> :
+                        }}>{item.runs !== null ? item.runs > 0 ? item.runs : 0 : '-'}/{item.wickets !== null ? item.wickets > 0 ? item.wickets : 0 : '-'}</Text> :
                         <Text style={{
                             color: 'black',
                             textAlign: 'center',
@@ -101,7 +101,11 @@ const TeamVsTeam = ({item}: any) => {
                         <Image source={{uri: item.team_1.team.flag_url}} style={[styles.teamFlag]}/>
                     </View>
                     <View style={{borderWidth: .21, width: '100%', marginVertical: 3}}/>
-                    <View style={[styles.teamScoreInfo, {}]}>
+                    <View style={[styles.teamScoreInfo, {
+                        flexDirection: 'row',
+
+
+                    }]}>
                         {test_score_over(team1[0])}
                         {team1[0].runs && team1[1].runs ? <Text>&</Text> : <></>}
                         {test_score_over(team1[1])}
@@ -114,7 +118,9 @@ const TeamVsTeam = ({item}: any) => {
                         <Text style={[styles.teamName]}>{item.team_2.team.short_name}</Text>
                     </View>
                     <View style={{borderWidth: .21, width: '100%', marginVertical: 3}}/>
-                    <View style={[styles.teamScoreInfo]}>
+                    <View style={[styles.teamScoreInfo, {
+                        flexDirection: 'row-reverse',
+                    }]}>
                         {test_score_over(team2[0])}
                         {team2[0].runs && team2[1].runs ? <Text>&</Text> : <></>}
                         {test_score_over(team2[1])}
@@ -178,7 +184,6 @@ const styles = StyleSheet.create({
     },
     teamScoreInfo: {
         width: '97%',
-        flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         // backgroundColor: 'blue',

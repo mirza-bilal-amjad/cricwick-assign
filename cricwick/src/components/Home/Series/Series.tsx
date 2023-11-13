@@ -15,6 +15,11 @@ import PointTableIcon from '../../../assets/Images/point_table.png'
 import {useNavigation} from "@react-navigation/native";
 
 const Series = ({item}: any) => {
+    /* item.data.map(
+         (item: any) => {
+             console.log(item.type)
+         }
+     )*/
     const navigation = useNavigation();
     const [componentWidth, setComponentWidth] = React.useState(0);
     const onLayout = (event: any) => {
@@ -61,7 +66,7 @@ const Series = ({item}: any) => {
                 </TouchableOpacity>
                 <View>
                     {
-                        item.data.sort((a: any, b: any) => b.type.localeCompare(a.type)).map(
+                        item.data.map(
                             (item: any) => {
                                 const lent = item.data.length;
                                 switch (item.type) {
@@ -125,7 +130,6 @@ const Series = ({item}: any) => {
                                         return (
                                             item.data && <View key={item.type}>
                                                 {item.data[0] && <View style={[styles.itemContainer, {
-                                                    // borderRadius: 15,
                                                     marginVertical: 10,
                                                 }]}>
                                                     <View style={[styles.thumbnailView]}>
@@ -143,6 +147,14 @@ const Series = ({item}: any) => {
                                                                 justifyContent: 'center',
                                                             }}
                                                             activeOpacity={.7}
+                                                            onPress={() => navigation.navigate('FeaturedContentVideos', {
+                                                                videoUri: item.data[0].qualities,
+                                                                title: item.data[0].title,
+                                                                poster: item.data[0].thumb,
+                                                                views: item.data[0].views,
+                                                                likes: item.data[0].likes,
+                                                                homePageItemType: 'videos-home'
+                                                            })}
                                                         >
                                                             <IonIcon name={'play-circle-outline'} size={40}
                                                                      color={'white'} style={{
@@ -170,6 +182,7 @@ const Series = ({item}: any) => {
                                                 <FlatList
                                                     data={item.data}
                                                     horizontal={true}
+                                                    keyExtractor={(item: any, index: number) => index.toString()}
                                                     style={{
                                                         // borderBottomWidth: .2,
                                                         flexDirection: 'row',
@@ -184,7 +197,6 @@ const Series = ({item}: any) => {
                                                     }, [])}/>
                                             </View>
                                         );
-
                                     default:
                                         return null;
                                 }
@@ -206,6 +218,7 @@ const Series = ({item}: any) => {
                     alignItems: 'center'
                 }}>
                     {
+                        //@ts-ignore
                         <TouchableOpacity onPress={() => navigation.navigate('SeriesInfoBottomNavigation', {
                             screen: 'Summary',
                             title: item.series_obj.title,
@@ -240,6 +253,8 @@ const Series = ({item}: any) => {
                             alignItems: 'center'
 
                         }}
+                        //@ts-ignore
+
                         onPress={() => navigation.navigate('SeriesInfoBottomNavigation', {
                             screen: 'Videos',
                             title: item.series_obj.title,
@@ -269,6 +284,8 @@ const Series = ({item}: any) => {
                         alignItems: 'center'
 
                     }}
+
+                    //@ts-ignore
                     onPress={() => navigation.navigate('SeriesInfoBottomNavigation', {
                         screen: 'PointTable',
                         title: item.series_obj.title,

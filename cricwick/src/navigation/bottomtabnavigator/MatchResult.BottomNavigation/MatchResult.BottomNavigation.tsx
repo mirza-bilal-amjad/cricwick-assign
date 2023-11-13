@@ -1,4 +1,4 @@
-import {BackHandler, Dimensions, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
+import {BackHandler, Dimensions, Easing, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React, {useEffect} from 'react'
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import BallByBall from "../../../screens/home/MatchResult.Screen/BallByBall";
@@ -27,19 +27,18 @@ const MatchResultBottomNavigation = ({route}: any) => {
                 position: 'relative',
 
             }}>
-                <TouchableOpacity style={{
-                    marginHorizontal: 15,
-                    zIndex: 10
-                }} onPress={() => navigation.goBack()}>
-                    <GoogleIcon name={'arrow-back-ios'} size={30} color={'black'}/>
+                <TouchableOpacity
+                    style={{
+                        marginHorizontal: 15,
+                        zIndex: 10
+                    }}
+                    onPress={() => navigation.goBack()}>
+                    <GoogleIcon name={'arrow-back-ios'} size={35} color={'black'}/>
                 </TouchableOpacity>
                 <View style={{
                     flex: 1,
                     width: Dimensions.get('window').width,
-                    // backgroundColor: 'pink',
                     position: 'absolute',
-                    // left: Dimensions.get('window').width / 2 - 40
-                    // marginHorizontal: 10,
                 }}>
                     <Text style={{
                         color: 'black',
@@ -63,19 +62,26 @@ const MatchResultBottomNavigation = ({route}: any) => {
     }
 
     useEffect(() => {
-        const handleBackPress = () => {
+        /*const handleBackPress = () => {
             //@ts-ignore
-            navigation.goBack({
-                index: 0,
-                // @ts-ignore
-                routes: [{name: 'BottomTabNavigation'}] // Replace with the name of the screen you want to navigate to
-            });
+            navigation.reset(
+                {
+                    index: 0,
+                    //@ts-ignore
+
+                    routes: [{name: 'BottomTabNavigation'}],
+                    config: {
+                        duration: 500, // Animation duration in milliseconds
+                        easing: Easing.inOut(Easing.ease), // Animation easing function
+                    }
+                }
+            );
             return true; // Return true to prevent default behavior (going back)
         };
         const backHandler = BackHandler.addEventListener('hardwareBackPress', handleBackPress);
         return () => {
             backHandler.remove();
-        };
+        };*/
     }, [route]);
 
     return (

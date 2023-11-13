@@ -2,19 +2,29 @@ import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React, {memo} from 'react'
 import GoogleIcon from "react-native-vector-icons/MaterialIcons";
 import moment from "moment";
-import {convertSecondToMinutes} from "../../../../utils/method";
+import {convertSecondToMinutes, getTimeSpan} from "../../../../utils/method";
 
 const FeaturedContentCardGHome = ({item, setTheVideoUri, setTheTitle, setThePoster, setTheViews, setTheLikes}: any) => {
+
+    const videoUri = item?.video?.qualities;
+    const title = item?.video?.title;
+    const poster = item?.video?.thumb;
+    const views = item.video.views > 1000 ? (item.video.views / 1000).toFixed(0) + 'k' : item.video.views;
+    const likes = item?.video?.likes;
+    const videoDuration = convertSecondToMinutes(item?.video?.duration)
+    const videoCreationDate = moment(item?.video?.created_at).format('DD MMM, YYYY')
+
     const handleVideoCont = (item: any) => {
-        setTheVideoUri(item.video.qualities);
-        setTheTitle(item.video.title);
-        setThePoster(item.video.thumb);
-        setTheViews(item.video.views);
-        setTheLikes(item.video.likes);
+        setTheVideoUri(videoUri);
+        setTheTitle(title);
+        setThePoster(poster);
+        setTheViews(views);
+        setTheLikes(likes);
     }
     return (
-            <TouchableOpacity activeOpacity={.8} onPress={() => handleVideoCont(item)}>
+        <TouchableOpacity activeOpacity={.8} onPress={() => handleVideoCont(item)}>
             <View style={{
+
                 marginHorizontal: 10,
                 flexDirection: 'row',
                 borderRadius: 9,
@@ -28,7 +38,7 @@ const FeaturedContentCardGHome = ({item, setTheVideoUri, setTheTitle, setThePost
                 <View style={{
                     alignItems: 'center'
                 }}>
-                    <Image source={{uri: item.video.thumb}} style={{width: 160, aspectRatio: 16 / 9}}/>
+                    <Image source={{uri: poster}} style={{width: 160, aspectRatio: 16 / 9}}/>
                     <View style={{
                         position: 'absolute',
                         bottom: 0,
@@ -44,7 +54,7 @@ const FeaturedContentCardGHome = ({item, setTheVideoUri, setTheTitle, setThePost
                         <Text style={{
                             color: 'white',
                             fontSize: 12
-                        }}>{convertSecondToMinutes(item.video.duration)}</Text>
+                        }}>{videoDuration}</Text>
                     </View>
                 </View>
                 <View style={{
@@ -56,7 +66,7 @@ const FeaturedContentCardGHome = ({item, setTheVideoUri, setTheTitle, setThePost
                         width: 215,
 
                     }}><Text style={{color: 'black', width: '100%'}}>
-                        {item.video.title}
+                        {title}
                     </Text></View>
                     <View style={{
                         width: 100,
@@ -76,7 +86,7 @@ const FeaturedContentCardGHome = ({item, setTheVideoUri, setTheTitle, setThePost
                                     marginHorizontal: 2.5,
                                     fontSize: 12
 
-                                }}>{item.video.views > 1000 ? (item.video.views / 1000).toFixed(0) + 'k' : item.video.views}</Text>
+                                }}>{views}</Text>
                         </View>
                         <View style={{
                             width: 3,
@@ -95,7 +105,7 @@ const FeaturedContentCardGHome = ({item, setTheVideoUri, setTheTitle, setThePost
                                     marginHorizontal: 2.5,
                                     fontSize: 12
 
-                                }}>{moment(item.video.created_at).format('DD MMM, YYYY')}</Text>
+                                }}>{videoCreationDate}</Text>
                         </View>
                     </View>
                 </View>
@@ -103,6 +113,6 @@ const FeaturedContentCardGHome = ({item, setTheVideoUri, setTheTitle, setThePost
             </View>
         </TouchableOpacity>
     );
-}
+};
 export default memo(FeaturedContentCardGHome)
 const styles = StyleSheet.create({})

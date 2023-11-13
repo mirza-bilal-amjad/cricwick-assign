@@ -7,7 +7,6 @@ import {convertSecondToMinutes} from "../../../../utils/method";
 const FeaturedContentCardVideo = ({item, setTheVideoUri, setTheTitle, setThePoster, setTheViews, setTheLikes}: any) => {
     const handleVideoCont = (item: any) => {
 
-        console.log(item)
         setTheVideoUri(item.video.qualities);
         setTheTitle(item.video.title);
         setThePoster(item.video.thumb);

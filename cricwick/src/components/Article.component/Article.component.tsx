@@ -11,8 +11,7 @@ const ArticleComponent = ({item}: any) => {
             flex: 1
         }}>
             {item.large_image && item.title && <ImageHeading item={item}/>}
-            {item.body && <WebViewComp item={item} height={
-                Dimensions.get('window').height - 385}/>}
+            {item.body && <WebViewComp item={item}/>}
         </View>
     )
 }

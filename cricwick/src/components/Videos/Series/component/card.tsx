@@ -2,6 +2,7 @@ import {Image, StyleSheet, Text, Touchable, TouchableOpacity, View} from 'react-
 import React from 'react'
 import GoogleIcon from "react-native-vector-icons/MaterialIcons";
 import IonIcon from "react-native-vector-icons/Ionicons";
+import FastImage from "react-native-fast-image";
 
 const Card = ({item, listID, seriesID, label, navigation}: any) => {
 
@@ -39,7 +40,7 @@ const Card = ({item, listID, seriesID, label, navigation}: any) => {
                                     borderRadius: 50,
                                 }}/>
                             </View>
-                            <Image source={{uri: item.data[0].thumb}} style={{
+                            <FastImage source={{uri: item.data[0].thumb}} style={{
                                 width: '100%',
                                 aspectRatio: 16 / 9,
 

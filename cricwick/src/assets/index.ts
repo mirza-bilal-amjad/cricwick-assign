@@ -2,6 +2,8 @@ export {default as BallLoaderAnimation} from './lottieAnimations/ball_loader_ani
 export {default as ActivityLoader} from './lottieAnimations/loader.json'
 export {default as Loader} from './lottieAnimations/laoder2.json'
 export {default as LiveAnim} from './lottieAnimations/liveIndicator.json'
+export {default as SwipeLeft} from './lottieAnimations/swipe_left.json'
+export {default as SwipeRight} from './lottieAnimations/swipe_right.json'
 // @ts-ignore
 export {default as Coins} from './Images/coins.png'
 // @ts-ignore
