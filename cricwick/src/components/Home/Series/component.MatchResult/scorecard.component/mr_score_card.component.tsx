@@ -16,18 +16,18 @@ const MrScoreCardComponent = ({item}: any) => {
 
 
             {/*Team Vs Team Component*/}
-            {item && item.format === 'ODI' && <ODITeamVsTeam item={item}/>}
-            {item && (item.format === 'T20i' || item.format === 'T20') && <T20TeamVsTeam item={item}/>}
+            {item && item?.format === 'ODI' && <ODITeamVsTeam item={item}/>}
+            {item && (item?.format === 'T20i' || item?.format === 'T20') && <T20TeamVsTeam item={item}/>}
             {item && item.format === 'Test' && <TestTeamVsTeam item={item}/>}
             {/*CricketName and Decisions Component*/}
-            {item && item.format === 'ODI' && <ODIDecisionComp item={item}/>}
-            {item && (item.format === 'T20i' || item.format === 'T20') && <T20DecisionComp item={item}/>}
-            {item && item.format === 'Test' && <TestDecisionComp item={item}/>}
+            {item && item?.format === 'ODI' && <ODIDecisionComp item={item}/>}
+            {item && (item?.format === 'T20i' || item?.format === 'T20') && <T20DecisionComp item={item}/>}
+            {item && item?.format === 'Test' && <TestDecisionComp item={item}/>}
             {/*    Team ScoreBoard     */}
             <ScrollView style={{
                 marginVertical: 2.5
             }}>{
-                item && item.innings &&
+                item && item?.innings &&
                 item.innings.map(
                     (inItem: any, index: number) => {
                         const [isOpen, setIsOpen] = useState((index !== item.innings.length - 1));

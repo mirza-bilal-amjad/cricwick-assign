@@ -17,45 +17,46 @@ const Component = ({item}: any) => {
                                 <Text style={{
                                     fontWeight: '500',
                                     color: 'black',
-                                    textAlign: 'left'
-                                }}>{inItem.player.short_name}</Text>
+                                    textAlign: 'left',
+                                }}>{inItem?.player?.short_name} <Text
+                                    style={{color: '#c50000'}}>{inItem?.batsman.string_state !== 'out' ? '*' : ''}</Text></Text>
                                 <Text style={{
-                                    color: 'black',
+                                    color: '#595959',
                                     textAlign: 'left',
                                     fontSize: 12,
-                                    fontWeight: '400'
-                                }}>{inItem.batsman.out_details}</Text>
+                                    fontWeight: '400',
+                                }}>{inItem?.batsman.string_state !== 'out' ? 'Not out' : inItem?.batsman?.out_details}</Text>
                             </View>
                             <View style={{flexDirection: 'row', paddingRight: 10}}>
                                 <View style={{width: '15%'}}><Text
                                     style={{
                                         color: 'black',
                                         textAlign: 'right'
-                                    }}>{inItem.batsman.runs_scored}</Text></View>
+                                    }}>{inItem?.batsman?.runs_scored}</Text></View>
                                 <View style={{width: '15%'}}><Text
                                     style={{
                                         color: 'black',
                                         textAlign: 'right',
                                         fontSize: 12, fontWeight: '400'
-                                    }}>{inItem.batsman.balls_played}</Text></View>
+                                    }}>{inItem?.batsman?.balls_played}</Text></View>
                                 <View style={{width: '15%'}}><Text
                                     style={{
                                         color: 'black',
                                         textAlign: 'right',
                                         fontSize: 12, fontWeight: '400'
-                                    }}>{inItem.batsman.boundry_4s_scored}</Text></View>
+                                    }}>{inItem?.batsman?.boundry_4s_scored}</Text></View>
                                 <View style={{width: '15%'}}><Text
                                     style={{
                                         color: 'black',
                                         textAlign: 'right',
                                         fontSize: 12, fontWeight: '400'
-                                    }}>{inItem.batsman.boundry_6s_scored}</Text></View>
+                                    }}>{inItem?.batsman?.boundry_6s_scored}</Text></View>
                                 <View style={{width: '17.5%'}}><Text
                                     style={{
                                         color: 'black',
                                         textAlign: 'right',
                                         fontSize: 12, fontWeight: '400'
-                                    }}>{inItem.batsman.strike_rate}</Text></View>
+                                    }}>{inItem?.batsman?.strike_rate}</Text></View>
                             </View>
                         </View>
                     )

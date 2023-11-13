@@ -5,7 +5,7 @@ import {BattingComponent, BowlingComponent, FallOfWicketsComponent} from "./comp
 const InningStatCard = ({item}: any) => {
     return (
         <View>
-            {item && item.batting_scorecard && item.batting_scorecard.length > 0 &&
+            {item && item?.batting_scorecard && item?.batting_scorecard.length > 0 &&
                 <View style={{backgroundColor: 'white'}}>
                     <View style={{
                         flexDirection: 'row',
@@ -28,10 +28,10 @@ const InningStatCard = ({item}: any) => {
                                 style={{color: 'black', textAlign: 'right'}}>SR</Text></View>
                         </View>
                     </View>
-                    <BattingComponent item={item.batting_scorecard}/>
+                    <BattingComponent item={item?.batting_scorecard}/>
                 </View>}
 
-            {item && item.bowling_scorecard && item.bowling_scorecard.length > 0 && <View>
+            {item && item?.bowling_scorecard && item?.bowling_scorecard.length > 0 && <View>
                 <View style={{
                     flexDirection: 'row',
                     justifyContent: 'space-between',
@@ -63,9 +63,9 @@ const InningStatCard = ({item}: any) => {
                             style={{color: 'black', textAlign: 'right'}}>6s</Text></View>
                     </View>
                 </View>
-                <BowlingComponent item={item.bowling_scorecard}/>
+                <BowlingComponent item={item?.bowling_scorecard}/>
             </View>}
-            {item && item.falls_of_wickets && item.falls_of_wickets.length > 0 && <View>
+            {item && item?.falls_of_wickets && item?.falls_of_wickets.length > 0 && <View>
                 <View style={{
                     flexDirection: 'row',
                     justifyContent: 'space-between',
@@ -88,7 +88,7 @@ const InningStatCard = ({item}: any) => {
                             style={{color: 'black', textAlign: 'right'}}>Score</Text></View>
                     </View>
                 </View>
-                <FallOfWicketsComponent item={item.falls_of_wickets}/>
+                <FallOfWicketsComponent item={item?.falls_of_wickets}/>
             </View>}
         </View>
     )

@@ -5,9 +5,7 @@
  * That allows to change them more easily later on.
  */
 
-
-
-import {ThemeNavigationColors} from "../../@types/theme";
+import { ThemeNavigationColors } from '../../@types/theme';
 
 /**
  * Colors
@@ -20,25 +18,17 @@ export const Colors = {
     textGray800: '#000000',
     textGray400: '#4D4D4D',
     textGray200: '#A1A1A1',
-    primaryInActive: '#A4B8D3',
-    primary: '#004FB4',
-    bookedText: '#4F6C92',
-    success: '#16A64D',
-    error: '#E2006A',
+    primary: '#E14032',
+    success: '#28a745',
+    error: '#dc3545',
     //ComponentColors
     circleButtonBackground: '#E1E1EF',
     circleButtonColor: '#44427D',
-    lottieKp1: '#979797',
-    lottieKp2: '#717171',
-    lottieKp3: '#474646',
-    lottieKp4: '#262626',
-    lottieKp5: '#1E1E1E',
-
 };
 
 export const NavigationColors: Partial<ThemeNavigationColors> = {
     primary: Colors.primary,
-    background: '#ffffff',
+    background: '#EFEFEF',
     card: '#EFEFEF',
 };
 
@@ -46,8 +36,8 @@ export const NavigationColors: Partial<ThemeNavigationColors> = {
  * FontSize
  */
 export const FontSize = {
-    tiny: 16,
-    small: 18,
+    tiny: 14,
+    small: 16,
     regular: 20,
     large: 40,
 };
