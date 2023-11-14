@@ -1,11 +1,11 @@
 import {Dimensions, FlatList, SafeAreaView, StyleSheet, Text, View} from 'react-native'
 import React, {useCallback, useEffect, useMemo, useState} from 'react'
-import {CarouselVideo, MainVideoContainer, PlayListComponent, SeriesComponent} from "../../components";
-import {fetchVideos} from "../../utils/serverfetch/fetchBackend";
-import videoCarousel from "../../components/Videos/Carousel/VideoCarousel";
+import {CarouselVideo, MainVideoContainer, PlayListComponent, SeriesComponent} from "../../../components";
+import {fetchVideos} from "../../../utils/serverfetch/fetchBackend";
+import videoCarousel from "../../../components/Videos/Carousel/VideoCarousel";
 import {useNavigation} from "@react-navigation/native";
 import LottieView from "lottie-react-native";
-import {ActivityLoader, Loader} from "../../assets";
+import {ActivityLoader, Loader} from "../../../assets";
 
 const Videos = () => {
 

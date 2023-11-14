@@ -17,10 +17,14 @@ import DrawerArticle from "../../screens/DrawerArticle";
 import SideSwipeAbleArticles from "../../screens/SideSwipeAbleArticles";
 import React from "react";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import {useTheme} from "../../hooks";
 
 const Stack = createNativeStackNavigator();
 
 const MainStack = ({navigation}: any) => {
+	const {Layout, darkMode, NavigationTheme, Colors} = useTheme();
+	const {colors} = NavigationTheme;
+
 	return (
 		<Stack.Navigator>
 			<Stack.Screen name={'BottomTabNavigation'} component={BottomTabNavigation} options={{
@@ -46,13 +50,13 @@ const MainStack = ({navigation}: any) => {
 				              headerShown: true,
 				              headerTitleAlign: 'center',
 				              headerShadowVisible: false,
-				              headerTitleStyle: {fontWeight: 'bold'},
-				              headerStyle: {backgroundColor: '#f3f3f3'},
+				              headerTitleStyle: {fontWeight: 'bold', color: colors.text},
+				              headerStyle: {backgroundColor: colors.background},
 				              //add more options here
 				              headerLeft: () => (
 					              <TouchableOpacity
 						              onPress={() => navigation.goBack()}>
-						              <GoogleIcon name={'arrow-back-ios'} size={35} color={'black'}/>
+						              <GoogleIcon name={'arrow-back-ios'} size={35} color={colors.text}/>
 					              </TouchableOpacity>
 				              ),
 
@@ -65,14 +69,14 @@ const MainStack = ({navigation}: any) => {
 				              headerLeft: () => (
 					              <TouchableOpacity
 						              onPress={() => navigation.goBack()}>
-						              <GoogleIcon name={'arrow-back-ios'} size={35} color={'black'}/>
+						              <GoogleIcon name={'arrow-back-ios'} size={35} color={colors.text}/>
 					              </TouchableOpacity>
 				              ),
 				              headerShown: true,
 				              headerTitleAlign: 'center',
 				              headerShadowVisible: false,
-				              headerTitleStyle: {fontWeight: 'bold'},
-				              headerStyle: {backgroundColor: '#f3f3f3'},
+				              headerTitleStyle: {fontWeight: 'bold', color: colors.text},
+				              headerStyle: {backgroundColor: colors.background},
 			              }}/>
 
 			<Stack.Screen name={'DrawerArticle'}

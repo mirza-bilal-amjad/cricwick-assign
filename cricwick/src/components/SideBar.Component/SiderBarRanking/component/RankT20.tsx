@@ -7,8 +7,11 @@ import Bowlers from "./comp/Bowlers";
 import AllRounders from "./comp/AllRounders";
 import GoogleIcon from "react-native-vector-icons/MaterialIcons";
 import Animated from "react-native-reanimated";
+import {useTheme} from "../../../../hooks";
 
 const RankT20 = ({route}: any) => {
+    const {Layout, darkMode, NavigationTheme, Colors} = useTheme();
+    const {colors} = NavigationTheme;
     const {t20} = route.params;
 
     const RenderItem = ({inItem, index}: any) => {
@@ -255,6 +258,8 @@ const RankT20 = ({route}: any) => {
     return (
         <View style={{
             flex: 1,
+            backgroundColor: colors.background,
+
         }}>
             {
                 t20 && t20.length > 0 &&

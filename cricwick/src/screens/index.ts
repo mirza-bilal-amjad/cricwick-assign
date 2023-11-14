@@ -1,7 +1,7 @@
-export {default as HomeScreen} from './home/Home';
-export {default as VideosScreen} from './videos/Videos';
+export {default as HomeScreen} from './mainbottomtabscreens/home/Home';
+export {default as VideosScreen} from './mainbottomtabscreens/videos/Videos';
 export {default as FantasyScreen} from './fantasy/Fantasy';
-export {default as MoreScreen} from './more/More';
+export {default as MoreScreen} from './mainbottomtabscreens/more/More';
 export {default as ArticlesScreen} from './Articles';
 export {default as BlogsScreen} from './Blogs';
 export {default as DrawerArticleScreen} from './DrawerArticle';

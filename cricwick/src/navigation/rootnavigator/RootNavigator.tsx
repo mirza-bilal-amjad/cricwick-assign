@@ -7,44 +7,40 @@ import {NavigationContainer} from "@react-navigation/native";
 import SideDrawerContent from "./SideDrawerContent";
 
 import MainStack from "./MainStack";
+import {useTheme} from "../../hooks";
 
 const Drawer = createDrawerNavigator();
 const RootNavigator = ({navigation}: any) => {
+	const {Layout, darkMode, NavigationTheme} = useTheme();
+	const {colors} = NavigationTheme;
+
 	const changeNavColor = async () => {
-		changeNavigationBarColor('#f3f3f3', true, true);
+		changeNavigationBarColor(colors.background, true, true);
 	}
 	useLayoutEffect(() => {
 		changeNavColor().catch(e => console.log('e', e))
-	}, []);
+	}, [darkMode]);
 	return (
 		<SafeAreaView style={{
 			flex: 1
 		}}>
-			<StatusBar animated barStyle={'dark-content'} backgroundColor={'#f3f3f3'}/>
+			<StatusBar animated barStyle={darkMode ? 'light-content' : 'dark-content'}
+			           backgroundColor={colors.background}/>
 
 			<NavigationContainer>
 				<Drawer.Navigator
-					drawerContent={(props) => <SideDrawerContent {...props}/>}
+
+					drawerContent={(props) => <SideDrawerContent  {...props}/>}
 					initialRouteName={'MainStack'}
 					screenOptions={{
-						drawerType: 'slide',
+						drawerType: 'front',
+						// drawerType: 'slide',
 						swipeEnabled: false,
 						unmountOnBlur: true,
 						drawerStatusBarAnimation: 'slide',
 						drawerStyle: {
-							backgroundColor: 'white',
-							padding: 0,
 							width: 280
 						},
-						drawerItemStyle: {
-							backgroundColor: "pink",
-							margin: 0, padding: 0
-
-						},
-						drawerLabelStyle: {
-							color: "red"
-
-						}
 					}}>
 					<Drawer.Screen name={'MainStack'} component={MainStack} options={{
 						headerShown: false,

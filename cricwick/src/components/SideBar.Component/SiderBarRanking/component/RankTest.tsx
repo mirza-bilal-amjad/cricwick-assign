@@ -7,8 +7,12 @@ import Bowlers from "./comp/Bowlers";
 import AllRounders from "./comp/AllRounders";
 import GoogleIcon from "react-native-vector-icons/MaterialIcons";
 import Animated from "react-native-reanimated";
+import {useTheme} from "../../../../hooks";
 
 const RankTest = ({route}: any) => {
+
+    const {Layout, darkMode, NavigationTheme, Colors} = useTheme();
+    const {colors} = NavigationTheme;
     const {test} = route.params;
 
 
@@ -21,7 +25,10 @@ const RankTest = ({route}: any) => {
             isOpen4: true,
         });
         return (
-            <View key={index}>
+            <View key={index} style={{
+                backgroundColor: colors.background,
+
+            }}>
                 <View>
                     <TouchableOpacity onPress={() => setIsOpen({
                         isOpen1: !isOpen.isOpen1,
@@ -256,6 +263,8 @@ const RankTest = ({route}: any) => {
     return (
         <View style={{
             flex: 1,
+            backgroundColor: colors.background,
+
         }}>
             {
                 test && test.length > 0 &&
