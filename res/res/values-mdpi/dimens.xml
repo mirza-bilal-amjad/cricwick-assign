@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+     <dimen name="telco_flag_height">10dp</dimen>
+     <dimen name="telco_flag_width">18dp</dimen>
+
+     <dimen name="extraLivesText">16sp</dimen>
+
+     <dimen name="packages_small_text_size">8dp</dimen>
+     <dimen name="packages_regular_text_size">10dp</dimen>
+     <dimen name="packages_heading_text_size">12dp</dimen>
+
+
+</resources>

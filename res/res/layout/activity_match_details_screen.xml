@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/new_bg_color"
+    tools:context="com.khaleef.cricket.MatchDetails.View.MatchDetailsScreen">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="?android:actionBarSize">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="15dp"
+            android:src="@drawable/back_button"
+            android:contentDescription="@string/image_back_description" />
+
+        <TextView
+            android:layout_toRightOf="@+id/backButton"
+            android:layout_toLeftOf="@+id/brandImageView"
+
+            android:id="@+id/toolbarTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/concon_regular"
+            android:gravity="center"
+            android:textColor="@color/defaulttext"
+            android:textSize="@dimen/text_size_20sp" />
+
+        <ImageView
+            android:id="@+id/brandImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/action_bar_logo"
+            android:visibility="visible"
+            android:contentDescription="@string/tag_brand_logo" />
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_match_home" />
+
+    <include
+
+        layout="@layout/content_home"/>
+
+</LinearLayout>

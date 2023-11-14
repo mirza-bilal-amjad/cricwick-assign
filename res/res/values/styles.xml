@@ -1,0 +1,47 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="dialogTheme">@style/dialogAnimation</item>
+        <item name="alertDialogStyle">@style/dialogAnimation</item>
+    </style>
+
+    <style name="toolTipTxt" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="navigation_text_appearance" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/concon_regular</item>
+    </style>
+
+    <style name="dialogAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/item_animation_from_bottom</item>
+        <item name="android:windowExitAnimation">@anim/layout_anim_to_top</item>
+    </style>
+
+    <style name="NavigationTabTextAppeareance" parent="Widget.Design.TabLayout">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="outlineButtonStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="textAllCaps">false</item>
+        <item name="strokeWidth">@dimen/_1sdp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="backgroundTint">@android:color/transparent</item>
+    </style>
+
+    <style name="roundButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="textAllCaps">false</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="backgroundTint">@null</item>
+    </style>
+</resources>

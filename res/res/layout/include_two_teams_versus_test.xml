@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/White"
+    android:id="@+id/teams_versus_test"
+
+    android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+
+    <LinearLayout
+        android:layout_marginTop="3dp"
+        android:id="@+id/preview_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/inning1LinearLayoutTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="18dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/team1NameTest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:singleLine="true"
+                    android:text="-"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textAllCaps="false"
+                    android:textColor="@color/Black"
+                    android:textSize="23sp"
+                    tools:ignore="HardcodedText" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="3dp"
+                    android:gravity="center"
+                     android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/team1FalgTest"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="3dp"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="India"
+                    android:textColor="@color/Black"
+                    android:textSize="16sp"
+                    tools:ignore="HardcodedText" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-8dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="15dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="-3dp"
+                    android:layout_marginRight="-3dp"
+                    android:layout_weight="1"
+                    android:alpha="0.4"
+                    android:background="@color/Gray" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="15dp" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="-4dp"
+                android:gravity="top">
+
+                <LinearLayout
+                    android:layout_toLeftOf="@+id/and1"
+                    android:id="@+id/team1inning1LinearLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/team1inning1ScoreWithWickets"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-4dp"
+                        android:padding="3dp"
+                        android:singleLine="true"
+                        android:fontFamily="@font/roboto_regular"
+
+                        android:text="-"
+                        android:textColor="@color/Black"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/team1inning1Overs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-4dp"
+                        android:padding="3dp"
+                        android:singleLine="true"
+                        android:text="-"
+                        android:fontFamily="@font/roboto_regular"
+
+                        android:textColor="@color/Black"
+                        android:textSize="12sp"
+                        tools:ignore="HardcodedText" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/and1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text=" &amp; "
+                    android:fontFamily="@font/roboto_regular"
+                    android:visibility="invisible"
+
+                    android:textColor="@android:color/black" />
+
+                <LinearLayout
+                    android:layout_toRightOf="@+id/and1"
+                    android:gravity="right"
+                    android:id="@+id/team1inning2LinearLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:fontFamily="@font/roboto_regular"
+                        android:id="@+id/team1inning2ScoreWithWickets"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-4dp"
+                        android:padding="3dp"
+                        android:singleLine="true"
+                        android:text="-"
+                        android:textColor="@color/Black"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/team1inning2Overs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-4dp"
+                        android:padding="3dp"
+                        android:singleLine="true"
+                        android:text="-"
+                        android:fontFamily="@font/roboto_regular"
+
+                        android:textColor="@color/Black"
+                        android:textSize="12sp"
+                        tools:ignore="HardcodedText" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="1dp"
+            android:layout_marginTop="-2dp"
+            android:src="@drawable/verses_icon_grey" />
+
+        <LinearLayout
+            android:id="@+id/inning2LinearLayoutTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/team2FalgTest"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="3dp"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="India"
+                    android:textColor="@color/Black"
+                    android:textSize="16sp"
+                    tools:ignore="HardcodedText" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="3dp"
+                    android:gravity="center"
+                     android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/team2NameTest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:singleLine="true"
+                    android:text="-"
+                    android:fontFamily="@font/roboto_regular"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:textAllCaps="false"
+                    android:textColor="@color/Black"
+                    android:textSize="23sp"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-8dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="15dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="-3dp"
+                    android:layout_marginRight="-3dp"
+                    android:layout_weight="1"
+                    android:alpha="0.4"
+                    android:background="@color/Gray" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="15dp" />
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="-4dp"
+                android:gravity="top">
+
+                <LinearLayout
+                    android:id="@+id/team2inning1LinearLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/team2inning1ScoreWithWickets"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-4dp"
+                        android:padding="3dp"
+                        android:singleLine="true"
+                        android:text="-"
+                        android:fontFamily="@font/roboto_regular"
+
+                        android:textColor="@color/Black"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/team2inning1Overs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-4dp"
+                        android:padding="3dp"
+                        android:singleLine="true"
+                        android:text="-"
+                        android:fontFamily="@font/roboto_regular"
+
+                        android:textColor="@color/Black"
+                        android:textSize="12sp"
+                        tools:ignore="HardcodedText" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text=" &amp; "
+                    android:fontFamily="@font/roboto_regular"
+                    android:id="@+id/and2"
+                    android:visibility="invisible"
+                    android:textColor="@android:color/black" />
+
+                <LinearLayout
+                    android:id="@+id/team2inning2LinearLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/team2inning2ScoreWithWickets"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-4dp"
+                        android:padding="3dp"
+                        android:singleLine="true"
+                        android:text="-"
+                        android:fontFamily="@font/roboto_regular"
+
+                        android:textColor="@color/Black"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/team2inning2Overs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-4dp"
+                        android:padding="3dp"
+                        android:singleLine="true"
+                        android:text="-"
+                        android:fontFamily="@font/roboto_regular"
+
+                        android:textColor="@color/Black"
+                        android:textSize="12sp"
+                        tools:ignore="HardcodedText" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+android:visibility="gone"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-7715354291523868/4478541728"
+        />
+
+</LinearLayout>

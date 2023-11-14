@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ksaLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="22dp"
+        android:paddingBottom="22dp"
+        android:weightSum="1">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25">
+
+            <ImageView
+                android:layout_width="@dimen/telco_flag_width"
+                android:layout_height="@dimen/telco_flag_height"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ksa" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/ksa"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.75"
+            android:checkable="true"
+            android:fontFamily="@font/roboto_regular"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="Saudi Arabia"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/TextSize22" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/kuwaitLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="22dp"
+        android:paddingBottom="22dp"
+        android:weightSum="1">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25">
+
+            <ImageView
+                android:layout_width="@dimen/telco_flag_width"
+                android:layout_height="@dimen/telco_flag_height"
+                android:layout_centerInParent="true"
+                android:src="@drawable/kuwait" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/kuwait"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.75"
+            android:checkable="true"
+            android:fontFamily="@font/roboto_regular"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="Kuwait"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/TextSize22" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bahrainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="22dp"
+        android:paddingBottom="22dp"
+        android:weightSum="1">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25">
+
+            <ImageView
+                android:layout_width="@dimen/telco_flag_width"
+                android:layout_height="@dimen/telco_flag_height"
+                android:layout_centerInParent="true"
+                android:src="@drawable/bahrain" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/bahrain"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.75"
+            android:checkable="true"
+            android:fontFamily="@font/roboto_regular"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="Bahrain"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/TextSize22" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/uaeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="22dp"
+        android:paddingBottom="22dp"
+        android:weightSum="1">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25">
+
+            <ImageView
+                android:layout_width="@dimen/telco_flag_width"
+                android:layout_height="@dimen/telco_flag_height"
+                android:layout_centerInParent="true"
+                android:src="@drawable/uae" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/uae"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.75"
+            android:checkable="true"
+            android:fontFamily="@font/roboto_regular"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="United Arab Emirates"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/TextSize22" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sriLankaLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="22dp"
+        android:paddingBottom="22dp"
+        android:weightSum="1">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25">
+
+            <ImageView
+                android:layout_width="@dimen/telco_flag_width"
+                android:layout_height="@dimen/telco_flag_height"
+                android:layout_centerInParent="true"
+                android:src="@drawable/sri" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/sri"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.75"
+            android:checkable="true"
+            android:fontFamily="@font/roboto_regular"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="Sri Lanka"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/TextSize22" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/jordonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="22dp"
+        android:paddingBottom="22dp"
+        android:visibility="gone"
+        android:weightSum="1">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25">
+
+            <ImageView
+                android:layout_width="@dimen/telco_flag_width"
+                android:layout_height="@dimen/telco_flag_height"
+                android:layout_centerInParent="true"
+                android:src="@drawable/jord" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/jordan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.75"
+            android:checkable="true"
+            android:fontFamily="@font/roboto_regular"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="Jordan"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/TextSize22" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/qatarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="22dp"
+        android:paddingBottom="22dp"
+        android:visibility="gone"
+        android:weightSum="1">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25">
+
+            <ImageView
+                android:layout_width="@dimen/telco_flag_width"
+                android:layout_height="@dimen/telco_flag_height"
+                android:layout_centerInParent="true"
+                android:src="@drawable/qatar" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/qatar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.75"
+            android:checkable="true"
+            android:fontFamily="@font/roboto_regular"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="Qatar"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/TextSize22" />
+
+    </LinearLayout>
+
+</LinearLayout>

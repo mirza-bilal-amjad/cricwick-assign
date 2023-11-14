@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/scoreContent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White"
+        android:orientation="vertical">
+
+
+         <include layout="@layout/view_livematch_team_vs_team_test" />
+
+
+
+
+
+
+        <LinearLayout
+            android:padding="2dp"
+             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/tv_run_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="right|center_vertical"
+                android:singleLine="true"
+                android:text=""
+                android:textSize="12sp"
+                android:visibility="gone"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tv_current_run_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text=""
+                android:textSize="11sp"
+                tools:ignore="HardcodedText"
+                tools:text="CRR: 3.2" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="3dp"
+
+            android:id="@+id/inning2requiredStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text=""
+            android:paddingBottom="@dimen/section_space"
+
+            android:textColor="@color/Black"
+            android:textSize="11sp"
+             android:visibility="visible"
+            tools:ignore="HardcodedText" />
+
+
+        <TextView
+            android:layout_below="@+id/inning2requiredStatus"
+            android:id="@+id/liveMatchFixture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:ellipsize="end"
+            android:gravity="center"
+             android:maxLines="1"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="@android:color/black"
+            android:textSize="11sp"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,187 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/White"
+    tools:context="com.khaleef.cricket.League.Fragments.WalletTransactionsFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/headerLayout"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:visibility="gone"
+        >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_text_color"
+            android:id="@+id/heading"
+            android:layout_centerVertical="true"
+            android:layout_weight="2"
+            android:background="#FDF2F2"
+            android:layout_marginLeft="@dimen/infoboard_small_margin"
+            android:layout_marginTop="@dimen/infoboard_small_margin"
+            android:layout_marginBottom="@dimen/infoboard_small_margin"
+            android:layout_marginRight="@dimen/infoboard_small_margin"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/man"
+                android:id="@+id/people_img"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/infoboard_small_margin"
+                ></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="People Joined"
+                android:textSize="@dimen/regular_text_size"
+                android:fontFamily="@font/opensans_semibold"
+                android:textColor="@color/Black"
+                android:layout_marginTop="12dp"
+                android:layout_toRightOf="@+id/people_img"
+                android:layout_marginLeft="14dp"
+                android:id="@+id/people_heading"
+                ></TextView>
+
+            <TextView
+                android:id="@+id/people_joind_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23"
+                android:textSize="@dimen/heading_text_size"
+                android:fontFamily="@font/opensans_semibold"
+                android:textColor="#B91414"
+                android:layout_toRightOf="@+id/people_img"
+                android:layout_marginLeft="14dp"
+                android:layout_below="@id/people_heading"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="12dp"
+                >
+
+            </TextView>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_text_color"
+            android:layout_centerVertical="true"
+            android:layout_weight="2"
+            android:background="#DCFFEE"
+            android:layout_marginLeft="@dimen/infoboard_small_margin"
+            android:layout_marginTop="@dimen/infoboard_small_margin"
+            android:layout_marginBottom="@dimen/infoboard_small_margin"
+            android:layout_marginRight="@dimen/infoboard_small_margin"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/money_bag"
+                android:id="@+id/bag_img"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/infoboard_small_margin"
+                ></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reward Earned"
+                android:textSize="@dimen/regular_text_size"
+                android:fontFamily="@font/opensans_semibold"
+                android:textColor="@color/Black"
+                android:layout_marginTop="12dp"
+                android:layout_toRightOf="@+id/bag_img"
+                android:layout_marginLeft="14dp"
+                android:id="@+id/reward_heading"
+                ></TextView>
+
+            <TextView
+                android:id="@+id/reward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rs. 200"
+                android:textSize="@dimen/heading_text_size"
+                android:fontFamily="@font/opensans_semibold"
+                android:textColor="#0BBA9D"
+                android:layout_toRightOf="@+id/bag_img"
+                android:layout_marginLeft="14dp"
+                android:layout_below="@id/reward_heading"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="12dp"
+                >
+
+            </TextView>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/infoboard_regular_margin"
+        android:layout_marginRight="@dimen/infoboard_regular_margin"
+        android:paddingBottom="@dimen/infoboard_regular_margin"
+        android:layout_marginTop="16dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensans_bold_0"
+            android:textSize="@dimen/regular_text_size"
+            android:text="Users"
+            android:textColor="@color/Black"
+            ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensans_bold_0"
+            android:textSize="@dimen/regular_text_size"
+            android:text="Prize"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/Black"
+            ></TextView>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/transactions_rv"
+        android:layout_marginTop="@dimen/infoboard_regular_margin"
+        android:layout_marginLeft="@dimen/infoboard_regular_margin"
+        android:layout_marginRight="@dimen/infoboard_regular_margin"
+        android:paddingBottom="@dimen/infoboard_regular_margin"
+        ></androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Prizes Won"
+        android:textSize="@dimen/regular_text_size"
+        android:fontFamily="@font/opensans_bold_0"
+        android:layout_gravity="center"
+        android:textColor="@color/dark_text_color"
+        android:id="@+id/empty_tv"
+        android:visibility="gone"
+        android:layout_marginTop="36dp"
+        android:layout_centerVertical="true"
+
+        ></TextView>
+
+
+</LinearLayout>

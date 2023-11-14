@@ -1,0 +1,305 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/new_bg_color"
+    tools:context="com.khaleef.cricket.MatchDetails.Fragments.MatchSummary.View.MatchSummaryFragment">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+
+        android:id="@+id/summaryShimmer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:shimmer_duration="1000">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                layout="@layout/upcoming_progress_loader"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_margin="@dimen/section_space" />
+
+            <include
+                layout="@layout/summary_progress_loader"
+
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_margin="@dimen/section_space" />
+
+            <include
+                layout="@layout/summary_progress_loader"
+
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_margin="@dimen/section_space" />
+
+            <include
+                layout="@layout/summary_progress_loader"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/section_space" />
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <LinearLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/liveStreamView"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="@dimen/section_space"
+            android:layout_marginTop="@dimen/section_space"
+            android:layout_marginRight="@dimen/section_space"
+            android:background="@color/card_grey"
+            android:clickable="true"
+
+            android:foreground="?attr/selectableItemBackground"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="@font/concon_regular"
+                    android:text="Watch Now!"
+                    android:textColor="@color/newsBlack"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="@font/concon_regular"
+                    android:text="WATCH LIVE"
+                    android:textColor="@color/live_section_red"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="2dp"
+                    android:src="@drawable/pre_right_arrow"
+                    app:tint="@color/live_section_red" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/horizontal_progress_loader"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/videoSurfaceContainer"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginLeft="@dimen/section_space"
+            android:layout_marginTop="@dimen/section_space"
+            android:layout_marginRight="@dimen/section_space"
+            android:background="#000"
+            android:keepScreenOn="true"
+            android:visibility="visible">
+
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/videoSurface"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                app:controller_layout_id="@layout/exo_player_custom_control_view" />
+
+            <FrameLayout
+                android:id="@+id/sec_pause_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/img_play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/video_series_play"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/img_pause"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/video_series_paus_icon" />
+            </FrameLayout>
+
+
+            <ProgressBar
+                android:id="@+id/video_loading_progressBar"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/White"
+                android:indeterminateTintMode="src_atop"
+                android:padding="3dp"
+                android:visibility="visible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@android:drawable/ic_media_pause"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#55000000"
+                android:orientation="vertical"
+                android:visibility="invisible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/sec_header_tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:visibility="visible">
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/main_controls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:padding="@dimen/section_space"
+                android:text="Live"
+                android:textColor="#fa0014"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:ignore="SmallSp" />
+
+            <ImageView
+                android:id="@+id/cross"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:padding="@dimen/section_space"
+                android:src="@drawable/cross_news"
+                android:visibility="visible" />
+
+            <ListView
+                android:id="@+id/quality_listview"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"></ListView>
+        </RelativeLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/summaryRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:layout_marginTop="3dp"
+                android:descendantFocusability="blocksDescendants"
+                android:visibility="visible" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/nodata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/no_content_found"
+        android:textSize="20sp"
+        android:visibility="gone" />
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-7715354291523868/1104550729" />
+
+    <ViewFlipper
+        android:id="@+id/matchSummeryFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:autoStart="true"
+
+
+        android:flipInterval="5000"
+        android:inAnimation="@android:anim/slide_in_left"
+        android:outAnimation="@android:anim/slide_out_right" />
+</RelativeLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+     <dimen name="telco_flag_height">35dp</dimen>
+     <dimen name="telco_flag_width">60dp</dimen>
+
+     <!--todo xup-->
+     <dimen name="nextGameTextSize">25sp</dimen>
+     <dimen name="timerTextSize">45sp</dimen>
+     <dimen name="prizeTextsize">24sp</dimen>
+     <dimen name="customerIDTextSize">20sp</dimen>
+     <dimen name="yourBalanceTitleTextSize">20sp</dimen>info
+     <dimen name="balanceTextSize">28sp</dimen>
+     <dimen name="extraLives">14sp</dimen>
+     <dimen name="eliminationtext">16sp</dimen>
+     <dimen name="extraLivesCount">16sp</dimen>
+     <dimen name="leaderBoardTextSize">20sp</dimen>
+     <dimen name="centerViewTopPadding">12dp</dimen>
+    <dimen name="extraLivesText">17sp</dimen>
+
+
+    <dimen name="infoboard_regular_margin">18dp</dimen>
+    <dimen name="infoboard_small_margin">10dp</dimen>
+    <dimen name="infoboard_large_margin">26dp</dimen>
+    <dimen name="infoboard_xlarge_margin">34dp</dimen>
+    <dimen name="infoboard_xxlarge_margin">44dp</dimen>
+    <dimen name="infoboard_top_bottom_margins">60dp</dimen>
+
+    <dimen name="small_text_size">16dp</dimen>
+    <dimen name="regular_text_size">18dp</dimen>
+    <dimen name="heading_text_size">26dp</dimen>
+
+    <dimen name="infoboard_regular_text_size">16dp</dimen>
+    <dimen name="infoboard_heading_text_size">20dp</dimen>
+
+    <dimen name="packages_small_text_size">14dp</dimen>
+    <dimen name="packages_regular_text_size">16dp</dimen>
+    <dimen name="packages_heading_text_size">18dp</dimen>
+
+
+</resources>

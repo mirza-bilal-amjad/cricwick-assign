@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/subscription_bg_bottom"
+            android:scaleType="fitXY"
+            android:id="@+id/batman_logo"
+            android:layout_alignParentBottom="true"></ImageView>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/enterPhoneLayout">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/rootView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/app_logo_medium"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/infoboard_xlarge_margin"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/screen1_text1"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:textSize="18dp"
+                    android:text=""
+                    android:paddingLeft="40dp"
+                    android:paddingRight="40dp"
+                    android:gravity="center"
+                    android:fontFamily="@font/opensans_bold_0"
+                    android:textColor="@color/Black"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/screen1_text2"
+                    android:textSize="@dimen/infoboard_regular_text_size"
+                    android:text=""
+                    android:paddingLeft="42dp"
+                    android:paddingRight="42dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/opensans_regular"
+                    android:textFontWeight="600"
+                    android:textColor="#3E3E3E"
+                    android:visibility="gone"
+                    ></TextView>
+
+                <!--            <TextView-->
+                <!--                android:id="@+id/noteTextTVSignUp"-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_marginLeft="80dp"-->
+                <!--                android:layout_marginRight="80dp"-->
+                <!--                android:drawableRight="@drawable/drop_down"-->
+                <!--                android:fontFamily="@font/roboto_regular"-->
+                <!--                android:gravity="center"-->
+                <!--                android:paddingTop="5dp"-->
+                <!--                android:paddingBottom="5dp"-->
+                <!--                android:textColor="@color/app_textColor"-->
+                <!--                android:textSize="19sp" />-->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/subscription_field_container"
+                    android:layout_marginLeft="@dimen/infoboard_xlarge_margin"
+                    android:layout_marginRight="@dimen/infoboard_xlarge_margin"
+                    android:layout_marginTop="22dp"
+                    android:id="@+id/carrier_layout"
+                    android:visibility="gone"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/carrier"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="18dp"
+
+                        ></ImageView>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Select Carrier"
+                        android:textColor="#C9C9C9"
+                        android:textSize="18dp"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/opensans_regular"
+                        android:layout_marginBottom="9dp"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginLeft="64dp"
+                        android:textFontWeight="600"
+                        android:id="@+id/carrier_tv_hint" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text=""
+                        android:textColor="@color/Black"
+                        android:textSize="18dp"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/opensans_regular"
+                        android:textFontWeight="600"
+                        android:id="@+id/carrier_tv" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/dropdown_ico"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="18dp"
+
+                        ></ImageView>
+
+
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:layout_marginTop="56dp"
+                    android:text="Enter your mobile number"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:textColor="@color/Black"
+                    android:id="@+id/enter_phone_text"
+                    android:layout_marginLeft="32dp"></TextView>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/subscription_field_container"
+                    android:layout_marginLeft="@dimen/infoboard_xlarge_margin"
+                    android:layout_marginRight="@dimen/infoboard_xlarge_margin"
+                    android:layout_marginTop="8dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/mobile"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginBottom="9dp"
+                        android:layout_marginLeft="@dimen/infoboard_regular_margin"></ImageView>
+
+                    <EditText
+                        android:id="@+id/phoneNumberField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:hint="03 xx xxxxxxx"
+                        android:inputType="phone"
+                        android:textColor="@color/Black"
+                        android:textColorHint="@color/textColorGray"
+                        android:textCursorDrawable="@null"
+                        android:textSize="16dp"
+                        android:layout_centerVertical="true"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/opensans_regular"
+                        android:textFontWeight="600"
+                        android:maxLength="11"
+                        android:layout_centerInParent="true" />
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/sendPinButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Continue"
+                    android:textColor="@color/White"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="@font/opensans_bold_0"
+                    android:background="@drawable/rounded_red_btn"
+                    android:backgroundTint="#B91414"
+                    android:paddingTop="9dp"
+                    android:paddingBottom="9dp" />
+
+
+                <TextView
+                    android:id="@+id/enterPhonePricePointKSA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center"
+                    android:textColor="@color/defaulttext"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    android:id="@+id/phoneCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:drawableRight="@drawable/drop_down"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:inputType="phone"
+                    android:padding="2dp"
+                    android:text="96653"
+                    android:textColor="@color/app_textColor"
+                    android:textColorHighlight="@color/defaulttext"
+                    android:textColorHint="@color/defaulttext"
+                    android:textCursorDrawable="@null"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/skipSubscription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/TextSize12"
+            android:layout_marginTop="20dp"
+            android:text="Maybe Next time, Skip for Now"
+            android:fontFamily="@font/opensans_regular"
+            android:textColor="@color/subscription_skip_color"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"
+            android:layout_marginBottom="@dimen/infoboard_regular_margin"></TextView>
+
+        <include layout="@layout/confirmation_pin_new" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#CC000000"
+            android:id="@+id/shadow_layout"
+            android:orientation="vertical"
+            android:visibility="gone"
+            ></LinearLayout>
+
+    </RelativeLayout>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="180dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:layout_marginRight="8dp"
+
+    >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/tv_image"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/placeholder_16_9" />
+
+            <RelativeLayout
+                android:layout_width="60dp"
+                android:layout_height="130dp"
+                android:background="@drawable/playlist_gradient"
+                >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_playlist"
+                    android:tint="@color/White"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginBottom="3dp"
+                    ></ImageView>
+
+                <TextView
+                    android:id="@+id/videos_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_regular"
+                    android:textColor="@color/White"
+                    android:textSize="16sp"
+                    android:text="14"
+                    android:gravity="center_horizontal"
+                    android:layout_marginLeft="6dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_regular"
+                    android:paddingBottom="5dp"
+                    android:textColor="@color/White"
+                    android:textSize="9sp"
+                    android:text="Videos"
+                    android:layout_marginLeft="6dp"
+                    />
+
+
+            </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:layout_marginTop="7dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:lines="2"
+            android:fontFamily="@font/opensans_bold_0"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/video_list_title"
+            tools:text="kjsbad kuagksdghkha kaksd kakbf kabfdk kajbDF SAKABD KKAhgfd kdbf khvksj dhbhjfbsmhdb jhsbd " />
+
+        <TextView
+            android:id="@+id/tv_sub_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/opensans_regular"
+            android:lines="1"
+            android:textColor="#979797"
+            android:textSize="@dimen/video_list_sub_title"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/tv_time_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="7dp"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/opensans_regular"
+            android:lines="1"
+            android:paddingBottom="5dp"
+            android:textColor="#979797"
+            android:textSize="@dimen/video_list_sub_title"
+            android:text="2 mins ago"/>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

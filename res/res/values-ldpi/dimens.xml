@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+     <dimen name="telco_flag_height">8dp</dimen>
+     <dimen name="telco_flag_width">13dp</dimen>
+
+     <!--todo xup trivia-->
+
+    <dimen name="extraLivesText">16sp</dimen>
+</resources>

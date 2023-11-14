@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/unsub_container"
+    android:background="@color/White"
+    android:orientation="vertical"
+    tools:context="com.khaleef.cricket.unsubscribe.view.UnsubscribtionActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/close_search"
+        android:src="@drawable/close_search"
+        android:layout_gravity="end"
+        android:layout_marginRight="@dimen/infoboard_regular_margin"
+        ></ImageView>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/unsubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/opensans_semibold"
+                android:text="Please Enter Your Details To Complete Payout Process"
+                android:textColor="@color/Black"
+                android:textSize="18dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Amount in wallet:"
+                        android:layout_marginTop="24dp"
+                        android:fontFamily="@font/opensans_semibold"
+                        android:textColor="@color/Black"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/wallet_amount_tv"
+                        android:textSize="18dp"
+                        android:text="0"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="24dp"
+                        android:fontFamily="@font/opensans_semibold"
+                        android:textColor="#C40A0B"></TextView>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/letUsKnowText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="Full Name (As per CNIC)*"
+                    android:textColor="#404040"
+                    android:textSize="18dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mail" />
+
+
+                <EditText
+                    android:id="@+id/full_name_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/unsub_textview_background"
+                    android:fontFamily="@font/opensans_light_0"
+                    android:hint="Enter your name"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:padding="7dp"
+                    android:textColor="#404040" />
+<!--                    android:nextFocusUp="@id/description"-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name Required"
+                    android:visibility="gone"
+                    android:id="@id/nameRequired"
+                    android:textColor="@color/redColor"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="CNIC Number*"
+                    android:textColor="#404040"
+                    android:textSize="18dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mail" />
+
+                <EditText
+                    android:id="@+id/cnic_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/unsub_textview_background"
+                    android:fontFamily="@font/opensans_light_0"
+                    android:hint="_____-_______-__"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:padding="7dp"
+                    android:maxLength="15"
+                    android:textColor="#404040" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cnic Required"
+                    android:id="@id/cnicRequired"
+                    android:visibility="gone"
+                    android:textColor="@color/redColor"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="CNIC Issuance Date*"
+                    android:textColor="#404040"
+                    android:textSize="18dp" />
+
+
+                <EditText
+                    android:id="@+id/cnic_issue_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/unsub_textview_background"
+                    android:fontFamily="@font/opensans_light_0"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:padding="7dp"
+                    android:focusable="false"
+                    android:textColor="#404040" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cnic Date Required"
+                    android:id="@id/cnicDateRequired"
+                    android:visibility="gone"
+                    android:textColor="@color/redColor"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:text="Withdrawal Amount*"
+                    android:textColor="#404040"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/withdrawal_amount_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/unsub_textview_background"
+                    android:fontFamily="@font/opensans_light_0"
+                    android:hint="Enter Amount"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:padding="7dp"
+                    android:textColor="#404040" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Amount Required"
+                    android:id="@+id/amount_empty"
+                    android:visibility="gone"
+                    android:textColor="@color/redColor"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="Payout amount should be multiple of 500 i.e 500, 1000, 1500"
+                    android:textColor="#404040"
+                    android:textSize="12dp"
+                    android:id="@+id/min_payout_text"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mail" />
+
+
+                <TextView
+                    android:id="@+id/payout_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="@drawable/rounded_red_btn"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:text="Payout"
+                    android:inputType="number"
+                    android:textColor="@color/White"
+                    android:textSize="18sp"
+                    android:layout_gravity="center_horizontal"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/new_bg_color">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/horizontal_progress_loader"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingBottom="8dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:visibility="invisible"
+            android:descendantFocusability="blocksDescendants"
+
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/no_videos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/no_videos_available"
+        android:visibility="invisible" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/teamShimmerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:shimmer_duration="1000">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/team_progress_loader" />
+
+            <include layout="@layout/team_progress_loader" />
+
+            <include layout="@layout/team_progress_loader" />
+
+            <include layout="@layout/team_progress_loader" />
+
+            <include layout="@layout/team_progress_loader" />
+
+            <include layout="@layout/team_progress_loader" />
+
+            <include layout="@layout/team_progress_loader" />
+
+            <include layout="@layout/team_progress_loader" />
+
+            <include layout="@layout/team_progress_loader" />
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+</RelativeLayout>

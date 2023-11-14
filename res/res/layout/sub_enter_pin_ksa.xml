@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/enterPinLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical"
+    android:visibility="visible"
+
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/opensans_bold_0"
+        android:gravity="center"
+        android:id="@+id/pinTitle"
+        android:padding="18dp"
+        android:text="Pin Verification"
+        android:textColor="@color/pinVerificationTextColor"
+        android:textSize="22sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progressBarLinearLayout"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/enterPinTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/opensans_regular"
+            android:includeFontPadding="false"
+            android:gravity="center"
+            android:padding="14dp"
+            android:text="Please check your SMS and enter your PIN"
+            android:textColor="@color/defaulttext"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/enteredPhoneTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:drawableRight="@drawable/edit_sub"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/opensans_light_0"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="966111111111"
+            android:textColor="@color/pinVerificationTextColor"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:text="Please Enter Your PIN"
+            android:textColor="@color/app_textColor"
+            android:textSize="14dp"
+            android:visibility="invisible" />
+
+        <EditText
+            android:id="@+id/pinCodeField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/subscribeButtonSignUpTwo"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:background="@null"
+            android:fontFamily="@font/opensans_light_0"
+            android:gravity="center"
+            android:hint="Enter Pin Code Here"
+            android:inputType="phone"
+            android:padding="5dp"
+            android:textColor="@color/app_textColor"
+            android:textColorHint="#404040"
+            android:textCursorDrawable="@null"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+             android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+
+            android:background="#43666565" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+
+
+            <TextView
+                android:id="@+id/buttonSubscribe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="23dp"
+                android:background="@drawable/next"
+                android:fontFamily="@font/opensans_regular"
+                android:gravity="center"
+                android:inputType="phone"
+                android:padding="15dp"
+                android:text="@string/subscribe"
+
+                android:textColor="@color/White"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/didNotGetCode"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/opensans_regular"
+                android:gravity="center"
+                android:text="Didn't receive Code?"
+                android:textColor="@color/Black"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/buttonResend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:fontFamily="@font/opensans_regular"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="RESEND PIN"
+                android:textColor="@color/redColor"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/enterPinPricePointKSA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/opensans_light_0"
+                android:gravity="center"
+                android:textColor="@color/defaulttext"
+                android:textSize="15sp" />
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

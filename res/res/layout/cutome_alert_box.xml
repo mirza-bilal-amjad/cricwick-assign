@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/dialogBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:background="@drawable/bg_white_with_shadow"
+        android:elevation="4dp"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/app_logo_medium"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="26dp"
+                ></ImageView>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/alertTitleTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:gravity="center_horizontal"
+            android:text="SAmple Text"
+            android:fontFamily="@font/opensans_bold_0"
+            android:textColor="@android:color/black"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/alertTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/opensans_regular"
+            android:text="SAmple Text osdafiuoasdhf"
+            android:textColor="#3E3E3E"
+            android:textSize="@dimen/regular_text_size" />
+
+
+        <TextView
+            android:id="@+id/positiveIB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="OK"
+            android:layout_marginLeft="64dp"
+            android:layout_marginRight="64dp"
+            android:textColor="@color/White"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="36dp"
+            android:fontFamily="@font/opensans_bold_0"
+            android:background="@drawable/rounded_red_btn"
+
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp" />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

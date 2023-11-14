@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:background="@color/White">
+
+    <ImageView
+        android:id="@+id/img_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="25dp"
+        android:src="@drawable/back_button" />
+
+
+    <TextView
+        android:id="@+id/tv_series_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+         android:layout_toLeftOf="@+id/cast_home_btn"
+        android:layout_toRightOf="@+id/img_back"
+         android:ellipsize="end"
+        android:fontFamily="@font/concon_regular"
+        android:gravity="center"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:lines="1"
+
+        android:textColor="@color/defaulttext"
+        android:textSize="@dimen/video_title_header"
+        tools:text="Pakistan Super League 2018" />
+
+
+<!--    <ImageView-->
+<!--        android:id="@+id/img_filters"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:padding="25dp"-->
+<!--        android:visibility="invisible" />-->
+
+    <androidx.mediarouter.app.MediaRouteButton
+        android:layout_width="wrap_content"
+        android:id="@+id/cast_home_btn"
+        android:layout_height="wrap_content"
+        android:mediaRouteTypes= "user"
+        android:visibility="visible"
+        android:layout_centerVertical="true"
+        app:mediaRouteButtonTint="@color/Black"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="12dp"
+        ></androidx.mediarouter.app.MediaRouteButton>
+
+
+
+</RelativeLayout>

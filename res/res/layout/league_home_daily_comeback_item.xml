@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="@dimen/infoboard_regular_margin"
+    android:background="@drawable/bg_white_with_shadow"
+    >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/daily_claim"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/infoboard_regular_margin"
+        android:id="@+id/heading_img"
+        ></ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/regular_text_size"
+        android:fontFamily="@font/opensans_regular"
+        android:textColor="@color/dark_text_color"
+        android:id="@+id/league_home_daily_claim_heading"
+        android:text="Visit everyday to collect higher Scores!"
+        android:layout_below="@id/heading_img"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        ></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/regular_text_size"
+        android:fontFamily="@font/opensans_regular"
+        android:textColor="@color/Black_with_opacity_4"
+        android:id="@+id/league_home_daily_claim_subheading"
+        android:text="Claim Next in 05:26:32"
+        android:layout_below="@id/league_home_daily_claim_heading"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="6dp"
+        ></TextView>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            android:scaleType="fitXY"
+            android:id="@+id/daily_claim_image"
+            android:layout_below="@id/league_home_daily_claim_subheading"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            ></ImageView>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Claim Scores"
+        android:background="@drawable/league_home_solid_btn"
+        android:backgroundTint="#FACA29"
+        android:layout_marginTop="@dimen/infoboard_xlarge_margin"
+        android:textColor="@color/Black"
+        android:fontFamily="@font/opensans_bold_0"
+        android:textSize="@dimen/regular_text_size"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/infoboard_large_margin"
+        android:layout_below="@+id/daily_claim_image"
+        ></TextView>
+
+
+
+
+</RelativeLayout>

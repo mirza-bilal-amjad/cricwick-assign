@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/White"
+    android:padding="@dimen/section_space">
+    <TextView
+        android:id="@+id/seriesTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:textSize="16sp"
+        android:fontFamily="@font/roboto_regular"
+        android:lines="1"
+        tools:ignore="HardcodedText"
+        tools:text="dfdsfsdfsdfsdfsf"
+        android:paddingLeft="@dimen/margin_10dp"
+        android:paddingTop="@dimen/section_space"
+        android:textColor="@color/defaulttext"
+        />
+    <TextView
+        android:layout_alignParentRight="true"
+        android:id="@+id/seriesResultDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:textSize="10sp"
+        android:fontFamily="@font/roboto_regular"
+        android:lines="1"
+        tools:text="dfdsfsdfsdfsdfsf"
+        tools:ignore="HardcodedText"
+         android:paddingTop="@dimen/section_space"
+        android:textColor="@color/defaulttext"
+        />
+
+    <TextView
+        android:id="@+id/seriesDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seriesTitle"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_bold"
+        android:lines="2"
+        android:paddingLeft="@dimen/margin_10dp"
+        android:textColor="@color/textColorGray"
+        android:textSize="13sp"
+        tools:ignore="HardcodedText"
+        tools:text="dfdsfsdfsdfsdfsf" />
+
+</RelativeLayout>

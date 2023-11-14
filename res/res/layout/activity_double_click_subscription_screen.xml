@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/rootView"
+    android:layout_height="match_parent"
+    android:background="@drawable/sub_bg_ksa"
+    tools:context="com.khaleef.cricket.Subscription.DoubleClickSubscription.view.DoubleClickSubscriptionScreen">
+
+
+    <ImageView
+        android:id="@+id/cricwickLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/subscription_logo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:src="@drawable/action_bar_logo"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cricwickLogo" />
+
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/languageLayout"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cricwickLogo"
+         android:stretchColumns="2">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="#66000000"
+            android:padding="1dp">
+
+            <TextView
+                android:id="@+id/englishLanguage"
+                style="@style/barGrapButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:background="#E61509"
+                android:padding="5dp"
+                android:text="English"
+                android:textColor="@color/colorWhite" />
+
+            <TextView
+                android:id="@+id/urduLanguage"
+                style="@style/barGrapButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="اردو" />
+
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:fontFamily="@font/lato_black"
+        android:gravity="center"
+        android:text="WATCH LIVE CRICKET\nVIDEOS &amp; HIGHLIGHTS"
+        android:textColor="#578011"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/languageLayout" />
+
+    <LinearLayout
+        android:id="@+id/subHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_bold"
+            android:gravity="center"
+            android:id="@+id/subHeading1"
+            android:includeFontPadding="false"
+            android:text="Gossips &amp; News"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/full_stop" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_bold"
+            android:gravity="center"
+            android:id="@+id/subHeading2"
+            android:text="HD Streaming"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/full_stop" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_bold"
+            android:gravity="center"
+            android:id="@+id/subHeading3"
+            android:text="Best Moments"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/enterPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_margin="40dp"
+        android:layout_marginTop="43dp"
+        android:fontFamily="@font/opensans_bold_0"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="Enter Your Mobile Number:"
+        android:textColor="#404040"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subHeading" />
+
+
+    <EditText
+        android:id="@+id/phoneCode"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="41dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="46dp"
+        android:background="@drawable/direct_sub_phone_background"
+        android:drawableStart="@drawable/cell"
+        android:drawablePadding="17dp"
+        android:enabled="false"
+        android:clickable="false"
+        android:fontFamily="@font/opensans_light_0"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:padding="@dimen/margin_10dp"
+
+        android:text=""
+        android:textColor="#080808"
+        android:textColorHint="#4D000000"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/enterPhoneNumber" />
+
+    <TextView
+        android:id="@+id/continueBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/direct_sub_button_background"
+        android:gravity="center"
+        android:text="CONTINUE"
+        android:fontFamily="@font/lato_black"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phoneCode" />
+
+    <ImageView
+        android:id="@+id/events"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:src="@drawable/events"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/continueBtn" />
+
+
+    <TextView
+        android:id="@+id/pricePoint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginRight="42dp"
+        android:fontFamily="@font/opensans_regular"
+        android:gravity="center"
+        android:text=" "
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/events" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

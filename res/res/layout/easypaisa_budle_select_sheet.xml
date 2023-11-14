@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet_bundles"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/cornered_22_background"
+    android:orientation="vertical"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/redeem_sheet_title"
+        android:src="@drawable/easypaisa_logo"
+        android:layout_marginTop="16dp"
+        ></ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/bundles_content_container"
+        android:visibility="visible"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="You have not been charged for 30 days. Purchase a bundle for PSL 2020."
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:textSize="16dp"
+            android:fontFamily="@font/opensans_regular"
+            android:id="@+id/easypaisa_sheet_desc_tv"
+            android:textColor="@color/Black"
+            android:layout_marginTop="16dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Plan:"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:textSize="16dp"
+            android:fontFamily="@font/opensans_semibold"
+            android:textColor="@color/Black"
+            android:layout_marginTop="16dp"></TextView>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/ep_bundles_recycler"
+            android:layout_marginTop="8dp"></androidx.recyclerview.widget.RecyclerView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Easy Mobile Account Number:"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:textSize="16dp"
+            android:fontFamily="@font/opensans_semibold"
+            android:textColor="@color/Black"
+            android:layout_marginTop="16dp"></TextView>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ep_field_container"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="8dp">
+
+
+            <EditText
+                android:id="@+id/phoneNumberField_ep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="9dp"
+                android:layout_centerHorizontal="true"
+                android:hint="03XXXXXXXXX"
+                android:inputType="phone"
+                android:textColor="#777777"
+                android:textColorHint="@color/textColorGray"
+                android:textCursorDrawable="@null"
+                android:textSize="16dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/opensans_regular"
+                android:textFontWeight="600"
+                android:maxLength="11"
+                />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/continue_ep_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Continue"
+            android:layout_marginLeft="64dp"
+            android:layout_marginRight="64dp"
+            android:textColor="@color/White"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_marginTop="@dimen/infoboard_regular_margin"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/opensans_bold_0"
+            android:background="@drawable/rounded_red_btn"
+            android:backgroundTint="#ED1C24"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:layout_marginBottom="32dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/otp_bundles_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible"
+        >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="OTP sent on number mentioned below"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:textSize="16dp"
+            android:fontFamily="@font/opensans_regular"
+            android:id="@+id/otp_desc_tv"
+            android:textColor="@color/Black"
+            android:layout_marginTop="16dp"
+            ></TextView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/enteredPhoneTV_ep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:padding="10dp"
+                android:fontFamily="@font/opensans_semibold"
+                android:text="0XXX XXXXXXX"
+                android:textColor="@color/Black"
+                android:textSize="16dp"
+
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/enteredPhoneTV_ep"
+                android:src="@drawable/edit_icon"
+                android:layout_centerVertical="true"
+                android:padding="2dp"
+                android:id="@+id/edit_number_ep"
+                ></ImageView>
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your plan:"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:textSize="16dp"
+            android:fontFamily="@font/opensans_semibold"
+            android:textColor="@color/Black"
+            android:layout_marginTop="16dp"
+            ></TextView>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tick_red"
+                app:layout_constraintLeft_toRightOf="@+id/selected_pkg_layout"
+                app:layout_constraintTop_toTopOf="@+id/selected_pkg_layout"
+                app:layout_constraintRight_toRightOf="@+id/selected_pkg_layout"
+                app:layout_constraintBottom_toTopOf="@+id/selected_pkg_layout"
+                android:elevation="4dp"
+                android:id="@+id/tick_pkg_selected"
+                ></ImageView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:elevation="2dp"
+                app:cardCornerRadius="5dp"
+                android:layout_marginBottom="16dp"
+                android:id="@+id/selected_pkg_layout">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/package_bg"
+                        android:id="@+id/bg_pkg_selected"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="80dp"
+                            android:layout_marginLeft="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="16dp"
+                                android:text=""
+                                android:id="@+id/title_pkg_selected"
+                                android:fontFamily="@font/opensans_bold_0"
+                                android:textColor="@color/Black"></TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12dp"
+                                android:text=""
+                                android:id="@+id/promo_pkg_selected"
+                                android:fontFamily="@font/opensans_regular"
+                                android:textColor="#CF3737"
+                                android:layout_marginTop="2dp"
+
+                                ></TextView>
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12dp"
+                            android:text="PKR."
+                            android:fontFamily="@font/opensans_regular"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="16dp"
+                            android:id="@+id/pkr_pkg_selected"
+                            android:textColor="@color/Black"
+                            android:layout_alignBaseline="@+id/price_pkg_selected"></TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="24dp"
+                            android:text=""
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/opensans_bold_0"
+                            android:layout_marginRight="2dp"
+                            android:layout_toLeftOf="@+id/pkr_pkg_selected"
+                            android:textColor="@color/Black"
+                            android:id="@+id/price_pkg_selected"></TextView>
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter OTP Received in SMS"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:textSize="16dp"
+            android:fontFamily="@font/opensans_semibold"
+            android:textColor="@color/Black"
+            android:layout_marginTop="16dp"
+            ></TextView>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ep_field_container"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="8dp">
+
+            <RelativeLayout
+                android:id="@+id/progress_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/infoboard_regular_margin"
+                >
+
+                <com.khaleef.cricket.Utils.ProgressBarView
+                    android:id="@+id/timeProgressbar_ep"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/progress_circle_background"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="70"
+                    android:padding="5dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/infoboard_regular_margin"
+                    android:rotationX="0"
+                    android:progressDrawable="@drawable/progress_circle_drawable" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/timeProgressText_ep"
+                    android:layout_centerInParent="true"
+                    android:textSize="12dp"
+                    android:text="30"
+                    ></TextView>
+            </RelativeLayout>
+
+
+            <EditText
+                android:id="@+id/otpField_ep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="9dp"
+                android:layout_centerHorizontal="true"
+                android:hint="XXXX"
+                android:inputType="phone"
+                android:gravity="center"
+                android:textColor="#777777"
+                android:textColorHint="@color/textColorGray"
+                android:textCursorDrawable="@null"
+                android:textSize="16dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/opensans_regular"
+                android:textFontWeight="600"
+                android:letterSpacing="0.5"
+                android:maxLength="7"
+                />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/subscribe_ep_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Subscribe"
+            android:layout_marginLeft="64dp"
+            android:layout_marginRight="64dp"
+            android:textColor="@color/White"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_marginTop="@dimen/infoboard_regular_margin"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/opensans_bold_0"
+            android:background="@drawable/rounded_red_btn"
+            android:backgroundTint="#B91414"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:layout_marginBottom="20dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:gravity="center_horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/regular_text_size"
+                android:text="Didn’t get the Pin?"
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/Black"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="8dp"
+                android:id="@+id/resend_text"
+                ></TextView>
+
+            <TextView
+                android:id="@+id/buttonResend_ep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/regular_text_size"
+                android:text="Resend pin"
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="#B91414"
+                android:layout_marginLeft="2dp"
+                android:layout_toRightOf="@+id/resend_text"
+                android:visibility="gone"
+                ></TextView>
+
+            <TextView
+                android:id="@+id/buttonResend_ep_disabled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/regular_text_size"
+                android:text="Resend pin"
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/greydark"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@+id/resend_text"
+                ></TextView>
+
+
+
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

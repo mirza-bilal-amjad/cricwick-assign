@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="low_balance">3</integer>
+    <integer name="pkg_time">0</integer>
+    <integer name="live_stream_expiry_time">10</integer>
+    <integer name="debounce_click_duration">1000</integer>
+    <integer name="debounce_click_duration_sub">2000</integer>
+    <integer name="videos_features">911</integer>
+    <integer name="video_highlights">912</integer>
+
+</resources>

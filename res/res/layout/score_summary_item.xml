@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:id="@+id/self_player_footer"
+    >
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/self_player_footer_rank_tv"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="32dp"
+        android:text="Scores"
+        android:fontFamily="@font/opensans_regular"
+        android:textSize="14dp"
+        android:textColor="@color/Black"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/self_player_footer_points_tv"
+        ></TextView>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/self_player_footer_points_tv"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="38dp"
+        android:text="1000"
+        android:fontFamily="@font/opensans_regular"
+        android:textSize="14dp"
+        android:textColor="@color/Black"
+        ></TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="38dp"
+        android:layout_alignParentBottom="true"
+        android:background="#E5E5E5"
+        ></LinearLayout>
+
+</RelativeLayout>

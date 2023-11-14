@@ -1,0 +1,300 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.khaleef.cricket.League.Fragments.LeagueWalletFragmentSide"
+    android:background="@color/bg_color_light_blue"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/opacity_bg"
+            android:background="#CC000000"
+            android:visibility="gone"
+            android:orientation="vertical"></LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/wallet_info_container"
+                    android:background="@drawable/bg_white_with_shadow"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginRight="28dp"
+                    android:visibility="visible"
+                    >
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/wallet_ic"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/infoboard_large_margin"></ImageView>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:id="@+id/league_wallet_cash_tv_container">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PKR"
+                            android:fontFamily="@font/opensans_bold_0"
+                            android:textSize="14dp"
+                            android:textColor="@color/Black"
+
+                            ></TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/league_wallet_cash_tv"
+                            android:text="0"
+                            android:fontFamily="@font/opensans_bold_0"
+                            android:textSize="22dp"
+                            android:textColor="@color/Black"
+                            android:layout_marginLeft="8dp"></TextView>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/league_wallet_subheading_tv"
+                        android:layout_marginTop="8dp"
+                        android:text=""
+                        android:fontFamily="@font/opensans_regular"
+                        android:textSize="14dp"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/dark_text_color_with_opacity"
+                        android:paddingBottom="40dp"></TextView>
+
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="24dp"
+                            android:layout_gravity="center_horizontal"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/league_wallet_paynow_btn"
+                                android:background="@drawable/rounded_red_btn"
+                                android:text="Payout"
+                                android:fontFamily="@font/opensans_bold_0"
+                                android:textSize="14dp"
+                                android:textColor="@color/White"
+                                android:gravity="center"></TextView>
+
+
+                        </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/White"
+                    android:layout_below="@+id/wallet_info_container"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tab_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/White"
+                        app:tabIndicatorColor="@color/league_pop_color"
+                        app:tabIndicatorHeight="5dp"
+                        app:tabSelectedTextColor="@color/league_pop_color"
+                        app:tabTextAppearance="@style/navigation_text_black" />
+
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/wallet_pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/redeem_coins_container"
+                    android:layout_below="@+id/wallet_info_container"
+                    android:background="@drawable/bg_white_with_shadow"
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/coins_heading_tv"
+                        android:layout_marginTop="@dimen/infoboard_regular_margin"
+                        android:text="JCoins"
+                        android:fontFamily="@font/opensans_bold_0"
+                        android:textSize="22dp"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/Black"
+                        android:layout_alignParentLeft="true"></TextView>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/coins_voucher_logo"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/infoboard_large_margin"></ImageView>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/coins_tv"
+                        android:text="0"
+                        android:layout_marginTop="24dp"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/opensans_bold_0"
+                        android:textSize="36dp"
+                        android:textColor="@color/Black"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/coins_subheading_tv"
+                        android:layout_marginTop="@dimen/infoboard_xlarge_margin"
+                        android:text=""
+                        android:fontFamily="@font/opensans_regular"
+                        android:textSize="14dp"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginRight="40dp"
+                        android:textColor="#222222"></TextView>
+
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="49dp"
+                        android:id="@+id/redeem_btn"
+                        android:background="@drawable/rounded_red_btn"
+                        android:text="Redeem"
+                        android:fontFamily="@font/opensans_bold_0"
+                        android:textSize="14dp"
+                        android:textColor="@color/White"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/infoboard_large_margin"
+                        android:layout_marginBottom="40dp"></TextView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/redeem_coins_container"
+                    ></LinearLayout>
+
+            </RelativeLayout>
+
+
+        <FrameLayout
+            android:id="@+id/league_wallet_transactions_container_side"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility="visible">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/league_wallet_payout_container_side"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility="visible">
+
+        </FrameLayout>
+
+        <com.khaleef.cricket.Utils.RotateLoading
+            android:id="@+id/rotating_loader"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            app:loading_color="@color/app_theme_color"
+            app:loading_speed="11"
+            app:loading_width="5dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/webview_container"
+            android:visibility="gone"
+            >
+
+
+
+            <WebView
+                android:id="@+id/webview_payout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="WebViewLayout"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/close_payout"
+                android:src="@drawable/close_search"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/infoboard_regular_margin"
+                android:layout_margin="16dp"
+                ></ImageView>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <include layout="@layout/bottom_sheet_prize"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

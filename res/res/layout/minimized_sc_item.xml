@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="4"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
+    android:layout_marginBottom="2dp"
+    android:layout_marginTop="2dp"
+    android:background="@color/White"
+    android:id="@+id/containerLayout"
+    >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="2"
+        android:paddingTop="@dimen/infoboard_small_margin"
+        android:paddingBottom="@dimen/infoboard_small_margin"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="@dimen/infoboard_small_margin"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/livedot"
+                android:layout_centerVertical="true"
+                android:id="@+id/live_dot"
+                ></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Live"
+                android:textColor="@color/live_section_red"
+                android:layout_toRightOf="@+id/live_dot"
+                android:id="@+id/live_title"
+                android:textSize="@dimen/small_text_size"
+                android:fontFamily="@font/opensans_semibold"
+                android:layout_marginLeft="@dimen/infoboard_small_margin"
+                android:layout_centerVertical="true"
+                ></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Super Over"
+                android:textColor="@color/White"
+                android:background="@drawable/sup_ov_bg"
+                android:layout_toRightOf="@+id/live_title"
+                android:layout_marginLeft="@dimen/infoboard_small_margin"
+                android:id="@+id/supr_over_tv"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:fontFamily="@font/opensans_semibold"
+                android:textSize="10dp"
+                android:visibility="gone"
+                android:layout_centerVertical="true"
+                ></TextView>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/infoboard_regular_margin"
+            android:layout_marginTop="4dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/team1_inning1_layout"
+                >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="@dimen/infoboard_small_margin"
+                    android:id="@+id/team1_flag"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:textSize="@dimen/regular_text_size"
+                    android:layout_toRightOf="@id/team1_flag"
+                    android:layout_marginLeft="2dp"
+                    android:textColor="@color/Black"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/team1_name"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="Yet To Bat"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/infoboard_small_margin"
+                    android:id="@+id/team1_ov"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:fontFamily="@font/opensans_semibold"
+                    android:textSize="@dimen/regular_text_size"
+                    android:layout_toLeftOf="@id/team1_ov"
+                    android:layout_marginLeft="@dimen/infoboard_small_margin"
+                    android:textColor="@color/Black"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/team1_sc"></TextView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/team1_inning1_layout"
+                android:layout_marginTop="2dp"
+                android:id="@+id/team1_inning2_layout"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(19.3)"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/infoboard_small_margin"
+                    android:id="@+id/team1_ov_2nd"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="116/4"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:textSize="@dimen/regular_text_size"
+                    android:layout_toLeftOf="@id/team1_ov_2nd"
+                    android:textColor="@color/Black"
+                    android:id="@+id/team1_sc_2nd"
+                    android:layout_centerVertical="true"
+                    ></TextView>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/team2_inning1_layout"
+                >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="@dimen/infoboard_small_margin"
+                    android:id="@+id/team2_flag"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:textSize="@dimen/regular_text_size"
+                    android:layout_toRightOf="@id/team2_flag"
+                    android:layout_marginLeft="2dp"
+                    android:textColor="@color/Black"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/team2_name"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="Yet To Bat"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/infoboard_small_margin"
+                    android:id="@+id/team2_ov"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:fontFamily="@font/opensans_semibold"
+                    android:textSize="@dimen/regular_text_size"
+                    android:layout_toLeftOf="@id/team2_ov"
+                    android:layout_marginLeft="@dimen/infoboard_small_margin"
+                    android:textColor="@color/Black"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/team2_sc"></TextView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/team2_inning1_layout"
+                android:layout_marginTop="2dp"
+                android:id="@+id/team2_inning2_layout"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(19.3)"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/infoboard_small_margin"
+                    android:id="@+id/team2_ov_2nd"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="116/4"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:textSize="@dimen/regular_text_size"
+                    android:layout_toLeftOf="@id/team2_ov_2nd"
+                    android:textColor="@color/Black"
+                    android:id="@+id/team2_sc_2nd"
+                    android:layout_centerVertical="true"
+                    ></TextView>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/infoboard_small_margin"
+        android:layout_marginBottom="@dimen/infoboard_small_margin"
+        android:background="@color/background_color"
+        ></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        android:layout_weight="2"
+        android:layout_marginTop="@dimen/infoboard_small_margin"
+        android:layout_marginBottom="@dimen/infoboard_small_margin"
+        >
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/infoboard_small_margin"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:fontFamily="@font/opensans_semibold"
+                android:textSize="@dimen/small_text_size"
+                android:layout_marginLeft="@dimen/infoboard_small_margin"
+                android:textColor="@color/Black"
+                android:id="@+id/min_bat1"
+                ></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text=""
+                android:layout_marginRight="@dimen/infoboard_small_margin"
+                android:textSize="@dimen/small_text_size"
+                android:layout_marginLeft="2dp"
+                android:id="@+id/min_b1_balls"
+                ></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/min_b1_balls"
+                android:fontFamily="@font/opensans_semibold"
+                android:textColor="@color/Black"
+                android:text=""
+                android:textSize="@dimen/small_text_size"
+                android:layout_marginLeft="2dp"
+                android:id="@+id/min_b1_score"
+                ></TextView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:fontFamily="@font/opensans_semibold"
+                android:textSize="@dimen/small_text_size"
+                android:layout_marginLeft="@dimen/infoboard_small_margin"
+                android:textColor="@color/Black"
+                android:id="@+id/min_bat2"
+                ></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text=""
+                android:layout_marginRight="@dimen/infoboard_small_margin"
+                android:textSize="@dimen/small_text_size"
+                android:layout_marginLeft="2dp"
+                android:id="@+id/min_b2_balls"
+                ></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/min_b2_balls"
+                android:text=""
+                android:fontFamily="@font/opensans_semibold"
+                android:textSize="@dimen/small_text_size"
+                android:layout_marginLeft="2dp"
+                android:textColor="@color/Black"
+                android:id="@+id/min_b2_score"
+
+                ></TextView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:fontFamily="@font/opensans_semibold"
+                android:textSize="@dimen/small_text_size"
+                android:layout_marginLeft="@dimen/infoboard_small_margin"
+                android:textColor="@color/Black"
+                android:id="@+id/min_bowler_name"
+                ></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text=""
+                android:layout_marginRight="@dimen/infoboard_small_margin"
+                android:fontFamily="@font/opensans_semibold"
+                android:textSize="@dimen/small_text_size"
+                android:layout_marginLeft="2dp"
+                android:textColor="@color/Black"
+                android:id="@+id/min_bowl_stat"
+                ></TextView>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

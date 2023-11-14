@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/White"
+    tools:context="com.khaleef.cricket.League.Fragments.WalletTransactionsFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/headerLayout"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Transactions"
+            android:textSize="@dimen/regular_text_size"
+            android:fontFamily="@font/opensans_bold_0"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/dark_text_color"
+            android:id="@+id/heading"
+            android:layout_centerVertical="true"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/close_search"
+            android:src="@drawable/close_search"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/infoboard_regular_margin"
+            ></ImageView>
+
+
+    </RelativeLayout>
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/transactions_rv"
+           android:layout_marginTop="@dimen/infoboard_regular_margin"
+           android:layout_marginLeft="@dimen/infoboard_regular_margin"
+           android:layout_marginRight="@dimen/infoboard_regular_margin"
+           android:paddingBottom="@dimen/infoboard_regular_margin"
+           ></androidx.recyclerview.widget.RecyclerView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Prizes Won"
+            android:textSize="@dimen/regular_text_size"
+            android:fontFamily="@font/opensans_bold_0"
+            android:layout_gravity="center"
+            android:textColor="@color/dark_text_color"
+            android:id="@+id/empty_tv"
+            android:visibility="gone"
+            android:layout_marginTop="36dp"
+            android:layout_centerVertical="true"
+
+            ></TextView>
+
+
+</LinearLayout>

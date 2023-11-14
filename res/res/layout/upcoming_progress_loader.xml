@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="3dp"
+    android:layout_marginLeft="7dp"
+    android:layout_marginRight="7dp"
+    android:layout_marginTop="5dp"
+    android:background="@color/placeholder_bg"
+    android:orientation="vertical"
+    android:paddingBottom="25dp">
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:alpha="0.2"
+        android:background="@color/White" />
+
+
+    <LinearLayout
+        android:id="@+id/preview_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:id="@+id/inning1LinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:gravity="bottom">
+
+                    <ImageView
+                        android:id="@+id/team1Falg"
+                        android:layout_width="@dimen/upcoming_matches_image_area"
+                        android:layout_height="@dimen/upcoming_matches_image_area"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="3dp"
+                        android:gravity="center"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/team1Name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/team1Falg"
+                        android:layout_marginTop="@dimen/upcoming_matches_text_margin_top"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp"
+                        tools:ignore="HardcodedText" />
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginTop="-4dp"
+                    android:gravity="top"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/team1Overs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-4dp"
+                        android:layout_weight="1"
+                        android:gravity="left|top"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/Black"
+                        android:textSize="12sp"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/team1ScoreWithWickets"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-4dp"
+                        android:layout_weight="1"
+                        android:gravity="right|top"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/Black"
+                        android:textSize="16sp"
+                        tools:ignore="HardcodedText" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/inning2LinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:gravity="bottom"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/team2Falg"
+                        android:layout_width="@dimen/upcoming_matches_image_area"
+                        android:layout_height="@dimen/upcoming_matches_image_area"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="3dp"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:textColor="@color/Black"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/team2Name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/team2Falg"
+                        android:layout_marginTop="@dimen/upcoming_matches_text_margin_top"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp"
+                        tools:ignore="HardcodedText" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/scheduleMatchFixtureSeriesTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/roboto_light_0"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@color/Black"
+            android:textSize="12sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/scheduleMatchFixtureSeries"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/roboto_light_0"
+            android:gravity="center"
+            android:singleLine="true"
+             android:textColor="@color/Black"
+            android:textSize="12sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/scheduleMatchFixture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/roboto_light_0"
+            android:gravity="center"
+             android:textColor="@color/Black"
+            android:textSize="12sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

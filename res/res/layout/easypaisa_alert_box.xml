@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+
+    <LinearLayout
+        android:id="@+id/dialogBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/bg_white_with_shadow"
+        android:elevation="4dp"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/app_logo_medium"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="26dp"
+                ></ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:gravity="center_horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/alertTitleTVHard"
+                android:text="Please wait"
+                android:fontFamily="@font/opensans_bold_0"
+                android:textColor="@android:color/black"
+                android:textSize="18dp"
+                android:layout_centerVertical="true"
+                />
+
+            <com.eyalbira.loadingdots.LoadingDots
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/loading_dots"
+                android:layout_toRightOf="@id/alertTitleTVHard"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="6dp"
+                android:layout_alignBaseline="@id/alertTitleTVHard"
+                app:LoadingDots_auto_play="true"
+                app:LoadingDots_dots_color="@color/Black"
+                app:LoadingDots_dots_count="3"
+                app:LoadingDots_dots_size="6dp"
+                app:LoadingDots_dots_space="2dp"
+                app:LoadingDots_loop_duration="800"
+                app:LoadingDots_loop_start_delay="100"
+                app:LoadingDots_jump_duration="200"
+                app:LoadingDots_jump_height="4dp"
+                />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/alertTitleTV"
+            android:fontFamily="@font/opensans_bold_0"
+            android:textColor="@android:color/black"
+            android:textSize="18dp"
+            android:layout_centerVertical="true"
+            />
+
+
+        <TextView
+            android:id="@+id/alert_sub_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:text=""
+            android:fontFamily="@font/opensans_semibold"
+            android:textColor="@android:color/black"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/alertTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/opensans_semibold"
+            android:text=""
+            android:textColor="#3E3E3E"
+            android:textSize="@dimen/regular_text_size"
+            android:paddingBottom="26dp"
+            />
+
+        <TextView
+            android:id="@+id/errorTitleTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:gravity="center_horizontal"
+            android:text="SAmple Text"
+            android:fontFamily="@font/opensans_bold_0"
+            android:textColor="#B91414"
+            android:textSize="18dp"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/errorTextTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/opensans_regular"
+            android:text="SAmple Text osdafiuoasdhf"
+            android:textColor="#B91414"
+            android:textSize="@dimen/regular_text_size"
+            android:visibility="gone"
+
+            />
+
+
+        <TextView
+            android:id="@+id/error_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="OK"
+            android:layout_marginLeft="64dp"
+            android:layout_marginRight="64dp"
+            android:textColor="@color/White"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="36dp"
+            android:fontFamily="@font/opensans_bold_0"
+            android:background="@drawable/rounded_red_btn"
+            android:backgroundTint="#B91414"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:visibility="gone"
+            />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

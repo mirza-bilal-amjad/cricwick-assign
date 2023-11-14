@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="@dimen/infoboard_regular_margin"
+    android:background="@drawable/bg_white_with_shadow"
+    android:layout_marginBottom="@dimen/infoboard_large_margin"
+    >
+
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/invite_bg">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/texts_container"
+                android:orientation="vertical"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/invite_friends"
+                    android:layout_gravity="center_horizontal"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/regular_text_size"
+                    android:fontFamily="@font/opensans_regular"
+                    android:textColor="@color/dark_text_color"
+                    android:id="@+id/league_home_promo_heading"
+                    android:text="Invite and Earn 300 Scores"
+                    android:layout_marginTop="12dp"
+                    android:layout_gravity="center_horizontal"></TextView>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal"
+                    android:padding="3dp">
+
+                    <TextView
+                        android:id="@+id/inviteButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Invite"
+                        android:textColor="@color/dark_text_color"
+                        android:textStyle="bold"
+                        android:textSize="14dp"
+                        android:fontFamily="@font/opensans_regular"
+                        android:paddingLeft="32dp"
+                        android:paddingRight="32dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:background="@drawable/connect_now_bg"
+
+                        />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="INVITE CODE"
+                    android:fontFamily="@font/opensans_regular"
+                    android:textColor="@color/dark_text_color_with_opacity"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="12dp"
+                    android:layout_marginTop="26dp" />
+
+
+                <RelativeLayout
+                    android:id="@+id/InviteButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Invite"
+                    android:background="@drawable/connect_now_bg"
+                    android:layout_marginTop="2dp">
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="1dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/code_tv"
+                            android:text="3QH"
+                            android:fontFamily="@font/opensans_regular"
+                            android:paddingLeft="@dimen/infoboard_regular_margin"
+                            android:paddingRight="@dimen/infoboard_regular_margin"
+                            android:background="@drawable/promo_code_bg"
+                            android:textColor="@color/dark_text_color"
+                            android:textSize="@dimen/regular_text_size" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Copy"
+                            android:fontFamily="@font/opensans_regular"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:textColor="@color/dark_text_color"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="@dimen/regular_text_size" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>

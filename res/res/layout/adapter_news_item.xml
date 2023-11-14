@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/news_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White">
+
+        <ImageView
+            android:id="@+id/news_img"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/tag_banner_image" />
+
+        <LinearLayout
+            android:id="@+id/headerView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/news_img"
+            android:layout_alignEnd="@+id/news_img"
+            android:layout_alignStart="@+id/news_img"
+            android:layout_alignRight="@+id/news_img"
+            android:layout_below="@+id/news_img"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/news_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:textSize="14sp"
+                android:fontFamily="@font/roboto_bold"
+                android:lines="3"
+                android:paddingLeft="@dimen/margin_10dp"
+                android:paddingRight="@dimen/margin_10dp"
+                android:textColor="@android:color/black"
+                 />
+
+            <TextView
+                android:id="@+id/news_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/cell_margin"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_light_0"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text=""
+                android:textColor="@color/Black"
+                android:textSize="@dimen/text_size_10sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/news_small_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerView1"
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
+            android:lines="4"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_10sp"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_below="@+id/news_img" />
+
+    </RelativeLayout>
+
+</LinearLayout>

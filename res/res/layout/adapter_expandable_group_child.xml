@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/section_space"
+    android:paddingLeft="@dimen/section_space"
+    android:paddingRight="@dimen/section_space"
+    android:paddingTop="@dimen/section_space">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/expand_child_header"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/BattingLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginLeft="3dp"
+            android:layout_weight="1.2"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Batting"
+            android:textColor="@color/app_textColor"
+            android:textSize="@dimen/TextSize16" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/RLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="right|center_vertical"
+                android:text="R"
+
+                android:textColor="@color/app_textColor"
+                android:textSize="@dimen/TextSize16" />
+
+            <TextView
+                android:id="@+id/BLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="right|center_vertical"
+                android:text="B"
+
+                android:textColor="@color/app_textColor"
+                android:textSize="@dimen/TextSize16" />
+
+            <TextView
+                android:id="@+id/FoursLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="right|center_vertical"
+                android:text="4s"
+
+                android:textColor="@color/app_textColor"
+                android:textSize="@dimen/TextSize16" />
+
+            <TextView
+                android:id="@+id/SixsLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="right|center_vertical"
+                android:text="6s"
+
+                android:textColor="@color/app_textColor"
+                android:textSize="@dimen/TextSize16" />
+
+            <TextView
+                android:id="@+id/SRLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="0.9"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="right|center_vertical"
+                android:paddingRight="5dp"
+                android:text="SR"
+
+                android:textColor="@color/app_textColor"
+                android:textSize="@dimen/TextSize16" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <!-- Linear Layout for adding Player Rows -->
+    <LinearLayout
+        android:id="@+id/batsmenStatusLinearLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical" />
+
+
+    <LinearLayout
+        android:id="@+id/extrasLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/expand_child_header2"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/ExtrasLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/cell_margin"
+                android:layout_marginRight="12dp"
+                android:fontFamily="@font/roboto_medium_0"
+                android:gravity="center_vertical"
+                android:text="Extras"
+                android:textColor="@color/app_textColor"
+
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/battingExtrasTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_light_0"
+
+                android:gravity="center_vertical"
+                android:text="Extras"
+                android:textColor="@color/app_textColor" />
+
+            <TextView
+                android:id="@+id/battingExtrasTotalTV"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/roboto_medium_0"
+                android:gravity="right|center_vertical"
+                android:text="Extras"
+                android:textColor="@color/app_textColor"
+
+                android:textSize="12sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/TotalLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/roboto_medium_0"
+                android:gravity="center_vertical"
+                android:text="Total"
+                android:textColor="@color/app_textColor"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/battingOutAndOversTotalTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:fontFamily="@font/roboto_light_0"
+                android:gravity="center_vertical"
+                android:text="Extras"
+
+                android:textColor="@color/app_textColor" />
+
+            <TextView
+                android:id="@+id/battingRunRateTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_medium_0"
+                android:gravity="left|center_vertical"
+                android:text="Extras"
+                android:textColor="@color/app_textColor"
+
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/battingTotalScoreTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/roboto_medium_0"
+                android:gravity="right|center_vertical"
+
+                android:text="Extras"
+                android:textColor="@color/app_textColor"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--Layout for Bowling Status -->
+
+    <LinearLayout
+        android:id="@+id/bowlingLabelLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/expand_child_header"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/BowlingLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginLeft="3dp"
+
+            android:layout_weight="1.2"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Bowling"
+            android:textColor="@color/app_textColor"
+            android:textSize="@dimen/TextSize16" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/OLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="right|center_vertical"
+                android:text="O"
+
+                android:textColor="@color/app_textColor"
+                android:textSize="@dimen/TextSize16" />
+
+            <TextView
+                android:id="@+id/MLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="right|center_vertical"
+                android:text="M"
+
+                android:textColor="@color/app_textColor"
+                android:textSize="@dimen/TextSize16" />
+
+            <TextView
+                android:id="@+id/RBowLabel"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="right|center_vertical"
+                android:text="R"
+                android:textColor="@color/app_textColor"
+                android:textSize="@dimen/TextSize16" />
+
+            <TextView
+                android:id="@+id/WLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="right|center_vertical"
+                android:text="W"
+
+                android:textColor="@color/app_textColor"
+                android:textSize="@dimen/TextSize16" />
+
+            <TextView
+                android:id="@+id/EconLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="right|center_vertical"
+                android:text="Econ"
+
+                android:textColor="@color/app_textColor"
+                android:textSize="@dimen/TextSize16" />
+
+            <TextView
+                android:id="@+id/ZerosLabel"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="right|center_vertical"
+                android:text="0s"
+                android:textColor="@color/app_textColor"
+                android:textSize="@dimen/TextSize16" />
+
+            <TextView
+                android:id="@+id/FoursBowLabel"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="right|center_vertical"
+                android:text="4s"
+                android:textColor="@color/app_textColor"
+                android:textSize="@dimen/TextSize16" />
+
+            <TextView
+                android:id="@+id/SixsBowLabel"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="right|center_vertical"
+                android:paddingRight="3dp"
+                android:text="6s"
+                android:textColor="@color/app_textColor"
+                android:textSize="@dimen/TextSize16" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <!-- Linear Layout for adding Bowlers Rows -->
+    <LinearLayout
+        android:id="@+id/bowlersStatusLinearLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical" />
+
+    <!--Layout for Bowling Status -->
+
+    <LinearLayout
+        android:id="@+id/fallOfWicketLabelLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/expand_child_header"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/FallOfWicketsLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginLeft="3dp"
+
+            android:layout_weight="1.2"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Fall of Wickets"
+            android:textColor="@color/app_textColor"
+            android:textSize="@dimen/TextSize16" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.3"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/OversLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center"
+                android:text="Overs"
+
+                android:textColor="@color/app_textColor"
+                android:textSize="@dimen/TextSize16" />
+
+            <TextView
+                android:id="@+id/ScoreLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center"
+                android:text="Score"
+
+                android:textColor="@color/app_textColor"
+                android:textSize="@dimen/TextSize16" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Linear Layout for adding Fall Of Wickets Rows -->
+    <LinearLayout
+        android:id="@+id/fallOfWicketsLinearLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical" />
+</LinearLayout>

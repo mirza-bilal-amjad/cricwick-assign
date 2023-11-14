@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:clipToPadding="true"
+        app:cardBackgroundColor="@color/colorPurple"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_7sdp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/checkin_bg"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_daily_check_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:rotation="-10"
+                android:text="@string/daily_check_in"
+                android:textColor="@color/White"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_reward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:rotation="-10"
+                android:text="@string/reward"
+                android:textColor="@color/colorDarkYellow"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tv_daily_check_in"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_daily_check_in"
+                app:layout_constraintTop_toBottomOf="@id/tv_daily_check_in" />
+
+            <ImageView
+                android:id="@+id/iv_coins"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/coins"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_reward"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_reward_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="7000"
+                android:textColor="@color/colorDarkYellow"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_coins" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_today_reward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/White"
+                android:stateListAnimator="@null"
+                android:text="@string/today_s_reward"
+                android:textAllCaps="false"
+                android:textColor="@color/Black"
+                android:textSize="14sp"
+                app:backgroundTint="@null"
+                app:cornerRadius="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_reward_amount" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_today_reward_claimed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorCyan"
+                android:stateListAnimator="@null"
+                android:text="@string/today_s_reward_claimed"
+                android:textAllCaps="false"
+                android:textColor="@color/Black"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:backgroundTint="@null"
+                app:cornerRadius="50dp"
+                app:icon="@drawable/ic_check"
+                app:iconTint="@color/colorDarkYellow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_today_reward" />
+
+            <TextView
+                android:id="@+id/tv_label_next_reward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/next_reward"
+                android:textColor="@color/White"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_today_reward_claimed" />
+
+            <TextView
+                android:id="@+id/tv_next_reward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="8000 coins"
+                android:textColor="@color/colorDarkYellow"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_label_next_reward" />
+
+            <TextView
+                android:id="@+id/tv_next_reward_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="27-09-2022"
+                android:textColor="@color/White"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_next_reward" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_claim_reward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:backgroundTint="@color/colorDarkYellow"
+                android:text="@string/claim_reward"
+                android:textAllCaps="false"
+                android:textColor="@color/Black"
+                android:textSize="18sp"
+                app:backgroundTint="@null"
+                app:cornerRadius="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_next_reward_date" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_create_fantasy"
+                style="@style/outlineButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/create_fantasy_team"
+                android:textAllCaps="false"
+                android:textColor="@color/colorDarkYellow"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:cornerRadius="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_claim_reward"
+                app:strokeColor="@color/colorDarkYellow" />
+
+            <TextView
+                android:id="@+id/tv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/White"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_create_fantasy" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animation_view"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="false"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/celebrate" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</ScrollView>

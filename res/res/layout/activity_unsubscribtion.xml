@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/unsub_container"
+    android:background="@color/White"
+    tools:context="com.khaleef.cricket.unsubscribe.view.UnsubscribtionActivity">
+
+
+    <TextView
+        android:id="@+id/unsubTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/opensans_bold_0"
+        android:text="UNREGISTER SO SOON?"
+        android:textColor="#C12026"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/subTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/opensans_light_0"
+        android:text="We are sorry to see you go"
+        android:textColor="#404040"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/unsubTitle" />
+
+    <ImageView
+        android:id="@+id/mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/unsub_mail"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subTitle" />
+
+
+    <TextView
+        android:id="@+id/letUsKnowText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/opensans_regular"
+        android:text="Please let us know what went wrong"
+        android:textColor="#404040"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mail" />
+
+    <CheckBox
+        android:id="@+id/toExpensive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/opensans_regular"
+        android:text=" Too Expensive for me"
+        android:textColor="#404040"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="@id/letUsKnowText"
+        app:layout_constraintTop_toBottomOf="@id/letUsKnowText" />
+
+    <CheckBox
+        android:id="@+id/streamNotFun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/opensans_regular"
+        android:text=" Stream is not Fun anymore"
+        android:textColor="#404040"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="@id/letUsKnowText"
+        app:layout_constraintTop_toBottomOf="@id/toExpensive" />
+
+    <CheckBox
+        android:id="@+id/cricketNotForMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/opensans_regular"
+        android:text=" Cricket is not for me"
+        android:textColor="#404040"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="@id/letUsKnowText"
+        app:layout_constraintTop_toBottomOf="@id/streamNotFun" />
+
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/nameTitle"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="5dp"-->
+    <!--        android:fontFamily="@font/opensans_regular"-->
+    <!--        android:padding="2dp"-->
+    <!--        android:text="Name"-->
+    <!--        -->
+    <!--        android:textColor="#404040"-->
+    <!--        android:textSize="18sp"-->
+    <!--        app:layout_constraintLeft_toLeftOf="@id/letUsKnowText"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/letUsKnowText" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/nameText"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginRight="40dp"-->
+<!--        android:background="@drawable/unsub_textview_background"-->
+<!--        android:fontFamily="@font/opensans_light_0"-->
+<!--        android:hint="Name"-->
+<!--        android:imeOptions="actionNext"-->
+<!--        android:inputType="text"-->
+<!--        android:nextFocusUp="@id/description"-->
+<!--        android:padding="7dp"-->
+<!--        android:textColor="#404040"-->
+<!--        app:layout_constraintLeft_toLeftOf="@id/letUsKnowText"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/letUsKnowText" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/description"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        android:background="@drawable/unsub_textview_background"-->
+<!--        android:fontFamily="@font/opensans_light_0"-->
+<!--        android:hint="Description"-->
+<!--        android:imeOptions="actionDone"-->
+<!--        android:inputType="text"-->
+<!--        android:padding="7dp"-->
+<!--        android:textColor="#404040"-->
+<!--        app:layout_constraintLeft_toLeftOf="@id/nameText"-->
+<!--        app:layout_constraintRight_toRightOf="@id/nameText"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/nameText" />-->
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/letUsKnowText"
+        app:layout_constraintTop_toBottomOf="@+id/enjoyText"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/enjoyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/opensans_regular"
+        android:text="You Can Still Enjoy"
+        android:textColor="#C12026"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="@id/letUsKnowText"
+        app:layout_constraintTop_toBottomOf="@+id/letUsKnowText" />
+
+    <ImageView
+        android:id="@+id/freeLiveTick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/unsub_tick"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="@id/spinner"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <TextView
+        android:id="@+id/freeLiveText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="17dp"
+        android:fontFamily="@font/opensans_bold_0"
+        android:includeFontPadding="false"
+        android:text="Free Live Scores"
+        android:textColor="#404040"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/freeLiveTick"
+        app:layout_constraintLeft_toRightOf="@id/freeLiveTick"
+        app:layout_constraintTop_toTopOf="@id/freeLiveTick" />
+
+    <ImageView
+        android:id="@+id/freeStatsTick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:src="@drawable/unsub_tick"
+        app:layout_constraintLeft_toLeftOf="@id/letUsKnowText"
+        app:layout_constraintTop_toBottomOf="@id/freeLiveTick" />
+
+    <TextView
+        android:id="@+id/freeStatsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="17dp"
+        android:fontFamily="@font/opensans_bold_0"
+        android:includeFontPadding="false"
+        android:text="Free Cricket Stats"
+        android:textColor="#404040"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/freeStatsTick"
+        app:layout_constraintLeft_toRightOf="@id/freeStatsTick"
+        app:layout_constraintTop_toTopOf="@id/freeStatsTick" />
+
+
+    <TextView
+        android:id="@+id/unsubscribe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/unsub_btn"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center"
+        android:text="Unregister"
+        android:textColor="@color/White"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/freeStatsText" />
+
+    <TextView
+        android:id="@+id/notNow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="Not Now"
+        android:textColor="#BF404040"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/unsubscribe" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

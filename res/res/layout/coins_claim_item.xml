@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="18dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/redeem_click"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/jcoins_left"
+                android:id="@+id/jcoins_left"></ImageView>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/jcoins_right"
+                android:scaleType="fitXY"
+                android:layout_toRightOf="@id/jcoins_left"></ImageView>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/jcoins_left"
+                android:src="@drawable/coins_voucher_logo"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/coins_logo_list"></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/coins_redeem_tv_list"
+                android:layout_toRightOf="@+id/coins_logo_list"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:textColor="#40476B"
+                android:fontFamily="@font/opensans_bold_0"
+                android:textSize="@dimen/heading_text_size"
+                android:text="50"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/topup_redeem_tv_list"
+                android:layout_centerVertical="true"
+                android:textColor="#40476B"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:fontFamily="@font/opensans_bold_0"
+                android:textSize="@dimen/infoboard_heading_text_size"
+                android:text="Top up 50 pkr"></TextView>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

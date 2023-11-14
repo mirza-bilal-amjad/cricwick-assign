@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginEnd="@dimen/margin_20dp"
+    android:layout_marginStart="@dimen/margin_20dp">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/margin_20dp"
+        android:lines="1"
+        android:fontFamily="@font/roboto_bold"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:padding="@dimen/margin_20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp"/>
+
+    <TextView
+        android:id="@+id/tv_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/margin_20dp"
+        android:lines="1"
+        android:visibility="gone"
+        android:textColor="@color/Black"
+        android:fontFamily="@font/roboto_regular"
+        android:layout_marginTop="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_title"/>
+
+    <View
+        android:layout_below="@+id/tv_count"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/placeholder_bg"/>
+
+    <ImageView
+        android:id="@+id/img_tick"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_tick"
+        android:layout_toStartOf="@+id/tv_title"
+        android:layout_toLeftOf="@+id/tv_title"
+        android:layout_marginEnd="@dimen/margin_20dp"
+        android:layout_marginRight="@dimen/margin_20dp"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/video_image" />
+
+</RelativeLayout>

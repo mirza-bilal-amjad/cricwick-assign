@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_white_with_shadow"
+    android:orientation="vertical"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gift_box_med"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="28dp"
+        android:id="@+id/sheet_prize_ic"
+        ></ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="6dp"
+        android:text="5000 pkr"
+        android:fontFamily="@font/opensans_bold_0"
+        android:textSize="24dp"
+        android:id="@+id/sheet_prize_amount"
+        ></TextView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginRight="34dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Match"
+            android:textSize="14dp"
+            android:fontFamily="@font/opensans_regular"
+            ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PZ vs LQ"
+            android:textSize="14dp"
+            android:fontFamily="@font/opensans_semibold"
+            android:layout_alignParentRight="true"
+            android:id="@+id/sheet_prize_title"
+            ></TextView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginRight="34dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rank"
+            android:textSize="14dp"
+            android:fontFamily="@font/opensans_regular"
+            ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sheet_prize_rank"
+            android:layout_alignParentRight="true"
+            android:text="Rank: 5"
+            android:fontFamily="@font/opensans_semibold"
+            android:textSize="10dp"
+            android:textColor="@color/rank_text_color"
+            android:background="@drawable/rank_bg"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            ></TextView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginRight="34dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:textSize="14dp"
+            android:fontFamily="@font/opensans_regular"
+            ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12-13-2021"
+            android:textSize="14dp"
+            android:fontFamily="@font/opensans_semibold"
+            android:layout_alignParentRight="true"
+            android:id="@+id/sheet_prize_date"
+            ></TextView>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Payout"
+        android:background="@drawable/league_home_solid_btn"
+        android:layout_marginTop="34dp"
+        android:textColor="@color/White"
+        android:fontFamily="@font/opensans_bold_0"
+        android:textSize="16dp"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/prize_claim_btn"
+        android:layout_marginBottom="24dp"
+        ></TextView>
+
+
+</LinearLayout>

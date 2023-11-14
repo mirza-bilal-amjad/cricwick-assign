@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/placeholder_bg">
+
+    <TextView
+        android:id="@+id/tv_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:background="@color/White"
+        android:gravity="center"
+        android:padding="@dimen/margin_5dp"
+        android:textColor="@color/Black"
+        android:textSize="@dimen/TextSize14"
+        android:fontFamily="@font/roboto_regular"/>
+
+    <RelativeLayout
+        android:layout_marginTop="2dp"
+        android:id="@+id/container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:minHeight="200dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        app:layout_constraintDimensionRatio="H,16:9"
+        app:layout_constraintEnd_toStartOf="@id/layout_status"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_comment">
+
+        <ImageView
+            android:id="@+id/img_video"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/placeholder_16_9"
+            android:contentDescription="@string/video_image" />
+
+        <TextView
+            android:id="@+id/tv_length"
+            android:minWidth="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/black_fade"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_10dp"
+            android:paddingBottom="@dimen/cell_margin"
+            android:paddingTop="@dimen/cell_margin"
+            android:textColor="@color/White"
+            android:textSize="@dimen/TextSize12"
+            android:fontFamily="@font/roboto_regular"/>
+
+        <ImageView
+            android:src="@drawable/play_button_big"
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+android:layout_centerInParent="true"
+            android:contentDescription="@string/video_image" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_status"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/White"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingEnd="40dp"
+        android:paddingStart="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_comment">
+
+        <TextView
+            android:id="@+id/tv_score"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/round_bg"
+            android:gravity="center"
+            android:textColor="@color/app_theme_color"
+            android:textSize="18sp"
+            android:maxLength="4"
+            android:fontFamily="@font/roboto_bold" />
+
+        <TextView
+            android:id="@+id/tv_ball"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="3dp"
+            android:textSize="@dimen/TextSize16"
+            android:maxLength="5"
+            android:fontFamily="@font/roboto_regular"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

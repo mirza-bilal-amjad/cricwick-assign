@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet_otp_bundles"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_white_with_shadow"
+    android:orientation="vertical"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/redeem_sheet_title"
+        android:src="@drawable/easypaisa_logo"
+        android:layout_marginTop="16dp"
+        ></ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:text="You have not been charged for 30 days. Purchase a bundle for PSL 2020."
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:textSize="16dp"
+        android:fontFamily="@font/opensans_regular"
+        android:id="@+id/easypaisa_sheet_desc_tv"
+        android:textColor="@color/Black"
+        android:layout_marginTop="16dp"
+        ></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your plan:"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:textSize="16dp"
+        android:fontFamily="@font/opensans_semibold"
+        android:textColor="@color/Black"
+        android:layout_marginTop="16dp"
+        ></TextView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tick_red"
+            app:layout_constraintLeft_toRightOf="@+id/selected_pkg_layout"
+            app:layout_constraintTop_toTopOf="@+id/selected_pkg_layout"
+            app:layout_constraintRight_toRightOf="@+id/selected_pkg_layout"
+            app:layout_constraintBottom_toTopOf="@+id/selected_pkg_layout"
+            android:elevation="4dp"
+            android:id="@+id/tick_pkg_selected"
+            ></ImageView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:elevation="2dp"
+            app:cardCornerRadius="5dp"
+            android:layout_marginBottom="16dp"
+            android:id="@+id/selected_pkg_layout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/package_bg"
+                    android:id="@+id/bg_pkg_selected"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="80dp"
+                        android:layout_marginLeft="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16dp"
+                            android:text="Weekly"
+                            android:id="@+id/title_pkg_selected"
+                            android:fontFamily="@font/opensans_bold_0"
+                            android:textColor="@color/Black"></TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12dp"
+                            android:text="Save upto 5%"
+                            android:id="@+id/promo_pkg_selected"
+                            android:fontFamily="@font/opensans_regular"
+                            android:textColor="#CF3737"
+                            android:layout_marginTop="2dp"
+
+                            ></TextView>
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12dp"
+                        android:text="PKR."
+                        android:fontFamily="@font/opensans_regular"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="16dp"
+                        android:id="@+id/pkr_pkg_selected"
+                        android:textColor="@color/Black"
+                        android:layout_alignBaseline="@+id/price_pkg_selected"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24dp"
+                        android:text="40"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/opensans_bold_0"
+                        android:layout_marginRight="2dp"
+                        android:layout_toLeftOf="@+id/pkr_pkg_selected"
+                        android:textColor="@color/Black"
+                        android:id="@+id/price_pkg_selected"></TextView>
+
+
+                </RelativeLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter OTP Received in SMS"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:textSize="16dp"
+        android:fontFamily="@font/opensans_semibold"
+        android:textColor="@color/Black"
+        android:layout_marginTop="16dp"
+        ></TextView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ep_field_container"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="8dp">
+
+
+        <EditText
+            android:id="@+id/otpField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="9dp"
+            android:layout_centerHorizontal="true"
+            android:hint="XXXX"
+            android:inputType="phone"
+            android:textColor="#777777"
+            android:textColorHint="@color/textColorGray"
+            android:textCursorDrawable="@null"
+            android:textSize="16dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/opensans_regular"
+            android:textFontWeight="600"
+            android:letterSpacing="0.5"
+
+            />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/subscribe_ep_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Subscribe"
+        android:layout_marginLeft="64dp"
+        android:layout_marginRight="64dp"
+        android:textColor="@color/White"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:layout_marginTop="@dimen/infoboard_regular_margin"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/opensans_bold_0"
+        android:background="@drawable/rounded_red_btn"
+        android:backgroundTint="#ED1C24"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:layout_marginBottom="32dp"
+        />
+
+
+
+</LinearLayout>

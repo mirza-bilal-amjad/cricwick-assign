@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/news_1"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White">
+
+        <ImageView
+            android:id="@+id/news_img"
+            android:layout_width="270dp"
+            android:layout_height="110dp"
+            android:padding="1dp"
+            android:scaleType="centerCrop" />
+
+        <RelativeLayout
+            android:id="@+id/headerView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/news_img"
+            android:layout_alignTop="@+id/news_img"
+             android:layout_toRightOf="@+id/news_img"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/show_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_light_0"
+                android:maxLines="3"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                tools:text="6 O"
+                tools:ignore="HardcodedText"
+                android:textColor="@color/defaulttext"
+                android:textSize="10sp" />
+
+            <TextView
+                android:layout_below="@+id/show_time"
+                android:id="@+id/news_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_regular"
+                android:maxLines="3"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                tools:text="Adnan Sohail"
+                tools:ignore="HardcodedText"
+                android:textColor="@color/defaulttext"
+                android:textSize="14sp" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/White"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/cell_margin">
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        app:layout_constraintDimensionRatio="H,16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="111dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/shade_drawable">
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/img_share1"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/cell_margin"
+            android:paddingLeft="@dimen/cell_margin"
+            android:paddingTop="@dimen/cell_margin">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium_0"
+                android:lines="1"
+
+                android:textColor="@color/White"
+                android:textSize="14sp"
+                tools:text="PAK Vs AUS- Hafeez takes down the Ausies" />
+
+            <TextView
+                android:id="@+id/tv_date"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light_0"
+                android:textColor="@color/White"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/cell_margin"
+            android:src="@drawable/share_icon"
+            android:tint="@color/White" />
+
+        <ImageView
+            android:id="@+id/img_share1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/cell_margin"
+            android:src="@drawable/share_icon"
+            android:tint="@color/White"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/summayView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/container">
+
+        <TextView
+            android:id="@+id/articleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_regular"
+            android:lines="3"
+            android:padding="10dp"
+            android:text="kjsdlfjdslfmmmmmmsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsddslkfsdsdsdsdsdsdsdsdsdsdsdsdsdjdlskjfflkdsjflkdsjflksdjflksdjflkkdsjflksdjflksjdlfkjsdlkfjsldkfjlksdjflksdjflksjdflksdjflkjsdlfkjdslkfjdsklfjlksdjfjsldfj"
+            android:textColor="@color/Black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/readMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/articleText"
+            android:layout_toLeftOf="@+id/arrow"
+            android:background="@color/White"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_regular"
+            android:lines="1"
+            android:paddingBottom="9dp"
+            android:paddingRight="0dp"
+            android:text=""
+            android:textColor="@color/Black"
+            android:textSize="11sp"
+            tools:layout_editor_absoluteX="367dp"
+            tools:layout_editor_absoluteY="250dp" />
+
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/readMore"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/readMore"
+            android:background="@color/White"
+            android:paddingBottom="6dp"
+            android:tint="@color/DimGray" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

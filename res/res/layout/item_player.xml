@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+     android:layout_marginLeft="3dp"
+    android:layout_marginRight="3dp"
+    android:background="@color/White"
+    android:layout_marginTop="3dp"
+    android:elevation="0dp"
+    app:cardCornerRadius="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/cell_margin"
+         android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <ImageView
+            android:layout_margin="1dp"
+            android:id="@+id/img_player"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+             android:scaleType="centerCrop"
+            android:src="@drawable/player_select_bg"
+            android:background="@drawable/button_border_gre"
+            />
+
+        <LinearLayout
+            android:padding="@dimen/section_space"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/section_space"
+             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/playerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/roboto_regular"
+                android:paddingLeft="@dimen/section_space"
+                android:textColor="@color/Black"
+                android:textSize="12sp"
+                tools:text="@tools:sample/lorem" />
+
+            <TextView
+                android:id="@+id/playerAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:paddingLeft="@dimen/section_space"
+                android:paddingTop="@dimen/series_match_spacing"
+                android:textColor="@color/Black"
+                android:textSize="12sp"
+                tools:text="@tools:sample/lorem" />
+
+            <TextView
+                android:id="@+id/playerRole"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:paddingLeft="@dimen/section_space"
+                android:paddingTop="@dimen/series_match_spacing"
+                android:textColor="@color/Black"
+                android:textSize="12sp"
+                tools:text="@tools:sample/lorem" />
+
+            <TextView
+                android:id="@+id/playerBatting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:paddingLeft="@dimen/section_space"
+                android:paddingTop="@dimen/series_match_spacing"
+                android:textColor="@color/Black"
+                android:textSize="12sp"
+                tools:text="@tools:sample/lorem" />
+
+            <TextView
+                android:id="@+id/playerBowling"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:paddingLeft="@dimen/section_space"
+                android:paddingTop="@dimen/series_match_spacing"
+                android:textColor="@color/Black"
+                android:textSize="12sp"
+                tools:text="@tools:sample/full_names" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

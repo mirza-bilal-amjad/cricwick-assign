@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/new_bg_color"
+    android:layout_marginTop="3dp"
+    android:visibility="gone"
+    android:id="@+id/partnerShipRootView"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:id="@+id/batsman_card"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.35"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:padding="@dimen/section_space"
+                android:text="Batsmen"
+                android:textColor="@color/Black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/bt1Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light_0"
+                android:maxLines="1"
+                android:padding="@dimen/section_space"
+                android:singleLine="true"
+                tools:text="Kumar sangakrrra"
+                tools:ignore="HardcodedText"
+                android:textColor="@color/Black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/bt2Name"
+                tools:ignore="HardcodedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light_0"
+                android:maxLines="1"
+                android:padding="@dimen/section_space"
+                android:singleLine="true"
+                tools:text="Batsmen"
+                android:textColor="@color/Black"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="0.65"
+            android:gravity="right"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/partnerShipText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light_0"
+                android:padding="@dimen/section_space"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/Black"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:orientation="horizontal"
+                android:padding="@dimen/section_space">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="1"
+                        >
+
+                        <TextView
+                            android:id="@+id/bt1runs"
+                            tools:ignore="HardcodedText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.26"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="right|center_vertical"
+                            android:maxLength="5"
+                            android:paddingRight="5dp"
+                            tools:text="999"
+                            android:textColor="@color/Black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Runs"
+                            android:layout_weight="0.13"
+
+                            android:textColor="@color/Gray"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/bt1Balls"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.15"
+                            tools:ignore="HardcodedText"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="right|center_vertical"
+                            android:paddingRight="5dp"
+                            tools:text="150"
+                            android:textColor="@color/Black"
+                            android:textSize="14sp" />
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Balls"
+                            android:layout_weight="0.13"
+
+                            android:textColor="@color/Gray"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/bt1SR"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+
+                            tools:ignore="HardcodedText"
+                            android:layout_weight="0.21"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="right|center_vertical"
+                            android:paddingRight="5dp"
+                            tools:text="33.33"
+                            android:textColor="@color/Black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="SR"
+                            android:layout_weight="0.13"
+
+                            android:textColor="@color/Gray"
+                            android:textSize="12sp" />
+
+
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:orientation="horizontal"
+                android:padding="@dimen/section_space">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="1"
+                        >
+
+                        <TextView
+                            android:id="@+id/bt2Runs"
+                            tools:ignore="HardcodedText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.26"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="right|center_vertical"
+                            android:maxLength="4"
+                            android:paddingRight="5dp"
+                            tools:text="99"
+                            android:textColor="@color/Black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Runs"
+                            android:layout_weight="0.13"
+                            android:textColor="@color/Gray"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/bt2Balls"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            tools:ignore="HardcodedText"
+                            android:layout_weight="0.15"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="right|center_vertical"
+                            android:paddingRight="5dp"
+                            tools:text="150"
+                            android:textColor="@color/Black"
+                            android:textSize="14sp" />
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Balls"
+                            android:layout_weight="0.13"
+                            android:textColor="@color/Gray"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/bt2SR"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            tools:ignore="HardcodedText"
+                            android:layout_weight="0.21"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="right|center_vertical"
+                            android:paddingRight="5dp"
+                            tools:text="122"
+                            android:textColor="@color/Black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_weight="0.13"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="SR"
+                            android:textColor="@color/Gray"
+                            android:textSize="12sp" />
+
+
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@color/White"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:id="@+id/bowler_card"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="0.3"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:padding="@dimen/section_space"
+                android:text="Bowlers"
+                android:textColor="@color/Black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/bo1Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light_0"
+                android:maxLines="1"
+                tools:ignore="HardcodedText"
+                android:padding="@dimen/section_space"
+                android:singleLine="true"
+                tools:text="Kumar sangakrrra"
+                android:textColor="@color/Black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/bo2Name"
+                tools:ignore="HardcodedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light_0"
+                android:maxLines="1"
+                android:padding="@dimen/section_space"
+                android:singleLine="true"
+                tools:text="Batsmen"
+                android:textColor="@color/Black"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="0.7"
+            android:gravity="right"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light_0"
+                android:padding="@dimen/section_space"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/Black"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/section_space"
+                android:paddingRight="@dimen/section_space"
+                android:paddingBottom="@dimen/section_space"
+
+                >
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="1"
+                        >
+                        <TextView
+                            android:id="@+id/bo1Ov"
+                            tools:ignore="HardcodedText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.14"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="right|center_vertical"
+                            android:maxLength="4"
+                            android:paddingRight="5dp"
+                            tools:text="0.6"
+                            android:textColor="@color/Black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Ov"
+                            android:layout_weight="0.06"
+                            android:textColor="@color/Gray"
+                            android:textSize="12sp" />
+                        <TextView
+                            android:id="@+id/bo1Runs"
+                            tools:ignore="HardcodedText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.12"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="right|center_vertical"
+                            android:maxLength="4"
+                            android:paddingRight="5dp"
+                            tools:text="999"
+                            android:textColor="@color/Black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Wkts"
+                            android:layout_weight="0.13"
+                            android:textColor="@color/Gray"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/bo1Balls"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            tools:ignore="HardcodedText"
+                            android:layout_weight="0.13"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="right|center_vertical"
+                            android:paddingRight="5dp"
+                            tools:text="150"
+                            android:textColor="@color/Black"
+                            android:textSize="14sp" />
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_weight="0.13"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Runs"
+                            android:textColor="@color/Gray"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/bo1Eco"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+
+                            tools:ignore="HardcodedText"
+                            android:layout_weight="0.18"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="right|center_vertical"
+                            android:paddingRight="5dp"
+                            tools:text="33.33"
+                            android:textColor="@color/Black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.15"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Econ"
+                            android:textColor="@color/Gray"
+                            android:textSize="12sp" />
+
+
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/section_space"
+                android:paddingRight="@dimen/section_space"
+                android:paddingBottom="@dimen/section_space">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="1"
+                        >
+                        <TextView
+                            android:id="@+id/bo2OV"
+                            tools:ignore="HardcodedText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.14"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="right|center_vertical"
+                            android:maxLength="4"
+                            android:paddingRight="5dp"
+                            tools:text="99"
+                            android:textColor="@color/Black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Ov"
+                            android:layout_weight="0.06"
+                            android:textColor="@color/Gray"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/bo2Runs"
+                            tools:ignore="HardcodedText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.12"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="right|center_vertical"
+                            android:maxLength="4"
+                            android:paddingRight="5dp"
+                            tools:text="99"
+                            android:textColor="@color/Black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Wkts"
+                            android:layout_weight="0.13"
+                            android:textColor="@color/Gray"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/bo2Balls"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            tools:ignore="HardcodedText"
+                            android:layout_weight="0.13"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="right|center_vertical"
+                            android:paddingRight="5dp"
+                            tools:text="150"
+                            android:textColor="@color/Black"
+                            android:textSize="14sp" />
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_weight="0.13"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Runs"
+                            android:textColor="@color/Gray"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/bo2Eco"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+
+                            tools:ignore="HardcodedText"
+                            android:layout_weight="0.18"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="right|center_vertical"
+                            android:paddingRight="5dp"
+                            tools:text="54.54"
+                            android:textColor="@color/Black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Econ"
+                            android:layout_weight="0.15"
+                            android:textColor="@color/Gray"
+                            android:textSize="12sp" />
+
+
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <include layout="@layout/include_man_of_the_match" />
+
+
+</LinearLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:id="@+id/self_player_footer">
+
+
+    <RelativeLayout
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/self_player_footer_rank_tv_layout"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="14dp"
+        android:layout_marginLeft="4dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/self_player_footer_rank_tv"
+            android:text="1"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/opensans_regular"
+            android:textSize="@dimen/regular_text_size"
+            android:textColor="@color/Black"></TextView>
+    </RelativeLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:id="@+id/self_player_footer_img"
+        android:layout_toRightOf="@id/self_player_footer_rank_tv_layout"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/avator"
+        ></de.hdodenhof.circleimageview.CircleImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/self_player_footer_name_tv"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/self_player_footer_img"
+        android:layout_toLeftOf="@+id/self_player_footer_points_tv"
+        android:paddingRight="10dp"
+        android:layout_marginLeft="14dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:maxLength="18"
+        android:fontFamily="@font/opensans_regular"
+        android:textSize="@dimen/regular_text_size"
+        android:textColor="@color/Black"
+        ></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/self_player_footer_points_tv"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:text="3000"
+        android:fontFamily="@font/opensans_regular"
+        android:textSize="@dimen/regular_text_size"
+        android:textColor="@color/Black"
+        ></TextView>
+
+
+</RelativeLayout>

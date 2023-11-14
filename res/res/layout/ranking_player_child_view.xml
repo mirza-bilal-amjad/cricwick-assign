@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:paddingTop="7dp"
+    android:paddingBottom="7dp"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="10">
+
+    <TextView
+        android:id="@+id/tv_rank"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.6"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center"
+        android:textColor="@color/ranking_text_color"
+        android:textSize="14sp"
+        tools:text="1" />
+
+
+    <TextView
+        android:id="@+id/tv_player_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3.7"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center_vertical"
+        android:textColor="@color/ranking_text_color"
+        android:textSize="14sp"
+        tools:text="Virat Kohli" />
+
+    <ImageView
+        android:id="@+id/img_flag"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_weight="0.5"
+        android:src="@drawable/switch_thumb_on" />
+
+    <TextView
+        android:id="@+id/tv_team_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_weight="2.65"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center_vertical"
+        android:textColor="@color/ranking_text_color"
+        android:textSize="14sp"
+        tools:text="India" />
+
+    <TextView
+        android:id="@+id/tv_rating"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.55"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center"
+        android:textColor="@color/ranking_text_color"
+        android:textSize="14sp"
+        tools:text="111" />
+
+
+</LinearLayout>

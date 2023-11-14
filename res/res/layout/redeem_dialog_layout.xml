@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/dialogBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:background="@drawable/bg_white_with_shadow"
+        android:elevation="4dp"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/app_logo_medium"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"></ImageView>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/alertTitleTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:gravity="center_horizontal"
+            android:text="SAmple Text"
+            android:paddingBottom="@dimen/infoboard_xlarge_margin"
+            android:fontFamily="@font/patuaone_regular_new"
+            android:textColor="@android:color/black"
+            android:textSize="18dp" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/alertTV"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_marginRight="15dp"-->
+<!--            android:layout_marginLeft="15dp"-->
+<!--            android:layout_marginTop="6dp"-->
+<!--            android:fontFamily="@font/opensans_regular"-->
+<!--            android:text="SAmple Text osdafiuoasdhf"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:textSize="@dimen/regular_text_size" />-->
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/opensans_regular">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/opensans_regular"
+                android:text="Mobile #"
+                android:textColor="@android:color/black"
+                android:textSize="16dp"
+
+                />
+
+            <TextView
+                android:id="@+id/redeem_dialog_number_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/opensans_regular"
+                android:text="XXXXXXX"
+                android:textColor="@android:color/black"
+                android:textSize="16dp"
+                android:layout_alignParentRight="true"
+
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/Black_with_opacity_3"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="16dp">
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/opensans_regular">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:fontFamily="@font/opensans_regular"
+                android:text="Topped Amount"
+                android:textColor="@android:color/black"
+                android:textSize="16dp"
+
+                />
+
+            <TextView
+                android:id="@+id/redeem_dialog_topped_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_regular"
+                android:text="50 Pkr"
+                android:textColor="@android:color/black"
+                android:textSize="16dp"
+                android:layout_alignParentRight="true"
+
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/Black_with_opacity_3"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="24dp">
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="24dp"
+            android:paddingBottom="8dp"
+            android:fontFamily="@font/opensans_regular">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_regular"
+                android:text="Remaining Coins"
+                android:textColor="@android:color/black"
+                android:textSize="16dp"
+
+                />
+
+            <TextView
+                android:id="@+id/redeem_dialog_rem_coins_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:fontFamily="@font/opensans_regular"
+                android:text="50"
+                android:textColor="@android:color/black"
+                android:textSize="16dp"
+                android:layout_alignParentRight="true"
+
+                />
+        </RelativeLayout>
+
+
+
+        <TextView
+            android:id="@+id/positiveIB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="OK"
+            android:layout_marginLeft="64dp"
+            android:layout_marginRight="64dp"
+            android:textColor="@color/White"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_marginTop="@dimen/infoboard_xlarge_margin"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="@font/opensans_bold_0"
+            android:background="@drawable/rounded_red_btn"
+            android:backgroundTint="#ED1C24"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp" />
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

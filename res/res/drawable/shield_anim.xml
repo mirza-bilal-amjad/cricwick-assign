@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:id="@+id/shield"
+    android:oneshot="false"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/sh_1" android:duration="50" />
+    <item android:drawable="@drawable/sh_2" android:duration="50" />
+    <item android:drawable="@drawable/sh_3" android:duration="50" />
+    <item android:drawable="@drawable/sh_4" android:duration="50" />
+    <item android:drawable="@drawable/sh_5" android:duration="50" />
+    <item android:drawable="@drawable/sh_6" android:duration="50" />
+    <item android:drawable="@drawable/sh_7" android:duration="50" />
+    <item android:drawable="@drawable/sh_8" android:duration="50" />
+    <item android:drawable="@drawable/sh_9" android:duration="50" />
+    <item android:drawable="@drawable/sh_10" android:duration="50" />
+    <item android:drawable="@drawable/sh_11" android:duration="50" />
+    <item android:drawable="@drawable/sh_12" android:duration="50" />
+    <item android:drawable="@drawable/sh_13" android:duration="50" />
+    <item android:drawable="@drawable/sh_14" android:duration="50" />
+    <item android:drawable="@drawable/sh_15" android:duration="50" />
+    <item android:drawable="@drawable/sh_16" android:duration="50" />
+    <item android:drawable="@drawable/sh_17" android:duration="50" />
+    <item android:drawable="@drawable/sh_18" android:duration="50" />
+    <item android:drawable="@drawable/sh_19" android:duration="50" />
+    <item android:drawable="@drawable/sh_20" android:duration="50" />
+    <item android:drawable="@drawable/sh_21" android:duration="50" />
+    <item android:drawable="@drawable/sh_22" android:duration="50" />
+    <item android:drawable="@drawable/sh_23" android:duration="50" />
+    <item android:drawable="@drawable/sh_24" android:duration="50" />
+    <item android:drawable="@drawable/sh_25" android:duration="50" />
+    <item android:drawable="@drawable/sh_26" android:duration="50" />
+    <item android:drawable="@drawable/sh_27" android:duration="50" />
+    <item android:drawable="@drawable/sh_28" android:duration="50" />
+    <item android:drawable="@drawable/sh_29" android:duration="50" />
+    <item android:drawable="@drawable/sh_30" android:duration="50" />
+    <item android:drawable="@drawable/sh_31" android:duration="50" />
+    <item android:drawable="@drawable/sh_32" android:duration="50" />
+    <item android:drawable="@drawable/sh_33" android:duration="50" />
+    <item android:drawable="@drawable/sh_34" android:duration="50" />
+</animation-list>

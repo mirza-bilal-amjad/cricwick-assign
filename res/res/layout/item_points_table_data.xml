@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingBottom="15dp"
+    android:paddingTop="15dp"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/tv_team_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".35"
+        android:paddingLeft="10dp"
+        android:paddingStart="10dp"
+        android:textColor="@color/Black"
+        android:textSize="14sp"
+        tools:text="Multan Sultan" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".65"
+        android:weightSum="3.5"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_matches"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.45"
+            android:gravity="center"
+            android:textColor="@color/Black"
+            android:textSize="14sp"
+            tools:text="0" />
+
+        <TextView
+            android:id="@+id/tv_won"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.45"
+            android:gravity="center"
+            android:textColor="@color/Black"
+            android:textSize="14sp"
+            tools:text="0" />
+
+        <TextView
+            android:id="@+id/tv_lost"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.45"
+            android:gravity="center"
+            android:textColor="@color/Black"
+            android:textSize="14sp"
+            tools:text="0" />
+
+        <TextView
+            android:id="@+id/tv_tied"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.45"
+            android:gravity="end"
+            android:textColor="@color/Black"
+            android:textSize="14sp"
+            tools:text="0" />
+
+        <TextView
+            android:id="@+id/tv_no_result"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.45"
+            android:gravity="end"
+            android:textColor="@color/Black"
+            android:textSize="14sp"
+            tools:text="0" />
+
+        <TextView
+            android:id="@+id/tv_points"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.45"
+            android:gravity="end"
+            android:textColor="@color/Black"
+            android:textSize="14sp"
+            tools:text="0" />
+
+        <TextView
+            android:id="@+id/tv_net_rr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:gravity="center"
+            android:textColor="@color/Black"
+            android:textSize="14sp"
+            tools:text="0" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/tick_red"
+        app:layout_constraintLeft_toRightOf="@+id/pkg_layout1"
+        app:layout_constraintTop_toTopOf="@+id/pkg_layout1"
+        app:layout_constraintRight_toRightOf="@+id/pkg_layout1"
+        app:layout_constraintBottom_toTopOf="@+id/pkg_layout1"
+        android:elevation="4dp"
+        android:id="@+id/tick_pkg1"
+        ></ImageView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="2dp"
+        app:cardCornerRadius="5dp"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/pkg_layout1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bg_pkg1"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="80dp"
+                    android:layout_marginLeft="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp"
+                        android:text=""
+                        android:id="@+id/title_pkg1"
+                        android:fontFamily="@font/opensans_bold_0"
+                        android:textColor="@color/Black"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12dp"
+                        android:text=""
+                        android:id="@+id/promo_pkg1"
+                        android:fontFamily="@font/opensans_regular"
+                        android:textColor="#CF3737"
+                        android:layout_marginTop="2dp"
+
+                        ></TextView>
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:text="PKR + Tax*"
+                    android:fontFamily="@font/opensans_regular"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="16dp"
+                    android:id="@+id/pkr_pkg1"
+                    android:textColor="@color/Black"
+                    android:layout_alignBaseline="@+id/price_pkg1"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24dp"
+                    android:text=""
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/opensans_bold_0"
+                    android:layout_marginRight="2dp"
+                    android:layout_toLeftOf="@+id/pkr_pkg1"
+                    android:textColor="@color/Black"
+                    android:id="@+id/price_pkg1"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24dp"
+                    android:text=""
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/opensans_bold_0"
+                    android:layout_marginRight="4dp"
+                    android:layout_toLeftOf="@+id/price_pkg1"
+                    android:textColor="@color/Black"
+                    android:id="@+id/price_original_pkg1"></TextView>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

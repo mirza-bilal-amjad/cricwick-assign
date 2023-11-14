@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="4"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
+    android:layout_marginBottom="2dp"
+    android:layout_marginTop="2dp"
+    android:background="@color/White"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/infoboard_small_margin"
+        android:paddingBottom="@dimen/infoboard_small_margin"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/infoboard_regular_margin"
+            >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/team1_inning1_layout"
+                >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="@dimen/infoboard_small_margin"
+                    android:id="@+id/team1_flag"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:textSize="@dimen/regular_text_size"
+                    android:layout_toRightOf="@id/team1_flag"
+                    android:layout_marginLeft="2dp"
+                    android:textColor="@color/Black"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/team1_name"></TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/team1_inning1_layout"
+                android:layout_marginTop="2dp"
+                android:id="@+id/team1_inning2_layout"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(19.3)"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/infoboard_small_margin"
+                    android:id="@+id/team1_ov_2nd"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="116/4"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:textSize="@dimen/regular_text_size"
+                    android:layout_toLeftOf="@id/team1_ov_2nd"
+                    android:textColor="@color/Black"
+                    android:id="@+id/team1_sc_2nd"
+                    android:layout_centerVertical="true"
+                    ></TextView>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/team2_inning1_layout"
+                android:layout_centerHorizontal="true"
+                >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="@dimen/infoboard_small_margin"
+                    android:id="@+id/team2_flag"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:textSize="@dimen/regular_text_size"
+                    android:layout_toRightOf="@id/team2_flag"
+                    android:layout_marginLeft="2dp"
+                    android:textColor="@color/Black"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/team2_name"></TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/team2_inning1_layout"
+                android:layout_marginTop="2dp"
+                android:id="@+id/team2_inning2_layout"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(19.3)"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/infoboard_small_margin"
+                    android:id="@+id/team2_ov_2nd"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="116/4"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:textSize="@dimen/regular_text_size"
+                    android:layout_toLeftOf="@id/team2_ov_2nd"
+                    android:textColor="@color/Black"
+                    android:id="@+id/team2_sc_2nd"
+                    android:layout_centerVertical="true"
+                    ></TextView>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

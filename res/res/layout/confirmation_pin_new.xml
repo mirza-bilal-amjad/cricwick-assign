@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/enterPinLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/infoboard_xlarge_margin"
+            android:src="@drawable/app_logo_medium"></ImageView>
+
+
+        <TextView
+            android:id="@+id/sub_otp_sent_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/infoboard_large_margin"
+            android:layout_marginTop="36dp"
+            android:layout_marginRight="@dimen/infoboard_large_margin"
+            android:fontFamily="@font/opensans_regular"
+            android:paddingBottom="1dp"
+            android:text="OTP sent on number mentioned below"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/regular_text_size"></TextView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/enteredPhoneTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/opensans_semibold"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:text="0300XXXXXXX"
+                android:textColor="@color/Black"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:id="@+id/edit_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/enteredPhoneTV"
+                android:paddingLeft="12dp"
+                android:paddingTop="10dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="10dp"
+                android:src="@drawable/edit_icon"></ImageView>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/sub_otp_received_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/opensans_semibold"
+            android:paddingBottom="1dp"
+            android:text="Enter OTP Received in SMS"
+            android:textColor="@color/Black"
+            android:textSize="16dp"></TextView>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/infoboard_xlarge_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="@dimen/infoboard_xlarge_margin"
+            android:background="@drawable/subscription_field_container">
+
+
+            <RelativeLayout
+                android:id="@+id/progress_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/infoboard_regular_margin">
+
+                <com.khaleef.cricket.Utils.ProgressBarView
+                    android:id="@+id/timeProgressbar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/infoboard_regular_margin"
+                    android:background="@drawable/progress_circle_background"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:padding="5dp"
+                    android:progress="70"
+                    android:progressDrawable="@drawable/progress_circle_drawable"
+                    android:rotationX="0" />
+
+                <TextView
+                    android:id="@+id/timeProgressText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="30"
+                    android:textSize="12dp"></TextView>
+            </RelativeLayout>
+
+            <!--            <androidx.core.widget.ContentLoadingProgressBar-->
+            <!--                android:layout_width="30dp"-->
+            <!--                android:layout_height="30dp"-->
+            <!--                android:layout_centerVertical="true"-->
+            <!--                android:layout_marginLeft="@dimen/infoboard_regular_margin"-->
+            <!--                android:progress="60"-->
+            <!--                android:progressTint="@color/app_theme_color"-->
+            <!--                android:id="@+id/progress"-->
+            <!--                ></androidx.core.widget.ContentLoadingProgressBar>-->
+
+            <TextView
+                android:id="@+id/hint_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="42dp"
+                android:layout_toRightOf="@id/progress_container"
+                android:hint="Enter the Pin from SMS Here"
+                android:inputType="phone"
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp"
+                android:textColor="#777777"
+                android:textColorHint="@color/textColorGray"
+                android:textCursorDrawable="@null"
+                android:textSize="12dp" />
+
+            <EditText
+                android:id="@+id/pinCodeField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="42dp"
+                android:layout_marginRight="42dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/opensans_semibold"
+                android:gravity="center"
+                android:inputType="phone"
+                android:letterSpacing="0.5"
+                android:maxLength="8"
+                android:paddingTop="9dp"
+                android:paddingBottom="9dp"
+                android:textColor="@color/Black"
+                android:textColorHint="@color/textColorGray"
+                android:textCursorDrawable="@null"
+                android:textSize="16dp" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/buttonSubscribe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="64dp"
+            android:layout_marginTop="@dimen/infoboard_regular_margin"
+            android:layout_marginRight="64dp"
+            android:background="@drawable/rounded_red_btn"
+            android:backgroundTint="#BFBFBF"
+            android:fontFamily="@font/opensans_bold_0"
+            android:gravity="center"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:text="Register"
+            android:textColor="@color/White"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="32dp"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/resend_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="8dp"
+                android:fontFamily="@font/opensans_regular"
+                android:text="Didn’t get the Pin?"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/regular_text_size"></TextView>
+
+            <TextView
+                android:id="@+id/buttonResend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_toRightOf="@+id/resend_text"
+                android:fontFamily="@font/opensans_regular"
+                android:text="Resend pin"
+                android:textColor="#B91414"
+                android:textSize="@dimen/regular_text_size"
+                android:visibility="gone"></TextView>
+
+            <TextView
+                android:id="@+id/buttonResendDisabled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@+id/resend_text"
+                android:fontFamily="@font/opensans_regular"
+                android:text="Resend pin"
+                android:textColor="@color/greydark"
+                android:textSize="@dimen/regular_text_size"></TextView>
+
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/disclaimer_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="40dp"
+            android:fontFamily="@font/opensans_regular"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text=""
+            android:textColor="#7A7A7A"
+            android:textSize="16dp"></TextView>
+
+        <TextView
+            android:id="@+id/terms_tv_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="40dp"
+            android:fontFamily="@font/opensans_regular"
+            android:gravity="center"
+            android:text="Please refer to terms and conditions"
+            android:textColor="#B91414"
+            android:textSize="14dp"></TextView>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorWhiteWithOpacity">#80FFFFFF</color>
+    <color name="colordividerWithOpacity">#1AFFFFFF</color>
+    <color name="black_fade">#B3000000</color>
+
+    <color name="pinVerificationTextColor">#626262</color>
+    <color name="subscribtionCancelTextColor">#D0D1D0</color>
+    <color name="redColor">#B81326</color>
+
+    <color name="divider_color">#DCEAF1</color>
+    <color name="league_pop_color">#B91414</color>
+    <color name="dark_text_color">#343434</color>
+    <color name="dark_text_color_with_opacity">#80343434</color>
+
+    <color name="leaderboard_pos1_color">#FFE016</color>
+    <color name="leaderboard_pos2_color">#F8B669</color>
+    <color name="leaderboard_pos3_color">#FF8550</color>
+
+
+    <color name="transactions_color">#FF0000</color>
+    <color name="greyed_out_color">#7F7F7F</color>
+    <color name="terms_color">#E8D0D1</color>
+    <color name="gold_color_score">#FFE853</color>
+    <color name="subscription_skip_color">#B3656565</color>
+
+    <color name="daily_claim_normal_color">#FACA29</color>
+    <color name="daily_claim_tint_color">#99FACA29</color>
+
+    <color name="t20_color">#FFC300</color>
+    <color name="t20_color_tint">#99FFC300</color>
+    <color name="odi_color">#28CE2C</color>
+    <color name="odi_color_tint">#99CE2C</color>
+    <color name="test_color">#B91414</color>
+    <color name="test_color_tint">#99B91414</color>
+    <color name="subscribe_red">#B91414</color>
+
+    <color name="Black_with_opacity">#80000000</color>
+    <color name="Black_with_opacity_4">#66000000</color>
+    <color name="Black_with_opacity_3">#4D000000</color>
+    <color name="shadow_color">#f0f0f0</color>
+
+    <color name="bundles_color">#CF3737</color>
+    <color name="bg_color_light_blue">#EEF8FE</color>
+    <color name="rank_text_color">#AAB914</color>
+    <color name="rank_text_color_bg">#F4F8CC</color>
+    <color name="boundry_six_bg">#00A19D</color>
+    <color name="boundry_four_bg">#7FC8A9</color>
+    <color name="wicket_bg">#E05D5D</color>
+    <color name="selected_over_bg">#f6f6f6</color>
+    <color name="bottom_tint">#BDBBBB</color>
+    <color name="lightPink">#FAF0F0</color>
+    <color name="app_theme_color_cricwick">#C40A0B</color>
+
+    <color name="colorPurple">#5B0CB6</color>
+    <color name="colorDarkYellow">#FFDD00</color>
+    <color name="colorCyan">#17CEB0</color>
+
+</resources>

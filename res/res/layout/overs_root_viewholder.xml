@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@color/White"
+    android:id="@+id/rootView"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:focusableInTouchMode="false"
+
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_marginTop="3dp"
+        android:layout_marginLeft="@dimen/series_match_spacing"
+        android:padding="@dimen/section_space"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/overTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium_0"
+
+            android:text="24"
+            android:textColor="@color/Black"
+            android:textSize="14sp" />
+        <TextView
+            android:layout_toRightOf="@+id/overTitle"
+            android:id="@+id/overTitleSup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium_0"
+            android:text="th"
+            android:textColor="@color/Black"
+            android:textSize="10sp" />
+        <TextView
+            android:layout_toRightOf="@+id/overTitleSup"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium_0"
+            android:text="Over"
+            android:layout_marginLeft="2dp"
+            android:textColor="@color/Black"
+            android:textSize="14sp" />
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/overItem"
+        android:padding="@dimen/section_space"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
+</LinearLayout>

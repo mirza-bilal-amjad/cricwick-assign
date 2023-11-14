@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/detailArticleLayout"
+    android:background="@color/White"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="15dp"
+            android:src="@drawable/back_button"
+            android:contentDescription="@string/image_back_description" />
+
+        <TextView
+            android:id="@+id/toolbarTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/concon_regular"
+            android:gravity="center"
+            android:textColor="@color/defaulttext"
+            android:textSize="@dimen/text_size_20sp"
+            android:text="@string/tag_articles" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/White"
+            android:orientation="vertical"
+            tools:ignore="ScrollViewSize">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/tag_banner_image"
+                android:transitionName="article_image_transition" />
+
+            <RelativeLayout
+                android:id="@+id/headerView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/articleTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/shareButton"
+                    android:layout_toStartOf="@+id/shareButton"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_bold"
+                     android:paddingLeft="@dimen/margin_10dp"
+                    android:paddingRight="@dimen/margin_10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/articleBy"
+                    android:layout_below="@+id/articleTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/section_space"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_condensed"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="@dimen/margin_10dp"
+                    android:paddingRight="@dimen/margin_10dp"
+                    android:text=""
+                    android:layout_toLeftOf="@+id/shareButton"
+                    android:layout_toStartOf="@+id/shareButton"
+                    android:textColor="@color/matchDetailes"
+                    android:textSize="@dimen/text_size_10sp" />
+
+                <ImageView
+                    android:id="@+id/shareButton"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:paddingBottom="@dimen/margin_10dp"
+                    android:paddingLeft="@dimen/margin_10dp"
+                    android:paddingRight="@dimen/margin_10dp"
+                    android:paddingTop="@dimen/margin_10dp"
+                    android:src="@drawable/share_gy"
+                    android:tint="#656565"
+                    android:contentDescription="@string/tag_share_icon" />
+
+            </RelativeLayout>
+
+            <WebView
+                android:id="@+id/descriptionWV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:background="@color/White" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+        <com.khaleef.cricket.Utils.RotateLoading
+            android:id="@+id/rotating_loader"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
+            android:padding="10dp"
+            app:loading_color="@color/app_theme_color"
+            app:loading_speed="11"
+            app:loading_width="5dp" />
+
+
+
+
+</LinearLayout>

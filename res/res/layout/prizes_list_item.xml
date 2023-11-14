@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:id="@+id/prize_view"
+    >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/gift_ic"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="24dp"
+        android:id="@+id/prize_ic"
+        ></ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/match_title"
+        android:layout_marginTop="16dp"
+        android:text="Scores"
+        android:fontFamily="@font/opensans_semibold"
+        android:textSize="14dp"
+        android:textColor="@color/Black"
+        android:layout_toRightOf="@+id/prize_ic"
+        android:layout_marginLeft="8dp"
+        ></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/prize_title"
+        android:layout_below="@+id/match_title"
+        android:text="12 may 2020"
+        android:fontFamily="@font/opensans_bold_0"
+        android:layout_marginTop="4dp"
+        android:textSize="18dp"
+        android:textColor="@color/Black"
+        android:layout_toRightOf="@+id/prize_ic"
+        android:layout_marginLeft="8dp"
+        ></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/prize_date"
+        android:layout_below="@+id/prize_title"
+        android:text="12 may 2020"
+        android:fontFamily="@font/opensans_bold_0"
+        android:layout_marginTop="4dp"
+        android:textSize="10dp"
+        android:textColor="@color/dark_text_color_with_opacity"
+        android:layout_toRightOf="@+id/prize_ic"
+        android:layout_marginLeft="8dp"
+        android:paddingBottom="14dp"
+        ></TextView>
+
+
+    <TextView
+        android:id="@+id/prize_rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/rank_bg"
+        android:fontFamily="@font/opensans_semibold"
+        android:paddingLeft="8dp"
+        android:paddingTop="2dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="2dp"
+        android:text=""
+        android:visibility="gone"
+        android:textColor="@color/rank_text_color"
+        android:textSize="10dp"></TextView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pre_right_arrow"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="16dp"
+        android:tint="#999999"
+        ></ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E5E5E5"
+        android:layout_below="@+id/prize_date"
+        ></LinearLayout>
+
+</RelativeLayout>

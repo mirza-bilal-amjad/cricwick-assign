@@ -1,0 +1,213 @@
+<resources>
+    <string name="app_name">Cricket</string>
+    <string name="CodePushDeploymentKey" moduleConfig="true">oQcf2H8oCNPy9J05ytqYSLu8bAQf7mYyW3Aoy</string>
+    <string name="video_image">Video Thumbnail</string>
+    <string name="image_back_description">Back Step Image</string>
+    <string name="tag_articles">Articles</string>
+
+    <string name="appCenterCrashes_whenToSendCrashes" moduleConfig="true" translatable="false">DO_NOT_ASK_JAVASCRIPT</string>
+    <string name="appCenterAnalytics_whenToEnableAnalytics" moduleConfig="true" translatable="false">ALWAYS_SEND</string>
+
+
+    <string name="tag_banner_image">Banner Image</string>
+    <string name="tag_share_icon">Share Icon</string>
+    <string name="tag_brand_logo">Brand Logo</string>
+    <string name="tag_more_details">More Details Image</string>
+    <string name="tag_no_internet_image">No Internet Image</string>
+    <string name="tag_no_match_video">No videos in this section for now</string>
+
+    <string-array name="unSub_Str">
+        <item>I found a better app</item>
+        <item>Technical issues</item>
+        <item>I don\'t use this service enough</item>
+        <item>Cost\-related reasons</item>
+        <item>Other</item>
+        <item>Decline to answer</item>
+    </string-array>
+
+    <!--facebook sdk-->
+    <string name="facebook_app_id">609481209617653</string>
+    <string name="fb_login_protocol_scheme">fb609481209617653</string>
+    <string name="live_stream_subs_text">Live stream dekhne or Rs 20 lene k liye abi easypaisa bundle se subscribe karein or payen Pehle hafte 90% discount</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="ap2">ap2</string>
+    <string name="app_id">762495</string>
+    <string name="app_key">d76cf275381ccbe10deb</string>
+    <string name="app_secret">237134becbe7471fd1a2</string>
+    <string name="auth_version">1.0</string>
+    <string name="subscription_info_count">subscription_count</string>
+    <string name="error_sign_up_name">REQUIRED</string>
+    <string name="error_sign_up_name_min_char">MINIMUM 3 CHARACTERS</string>
+    <string name="error_sign_up_email">ENTER VALID EMAIL</string>
+    <string name="error_sign_up_password">MINIMUM 8 CHARACTERS</string>
+    <string name="error_refferal_field">REQUIRED</string>
+    <string name="error_reffral_field_no_space">NO SPACE ALLOWED</string>
+    <string name="error_sign_up_c_password">CONFIRM PASSWORD NOT MATCHED</string>
+    <string name="error_base_url">http://52.37.164.221:8089/</string>
+    <string name="error_login_fb">facebook</string>
+    <string name="error_login_mail">email</string>
+    <string name="image_upload_s_message">Picture Updated Successfully!</string>
+    <string name="error_more_live"><![CDATA[<p style=\"text-align:center\">Need More Lives?</p><br>\n <p>\nShare your referral code with friends, \neverytime someone signup using your\nreferral code and plays their first game\nyou get an extra life!<br>\n\nWith extra life you can continue your\ngame even if you gave a wrong answer!</p>]]></string>
+    <string name="position">position</string>
+    <string name="series_id">SERIES_ID</string>
+    <string name="news_data_model">news_data_model</string>
+    <string name="frag_type">fragType</string>
+    <string name="team_id">TEAM_ID</string>
+    <string name="telco_dummy_zeros_passtern">000_000_000_000_000_000</string>
+    <string name="some_thing_went_wrong">Something went wrong...</string>
+    <string name="invalid_number">Invalid Phone Number</string>
+    <string name="pin_required">Pin Code Required...</string>
+    <string name="intent_article">intent_article</string>
+    <string name="no_internet_connection">NO INTERNET CONNECTION.</string>
+    <string name="no_stream">Live Stream Not Available</string>
+    <string name="telco_error">Your Operator is not supported</string>
+    <string name="no_video_found">This video is no longer available</string>
+    <string name="sign_in_success">SignIn Successful</string>
+    <string name="sign_in_failure">SignIn not completed</string>
+    <string name="valid_phone_number">Please enter a valid phone number</string>
+    <string name="register_from_cricwick_web">Please go to www.cricwick.net and register</string>
+    <string name="valid_telco_error">Please select your network</string>
+    <string name="live_match_error_stream">live_match_stream</string>
+    <string name="is_live_steam_purchased">is_live_stream_purchased</string>
+    <string name="generic_stream_url">generic_stream_url</string>
+    <string name="stream_image">stream_image</string>
+    <string name="video_quality_selected">240p</string>
+    <string name="call_from_match_detail">CALL_FROM_MATCH_DETAIL</string>
+    <string name="intent_video">intent_video</string>
+    <string name="intent_video_type">intent_video_type</string>
+    <string name="intent_artical_id">id</string>
+    <string name="intent_news_object">INTENT_NEWS_OBJECT</string>
+    <string name="intent_series_id">intent_series_id</string>
+    <string name="intent_video_index">intent_video_index</string>
+    <string name="intent_video_featured">featured</string>
+    <string name="intent_video_series">series</string>
+    <string name="intent_video_play_list">play_list</string>
+    <string name="shared_pref_key">CricBoom_Data</string>
+    <string name="url_get_update_video_view">/userapi/update_only_video_views</string>
+    <string name="default_url">http://contentserver.cricwick.net</string>
+    <string name="url_get_single_video">/userapi/get_single_video</string>
+    <string name="url_get_single_series_video">/userapi/get_videos_by_series</string>
+    <string name="check_telco_base_url">http://185.152.65.139:3456</string>
+    <string name="billing_base_url">https://e341a74329d5.ngrok.io</string>
+    <string name="google_ack_base_url">https://androidpublisher.googleapis.com/androidpublisher/v3/</string>
+    <string name="zain_header_base_url">http://cric.sa.zain.com</string>
+    <string name="monthly_header_base_url">http://203.115.105.98:8080</string>
+    <string name="search_country_by_ip_url">https://api.ipfind.com</string>
+    <string name="cpi_base_url">http://back.cricwick.net/</string>
+    <string name="base_url_attribution">https://k8s.cricwick.net/khaleef-attribution/</string>
+    <string name="x_up_base_url">http://52.37.164.221:8089/</string>
+    <string name="free_fantasy_url"><![CDATA[https://ff.cricwick.net/#utm_source=\\KSACricwick&utm_medium=ios&utm_campaign=MyStar11]]></string>
+    <string name="amazon_config_url">https://asset.cricvids.co/cricwick-assets/app-config/</string>
+    <string name="etisalat_session_token_url">http://zgames.mobi/</string>
+    <string name="total_pages">total_pages</string>
+    <string name="current_pages">current_page</string>
+    <string name="odi">ODI</string>
+    <string name="match_format_t_20">T20i</string>
+    <string name="match_format_test">Test</string>
+    <string name="match_format_domestic_t_20">T20</string>
+    <string name="match_model">MATCH_MODEL</string>
+    <string name="to_videos">TO_VIDEOS</string>
+    <string name="to_point_tabel">TO_POINTS_TABLE</string>
+    <string name="match_id">MATCH_ID</string>
+    <string name="time_video_list">TIMELINE_VIDEO_LIST</string>
+    <string name="radeem_daily_clain">redeem_daily_claim</string>
+    <string name="complete_video_quota">complete_video_quota</string>
+    <string name="trivia_winners">trivia_winners</string>
+    <string name="connect_social_media">connect_social_media</string>
+    <string name="leaderboard_ready">leaderboard_ready</string>
+    <string name="complete_trivia">complete_trivia</string>
+    <string name="start_trivia_match">start_trivia_match</string>
+    <string name="batting_scorecard">batting_scorecard</string>
+    <string name="bowling_scorecard">bowling_scorecard</string>
+    <string name="fall_of_wickets">fall_of_wickets_scorecard</string>
+    <string name="first_run">FIRST_RUN</string>
+    <string name="rate_us">RATE_US</string>
+    <string name="update_version">update_version</string>
+    <string name="clear_cache">clear_cache</string>
+    <string name="video_id">video_id</string>
+    <string name="select_option">Please select an option...</string>
+    <string name="xup_user">XUP_USER</string>
+    <string name="xup_user_object">XUP_USER_OBJECT</string>
+    <string name="share">share</string>
+    <string name="view">view</string>
+    <string name="video">video</string>
+    <string name="article">article</string>
+    <string name="news">news</string>
+    <string name="jazz_cash_card">FROM_JAZZ_CARD</string>
+    <string name="after_sub_target_screen">AFTER_SUB_TARGET_SCREEN</string>
+    <string name="after_sub_fantasy_screen">AFTER_SUB_FANTASY_SCREEN</string>
+    <string name="free_user_number">FREE_USER_NUMBER</string>
+    <string name="todo_list">todos_list</string>
+    <string name="task">task</string>
+    <string name="content">content://</string>
+    <string name="authority">me.indiandollar.apps.todoappcollectionwidget</string>
+    <string name="todos">todos</string>
+    <string name="payout_base_url">https://cricket.jazz.com.pk/payment-methods/</string>
+    <string name="pusher_counts_base_url">http://api-%1$s.pusher.com/</string>
+    <string name="live_matches">live_matches</string>
+    <string name="match_update">match_update</string>
+    <string name="partnership_update">partnership_update</string>
+    <string name="ball_by_ball_update">ball_by_ball_update</string>
+    <string name="refresh">refresh</string>
+    <string name="pusher_app_id_staging">580703</string>
+    <string name="pusher_cluster">ap1</string>
+    <string name="pusher_api_key_staging">96a11f3e2f71d6b34e4f</string>
+    <string name="pusher_app_id_prod">580704</string>
+    <string name="pusher_api_key_prod">44382e5777aebbc67aad</string>
+    <string name="live_stream_auth_key">w0v3WRQTM40DirjL</string>
+    <string name="live_stream">Live Stream</string>
+    <string name="video_mp4">videos/mp4</string>
+    <string name="an_error_occurred_try_again">An error occurred. Please try again.</string>
+    <string name="ok">ok</string>
+    <string name="live_stream_category">LiveStream</string>
+    <string name="live_stream_played">LiveStreamPlayed</string>
+    <string name="stream_match">\"StreamMatch : \"</string>
+    <string name="get_live_stram_token_params">expire=%1$s&amp;ref_allow=allow.com&amp;ref_deny=deny.com</string>
+    <string name="live_stream_test_url">http://13335821.r.cdnsun.net/13335821/_definst_/stream_360p_khaleef/playlist.m3u8</string>
+    <string name="downloads">downloads</string>
+    <string name="tweet">tweet</string>
+    <string name="articles">articles</string>
+    <string name="match">match</string>
+    <string name="timeline_videos">timeline_videos</string>
+    <string name="videos">videos</string>
+    <string name="overs">overs</string>
+    <string name="psl_fantasy_league">PSL Fantasy League</string>
+    <string name="subscription_failed">Subscription Failed</string>
+    <string name="pls_try_again_later">Please try again later.</string>
+
+
+    <string-array name="live_stream_resolution">
+        <item>Auto</item>
+        <item>720p</item>
+        <item>480p</item>
+        <item>360p</item>
+        <item>240p</item>
+        <item>144p</item>
+    </string-array>
+    <string name="no_videos_available">No videos Available.</string>
+    <string name="no_teams_available">No teams Available.</string>
+
+    <string name="navigationLoginString">Login or Register</string>
+    <string name="navigationWalletString">Wallet</string>
+    <string name="navigationChangePackageString">Change Package</string>
+    <string name="navigationLogoutString">Logout</string>
+    <string name="daily_check_in">DAILY CHECK-IN</string>
+    <string name="reward">REWARD</string>
+    <string name="today_s_reward">Today\'s Reward</string>
+    <string name="today_s_reward_claimed">Today\'s Reward Claimed</string>
+    <string name="next_reward">NEXT REWARD</string>
+    <string name="claim_reward">Claim Reward</string>
+    <string name="create_fantasy_team">Create Fantasy Team</string>
+    <string name="proceed">Proceed</string>
+    <string name="sorry_fot_the_inconveniences">sorry for the inconveniences</string>
+    <string name="du_service_is_not_available_at_this_time_n_please_come_back_later">DU service is not available at this time. \n Please come back later</string>
+
+    <color name="app_accent_color_primary">#00a2af</color>
+
+    <color name="app_accent_color_secondary">#fdb519</color>
+
+</resources>

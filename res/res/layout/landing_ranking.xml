@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/White"
+    android:layout_marginBottom="4dp"
+     android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/topHeadr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+
+        <TextView
+            android:id="@+id/sectionHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:fontFamily="@font/concon_regular"
+            android:gravity="center_vertical"
+            android:paddingBottom="10dp"
+            android:paddingLeft="8dp"
+            tools:text="icc rankings"
+            android:paddingTop="10dp"
+            android:textColor="@color/Black"
+            android:textSize="16sp" />
+
+        <ImageButton
+            android:id="@+id/img_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="right|center_vertical"
+            android:background="@android:color/transparent"
+            android:paddingBottom="8dp"
+            android:paddingLeft="26dp"
+            android:paddingRight="10dp"
+            android:paddingTop="8dp"
+            android:src="@drawable/pre_right_arrow" />
+
+    </RelativeLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleY="-1"
+        app:tabBackground="@drawable/tab_color_selector"
+        app:tabIndicatorColor="@color/app_theme_color"
+        app:tabIndicatorHeight="2dp"
+        app:tabTextAppearance="@style/navigation_text_appearance1" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="470dp"
+        android:background="@color/White"
+        android:paddingTop="5dp" />
+
+</LinearLayout>

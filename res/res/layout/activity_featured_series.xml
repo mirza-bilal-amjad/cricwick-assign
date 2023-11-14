@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/topHeader"
+        layout="@layout/include_header_simple" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorWhite"
+        android:clipToPadding="false"
+        android:elevation="10dp"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        app:tabIndicatorHeight="0dp"
+        app:tabMode="fixed" />
+
+    <com.khaleef.cricket.Views.CustomViewPager
+        android:id="@+id/vp_videos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tab_layout"
+        android:layout_below="@+id/topHeader"
+        android:background="@color/transparent" />
+
+    <fragment
+        android:id="@+id/castMiniController"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tab_layout"
+        android:visibility="gone"
+        app:castControlButtons="@array/cast_mini_controller_control_buttons"
+        class="com.google.android.gms.cast.framework.media.widget.MiniControllerFragment"/>
+
+</RelativeLayout>

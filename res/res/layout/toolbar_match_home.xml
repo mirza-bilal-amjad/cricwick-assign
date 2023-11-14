@@ -1,0 +1,110 @@
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/White"
+    app:contentInsetEnd="0dp"
+    app:contentInsetStart="0dp"
+    app:popupTheme="@style/AppTheme.PopupOverlay">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:src="@drawable/back_button" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/ic_board"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/screen_title_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/concon_regular"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                     android:textAllCaps="false"
+                    android:textColor="@color/defaulttext"
+                    android:textSize="18sp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/screen_subtitle_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:lines="1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/screen_title_text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:includeFontPadding="false"
+                     android:textAllCaps="false"
+                    android:textColor="@color/defaulttext"
+                    android:textSize="15sp"
+                    android:visibility="visible" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/chrome_logo_container"
+            android:layout_alignParentRight="true"
+            >
+
+        <androidx.mediarouter.app.MediaRouteButton
+            android:layout_width="wrap_content"
+            android:id="@+id/cast_home_btn"
+            android:layout_height="wrap_content"
+            android:mediaRouteTypes= "user"
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            app:mediaRouteButtonTint="@color/Black"
+            android:padding="4dp"
+            android:layout_alignParentLeft="true"
+            ></androidx.mediarouter.app.MediaRouteButton>
+
+
+            <ImageView
+                android:id="@+id/actionBarLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/cast_home_btn"
+                android:padding="5dp"
+                android:src="@drawable/action_bar_logo"
+
+                android:visibility="gone" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</androidx.appcompat.widget.Toolbar>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/Black_with_opacity"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/dialogBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_white_background"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:elevation="4dp"
+        >
+
+        <TextView
+            android:id="@+id/alertTitleTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:text="SAmple Text"
+            android:fontFamily="@font/patuaone_regular_new"
+            android:textColor="@android:color/black"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/alertTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:padding="10dp"
+            android:fontFamily="@font/opensans_regular"
+            android:text="SAmple Text osdafiuoasdhf"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/regular_text_size" />
+
+
+        <TextView
+            android:id="@+id/positiveIB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="OK"
+            android:layout_marginLeft="64dp"
+            android:layout_marginRight="64dp"
+            android:textColor="@color/White"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_marginTop="@dimen/infoboard_regular_margin"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="@font/opensans_bold_0"
+            android:background="@drawable/rounded_red_btn"
+            android:backgroundTint="#ED1C24"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="40dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:weightSum="1"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+<!--            <TextView-->
+<!--                android:id="@+id/positiveIB"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_weight="0.35"-->
+<!--                android:layout_height="35dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:layout_marginRight="8dp"-->
+<!--                android:layout_marginBottom="20dp"-->
+<!--                android:background="@drawable/button_border_dgre_b"-->
+<!--                android:fontFamily="@font/concon_regular"-->
+<!--                android:gravity="center"-->
+<!--                android:inputType="phone"-->
+<!--                android:text="OK"-->
+<!--                android:textColor="@color/defaulttext"-->
+<!--                android:textSize="18sp" />-->
+
+            <TextView
+                android:id="@+id/nagativeIB"
+                android:layout_width="0dp"
+                android:layout_weight="0.35"
+                android:layout_height="35dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button_border_dgre_b"
+                android:fontFamily="@font/concon_regular"
+                android:gravity="center"
+                android:inputType="phone"
+
+                android:text="CANCEL"
+                android:textColor="@color/defaulttext"
+                android:textSize="18sp" />
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

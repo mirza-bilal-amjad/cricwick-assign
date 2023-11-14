@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/home_group"
+        android:checkableBehavior="single"
+        android:enabled="true">
+
+        <item
+            android:id="@+id/nav_login"
+            android:icon="@drawable/subscribe_side"
+            android:title="@string/navigationLoginString" />
+
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/profile_icon"
+            android:title="@string/navigationProfileString" />
+
+        <item
+            android:id="@+id/nav_subscription"
+            android:icon="@drawable/subscribe_side"
+            android:title="@string/navigationSubscribeString"
+            android:visible="false" />
+
+        <item
+            android:id="@+id/nav_wallet"
+            android:icon="@drawable/payout_ic"
+            android:title="@string/navigationWalletString" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/subscribe_side"
+            android:title="@string/navigationLogoutString"
+            android:visible="false" />
+    </group>
+
+    <group
+        android:id="@+id/options_group"
+        android:checkableBehavior="single"
+        android:enabled="true">
+
+        <item
+            android:id="@+id/nav_home"
+            android:checked="true"
+            android:icon="@drawable/home_side"
+            android:title="@string/navigationHomeString" />
+
+        <item
+            android:id="@+id/fantasy"
+            android:icon="@drawable/fantasy_side"
+            android:title="Fantasy League" />
+
+        <item
+            android:id="@+id/nav_videos"
+            android:icon="@drawable/video_side"
+            android:title="@string/navigationVideosString" />
+
+        <item
+            android:id="@+id/nav_news"
+            android:icon="@drawable/news_side"
+            android:title="@string/navigationNewsString" />
+
+        <item
+            android:id="@+id/nav_articles"
+            android:icon="@drawable/artical_side"
+            android:title="@string/navigationArticlesString" />
+
+        <item
+            android:id="@+id/nav_following"
+            android:icon="@drawable/following_side"
+            android:title="@string/navigationFollowingString"
+            android:visible="false" />
+
+        <item
+            android:id="@+id/psl"
+            android:icon="@drawable/psl_side"
+            android:title="@string/navigationPSL" />
+
+        <item
+            android:id="@+id/nav_results"
+            android:icon="@drawable/result_side"
+            android:title="@string/navigationResultsString" />
+
+        <item
+            android:id="@+id/nav_series"
+            android:icon="@drawable/series_side"
+            android:title="@string/navigationSeriesString" />
+
+        <item
+            android:id="@+id/nav_rankings"
+            android:icon="@drawable/ranking_side"
+            android:title="@string/navigationRankingsString" />
+
+        <item
+            android:id="@+id/nav_teams"
+            android:icon="@drawable/team_side"
+            android:title="@string/navigationTeamString" />
+
+        <item
+            android:id="@+id/nav_terms"
+            android:icon="@drawable/artical_side"
+            android:iconTint="#505050"
+            android:title="@string/navigationTermsString" />
+
+        <item
+            android:id="@+id/nav_faqs_fantasy"
+            android:icon="@drawable/quiz"
+            android:iconTint="#505050"
+            android:title="@string/navigationFaqsString" />
+
+        <item
+            android:id="@+id/nav_faqs"
+            android:icon="@drawable/quiz"
+            android:iconTint="#505050"
+            android:title="FAQs" />
+    </group>
+</menu>

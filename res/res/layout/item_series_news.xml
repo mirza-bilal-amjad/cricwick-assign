@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/White"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+<ImageView
+    android:layout_marginLeft="@dimen/margin_5dp"
+    android:layout_marginRight="@dimen/margin_5dp"
+    android:layout_marginTop="18dp"
+    android:id="@+id/bullet"
+      android:layout_width="17dp"
+    android:layout_height="4dp"
+    android:background="#000"
+
+    />
+    <TextView
+        android:padding="@dimen/margin_10dp"
+         android:layout_toRightOf="@+id/bullet"
+        android:id="@+id/news"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+         tools:text="this is the news ok ?"
+        android:textColor="@color/app_textColor"
+        android:textSize="15sp"
+        />
+</RelativeLayout>

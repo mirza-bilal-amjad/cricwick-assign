@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="?actionBarSize"
+    android:background="@color/colorWhite">
+
+    <ImageView
+        android:id="@+id/menuIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="13dp"
+        android:src="@drawable/ic_menu" />
+
+    <TextView
+        android:id="@+id/homeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/concon_regular"
+
+        android:text="Home"
+        android:textColor="@color/defaulttext"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/actionBarCenterLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:padding="5dp"
+        android:src="@drawable/action_bar_logo"
+        android:visibility="invisible" />
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:id="@+id/actionBarLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:src="@drawable/action_bar_logo"
+            android:visibility="visible" />
+
+        <androidx.mediarouter.app.MediaRouteButton
+            android:id="@+id/cast_home_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/actionBarLogo"
+            android:mediaRouteTypes="user"
+            android:visibility="visible"
+            app:mediaRouteButtonTint="@color/Black"></androidx.mediarouter.app.MediaRouteButton>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

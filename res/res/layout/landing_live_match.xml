@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:background="@color/White"
+    android:orientation="vertical"
+    android:layout_marginBottom="4dp"
+    >
+
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/homeTopHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/concon_regular"
+            android:paddingLeft="5dp"
+            android:paddingStart="5dp"
+            android:textColor="@color/defaulttext"
+            android:textSize="14sp"
+            android:text="@string/navigationUpcommingString" />
+
+
+
+        <ImageButton
+            android:id="@+id/buttonMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent"
+            android:paddingBottom="8dp"
+            android:paddingLeft="26dp"
+            android:paddingRight="25dp"
+            android:paddingTop="8dp"
+            android:src="@drawable/pre_right_arrow" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/liveMatchRecycler"
+        android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+
+        >
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/matchShimmer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="200dp"
+         android:paddingBottom="@dimen/section_space"
+        app:shimmer_duration="1000">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/upcoming_progress_loader" />
+
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-7715354291523868/9539296719"
+        />
+</LinearLayout>

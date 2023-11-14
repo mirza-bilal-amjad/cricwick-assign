@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/enterPhoneLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:visibility="visible">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tabBottom"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/planSelectionView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/signUpLabel"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:text="Please select your Billing plan."
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp">
+
+                <RadioButton
+                    android:id="@+id/daily"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:tag="daily"
+                    android:text="PKR 2.39 Daily (Recursive)" />
+
+                <RadioButton
+                    android:id="@+id/monthly"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:tag="monthly"
+                    android:text="PKR 59.75 Per Month (Non-Recursive)" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/subscription_logo" />
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/languageLayout"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            android:stretchColumns="2">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:background="#66000000"
+                android:padding="1dp">
+
+                <TextView
+                    android:id="@+id/englishLanguage"
+                    style="@style/barGrapButtons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:background="#E61509"
+                    android:padding="5dp"
+                    android:text="English"
+                    android:textColor="@color/colorWhite" />
+
+                <TextView
+                    android:id="@+id/urduLanguage"
+                    style="@style/barGrapButtons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="اردو" />
+
+            </TableRow>
+        </TableLayout>
+
+
+        <TextView
+            android:id="@+id/phoneTextFirst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="40dp"
+            android:fontFamily="@font/opensans_regular"
+            android:gravity="center"
+            android:text="Get To"
+            android:textColor="@color/app_textColor"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/phoneTextSecond"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/signUpLabel"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="40dp"
+            android:fontFamily="@font/opensans_regular"
+            android:gravity="center"
+            android:text="Live Scores,\nIn-Match Videos &amp; Match Highlights"
+            android:textColor="@color/app_textColor"
+            android:textSize="14sp" />
+        <!--        android:textSize="19sp"-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/countryFlag"
+                android:layout_width="@dimen/telco_flag_width"
+                android:layout_height="@dimen/telco_flag_height"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/noteTextTVSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/signUpLabel"
+                android:fontFamily="@font/roboto_light_0"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+
+                android:textColor="@color/app_textColor"
+                android:textSize="19sp" />
+            <!--            android:text="Select Country"-->
+            <!--            android:layout_marginLeft="5dp"-->
+            <!--            android:drawableRight="@drawable/drop_down"-->
+
+        </LinearLayout>
+
+        <!--        <ImageView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="1dp"-->
+        <!--            android:layout_marginLeft="20dp"-->
+        <!--            android:layout_marginTop="5dp"-->
+        <!--            android:layout_marginRight="20dp"-->
+        <!--            android:background="#43666565" />-->
+
+
+        <TextView
+            android:id="@+id/enterMobileText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="75dp"
+            android:background="@null"
+            android:fontFamily="@font/opensans_bold_0"
+            android:gravity="left"
+            android:text="Enter Your Mobile Number"
+            android:textColor="@color/Black"
+            android:textSize="14sp"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/phoneBackground"
+             android:layout_marginRight="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/phoneCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:fontFamily="@font/roboto_light_0"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:text="---"
+
+                android:textColor="@color/Black"
+                android:textColorHighlight="@color/defaulttext"
+                android:textColorHint="@color/defaulttext"
+                android:textCursorDrawable="@null"
+                android:textSize="19sp"
+                android:visibility="gone" />
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/cell"
+                android:paddingLeft="5dp"
+                android:paddingRight="15dp"
+                android:src="@drawable/cell"
+                android:visibility="visible" />
+
+
+            <EditText
+                android:id="@+id/phoneNumberField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+
+                android:fontFamily="@font/opensans_light_0"
+                android:gravity="left"
+                android:hint="xxxxxxxx"
+                android:inputType="phone"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:text=""
+                android:textColor="@color/Black"
+                android:textColorHint="#4D000000"
+                android:textCursorDrawable="@null"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:background="#43666565" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="25dp"
+
+            >
+
+            <TextView
+                android:id="@+id/enterPhonePricePointKSA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/opensans_light_0"
+                android:gravity="center"
+                android:textColor="#BF404040"
+                android:textSize="15sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/sendPinButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/next"
+                android:fontFamily="@font/opensans_regular"
+                android:gravity="center"
+                android:inputType="phone"
+                android:padding="15dp"
+                android:text="Get PIN"
+                android:textColor="@color/White"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/skipSubscription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/opensans_regular"
+                android:gravity="center"
+                android:inputType="phone"
+                android:padding="15dp"
+                android:text="Cancel"
+                android:textColor="#cecece"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+        <!--        <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/enterPhonePricePointKSA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:textColor="@color/defaulttext"
+                        android:textSize="14sp"
+                        android:visibility="visible" />
+                </ScrollView>-->
+
+    </LinearLayout>
+
+</LinearLayout>

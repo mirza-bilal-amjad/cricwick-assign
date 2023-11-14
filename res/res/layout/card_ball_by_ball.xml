@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:orientation="vertical">
+
+
+    <!--top layout-->
+    <LinearLayout
+        android:id="@+id/overDetailsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@color/White"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/overEndingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/roboto_regular"
+            android:text="End Of Over 19( 8 Runs)"
+            android:textColor="@color/ball_textColor"
+            android:textSize="14sp" />
+
+        <View
+
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/corner"
+            android:alpha="0.4"
+            android:background="@color/Gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:weightSum="1.0">
+
+                    <TextView
+                        android:id="@+id/batsman1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.40"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="left"
+                        android:text="SPD Smith"
+                        android:textColor="@color/ball_textColor"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/batsman1Runs"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.25"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="34 (44)"
+                        android:textColor="@color/ball_textColor"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/batsman1Boundries"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.35"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="right"
+                        android:text="(3 x 4 1 x 6)"
+                        android:textColor="@color/ball_textColor"
+                        android:textSize="12sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/bowler1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.35"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="right"
+                        android:text="Azahar Ali"
+                        android:textColor="@color/ball_textColor"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/bowler1BowlingDetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.65"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="end"
+                        android:text="5ov 0m 40runs 0wkts"
+                        android:textColor="@color/ball_textColor"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="5dp"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:weightSum="1.0">
+
+                    <TextView
+                        android:id="@+id/batsman2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.40"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="left"
+                        android:text="UT Khawaja"
+                        android:textColor="@color/ball_textColor"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/batsman2Runs"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.25"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="23 (20)"
+                        android:textColor="@color/ball_textColor"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/batsman2Boundries"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.35"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="right"
+                        android:text="(1 x 4 0 x 6)"
+                        android:textColor="@color/ball_textColor"
+                        android:textSize="12sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:weightSum="1.0">
+
+                    <TextView
+                        android:id="@+id/bowler2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.35"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="right"
+                        android:text="Yasir Shah"
+                        android:textColor="@color/ball_textColor"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/bowler2BowlingDetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.65"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="right"
+                        android:text="10ov 0m 40runs 0wkts"
+
+                        android:textColor="@color/ball_textColor"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--bottom layout-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/White"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+         android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="10dp">
+
+        <LinearLayout
+            android:id="@+id/corner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:id="@+id/ballBackground"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/round_bg">
+
+                <TextView
+                    android:id="@+id/ballScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/roboto_regular"
+                    android:inputType="textCapSentences"
+                    android:text="Out"
+
+                    android:textColor="@color/app_theme_color"
+                    android:textSize="@dimen/TextSize16" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/totalOvers"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:fontFamily="@font/roboto_medium_0"
+                android:gravity="center"
+                android:inputType="textCapSentences"
+                android:minWidth="35dp"
+                android:text="16.5"
+                android:textColor="@color/ball_textColor"
+                android:textSize="@dimen/TextSize12" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/ballDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/thumblineRL2"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="@font/roboto_light_0"
+            android:text="asdasdassshshshshhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhasdashsSsdsDasdasdasdsasdasdasdasdasgass"
+            android:textColor="@color/ball_textColor"
+            android:textSize="14sp" />
+    </LinearLayout>
+</LinearLayout>

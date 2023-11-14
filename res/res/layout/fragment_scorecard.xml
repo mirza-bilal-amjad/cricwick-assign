@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
+    android:paddingLeft="7dp"
+    android:paddingRight="7dp">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/section_space" />
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar_match_home"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/teams_versus_odi_t20"
+                layout="@layout/match_details_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/toolbar"
+                android:visibility="visible" />
+
+            <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                ads:adSize="BANNER"
+                ads:adUnitId="ca-app-pub-7715354291523868/4478541728" />
+
+            <ViewFlipper
+                android:id="@+id/scorecardLiveStreamFlipper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+
+                android:autoStart="true"
+                android:flipInterval="5000"
+                android:inAnimation="@android:anim/slide_in_left"
+                android:outAnimation="@android:anim/slide_out_right" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tour_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/match_number"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/roboto_medium_0"
+                        android:gravity="left"
+                        android:lines="1"
+                        android:paddingRight="5dp"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText"
+                        tools:text="Englan tour of United Arab Emirates." />
+
+                    <TextView
+                        android:id="@+id/match_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:fontFamily="@font/roboto_medium_0"
+                        android:gravity="end"
+                        android:lines="1"
+
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText"
+                        tools:text="3rd ODI" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/toss_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_light_0"
+                    android:lines="1"
+
+                    android:paddingRight="10dp"
+                    android:textColor="@android:color/black"
+                    tools:ignore="HardcodedText"
+                    tools:text="Englan tour of United Arab Emirates." />
+
+                <TextView
+                    android:id="@+id/match_score_needed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_medium_0"
+                    android:lines="1"
+
+                    android:paddingRight="10dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText"
+                    tools:text="Englan tour of United Arab Emirates." />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/list_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.khaleef.cricket.Widgits.AnimatedExpandableListView
+                    android:id="@+id/expandable_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="@null"
+                    android:groupIndicator="@null"
+                    android:scrollbars="none" />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/scorecardShimmer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:shimmer_duration="1000">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@color/placeholder_bg" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@color/placeholder_bg" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@color/placeholder_bg" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@color/placeholder_bg" />
+                    </LinearLayout>
+
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <TextView
+                    android:id="@+id/empty_content_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="No content available"
+                    android:visibility="gone">
+
+                </TextView>
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/NoInternetBanner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:scaleType="center"
+                android:visibility="gone" />
+        </LinearLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-7715354291523868/4478541728" />
+
+    <ViewFlipper
+        android:id="@+id/scorecardFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        android:autoStart="true"
+        android:flipInterval="5000"
+        android:inAnimation="@android:anim/slide_in_left"
+        android:outAnimation="@android:anim/slide_out_right" />
+
+</LinearLayout>

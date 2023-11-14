@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/new_bg_color"
+    android:orientation="vertical"
+    tools:context=".Home.Fragments.HomePackage.View.HomeFragments">
+
+    <RelativeLayout android:background="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/widget_header"
+        >
+        <ImageView
+            android:id="@+id/actionBarCenterLogo"
+            android:layout_margin="8dp"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:visibility="visible"
+            android:src="@drawable/action_bar_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/Gray"
+        ></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ListView
+            android:id="@+id/widgetListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:dividerHeight="1dp"
+            android:divider="#eeeeee"
+            tools:listitem="@layout/card_upcoming_match"></ListView>
+    </LinearLayout>
+
+</LinearLayout>

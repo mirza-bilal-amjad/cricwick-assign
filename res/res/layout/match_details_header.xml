@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+     >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+          android:background="@color/White"
+        android:orientation="vertical">
+
+
+        <include
+            layout="@layout/include_two_teams_versus_odi_t20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp" />
+
+        <include
+            layout="@layout/include_two_teams_versus_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Open Your Fantasy Team"
+            android:id="@+id/opnFantasyTxt"
+            android:textColor="@color/redColor"
+            android:drawablePadding="8dp"
+            android:textSize="15sp"
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:fontFamily="@font/opensans_bold_0"
+            android:drawableEnd="@drawable/pre_right_arrow"
+            android:drawableTint="@color/redColor"
+            android:layout_gravity="center"/>
+        <LinearLayout
+            android:id="@+id/runratelayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/match_run_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text=""
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/Black"
+                android:textSize="12sp"
+                android:visibility="visible"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/last_5_overs_rr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text=""
+                android:fontFamily="@font/roboto_regular"
+
+                android:textColor="@color/Black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/inning2requiredStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:lines="1"
+            android:text=""
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/Black"
+            android:textSize="12sp"
+            android:padding="@dimen/section_space"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            ads:adSize="BANNER"
+            android:visibility="gone"
+            android:background="@color/redColor"
+            ads:adUnitId="ca-app-pub-7715354291523868/9539296719"
+            />
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/break_str"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lunch"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/app_theme_color"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/space"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_toRightOf="@+id/break_str"
+                android:gravity="center"
+                android:text="-"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@android:color/black"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/day_session"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/space"
+                android:text="Day 1, Session 1"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@android:color/black"
+                android:textSize="13sp" />
+        </RelativeLayout>
+    </LinearLayout>
+    <include
+         layout="@layout/item_partnership"
+        ></include>
+
+</LinearLayout>

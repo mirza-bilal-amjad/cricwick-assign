@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="@dimen/infoboard_regular_margin"
+    android:background="@drawable/bg_white_with_shadow"
+    >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/daily_master_blaster"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/infoboard_regular_margin"
+        android:id="@+id/heading_img"
+        ></ImageView>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heading_img"
+        android:layout_marginLeft="@dimen/infoboard_regular_margin"
+        android:layout_marginRight="@dimen/infoboard_large_margin"
+        android:id="@+id/master_blaster_video_share_container"
+        android:layout_marginTop="@dimen/infoboard_large_margin"
+
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:id="@+id/video_league_video_container"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:id="@+id/video_league_watch_img"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/video_league_watch"></ImageView>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintCircle="@id/video_league_watch_img"
+                app:layout_constraintCircleAngle="315"
+                app:layout_constraintCircleRadius="36dp"
+                android:background="@drawable/circle_bg_white_with_red_stroke"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1/3"
+                    android:textSize="12dp"
+                    android:textColor="@color/Black"
+                    android:layout_centerInParent="true"
+                    android:padding="4dp"
+                    android:fontFamily="@font/opensans_bold_0"
+                    android:id="@+id/watch_count"
+                    ></TextView>
+            </RelativeLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/video_league_video_container"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="8dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/regular_text_size"
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/dark_text_color"
+                android:id="@+id/league_home_daily_video_heading"
+                android:text="Watch 3 New Videos Daily"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:fontFamily="@font/opensans_bold_0"
+                android:textColor="@color/dark_text_color_with_opacity"
+                android:id="@+id/league_home_daily_video_subheading"
+                android:text="EARN 3OO SCORES"
+                android:layout_marginTop="4dp"></TextView>
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/infoboard_large_margin"
+        android:background="#E5E5E5"
+        android:layout_marginLeft="@dimen/infoboard_regular_margin"
+        android:layout_marginRight="@dimen/infoboard_large_margin"
+        android:layout_below="@+id/master_blaster_video_share_container"
+        android:id="@+id/divider1"
+        android:orientation="vertical"
+        ></LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/divider1"
+        android:layout_marginLeft="@dimen/infoboard_regular_margin"
+        android:layout_marginRight="@dimen/infoboard_large_margin"
+        android:id="@+id/master_blaster_article_share_container"
+        android:layout_marginTop="@dimen/infoboard_large_margin"
+
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:id="@+id/video_league_share_container"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:id="@+id/video_league_share_img"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/video_league_share"></ImageView>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintCircle="@+id/video_league_share_img"
+                app:layout_constraintCircleAngle="315"
+                app:layout_constraintCircleRadius="36dp"
+                android:background="@drawable/circle_bg_white_with_red_stroke"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/share_count"
+                    android:text="2"
+                    android:textSize="12dp"
+                    android:textColor="@color/Black"
+                    android:layout_centerInParent="true"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:fontFamily="@font/opensans_bold_0"
+                    ></TextView>
+            </RelativeLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/video_league_share_container"
+            android:layout_marginRight="8dp"
+            android:paddingBottom="30dp"
+            android:layout_alignParentLeft="true"
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/regular_text_size"
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/dark_text_color"
+                android:id="@+id/league_home_daily_article_heading"
+                android:text="Share Video, Article or News with your friends"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:fontFamily="@font/opensans_bold_0"
+                android:textColor="@color/dark_text_color_with_opacity"
+                android:id="@+id/league_home_daily_article_subheading"
+                android:text="EARN 3OO SCORES*"
+                android:layout_marginTop="4dp"></TextView>
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

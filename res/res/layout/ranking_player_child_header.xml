@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/ranking_name_strip"
+    android:orientation="horizontal"
+    android:padding="5dp"
+    android:weightSum="10">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center"
+        android:text="Rank"
+        android:textColor="@color/White"
+        android:textSize="12sp" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3.8"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center_vertical"
+        android:text="Player"
+        android:textColor="@color/White"
+        android:textSize="12sp" />
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3.2"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center_vertical"
+        android:text="Team"
+        android:textColor="@color/White"
+        android:textSize="12sp" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center"
+        android:text="Rating"
+        android:textColor="@color/White"
+        android:textSize="12sp" />
+
+
+</LinearLayout>

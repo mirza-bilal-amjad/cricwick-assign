@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/batman_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/subscription_bg_bottom" />
+
+    <RelativeLayout
+        android:id="@+id/enterPhoneLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/rootView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/infoboard_xlarge_margin"
+                android:src="@drawable/app_logo_medium" />
+
+            <TextView
+                android:id="@+id/screen1_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/opensans_bold_0"
+                android:gravity="center"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:text="LOGIN TO CONTINUE"
+                android:textColor="@color/Black"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/screen1_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/opensans_regular"
+                android:paddingLeft="42dp"
+                android:paddingRight="42dp"
+                android:text=""
+                android:textColor="#3E3E3E"
+                android:textFontWeight="600"
+                android:textSize="@dimen/infoboard_regular_text_size"
+                android:visibility="gone" />
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/noteTextTVSignUp"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginLeft="80dp"-->
+            <!--                android:layout_marginRight="80dp"-->
+            <!--                android:drawableRight="@drawable/drop_down"-->
+            <!--                android:fontFamily="@font/roboto_regular"-->
+            <!--                android:gravity="center"-->
+            <!--                android:paddingTop="5dp"-->
+            <!--                android:paddingBottom="5dp"-->
+            <!--                android:textColor="@color/app_textColor"-->
+            <!--                android:textSize="19sp" />-->
+
+            <RelativeLayout
+                android:id="@+id/carrier_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/infoboard_xlarge_margin"
+                android:layout_marginTop="22dp"
+                android:layout_marginRight="@dimen/infoboard_xlarge_margin"
+                android:background="@drawable/subscription_field_container"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="18dp"
+                    android:src="@drawable/carrier" />
+
+
+                <TextView
+                    android:id="@+id/carrier_tv_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="64dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginBottom="9dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="Select Carrier"
+                    android:textColor="#C9C9C9"
+                    android:textFontWeight="600"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/carrier_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text=""
+                    android:textColor="@color/Black"
+                    android:textFontWeight="600"
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="18dp"
+                    android:src="@drawable/dropdown_ico" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/enter_phone_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center"
+                android:layout_marginTop="56dp"
+                android:fontFamily="@font/opensans_semibold"
+                android:text="Enter your mobile number"
+                android:textColor="@color/Black"
+                android:textSize="16dp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/infoboard_xlarge_margin"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="@dimen/infoboard_xlarge_margin"
+                android:background="@drawable/subscription_field_container">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/infoboard_regular_margin"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginBottom="9dp"
+                    android:src="@drawable/mobile" />
+
+                <EditText
+                    android:id="@+id/phoneNumberField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/opensans_regular"
+                    android:gravity="center"
+                    android:hint="03XXXXXXXXX"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:textColor="@color/Black"
+                    android:textColorHint="@color/textColorGray"
+                    android:textCursorDrawable="@null"
+                    android:textFontWeight="600"
+                    android:textSize="16dp" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/sendPinButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/rounded_red_btn"
+                android:backgroundTint="#B91414"
+                android:fontFamily="@font/opensans_bold_0"
+                android:gravity="center"
+                android:paddingTop="9dp"
+                android:paddingBottom="9dp"
+                android:text="Proceed"
+                android:textColor="@color/White"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/enterPhonePricePointKSA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center"
+                android:textColor="@color/defaulttext"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/phoneCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:drawableRight="@drawable/drop_down"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:inputType="phone"
+                android:padding="2dp"
+                android:text="96653"
+                android:textColor="@color/app_textColor"
+                android:textColorHighlight="@color/defaulttext"
+                android:textColorHint="@color/defaulttext"
+                android:textCursorDrawable="@null"
+                android:textSize="18sp"
+                android:visibility="gone" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/infoboard_large_margin"
+                android:fontFamily="@font/opensans_regular"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/Black"
+                android:textSize="15dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/infoboard_large_margin"
+                android:fontFamily="@font/opensans_bold_0"
+                android:text="OR"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/heading_text_size"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/other_bundles_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/opensans_bold_0"
+                android:padding="8dp"
+                android:text="REGISTER NOW"
+                android:textColor="@color/app_theme_color_cricwick"
+                android:textSize="18dp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/skipSubscription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="@dimen/infoboard_regular_margin"
+        android:fontFamily="@font/opensans_regular"
+        android:text="Maybe Next time, Skip for Now"
+        android:textColor="@color/subscription_skip_color"
+        android:textSize="@dimen/TextSize12" />
+
+    <include layout="@layout/confirmation_pin_new" />
+
+    <LinearLayout
+        android:id="@+id/shadow_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CC000000"
+        android:orientation="vertical"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp">
+
+        <TextView
+            android:fontFamily="@font/roboto_regular"
+            android:id="@+id/batsmanNameTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_weight="1.2"
+            android:paddingLeft="20dp"
+
+            android:gravity="center_vertical|left"
+            android:textColor="@color/app_textColor"
+            android:textSize="@dimen/TextSize14" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:fontFamily="@font/roboto_light_0"
+
+                android:id="@+id/oversTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/app_textColor"
+                android:textSize="@dimen/TextSize12" />
+
+            <TextView
+                android:fontFamily="@font/roboto_light_0"
+
+                android:id="@+id/scoreTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/app_textColor"
+                android:textSize="@dimen/TextSize12" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

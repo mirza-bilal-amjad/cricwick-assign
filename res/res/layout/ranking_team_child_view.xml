@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="7dp"
+    android:paddingTop="7dp"
+    android:weightSum="10">
+
+    <TextView
+        android:id="@+id/tv_rank"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center"
+        android:textColor="@color/ranking_text_color"
+        android:textSize="12sp"
+        tools:text="1" />
+
+    <ImageView
+        android:id="@+id/img_flag"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_weight="0.5"
+        android:src="@drawable/switch_thumb_on" />
+
+    <TextView
+        android:id="@+id/tv_team_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3.1"
+        android:paddingLeft="3dp"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center_vertical"
+        android:textColor="@color/ranking_text_color"
+        android:textSize="12sp"
+        tools:text="Team" />
+
+    <TextView
+        android:id="@+id/tv_matches"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.6"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center"
+        android:textColor="@color/ranking_text_color"
+        android:textSize="12sp"
+        tools:text="Matches" />
+
+    <TextView
+        android:id="@+id/tv_points"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.6"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center"
+        android:textColor="@color/ranking_text_color"
+        android:textSize="12sp"
+        tools:text="Points" />
+
+    <TextView
+        android:id="@+id/tv_rating"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.6"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center"
+        android:textColor="@color/ranking_text_color"
+        android:textSize="12sp"
+        tools:text="Rating" />
+
+
+</LinearLayout>

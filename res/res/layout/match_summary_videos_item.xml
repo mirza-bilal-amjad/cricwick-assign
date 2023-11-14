@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/news_1"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White">
+    <RelativeLayout
+        android:id="@+id/imageContainer"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/White">
+        <ImageView
+            android:id="@+id/news_img"
+            android:layout_width="270dp"
+            android:layout_height="110dp"
+            android:padding="1dp"
+            android:scaleType="centerCrop" />
+        <ImageView
+            android:id="@+id/playButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/play_button_big" />
+    </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/headerView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageContainer"
+            android:layout_alignTop="@+id/imageContainer"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/imageContainer"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/news_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_medium_0"
+                android:maxLines="2"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                tools:text="Adnan Sohail"
+                tools:ignore="HardcodedText"
+                android:textColor="@color/defaulttext"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_below="@+id/news_title"
+                android:id="@+id/by"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_regular"
+                android:maxLines="2"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                tools:text="Adnan Sohail"
+                tools:ignore="HardcodedText"
+                android:textColor="@color/textColorGray"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/seprator"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/separator"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</LinearLayout>

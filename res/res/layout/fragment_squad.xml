@@ -1,0 +1,50 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/new_bg_color"
+    tools:context="com.khaleef.cricket.FeaturedSeries.Fragments.SquadPackage.view.SquadFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/teamShimmerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:shimmer_auto_start="true"
+        app:shimmer_duration="1000">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/team_progress_loader" />
+
+            <include layout="@layout/team_progress_loader" />
+
+            <include layout="@layout/team_progress_loader" />
+
+            <include layout="@layout/team_progress_loader" />
+
+            <include layout="@layout/team_progress_loader" />
+
+            <include layout="@layout/team_progress_loader" />
+
+            <include layout="@layout/team_progress_loader" />
+
+            <include layout="@layout/team_progress_loader" />
+
+            <include layout="@layout/team_progress_loader" />
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+</FrameLayout>

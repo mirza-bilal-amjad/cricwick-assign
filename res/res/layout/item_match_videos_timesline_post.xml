@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <RelativeLayout
+        android:id="@+id/videoHighLightLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:clickable="true"
+         android:visibility="visible">
+
+
+        <LinearLayout
+            android:id="@+id/title_bg_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/videoHighLight1"
+            android:layout_marginTop="-2dp"
+            android:background="@color/White">
+
+            <TextView
+                android:maxLines="3"
+                android:id="@+id/video_title_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                 android:ellipsize="end"
+                android:fontFamily="@font/roboto_regular"
+                android:lines="2"
+                android:padding="@dimen/section_space"
+                 android:textColor="@color/defaulttext"
+                android:textSize="12sp"
+                 tools:text="video title" />
+
+
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/videoHighLight1"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:visibility="visible"
+            android:src="@color/defaulttext"
+            />
+
+        <ImageView
+            android:id="@+id/imagePlay1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="27dp"
+            android:src="@drawable/video_play_icon"
+            android:visibility="invisible" />
+
+
+
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/new_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/button_new"
+        android:fontFamily="@font/concon_regular"
+        android:text="New"
+        android:textColor="@android:color/white"
+        android:textSize="10sp" />
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tag_title_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="4dp"
+        android:layout_toRightOf="@+id/highlightTitle"
+        android:layout_weight="0.5"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="right"
+        android:lines="1"
+        android:paddingBottom="5dp"
+        android:textColor="@color/White"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        tools:text="Package" />
+</RelativeLayout>

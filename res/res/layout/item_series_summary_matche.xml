@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+     >
+<LinearLayout
+    android:id="@+id/resultCard"
+    android:orientation="vertical"
+    android:layout_weight="1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium_0"
+        android:textColor="@color/defaulttext"
+        android:text="@string/stringSeries"
+        android:textSize="14sp"
+        android:paddingLeft="@dimen/cell_margin"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:paddingBottom="@dimen/margin_10dp"
+
+        android:id="@+id/title"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/separator"/>
+    <RelativeLayout
+        android:id="@+id/bottom_separator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:textColor="#656565"
+        android:text="@string/stringSeries"
+        android:textSize="14sp"
+        android:paddingLeft="@dimen/cell_margin"
+        android:paddingTop="@dimen/margin_5dp"
+
+        android:id="@+id/matchState"
+        />
+
+
+        <RelativeLayout
+        android:id="@+id/teamsView"
+            android:layout_below="@+id/matchState"
+        android:paddingLeft="@dimen/margin_5dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/teamNamesView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_marginLeft="@dimen/margin_5dp"
+
+                    android:id="@+id/team1Logo"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp" />
+            <TextView
+                android:id="@+id/teamA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/defaulttext"
+                tools:text="NZ"
+                tools:ignore="HardcodedText"
+                android:paddingLeft="@dimen/margin_5dp"
+                android:ellipsize="end"
+                android:textSize="16sp"
+                android:layout_gravity="center_vertical"
+
+                />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_marginLeft="@dimen/margin_5dp"
+
+                    android:id="@+id/team2Logo"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp" />
+            <TextView
+                android:id="@+id/teamB"
+                android:paddingLeft="@dimen/margin_5dp"
+                android:layout_gravity="center_vertical"
+                android:layout_below="@+id/teamA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/defaulttext"
+                tools:text="PZ"
+                tools:ignore="HardcodedText"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:textSize="16sp"
+                />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginRight="@dimen/cell_margin"
+            android:layout_alignParentRight="true"
+
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <View
+
+                     android:layout_width="0dp"
+                    android:layout_height="25dp" />
+            <TextView
+                android:id="@+id/teamAScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/defaulttext"
+                tools:text="NZ"
+                tools:ignore="HardcodedText"
+                android:paddingLeft="@dimen/margin_5dp"
+                android:ellipsize="end"
+                android:textSize="16sp"
+                android:layout_gravity="center_vertical"
+
+                />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="2dp"
+
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <View
+
+                    android:layout_width="0dp"
+                    android:layout_height="25dp" />
+            <TextView
+                android:id="@+id/teamBScore"
+                android:paddingLeft="@dimen/margin_5dp"
+                android:layout_gravity="center_vertical"
+                android:layout_below="@+id/teamA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/defaulttext"
+                tools:text="PZ"
+                tools:ignore="HardcodedText"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:textSize="16sp"
+                />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+        <TextView
+            android:id="@+id/resultText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/teamsView"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+
+            android:paddingLeft="@dimen/cell_margin"
+
+            android:paddingRight="@dimen/cell_margin"
+            android:textColor="@color/defaulttext"
+            android:textSize="15sp"
+            tools:ignore="HardcodedText"
+            tools:text="NZ" />
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/upcomingCard"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:paddingLeft="@dimen/margin_5dp"
+
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="#656565"
+            android:text="@string/stringSeriesUpcoming"
+            android:textSize="14sp"
+            android:paddingLeft="@dimen/margin_5dp"
+            android:paddingTop="@dimen/margin_5dp"
+
+            android:id="@+id/titleUpcoming"
+            />
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_marginLeft="@dimen/margin_5dp"
+
+                    android:id="@+id/team1UpcomingLogo"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp" />
+                <TextView
+                    android:id="@+id/teamAUpcoming"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/defaulttext"
+                    tools:text="NZdfdfdsfsdfds"
+                    tools:ignore="HardcodedText"
+                    android:paddingLeft="@dimen/margin_5dp"
+                    android:ellipsize="end"
+                    android:textSize="16sp"
+                    />
+
+                <TextView
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/textColorGray"
+                    android:text="@string/string_vs"
+                    android:textSize="10sp"
+                    android:layout_centerVertical="true"
+
+                    />
+                <ImageView
+
+                    android:id="@+id/team2UpcomingLogo"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp" />
+                <TextView
+                    android:id="@+id/teamBUpcoming"
+                    android:paddingLeft="@dimen/margin_5dp"
+
+                    android:layout_below="@+id/teamA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/defaulttext"
+                    tools:text="PdfdfdfZ"
+                    tools:ignore="HardcodedText"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-7715354291523868/4478541728"
+        />
+ </LinearLayout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rankingLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.khaleef.cricket.Utils.CustomSwipeToRefresh
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:background="@color/new_bg_color">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/matchCardRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="@dimen/section_space"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="@dimen/section_space"
+                android:background="@color/White"
+                android:descendantFocusability="blocksDescendants"
+                android:fillViewport="true" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/matchCardRecyclerView"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="vertical">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="@style/horizontal_progress_loader"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:visibility="gone" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+                    android:descendantFocusability="blocksDescendants"
+                    android:fillViewport="true" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/matchCardRecyclerView"
+                android:id="@+id/empty_content_layout"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/empty_content_tv"
+                    android:text="No content available"
+                    android:visibility="visible"
+                    android:layout_centerInParent="true"
+                    >
+
+                </TextView>
+
+
+            </RelativeLayout>
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/ballShimmer"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/matchCardRecyclerView"
+                android:visibility="visible"
+                app:shimmer_duration="1000">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:background="@color/placeholder_bg" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/placeholder_bg" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/placeholder_bg" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/placeholder_bg" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/placeholder_bg" />
+                </LinearLayout>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+
+        </RelativeLayout>
+    </com.khaleef.cricket.Utils.CustomSwipeToRefresh>
+</RelativeLayout>

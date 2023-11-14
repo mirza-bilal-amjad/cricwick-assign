@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardToShare"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:paddingBottom="3dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+
+                <TextView
+                    android:id="@+id/liveTextHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/button_live"
+                    android:fontFamily="@font/concon_regular"
+                    android:text="Live"
+                    android:textColor="@color/White"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.cunoraz.gifview.library.GifView
+                    android:id="@+id/gif1"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="2dp"
+                    custom:gif="@raw/liveindicator" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@+id/img_follow"
+                        android:background="@android:color/transparent"
+                        android:padding="5dp"
+                        android:src="@drawable/share_gy"
+                        android:visibility="gone"
+                        app:tint="#a4a4a4" />
+
+                    <ImageButton
+
+                        android:id="@+id/shareLiveCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@+id/img_follow"
+                        android:background="@android:color/transparent"
+                        android:padding="5dp"
+                        android:src="@drawable/share_gy" />
+
+                    <ImageButton
+                        android:id="@+id/img_follow"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:background="@android:color/transparent"
+                        android:padding="5dp"
+                        android:src="@drawable/follow_offstete" />
+                </LinearLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/match_content_view"
+            layout="@layout/view_livematch_team_vs_team_odi_t20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/header" />
+
+        <LinearLayout
+            android:id="@+id/run_rate_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/match_content_view"
+            android:orientation="horizontal"
+            android:padding="1dp">
+
+            <TextView
+                android:id="@+id/tv_run_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="start"
+                android:singleLine="true"
+                android:text=""
+                android:textSize="12sp"
+                android:visibility="invisible"
+                tools:ignore="HardcodedText"
+                tools:text="RR: 3.34" />
+
+            <TextView
+                android:id="@+id/tv_current_run_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="start"
+                android:singleLine="true"
+                android:text=""
+                android:textSize="11sp"
+                android:visibility="invisible"
+                tools:ignore="HardcodedText"
+                tools:text="CRR: 3.34" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_required_rr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/run_rate_view"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="2dp"
+            android:textSize="11sp"
+            android:visibility="gone"
+            tools:text="Required Run Rate : 3.55" />
+
+        <TextView
+            android:id="@+id/inning2requiredStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_required_rr"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:paddingBottom="@dimen/section_space"
+            android:singleLine="true"
+            android:text="-"
+            android:textColor="@color/Black"
+            android:textSize="11sp"
+            android:visibility="visible"
+            tools:ignore="HardcodedText"
+            tools:text="kjakf ajgdkga dkagsdkug gkasgd jkgd hjb" />
+
+        <TextView
+            android:id="@+id/liveMatchFixture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/inning2requiredStatus"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="-"
+            android:textColor="@android:color/black"
+            android:textSize="11sp"
+            android:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/liveStreamView"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_below="@+id/liveMatchFixture"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/round_bg_red"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="@font/concon_regular"
+                    android:text="WATCH LIVE"
+                    android:textColor="@color/live_section_red"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="2dp"
+                    android:paddingRight="8dp"
+                    android:src="@drawable/pre_right_arrow"
+
+                    app:tint="@color/live_section_red" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

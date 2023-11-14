@@ -1,0 +1,1170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="@dimen/margin_10dp"
+    >
+
+
+
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="8dp"
+        android:id="@+id/league_home_matches_t20_container"
+        android:background="@drawable/t20_bg"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/infoboard_regular_margin"
+            android:layout_marginLeft="@dimen/infoboard_regular_margin"
+            android:layout_marginRight="@dimen/infoboard_regular_margin"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/t20_icon"
+                ></ImageView>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/prize_container_bg"
+                android:padding="1dp"
+                android:layout_marginTop="1dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#B91414"
+                    android:text="WIN CASH UPTO"
+                    android:textColor="#F9F9FB"
+                    android:textSize="8dp"
+                    android:fontFamily="@font/opensans_bold_0"
+                    android:paddingLeft="11dp"
+                    android:paddingRight="11dp"
+                    android:id="@+id/prize_con_heading"
+                    ></TextView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="3dp"
+                    android:paddingTop="1dp"
+                    android:layout_below="@+id/prize_con_heading"
+                    android:layout_centerHorizontal="true"
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PKR"
+                        android:textColor="#B91414"
+                        android:textSize="8dp"
+                        android:fontFamily="@font/opensans_bold_0"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10,000"
+                        android:textColor="#B91414"
+                        android:textSize="12dp"
+                        android:layout_marginLeft="4dp"
+                        android:fontFamily="@font/opensans_bold_0"
+                        android:id="@+id/prize_tv"></TextView>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/infoboard_large_margin"
+            android:id="@+id/t20_start_container"
+            android:layout_gravity="center_horizontal"
+            android:visibility="visible"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/timer_ic"
+                android:layout_gravity="center_vertical"
+                ></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20:22:06"
+                android:textColor="@color/Black_with_opacity_4"
+                android:textSize="@dimen/regular_text_size"
+                android:id="@+id/t20_start_timer_tv"
+                android:layout_marginLeft="6dp"
+                android:fontFamily="@font/opensans_regular"
+                android:layout_gravity="center_vertical"
+                ></TextView>
+
+
+
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="@dimen/infoboard_large_margin"
+            android:id="@+id/t20_continue_container"
+            android:visibility="gone"
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MATCH SCORE"
+                    android:textSize="10dp"
+                    android:fontFamily="@font/opensans_bold_0"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/Black_with_opacity_4"
+                    ></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25340"
+                    android:textSize="22dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#6A6A6A"
+                    android:id="@+id/t20_continue_score"
+                    ></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/Black_with_opacity_4"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                ></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:id="@+id/t20_progress_container"
+                android:layout_gravity="center_vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/timer_ic"
+                        android:layout_gravity="center_vertical"
+                        ></ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20:22:06"
+                        android:textColor="@color/Black_with_opacity_4"
+                        android:textSize="@dimen/regular_text_size"
+                        android:id="@+id/t20_timer_tv"
+                        android:layout_marginLeft="6dp"
+                        android:fontFamily="@font/opensans_regular"
+                        android:layout_gravity="center_vertical"
+                        ></TextView>
+
+                </LinearLayout>
+
+                <androidx.core.widget.ContentLoadingProgressBar
+                    android:layout_width="124dp"
+                    android:layout_height="8dp"
+                    android:max="20"
+                    android:progress="5"
+                    android:id="@+id/t20_progress_bar"
+                    android:progressTint="#FED03C"
+                    android:background="#B6B6B6"
+                    android:layout_marginTop="6dp"
+                    android:layout_gravity="center_horizontal"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    ></androidx.core.widget.ContentLoadingProgressBar>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:fontFamily="@font/opensans_bold_0"
+                    android:textColor="@color/Black_with_opacity_4"
+                    android:text="5 of 20 Answered"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="6dp"
+                    android:id="@+id/t20_continue_answer_count"
+                    ></TextView>
+
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="@dimen/infoboard_large_margin"
+            android:id="@+id/t20_finished_container"
+            android:visibility="gone"
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MATCH SCORE"
+                    android:textSize="10dp"
+                    android:fontFamily="@font/opensans_bold_0"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/Black_with_opacity_4"
+                    ></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25340"
+                    android:textSize="22dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#6A6A6A"
+                    android:id="@+id/t20_finshed_score_tv"
+                    ></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/Black_with_opacity_4"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                ></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:id="@+id/t20_fininshed_progress_container"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:fontFamily="@font/opensans_bold_0"
+                    android:textColor="@color/Black_with_opacity_4"
+                    android:text="NEXT MATCH IN"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_gravity="center_horizontal"
+                    ></TextView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="6dp"
+
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/timer_ic"
+                        android:layout_gravity="center_vertical"
+                        ></ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20:22:06"
+                        android:textColor="@color/Black_with_opacity_4"
+                        android:textSize="@dimen/regular_text_size"
+                        android:id="@+id/t20_finished_timer_tv"
+                        android:layout_marginLeft="6dp"
+                        android:fontFamily="@font/opensans_regular"
+                        android:layout_gravity="center_vertical"
+                        ></TextView>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Complete your game to score more! "
+            android:gravity="center"
+            android:ellipsize="end"
+            android:layout_marginLeft="@dimen/infoboard_large_margin"
+            android:layout_marginRight="@dimen/infoboard_large_margin"
+            android:maxLines="2"
+            android:layout_marginTop="@dimen/infoboard_large_margin"
+            android:textColor="@color/dark_text_color"
+            android:fontFamily="@font/opensans_regular"
+            android:textSize="@dimen/regular_text_size"
+            android:id="@+id/t20_info_tv"
+            ></TextView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Continue"
+            android:background="@drawable/league_home_solid_btn"
+            android:backgroundTint="@color/t20_color"
+            android:layout_marginTop="@dimen/infoboard_xlarge_margin"
+            android:textColor="@color/Black"
+            android:fontFamily="@font/opensans_bold_0"
+            android:textSize="@dimen/regular_text_size"
+            android:gravity="center"
+            android:id="@+id/t20_btn_tv"
+            android:layout_marginBottom="@dimen/infoboard_large_margin"
+            ></TextView>
+
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/league_home_matches_t20_container"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/infoboard_regular_margin"
+        android:id="@+id/league_home_matches_odi_container"
+        android:background="@drawable/odi_bg"
+        android:orientation="vertical"
+        android:visibility="visible"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/infoboard_regular_margin"
+            android:layout_marginLeft="@dimen/infoboard_regular_margin"
+            android:layout_marginRight="@dimen/infoboard_regular_margin"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/odi_icon"
+                ></ImageView>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/prize_container_bg"
+                android:padding="1dp"
+                android:layout_marginTop="1dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#B91414"
+                    android:text="WIN CASH UPTO"
+                    android:textColor="#F9F9FB"
+                    android:textSize="8dp"
+                    android:fontFamily="@font/opensans_bold_0"
+                    android:paddingLeft="11dp"
+                    android:paddingRight="11dp"
+                    android:id="@+id/prize_con_heading_odi"
+                    ></TextView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="3dp"
+                    android:paddingTop="1dp"
+                    android:layout_below="@+id/prize_con_heading_odi"
+                    android:layout_centerHorizontal="true"
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PKR"
+                        android:textColor="#B91414"
+                        android:textSize="8dp"
+                        android:fontFamily="@font/opensans_bold_0"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10,000"
+                        android:textColor="#B91414"
+                        android:textSize="12dp"
+                        android:layout_marginLeft="4dp"
+                        android:fontFamily="@font/opensans_bold_0"
+                        android:id="@+id/prize_tv_odi"></TextView>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/infoboard_large_margin"
+            android:id="@+id/odi_start_container"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/timer_ic"
+                android:layout_gravity="center_vertical"
+                ></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20:22:06"
+                android:textColor="@color/Black_with_opacity_4"
+                android:textSize="@dimen/regular_text_size"
+                android:id="@+id/odi_start_timer_tv"
+                android:layout_marginLeft="6dp"
+                android:fontFamily="@font/opensans_regular"
+                android:layout_gravity="center_vertical"
+                ></TextView>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="@dimen/infoboard_large_margin"
+            android:id="@+id/odi_continue_container"
+            android:visibility="gone"
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MATCH SCORE"
+                    android:textSize="10dp"
+                    android:fontFamily="@font/opensans_bold_0"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/Black_with_opacity_4"
+                    ></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25340"
+                    android:textSize="22dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#6A6A6A"
+                    android:id="@+id/odi_continue_score"
+                    ></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/Black_with_opacity_4"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                ></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:id="@+id/odi_progress_container"
+                android:layout_gravity="center_vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/timer_ic"
+                        android:layout_gravity="center_vertical"
+                        ></ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20:22:06"
+                        android:textColor="@color/Black_with_opacity_4"
+                        android:textSize="@dimen/regular_text_size"
+                        android:id="@+id/odi_timer_tv"
+                        android:layout_marginLeft="6dp"
+                        android:fontFamily="@font/opensans_regular"
+                        android:layout_gravity="center_vertical"
+                        ></TextView>
+
+                </LinearLayout>
+
+                <androidx.core.widget.ContentLoadingProgressBar
+                    android:layout_width="124dp"
+                    android:layout_height="8dp"
+                    android:max="20"
+                    android:progress="5"
+                    android:progressTint="@color/odi_color"
+                    android:background="#B6B6B6"
+                    android:id="@+id/odi_progress_bar"
+                    android:layout_marginTop="6dp"
+                    android:layout_gravity="center_horizontal"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    ></androidx.core.widget.ContentLoadingProgressBar>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:fontFamily="@font/opensans_bold_0"
+                    android:textColor="@color/Black_with_opacity_4"
+                    android:text="5 of 20 Answered"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="6dp"
+                    android:id="@+id/odi_continue_answer_count"
+                    ></TextView>
+
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="@dimen/infoboard_large_margin"
+            android:id="@+id/odi_finished_container"
+            android:visibility="gone"
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MATCH SCORE"
+                    android:textSize="10dp"
+                    android:fontFamily="@font/opensans_bold_0"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/Black_with_opacity_4"
+                    ></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25340"
+                    android:textSize="22dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#6A6A6A"
+                    android:id="@+id/odi_finshed_score_tv"
+                    ></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/Black_with_opacity_4"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                ></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:id="@+id/odi_fininshed_progress_container"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:fontFamily="@font/opensans_bold_0"
+                    android:textColor="@color/Black_with_opacity_4"
+                    android:text="NEXT MATCH IN"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_gravity="center_horizontal"
+                    ></TextView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="6dp"
+
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/timer_ic"
+                        android:layout_gravity="center_vertical"
+                        ></ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20:22:06"
+                        android:textColor="@color/Black_with_opacity_4"
+                        android:textSize="@dimen/regular_text_size"
+                        android:id="@+id/odi_finished_timer_tv"
+                        android:layout_marginLeft="6dp"
+                        android:fontFamily="@font/opensans_regular"
+                        android:layout_gravity="center_vertical"
+                        ></TextView>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Complete your game to score more!"
+            android:gravity="center"
+            android:ellipsize="end"
+            android:layout_marginLeft="@dimen/infoboard_large_margin"
+            android:layout_marginRight="@dimen/infoboard_large_margin"
+            android:layout_marginTop="@dimen/infoboard_large_margin"
+            android:textColor="@color/dark_text_color"
+            android:fontFamily="@font/opensans_regular"
+            android:textSize="@dimen/regular_text_size"
+            android:id="@+id/odi_info_tv"
+            ></TextView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Continue"
+            android:background="@drawable/league_home_solid_btn"
+            android:backgroundTint="@color/odi_color"
+            android:layout_marginTop="@dimen/infoboard_xlarge_margin"
+            android:textColor="@color/Black"
+            android:fontFamily="@font/opensans_bold_0"
+            android:textSize="@dimen/regular_text_size"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/infoboard_large_margin"
+            android:id="@+id/odi_btn_tv"
+            ></TextView>
+
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/league_home_matches_odi_container"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/infoboard_regular_margin"
+        android:id="@+id/league_home_matches_test_container"
+        android:background="@drawable/test_bg"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/infoboard_regular_margin"
+            android:layout_marginLeft="@dimen/infoboard_regular_margin"
+            android:layout_marginRight="@dimen/infoboard_regular_margin"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/test_icon"
+                ></ImageView>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/prize_container_bg"
+                android:padding="1dp"
+                android:layout_marginTop="1dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#B91414"
+                    android:text="WIN CASH UPTO"
+                    android:textColor="#F9F9FB"
+                    android:textSize="8dp"
+                    android:fontFamily="@font/opensans_bold_0"
+                    android:paddingLeft="11dp"
+                    android:paddingRight="11dp"
+                    android:id="@+id/prize_con_heading_test"
+                    ></TextView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="3dp"
+                    android:paddingTop="1dp"
+                    android:layout_below="@+id/prize_con_heading_test"
+                    android:layout_centerHorizontal="true"
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PKR"
+                        android:textColor="#B91414"
+                        android:textSize="8dp"
+                        android:fontFamily="@font/opensans_bold_0"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30,000"
+                        android:textColor="#B91414"
+                        android:textSize="12dp"
+                        android:layout_marginLeft="4dp"
+                        android:fontFamily="@font/opensans_bold_0"
+                        android:id="@+id/prize_tv_test"></TextView>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/infoboard_large_margin"
+            android:id="@+id/test_start_container"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/timer_ic"
+                android:layout_gravity="center_vertical"
+                ></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20:22:06"
+                android:textColor="@color/Black_with_opacity_4"
+                android:textSize="@dimen/regular_text_size"
+                android:id="@+id/test_start_timer_tv"
+                android:layout_marginLeft="6dp"
+                android:fontFamily="@font/opensans_regular"
+                android:layout_gravity="center_vertical"
+                ></TextView>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="@dimen/infoboard_large_margin"
+            android:id="@+id/test_continue_container"
+            android:visibility="gone"
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MATCH SCORE"
+                    android:textSize="10dp"
+                    android:fontFamily="@font/opensans_bold_0"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/Black_with_opacity_4"
+                    ></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25340"
+                    android:textSize="22dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#6A6A6A"
+                    android:id="@+id/test_continue_score"
+                    ></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/Black_with_opacity_4"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                ></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:id="@+id/test_progress_container"
+                android:layout_gravity="center_vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/timer_ic"
+                        android:layout_gravity="center_vertical"
+                        ></ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20:22:06"
+                        android:textColor="@color/Black_with_opacity_4"
+                        android:textSize="@dimen/regular_text_size"
+                        android:id="@+id/test_timer_tv"
+                        android:layout_marginLeft="6dp"
+                        android:fontFamily="@font/opensans_regular"
+                        android:layout_gravity="center_vertical"
+                        ></TextView>
+
+                </LinearLayout>
+
+                <androidx.core.widget.ContentLoadingProgressBar
+                    android:layout_width="124dp"
+                    android:layout_height="8dp"
+                    android:max="20"
+                    android:id="@+id/test_progress_bar"
+                    android:progress="5"
+                    android:progressTint="@color/test_color"
+                    android:background="#B6B6B6"
+                    android:layout_marginTop="6dp"
+                    android:layout_gravity="center_horizontal"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    ></androidx.core.widget.ContentLoadingProgressBar>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:fontFamily="@font/opensans_bold_0"
+                    android:textColor="@color/Black_with_opacity_4"
+                    android:text="5 of 20 Answered"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="6dp"
+                    android:id="@+id/test_continue_answer_count"
+                    ></TextView>
+
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="@dimen/infoboard_large_margin"
+            android:id="@+id/test_finished_container"
+            android:visibility="gone"
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MATCH SCORE"
+                    android:textSize="10dp"
+                    android:fontFamily="@font/opensans_bold_0"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/Black_with_opacity_4"
+                    ></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25340"
+                    android:textSize="22dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#6A6A6A"
+                    android:id="@+id/test_finshed_score_tv"
+                    ></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/Black_with_opacity_4"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                ></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:id="@+id/test_fininshed_progress_container"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:fontFamily="@font/opensans_bold_0"
+                    android:textColor="@color/Black_with_opacity_4"
+                    android:text="NEXT MATCH IN"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_gravity="center_horizontal"
+                    ></TextView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="6dp"
+
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/timer_ic"
+                        android:layout_gravity="center_vertical"
+                        ></ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20:22:06"
+                        android:textColor="@color/Black_with_opacity_4"
+                        android:textSize="@dimen/regular_text_size"
+                        android:id="@+id/test_finished_timer_tv"
+                        android:layout_marginLeft="6dp"
+                        android:fontFamily="@font/opensans_regular"
+                        android:layout_gravity="center_vertical"
+                        ></TextView>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Complete your game to score more!"
+            android:layout_marginTop="@dimen/infoboard_large_margin"
+            android:gravity="center"
+            android:ellipsize="end"
+            android:layout_marginLeft="@dimen/infoboard_large_margin"
+            android:layout_marginRight="@dimen/infoboard_large_margin"
+            android:textColor="@color/dark_text_color"
+            android:fontFamily="@font/opensans_regular"
+            android:textSize="@dimen/regular_text_size"
+            android:id="@+id/test_info_tv"
+            ></TextView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Continue"
+            android:background="@drawable/league_home_solid_btn"
+            android:backgroundTint="@color/test_color"
+            android:layout_marginTop="@dimen/infoboard_xlarge_margin"
+            android:textColor="@color/White"
+            android:fontFamily="@font/opensans_bold_0"
+            android:textSize="@dimen/regular_text_size"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/infoboard_large_margin"
+            android:id="@+id/test_btn_tv"
+            ></TextView>
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

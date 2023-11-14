@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="40dp">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:fontFamily="@font/roboto_regular"
+        android:text="Follow Match"
+        android:textColor="@color/Black"
+        android:textSize="18sp"
+        tools:text="@tools:sample/lorem" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:fontFamily="@font/roboto_regular"
+        android:text="Select Notifications for this match."
+        android:textColor="@color/Black"
+        android:textSize="14sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1">
+
+
+        <TextView
+            android:id="@+id/tv_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/sw_start"
+            android:layout_toStartOf="@+id/sw_start"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="start"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:text="Match Start"
+            android:textColor="@color/Black"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sw_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:scaleX="0.7"
+            android:scaleY="0.7"
+            android:shadowColor="@color/BrandColor"
+            android:thumb="@drawable/switch_thumb_selector"
+            app:track="@drawable/switch_track_selector" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv_start"
+            android:background="@color/switch_thumb_un_selected_color" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+
+        <TextView
+            android:id="@+id/tv_inning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/sw_inning"
+            android:layout_toStartOf="@+id/sw_inning"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="start"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:text="Innings Alert"
+            android:textColor="@color/Black"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sw_inning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:scaleX="0.7"
+            android:scaleY="0.7"
+            android:shadowColor="@color/BrandColor"
+            android:thumb="@drawable/switch_thumb_selector"
+            app:track="@drawable/switch_track_selector" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv_inning"
+            android:background="@color/switch_thumb_un_selected_color" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+
+        <TextView
+            android:id="@+id/tv_end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/sw_end"
+            android:layout_toStartOf="@+id/sw_end"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="start"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:text="Match End"
+            android:textColor="@color/Black"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sw_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:scaleX="0.7"
+            android:scaleY="0.7"
+            android:shadowColor="@color/BrandColor"
+            android:thumb="@drawable/switch_thumb_selector"
+            app:track="@drawable/switch_track_selector" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv_end"
+            android:background="@color/switch_thumb_un_selected_color" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/sw_highlights"
+            android:layout_toStartOf="@+id/sw_highlights"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="start"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:text="Match Highlights"
+            android:textColor="@color/Black"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sw_highlights"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:scaleX="0.7"
+            android:scaleY="0.7"
+            android:shadowColor="@color/BrandColor"
+            android:thumb="@drawable/switch_thumb_selector"
+            app:track="@drawable/switch_track_selector" />
+
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:layout_below="@+id/tv_highlights"-->
+        <!--android:background="@color/Gray" />-->
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tv_done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:fontFamily="@font/roboto_medium_0"
+        android:padding="15dp"
+        android:text="Done"
+        android:textColor="@color/app_theme_color"
+        android:textSize="18sp" />
+
+
+</LinearLayout>

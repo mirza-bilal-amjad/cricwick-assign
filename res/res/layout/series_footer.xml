@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+
+    android:orientation="horizontal"
+    android:weightSum="4">
+
+
+    <RelativeLayout
+        android:id="@+id/seriesHome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_weight="1"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/seriesHomeIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/series_icon"
+            app:tint="@color/footer_text_color" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_toRightOf="@id/seriesHomeIcon"
+            android:fontFamily="@font/roboto_medium_0"
+            android:paddingLeft="2dp"
+            android:paddingTop="@dimen/margin_5dp"
+            android:paddingBottom="@dimen/margin_5dp"
+            android:text="@string/stringFooterSeriesHome"
+            android:textColor="@color/footer_text_color"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/seriesVideos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.8"
+
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/seriesVideosIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/SeriesVideoText"
+            android:src="@drawable/video_icon"
+            app:tint="@color/footer_text_color" />
+
+        <TextView
+            android:id="@+id/SeriesVideoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/roboto_medium_0"
+            android:gravity="center"
+            android:paddingLeft="2dp"
+            android:paddingTop="@dimen/margin_5dp"
+            android:paddingBottom="@dimen/margin_5dp"
+            android:text="@string/stringFooterSeriesVideos"
+            android:textColor="@color/footer_text_color"
+            android:textSize="14sp" />
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/seriesPointsTable"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.1"
+
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/seriesPointsTableIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/point_table"
+            app:tint="@color/footer_text_color" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_toRightOf="@id/seriesPointsTableIcon"
+            android:fontFamily="@font/roboto_medium_0"
+            android:gravity="center"
+            android:paddingLeft="2dp"
+            android:paddingTop="@dimen/margin_5dp"
+            android:paddingBottom="@dimen/margin_5dp"
+            android:text="@string/stringFooterSeriesPT"
+            android:textColor="@color/footer_text_color"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fantasyLeague"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.9"
+        android:layout_gravity="center_vertical"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/fantasy_league_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/fantasy_side"
+            app:tint="@color/footer_text_color" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_toRightOf="@id/fantasy_league_icon"
+            android:fontFamily="@font/roboto_medium_0"
+            android:gravity="center"
+            android:paddingLeft="2dp"
+            android:paddingTop="@dimen/margin_5dp"
+            android:paddingBottom="@dimen/margin_5dp"
+            android:text="@string/stringFantasy"
+            android:textColor="@color/footer_text_color"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+</LinearLayout>
