@@ -1,6 +1,6 @@
 import {SafeAreaView, StyleSheet, View} from 'react-native'
 import React, {useEffect, useState} from 'react'
-import SeriesScreenComponent from "../../../../components/Series/SeriesScreenComponent";
+import SeriesScreenComponent from "../../../../components/comp.mainbottomtabscreen/Series/SeriesScreenComponent";
 import {fetchSeries} from "../../../../utils/serverfetch/fetchBackend";
 import LottieView from "lottie-react-native";
 import {ActivityLoader, Loader} from "../../../../assets";

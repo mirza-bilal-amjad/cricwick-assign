@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react'
 import {fetchSchedule} from "../../utils/serverfetch/fetchBackend";
 import LottieView from "lottie-react-native";
 import {BallLoaderAnimation, Loader} from "../../assets";
-import PointTableCard from "../../components/Series/component/sub_screen.component/PointTable/PointTableCard";
+import PointTableCard from "../../components/com.matchsummarybottomtabscreen/PointTable/PointTableCard";
 import {Row, Table} from 'react-native-table-component';
 import {useTheme} from "../../hooks";
 
