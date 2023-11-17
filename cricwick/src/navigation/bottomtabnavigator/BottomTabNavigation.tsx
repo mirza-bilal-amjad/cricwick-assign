@@ -4,20 +4,25 @@ import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {FantasyScreen, HomeScreen, MoreScreen, VideosScreen} from "../../screens";
 import IonIcon from 'react-native-vector-icons/Ionicons'
 import GoogleIcon from 'react-native-vector-icons/MaterialIcons'
-// import {useFonts} from 'react-native-google-fonts'
 // @ts-ignore
-import cricwickImage from '../../assets/Images/app_logo.png'
+import cricwickImageDark from '../../assets/Images/app_logo.png'
+// @ts-ignore
+import cricwickImageLight from '../../assets/Images/app_logo_light.png'
 // @ts-ignore
 import fantasyImage from '../../assets/Images/fantasy_bottom.png'
 // @ts-ignore
 import seriesBottomImage from '../../assets/Images/series_side.png'
-import SeriesBottomTabNavigation from "./seriesBottomNavigator/SeriesBottomTabNavigation";
+import Series from "./series/Series";
 import {useTheme} from "../../hooks";
-import {column} from "mathjs";
 
 const BottomTabs = createBottomTabNavigator();
 
-function Header(props: { onPress: () => any; leftIcon: string; rightIcon: string; name?: string }) {
+function Header(props: {
+	onPress: () => any;
+	leftIcon: string;
+	rightIcon: string;
+	name?: string
+}) {
 	const {Layout, darkMode, NavigationTheme, Colors} = useTheme();
 	const {colors} = NavigationTheme;
 	return <View style={{
@@ -57,6 +62,7 @@ const BottomTabNavigation = ({navigation}: any) => {
 				                      backgroundColor: colors.background,
 				                      height: 70,
 				                      padding: 0,
+				                      borderColor: 'transparent',
 				                      justifyContent: 'center',
 				                      alignItems: 'center',
 			                      },
@@ -90,8 +96,9 @@ const BottomTabNavigation = ({navigation}: any) => {
 							<IonIcon name="menu" size={35} color={colors.text}/>
 						</TouchableOpacity>
 						<View>
-							{cricwickImage &&
-                                <Image source={cricwickImage} style={{height: 27, aspectRatio: 7 / 2}}/>}
+							{cricwickImageDark &&
+                                <Image source={darkMode ? cricwickImageLight : cricwickImageDark}
+                                       style={{height: 27, aspectRatio: 7 / 2}}/>}
 						</View>
 						<TouchableOpacity>
 							<GoogleIcon name="cast" size={28} color={colors.text}/>
@@ -144,7 +151,7 @@ const BottomTabNavigation = ({navigation}: any) => {
 					</TouchableOpacity>
 				),
 			}}/>
-			<BottomTabs.Screen name="Series" component={SeriesBottomTabNavigation} options={{
+			<BottomTabs.Screen name="Series" component={Series} options={{
 				headerShown: false,
 				tabBarButton: () => (
 					<TouchableOpacity

@@ -1,4 +1,4 @@
-import {View, Text, Image, TouchableOpacity, Linking} from 'react-native'
+import {Image, Linking, Text, TouchableOpacity, View} from 'react-native'
 import React from 'react'
 import LinearGradient from "react-native-linear-gradient";
 import {getTimeSpan} from "../../../utils/method";

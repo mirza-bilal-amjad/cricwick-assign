@@ -1,9 +1,6 @@
-import {configureStore, combineReducers} from '@reduxjs/toolkit';
+import {combineReducers, configureStore} from '@reduxjs/toolkit';
 import {setupListeners} from '@reduxjs/toolkit/query';
-import {
-    persistReducer,
-    persistStore,
-} from 'redux-persist';
+import {persistReducer, persistStore,} from 'redux-persist';
 
 
 import theme from './theme';
@@ -11,6 +8,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import {carouselReducer} from "./FBCarouselReducer";
 import {toggleReducer} from "./toggleReducer";
 import {cricwickHomePageReducer} from "./crickwickHome";
+
 const reducers = combineReducers({
     theme,
     carouselReducer,

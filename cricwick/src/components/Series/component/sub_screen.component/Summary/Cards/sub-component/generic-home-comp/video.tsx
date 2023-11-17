@@ -1,4 +1,4 @@
-import {View, Text, TouchableOpacity, Image} from 'react-native'
+import {Image, Text, TouchableOpacity, View} from 'react-native'
 import React from 'react'
 import GoogleIcon from "react-native-vector-icons/MaterialIcons";
 

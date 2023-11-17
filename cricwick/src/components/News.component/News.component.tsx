@@ -1,9 +1,8 @@
-import {Dimensions, StyleSheet, Text, View} from 'react-native'
+import {StyleSheet, View} from 'react-native'
 import React from 'react'
 import ImageHeading
-    from "../Home/Series/component.MatchResult/report.component/match_image_heading.component/ImageHeading";
-import WebViewComp
-    from "../Home/Series/component.MatchResult/report.component/match_image_heading.component/WebViewComp";
+	from "../comp.matchresultbottomtabscreen/report.component/match_image_heading.component/ImageHeading";
+import WebViewComp from "../comp.matchresultbottomtabscreen/report.component/match_image_heading.component/WebViewComp";
 
 const NewsComponent = ({item}: any) => {
     return (

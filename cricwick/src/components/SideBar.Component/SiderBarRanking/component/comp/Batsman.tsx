@@ -1,4 +1,4 @@
-import {View, Text} from 'react-native'
+import {Text, View} from 'react-native'
 import React from 'react'
 import FastImage from "react-native-fast-image";
 import {useTheme} from "../../../../../hooks";

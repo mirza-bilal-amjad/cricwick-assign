@@ -1,5 +1,5 @@
-import {FlatList, StyleSheet, Text, View} from 'react-native'
-import React, {useEffect, useMemo, useState} from 'react'
+import {StyleSheet} from 'react-native'
+import React, {useMemo} from 'react'
 import Card from "./component/card";
 import {SwiperFlatList} from "react-native-swiper-flatlist";
 

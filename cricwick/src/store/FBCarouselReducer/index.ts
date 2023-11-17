@@ -1,5 +1,4 @@
 import {createSlice, Draft, PayloadAction} from '@reduxjs/toolkit';
-import {removeDuplicate} from "../../utils/method";
 
 const initialState: object = [];
 

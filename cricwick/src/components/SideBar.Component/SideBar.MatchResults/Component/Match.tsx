@@ -1,7 +1,6 @@
-import {View, Text, Image, FlatList, TouchableOpacity} from 'react-native'
+import {FlatList, Image, Text, TouchableOpacity, View} from 'react-native'
 import React from 'react'
 import GoogleIcon from "react-native-vector-icons/MaterialIcons";
-import matches from "../../../Home/Series/component/matches";
 import {useNavigation} from "@react-navigation/native";
 
 const Match = ({match}: any) => {

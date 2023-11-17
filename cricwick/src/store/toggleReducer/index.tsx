@@ -1,5 +1,4 @@
-import {createSlice, Draft, PayloadAction} from '@reduxjs/toolkit';
-import {removeDuplicate} from "../../utils/method";
+import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
     flag: false,

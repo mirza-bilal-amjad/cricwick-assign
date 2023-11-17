@@ -1,5 +1,5 @@
-import {Dimensions, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
-import React, {useMemo} from 'react'
+import {Dimensions, Image, StyleSheet, TouchableOpacity, View} from 'react-native'
+import React from 'react'
 
 const Card = ({item, listID, seriesID, label, navigation}: any) => {
 

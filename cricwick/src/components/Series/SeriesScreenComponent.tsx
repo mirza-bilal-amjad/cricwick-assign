@@ -4,9 +4,11 @@ import {OnGoingCard, ResultCard, UpcomingCard} from "./component";
 import {useNavigation} from "@react-navigation/native";
 
 const SeriesScreenComponent = ({data, screenType, callBackFunc}: any) => {
+
     const navigation = useNavigation()
     return (
-        <View>
+        <View style={{
+        }}>
             <FlatList
                 data={data}
                 initialNumToRender={10}
