@@ -1,6 +1,5 @@
-import {StyleSheet, Text, View} from 'react-native'
+import {StyleSheet} from 'react-native'
 import React from 'react'
-import TEST from "../TEST/TEST";
 import OverMatch from "./comp.match_state/OverMatch";
 import ScheduleMatch from "./comp.match_state/ScheduleMatch";
 import LiveMatch from "./comp.match_state/LiveMatch";

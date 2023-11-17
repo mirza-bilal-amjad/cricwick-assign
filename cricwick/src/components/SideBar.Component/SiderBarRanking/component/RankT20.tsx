@@ -1,5 +1,5 @@
-import {View, Text, TouchableOpacity, FlatList} from 'react-native'
-import React, {useEffect, useState} from 'react'
+import {FlatList, Text, TouchableOpacity, View} from 'react-native'
+import React, {useState} from 'react'
 import Collapsible from "react-native-collapsible";
 import Teams from "./comp/Teams";
 import Batsman from "./comp/Batsman";

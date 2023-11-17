@@ -1,6 +1,5 @@
-import {Easing, Image, Text, TouchableOpacity, View} from "react-native";
-import React, {useEffect, useRef, useState} from "react";
-import {DateComponent} from "../index";
+import {Text, TouchableOpacity, View} from "react-native";
+import React, {useEffect} from "react";
 import FastImage from "react-native-fast-image";
 import Animated, {useAnimatedStyle, useSharedValue, withDelay, withTiming} from "react-native-reanimated";
 import {getTimeSpan} from "../../utils/method";

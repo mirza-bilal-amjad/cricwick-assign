@@ -1,18 +1,18 @@
 /*
 // HomePage Containers
 */
-export {default as GenericHome} from './Home/GenericHome/GenericHome';
-export {default as Series} from './Home/Series/Series';
-export {default as Rankings} from './Home/Rankings/Rankings';
-export {default as VideoContainerHorizontal} from './Home/Video/VideoContainerHorizontal';
-export {default as VideoContainerVertical} from './Home/Video/VideoContainerVertical';
+export {default as GenericHome} from './comp.mainbottomtabscreen/Home/GenericHome/GenericHome';
+export {default as Series} from './comp.mainbottomtabscreen/Home/Series/Series';
+export {default as Rankings} from './comp.mainbottomtabscreen/Home/Rankings/Rankings';
+export {default as VideoContainerHorizontal} from './comp.mainbottomtabscreen/Home/Video/VideoContainerHorizontal';
+export {default as VideoContainerVertical} from './comp.mainbottomtabscreen/Home/Video/VideoContainerVertical';
 // HomePage Components
-export {default as MatchCarousel} from './Home/Carousel/component/matchCarousel';
+export {default as MatchCarousel} from './comp.mainbottomtabscreen/Home/Carousel/component/matchCarousel';
 
-export {default as MatchesComponent} from './Home/Series/component/matches';
-export {default as HomeNewsComponent} from './Home/Series/component/news';
-export {default as HomeArticleComponent} from './Home/Series/component/article';
-export {default as VideoComponent} from './Home/Series/component/videos';
+export {default as MatchesComponent} from './comp.mainbottomtabscreen/Home/Series/component/matches';
+export {default as HomeNewsComponent} from './comp.mainbottomtabscreen/Home/Series/component/news';
+export {default as HomeArticleComponent} from './comp.mainbottomtabscreen/Home/Series/component/article';
+export {default as VideoComponent} from './comp.mainbottomtabscreen/Home/Series/component/videos';
 //Bottom Nav VideoScreenComponent
 // Main Video Container
 export {default as MainVideoContainer} from './Videos/VideoScreenComponent';

@@ -1,11 +1,14 @@
 import {Image, StyleSheet, Text, View} from 'react-native'
 import React from 'react'
+import {useTheme} from "../../../../../../../../../hooks";
 
 const LiveMatch = ({item}: any) => {
+    const {Layout, darkMode, NavigationTheme} = useTheme();
+    const {colors} = NavigationTheme;
     return (
         <View style={{
             borderBottomWidth: .2,
-            borderBottomColor: '#d7d7d7'
+            borderBottomColor: colors.card
         }}>
             <View style={{
                 marginHorizontal: 10,
@@ -36,7 +39,7 @@ const LiveMatch = ({item}: any) => {
                                 marginLeft: 10,
                                 fontSize: 16,
                                 fontWeight: 'bold',
-                                color: 'black'
+                                color: colors.text
                             }}>{item.teamA.short_name}</Text>
 
                         </View>
@@ -49,12 +52,12 @@ const LiveMatch = ({item}: any) => {
                                 }}><Text style={{
                                     fontSize: 16,
                                     fontWeight: 'bold',
-                                    color: 'black'
+                                    color: colors.text
                                 }}>{insideItem.runs > 0 ? insideItem.runs : 0}{insideItem.wickets > 0 ? insideItem.wickets < 10 ? `/${insideItem.wickets}` : '' : '/0'}</Text>
                                     <Text style={{
                                         fontSize: 11,
                                         fontWeight: '500',
-                                        color: 'black',
+                                        color: colors.text,
                                         alignSelf: 'flex-end',
                                         bottom: 2
                                     }}> ({Number(insideItem.overs).toFixed(1)} ov) </Text>
@@ -85,7 +88,7 @@ const LiveMatch = ({item}: any) => {
                                 marginLeft: 10,
                                 fontSize: 16,
                                 fontWeight: 'bold',
-                                color: 'black'
+                                color: colors.text
                             }}>{item.teamB.short_name}</Text>
                         </View>
                         <View style={{
@@ -97,12 +100,12 @@ const LiveMatch = ({item}: any) => {
                                 }}><Text style={{
                                     fontSize: 16,
                                     fontWeight: 'bold',
-                                    color: 'black'
+                                    color: colors.text
                                 }}>{insideItem.runs > 0 ? insideItem.runs : 0}{insideItem.wickets > 0 ? insideItem.wickets < 10 ? `/${insideItem.wickets}` : '' : '/0'}</Text>
                                     <Text style={{
                                         fontSize: 11,
                                         fontWeight: '500',
-                                        color: 'black',
+                                        color: colors.text,
                                         alignSelf: 'flex-end',
                                         bottom: 2
                                     }}> ({Number(insideItem.overs).toFixed(1)} ov) </Text>
@@ -116,7 +119,7 @@ const LiveMatch = ({item}: any) => {
                     marginVertical: 5,
                     alignItems: 'center'
                 }}>
-                    <Text style={{fontSize: 16, fontWeight: 'bold', color: 'black'}}>{item.match_result}</Text>
+                    <Text style={{fontSize: 16, fontWeight: 'bold', color: colors.text}}>{item.match_result}</Text>
                 </View>
             </View>
         </View>

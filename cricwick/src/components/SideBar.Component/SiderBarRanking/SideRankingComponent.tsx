@@ -1,6 +1,5 @@
-import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
-import React, {useEffect} from 'react'
-import {SwiperFlatList} from 'react-native-swiper-flatlist';
+import {StyleSheet, View} from 'react-native'
+import React from 'react'
 import {createMaterialTopTabNavigator} from "@react-navigation/material-top-tabs";
 import RankODI from "./component/RankODI";
 import RankT20 from "./component/RankT20";

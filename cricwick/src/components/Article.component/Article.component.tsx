@@ -1,11 +1,13 @@
-import {Dimensions, StyleSheet, Text, View} from 'react-native'
+import {StyleSheet, View} from 'react-native'
 import React from 'react'
+import {useTheme} from "../../hooks";
 import ImageHeading
-    from "../Home/Series/component.MatchResult/report.component/match_image_heading.component/ImageHeading";
-import WebViewComp
-    from "../Home/Series/component.MatchResult/report.component/match_image_heading.component/WebViewComp";
+	from "../comp.matchresultbottomtabscreen/report.component/match_image_heading.component/ImageHeading";
+import WebViewComp from "../comp.matchresultbottomtabscreen/report.component/match_image_heading.component/WebViewComp";
 
 const ArticleComponent = ({item}: any) => {
+    const {Layout, darkMode, NavigationTheme, Colors} = useTheme();
+    const {colors} = NavigationTheme;
     return (
         <View style={{
             flex: 1

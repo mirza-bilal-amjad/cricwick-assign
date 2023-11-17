@@ -1,11 +1,11 @@
-import {FlatList, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
+import {FlatList, StyleSheet, View} from 'react-native'
 import React, {useMemo} from 'react'
 import Card from "./component/card";
-import IonIcon from "react-native-vector-icons/Ionicons";
-import GoogleIcon from "react-native-vector-icons/MaterialIcons";
+import {useTheme} from "../../../hooks";
 
 const PlayList = ({data, listID, seriesID, label, navigation}: any) => {
-
+    const {Layout, darkMode, NavigationTheme, Colors} = useTheme();
+    const {colors} = NavigationTheme;
     return (
         <FlatList
             horizontal

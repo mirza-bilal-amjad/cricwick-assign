@@ -1,7 +1,6 @@
 import {Dimensions, FlatList, SafeAreaView, StyleSheet, Text, View} from 'react-native'
-import React, {memo, useEffect, useMemo, useState} from 'react'
-import {CarouselVideo, PlayListComponent, SeriesComponent, VideoComponent} from "../index";
-import {fetchVideos} from "../../utils/serverfetch/fetchBackend";
+import React, {memo, useMemo} from 'react'
+import {CarouselVideo, PlayListComponent, SeriesComponent} from "../index";
 import LottieView from "lottie-react-native";
 import {ActivityLoader, Loader} from "../../assets";
 

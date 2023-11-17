@@ -1,7 +1,6 @@
-import {FlatList, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
+import {FlatList, View} from 'react-native'
 import React, {useMemo} from 'react'
 import Card from "./component/card";
-import GoogleIcon from "react-native-vector-icons/MaterialIcons";
 
 const Series = ({data, listID, seriesID, label, navigation}: any) => {
 

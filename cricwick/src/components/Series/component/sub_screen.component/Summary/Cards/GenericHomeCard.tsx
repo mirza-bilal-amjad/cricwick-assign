@@ -1,4 +1,3 @@
-import {View, Text} from 'react-native'
 import React from 'react'
 import News from "./sub-component/generic-home-comp/news";
 import Video from "./sub-component/generic-home-comp/video";

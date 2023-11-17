@@ -1,6 +1,5 @@
-import {View, Text, Dimensions, Image, TouchableOpacity} from 'react-native'
+import {Image, Text, TouchableOpacity, View} from 'react-native'
 import React from 'react'
-import FastImage from "react-native-fast-image";
 
 const News = ({item, navigation}: any) => {
 

@@ -20,5 +20,3 @@ import {default as Fantasy_Bottom} from './Images/fantasy_bottom.png'
 import {default as PSL} from './Images/psl_side.png'
 // @ts-ignore
 import {default as SeriesIcon} from './Images/series_icon.png'
-
-

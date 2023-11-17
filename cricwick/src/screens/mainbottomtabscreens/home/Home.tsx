@@ -1,19 +1,9 @@
 import React, {useCallback, useEffect, useMemo, useState} from 'react'
-import {
-	Dimensions,
-	FlatList,
-	SafeAreaView, StyleSheet,
-	View
-} from 'react-native'
+import {Dimensions, FlatList, SafeAreaView, StyleSheet, View} from 'react-native'
 import {fetchGenericHome} from "../../../utils/serverfetch/fetchBackend";
 import {ActivityLoader, Loader} from "../../../assets";
 import LottieView from "lottie-react-native";
-import {
-	MatchCarousel,
-	GenericHome,
-	Rankings,
-	VideoContainerVertical, Series
-} from "../../../components";
+import {GenericHome, MatchCarousel, Rankings, Series, VideoContainerVertical} from "../../../components";
 import {FIREBASE_DATABASE_REF} from "../../../config/firebase/firebase.config";
 import {onValue} from "firebase/database";
 import {useDispatch, useSelector} from "react-redux";
@@ -21,8 +11,8 @@ import {addToCarousel} from "../../../store/FBCarouselReducer";
 import {removeDuplicate} from "../../../utils/method";
 import {toggleFlag} from "../../../store/toggleReducer";
 import {setDataIncCricwick, setPageNumber} from "../../../store/crickwickHome";
-import NativeScreen from "../../../components/Home/NativeScreen/NativeScreen";
 import {useTheme} from "../../../hooks";
+import NativeScreen from "../../../components/comp.mainbottomtabscreen/Home/NativeScreen/NativeScreen";
 
 const Home = ({navigation}: any) => {
 	const {Layout, darkMode, NavigationTheme, Colors} = useTheme();
@@ -151,11 +141,13 @@ const Home = ({navigation}: any) => {
 						top: -2,
 						zIndex: 10
 					}}
-                    colorFilters={[
-						{
-							keypath: "Shape Layer 2",
-							color: "#c22026"
-						}]}
+                    colorFilters={[{
+						keypath: "Shape Layer 2",
+						color: "#c22026"
+					}, {
+						keypath: "Shape Layer 1",
+						color: colors.text
+					}]}
                 />}
 			</View>
 
@@ -172,6 +164,9 @@ const Home = ({navigation}: any) => {
 					            colorFilters={[{
 						            keypath: "Shape Layer 2",
 						            color: "#c22026"
+					            }, {
+						            keypath: "Shape Layer 1",
+						            color: colors.text
 					            }]}
 					/>
 				</View>

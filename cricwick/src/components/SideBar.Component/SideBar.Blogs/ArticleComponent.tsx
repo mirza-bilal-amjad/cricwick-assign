@@ -1,9 +1,9 @@
-import {Dimensions, StyleSheet, Text, View} from 'react-native'
-import React, {useRef, useState} from 'react'
+import {StyleSheet, View} from 'react-native'
+import React from 'react'
 import ImageHeading
-    from "../../Home/Series/component.MatchResult/report.component/match_image_heading.component/ImageHeading";
+	from "../../Home/Series/component.MatchResult/report.component/match_image_heading.component/ImageHeading";
 import WebViewComp
-    from "../../Home/Series/component.MatchResult/report.component/match_image_heading.component/WebViewComp";
+	from "../../Home/Series/component.MatchResult/report.component/match_image_heading.component/WebViewComp";
 
 const ArticleComponent = ({item, isScrollEnabled}: any) => {
 

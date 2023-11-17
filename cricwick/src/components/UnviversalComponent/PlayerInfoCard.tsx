@@ -1,4 +1,4 @@
-import {View, Text, Image} from 'react-native'
+import {Image, Text, View} from 'react-native'
 import React from 'react'
 
 const PlayerInfoCard = ({item}: any) => {
