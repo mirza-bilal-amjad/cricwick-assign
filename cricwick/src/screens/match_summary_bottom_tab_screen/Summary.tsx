@@ -4,8 +4,8 @@ import LottieView from "lottie-react-native";
 import {BallLoaderAnimation, Loader} from "../../assets";
 import {fetchSummary} from "../../utils/serverfetch/fetchBackend";
 import {useNavigation} from "@react-navigation/native";
-import MatchCard from "../../components/Series/component/sub_screen.component/Summary/Cards/MatchCard";
-import GenericHomeCard from "../../components/Series/component/sub_screen.component/Summary/Cards/GenericHomeCard";
+import MatchCard from "../../components/com.matchsummarybottomtabscreen/Summary/Cards/MatchCard";
+import GenericHomeCard from "../../components/com.matchsummarybottomtabscreen/Summary/Cards/GenericHomeCard";
 import {useTheme} from "../../hooks";
 
 const Summary = ({route}: any) => {

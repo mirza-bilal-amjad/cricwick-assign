@@ -15,22 +15,22 @@ export {default as HomeArticleComponent} from './comp.mainbottomtabscreen/Home/S
 export {default as VideoComponent} from './comp.mainbottomtabscreen/Home/Series/component/videos';
 //Bottom Nav VideoScreenComponent
 // Main Video Container
-export {default as MainVideoContainer} from './Videos/VideoScreenComponent';
+export {default as MainVideoContainer} from './comp.mainbottomtabscreen/Videos/VideoScreenComponent';
 /*
 ** VideoContainer Components
 */
 // Carousel
-export {default as CarouselVideo} from './Videos/Carousel/VideoCarousel';
+export {default as CarouselVideo} from './comp.mainbottomtabscreen/Videos/Carousel/VideoCarousel';
 // Playlist
-export {default as PlayListComponent} from './Videos/PlayList/PlayList';
-export {default as SeriesComponent} from './Videos/Series/Series';
+export {default as PlayListComponent} from './comp.mainbottomtabscreen/Videos/PlayList/PlayList';
+export {default as SeriesComponent} from './comp.mainbottomtabscreen/Videos/Series/Series';
 /*
 * BottomNav Series Screen
 *
 *
 *  */
 
-export {default as SeriesScreenComponent} from './Series/SeriesScreenComponent';
+export {default as SeriesScreenComponent} from './comp.mainbottomtabscreen/Series/SeriesScreenComponent';
 export {default as ArticleComponent} from './Article.component/Article.component'
 
 //UniversalMethods

@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react'
 import LottieView from "lottie-react-native";
 import {BallLoaderAnimation, Loader} from "../../assets";
 import {fetchSchedule} from "../../utils/serverfetch/fetchBackend";
-import ScheduleCard from "../../components/Series/component/sub_screen.component/Schedule/ScheduleCard";
+import ScheduleCard from "../../components/com.matchsummarybottomtabscreen/Schedule/ScheduleCard";
 import {useTheme} from "../../hooks";
 
 const Schedules = ({route}: any) => {
